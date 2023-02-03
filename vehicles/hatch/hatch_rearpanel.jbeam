@@ -1,0 +1,217 @@
+{
+"hatch_rearpanel": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Covet Rear Panel",
+	}
+    "slotType" : "hatch_rearpanel",
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["hatch_rearpanel", ["hatch_rearpanel"]],
+		 
+		 {"deformGroup":"hatch_taillight_L_break", "deformMaterialBase":"hatch_signal_L", "deformMaterialDamaged":"hatch_lights_dmg"}
+		 ["hatch_rearsignal_L", ["hatch_rearpanel"]],
+		 
+		 {"deformGroup":"hatch_taillight_R_break", "deformMaterialBase":"hatch_signal_R", "deformMaterialDamaged":"hatch_lights_dmg"}
+		 ["hatch_rearsignal_R", ["hatch_rearpanel"]],
+		 
+		 {"deformGroup":"hatch_taillight_L_break", "deformMaterialBase":"hatch_taillight", "deformMaterialDamaged":"hatch_lights_dmg"}
+		 ["hatch_taillight_L", ["hatch_rearpanel"]],
+		 
+		 {"deformGroup":"hatch_taillight_R_break", "deformMaterialBase":"hatch_taillight", "deformMaterialDamaged":"hatch_lights_dmg"}
+		 ["hatch_taillight_R", ["hatch_rearpanel"]],
+		 
+		 {"deformGroup":"hatch_taillight_L_break", "deformMaterialBase":"hatch_reverselight", "deformMaterialDamaged":"hatch_lights_dmg"}
+		 ["hatch_reverselight_L", ["hatch_rearpanel"]],
+		 
+		 {"deformGroup":"hatch_taillight_R_break", "deformMaterialBase":"hatch_reverselight", "deformMaterialDamaged":"hatch_lights_dmg"}
+		 ["hatch_reverselight_R", ["hatch_rearpanel"]],
+		 
+		 {"deformGroup":""}
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR PANEL--
+		 {"collision":true},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":1},
+		 {"nodeWeight":2.2},
+		 {"group":"hatch_rearpanel"},
+		 {"selfCollision":true},
+		 ["rp1rr",-0.77, 1.80, 0.50],
+		 ["rp1r", -0.31, 1.83, 0.50],
+		 ["rp1l",  0.31, 1.83, 0.50],
+		 ["rp1ll", 0.77, 1.80, 0.50],
+		 
+		 ["rp2rr",-0.77, 1.75, 0.70],
+		 ["rp2r", -0.31, 1.78, 0.70],
+		 ["rp2l",  0.31, 1.78, 0.70],
+		 ["rp2ll", 0.77, 1.75, 0.70],
+		 
+		 {"selfCollision":true},
+		 ["rp3rr",-0.79, 1.68, 0.50],
+		 {"selfCollision":false},
+		 ["rp3",0.0, 1.71, 0.50],
+		 {"selfCollision":true},
+		 ["rp3ll", 0.79, 1.68, 0.50],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},//--rearpanel--
+		  
+		  //--REAR PANEL--
+		  {"beamSpring":1201000,"beamDamp":180},
+		  {"beamDeform":140500,"beamStrength":"FLT_MAX"},
+		  
+		  //rear panel main shape
+		  ["rp1rr","rp1r"],
+		  ["rp1r","rp1l"],
+		  ["rp1l","rp1ll"],
+		  
+		  ["rp2rr","rp2r"],
+		  ["rp2r","rp2l"],
+		  ["rp2l","rp2ll"],
+		  
+		  ["rp1rr","rp3rr"],
+		  ["rp1ll","rp3ll"],
+		  
+		  ["rp2rr","rp3rr"],
+		  ["rp2ll","rp3ll"],
+		  
+		  //crossing
+		  {"beamDeform":36500,"beamStrength":"FLT_MAX"},
+		  {"deformGroup":"hatch_taillight_R_break", "triggerStrength":5000},
+		  ["rp1rr","rp2r"],
+		  ["rp1r","rp2rr"],
+		  {"deformGroup":""},
+		  ["rp1r","rp2l"],
+		  ["rp1l","rp2r"],
+		  {"deformGroup":"hatch_taillight_L_break", "triggerStrength":5000},
+		  ["rp1l","rp2ll"],
+		  ["rp1ll","rp2l"],
+		  {"deformGroup":""},
+		  
+		  
+		  
+		  //rigidifier
+		  ["rp1rr","rp3"],
+		  ["rp1r","rp3"],
+		  ["rp1l","rp3"],
+		  ["rp1ll","rp3"],
+		  ["rp2rr","rp3"],
+		  ["rp2r","rp3"],
+		  ["rp2l","rp3"],
+		  ["rp2ll","rp3"],
+		  ["rp3rr","rp3"],
+		  ["rp3ll","rp3"],
+		  
+		  {"beamDeform":76500,"beamStrength":"FLT_MAX"},
+		  //rigid corners
+		  ["rp2r","rp3rr"],
+		  ["rp2l","rp3ll"],
+		  ["rp1r","rp3rr"],
+		  ["rp1l","rp3ll"],
+		  
+		  
+		  //attach
+		  {"beamDeform":21500,"beamStrength":68000},
+		  {"breakGroup":"hatch_rearpanel_R"},
+		  //r
+		  /*
+		  ["rp1rr","r4r"],
+		  ["rp3rr","r4r"],
+		  ["rp2rr","r4r"],
+		  ["rp1r","r4r"],
+		  ["rp2r","r4r"],
+		  ["rp1rr","r2r"],
+		  ["rp3rr","r2r"],
+		  */
+		  
+		  {"deformGroup":"hatch_taillight_R_break", "triggerStrength":5000},
+		  ["rp1rr","q7r"],
+		  ["rp2rr","q7r"],
+		  ["rp3rr","q7r"],
+		  ["rp2rr","q3r"],
+		  ["rp1r","q7r"],
+		  ["rp2r","q7r"],
+		  ["rp2r","q3r"],
+		  {"breakGroup":"hatch_rearpanel_L"},
+		  //l
+		  /*
+		  ["rp1ll","r4l"],
+		  ["rp3ll","r4l"],
+		  ["rp2ll","r4l"],
+		  ["rp1l","r4l"],
+		  ["rp2l","r4l"],
+		  ["rp1ll","r2l"],
+		  ["rp3ll","r2l"],
+		  */
+		  
+		  {"deformGroup":"hatch_taillight_L_break", "triggerStrength":5000},
+		  ["rp1ll","q7l"],
+		  ["rp2ll","q7l"],
+		  ["rp3ll","q7l"],
+		  ["rp2ll","q3l"],
+		  ["rp1l","q7l"],
+		  ["rp2l","q7l"],
+		  ["rp2l","q3l"],
+		  
+		  
+		  {"deformGroup":""},
+		  {"breakGroup":""},
+		  //rear panel support beams
+		  {"beamType":"|SUPPORT", "beamLongBound":4},
+		  {"beamSpring":1151000,"beamDamp":180},
+		  {"beamLimitSpring":1151000,"beamLimitDamp":180},
+		  {"beamDeform":28000,"beamStrength":460000},
+		  ["rp1rr","r4r"],
+		  ["rp1ll","r4l"],
+		  
+		  ["rp3rr","r3r"],
+		  ["rp3ll","r3l"],
+		  
+		  ["rp1rr","r2r"],
+		  ["rp1ll","r2l"],
+		  
+		  ["rp1r","r4r"],
+		  ["rp1l","r4l"],
+		  ["rp2r","r4r"],
+		  ["rp2l","r4l"],
+		  ["rp2r","r3r"],
+		  ["rp2l","r3l"],
+		  
+		  //rearpanel limiters
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.35, "beamShortBound":0.35},
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":150000,"beamStrength":450000},
+		  {"beamLimitSpring":601000,"beamLimitDamp":1000},
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//rear panel
+			{"group":"hatch_rearpanel"},
+			["rp2ll","rp3ll","rp1ll"],
+			["rp2ll","rp1ll","rp1l"],
+			["rp2ll","rp1l","rp2l"],
+			["rp2l","rp1l","rp1r"],
+			["rp2l","rp1r","rp2r"],
+			["rp2r","rp1r","rp1rr"],
+			["rp2r","rp1rr","rp2rr"],
+			["rp2rr","rp1rr","rp3rr"],
+			{"group":""},
+			
+			
+	],
+}
+}

@@ -1,0 +1,740 @@
+{
+"super": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide",
+	}
+    "slotType" : "main",
+	"slots": [
+		["type", "default"]
+		//bodywork
+		["super_body","super_body"],
+		["super_steer","steer_01a"],
+		//engine
+		["super_engine","super_engine"],
+		["super_fueltank","super_fueltank"],
+		//running gear
+		["super_suspension_R","super_suspension_R"],
+		["super_suspension_F","super_suspension_F"],
+	],
+	"dragCoef":10,
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"zeroOutSelfCollision":false,
+	"refNodes":[
+		["ref:", "back:", "left:", "up:"]
+		["c3r", "c4r", "c3l", "c9r"]
+		],
+	"cameraExternal":{
+		"distance":6.5,
+		"distanceMin":4,
+		"offset":{"x":0.34, "y":0, "z":0},
+		"fov":70,
+		},
+	"camerasInternal":[
+		["x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+		{"nodeWeight":2},
+	    {"selfCollision":false}
+	    {"collision":false}
+		{"beamSpring":150000,"beamDamp":750},
+		//hood cam
+		[0.0, -0.7, 1.1, 75, "c3r","c5r","c5l","c3l","c4r","c4l"],
+		//fender cam
+		[-1.3, 0.3, 0.65, 75, "c3r","c5r","c5l","c3l","c4r","c4l"],
+		{"beamSpring":900, "beamDamp":120},
+		//dash cam
+		[0.39, 0.15, 0.95, 75, "c3r","c3ll","c5l","c3l","c4r","c4l"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"rotation":{"x":0, "y":0, "z":0}, "translation":{"x":0, "y":0, "z":0}},
+		 //{"disableSection":1},
+		 //{"debugPositioning":true},
+		 {"isCollisionMesh":false},
+		 //chassis
+		 ["super_chassis", ["super_chassis","super_shocktop_R","super_shocktop_F","super_uppermounts_F","super_lowermounts_a_F","super_lowermounts_b_F","super_uppermounts_R","super_lowermounts_R"]],
+		 
+		 ["super_engbaycrap", ["super_chassis","super_shocktop_R","super_uppermounts_R","super_lowermounts_R"]],
+		 ],
+		"glowMap":{
+			"super_signal_L":{"simpleFunction":{"parking":0.2,"signal_L":0.2}, "off":"super_lights", "on":"super_lights_on", "limit":0.2},
+			"super_signal_R":{"simpleFunction":{"parking":0.2,"signal_R":0.2}, "off":"super_lights", "on":"super_lights_on", "limit":0.2},
+			"super_brakelight":{"simpleFunction":{"brake":0.2,"running":0.2}, "off":"super_lights", "on":"super_lights_on"},
+			"super_headlight":{"simpleFunction":{"lowbeam":0.5,"highbeam":0.5}, "off":"super_lights", "on":"super_lights_on"},
+			"super_parkinglight":{"simpleFunction":{"parking":0.3,"fog":0.5,"running":0.2}, "off":"super_lights", "on":"super_lights_on"},
+			"super_reverselight":{"simpleFunction":{"reverse":0.3}, "off":"super_lights", "on":"super_lights_on"},
+			}
+			
+	     "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"super_chassis"},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":7.5},
+		 //chassis
+		 //bottom
+		 ["c1r",-0.29, -1.60, 0.22],
+		 ["c1", 0.0, -1.60, 0.22],
+		 ["c1l", 0.29, -1.60, 0.22],
+		 ["c2rr",-0.81, -0.81, 0.17],
+		 ["c2r",-0.29, -0.89, 0.22],
+		 //["c2", 0.0, -0.89, 0.22],
+		 ["c2l", 0.29, -0.89, 0.22],
+		 ["c2ll", 0.85, -0.81, 0.17],
+		 ["c3rr",-0.85, -0.27, 0.17],
+		 ["c3r",-0.34, -0.27, 0.22],
+		 //["c3", 0.0, -0.27, 0.22],
+		 ["c3l", 0.34, -0.27, 0.22],
+		 ["c3ll", 0.85, -0.27, 0.17],
+		 ["c4rr",-0.85, 0.29, 0.17],
+		 ["c4r",-0.34, 0.29, 0.22],
+		 //["c4", 0.0, 0.29, 0.22],
+		 ["c4l", 0.34, 0.29, 0.22],
+		 ["c4ll", 0.85, 0.29, 0.17],
+		 ["c5r",-0.34, 0.85, 0.22],
+		 //["c5", 0.0, 0.85, 0.22],
+		 ["c5l", 0.34, 0.85, 0.22],
+		 ["c6r",-0.34, 1.58, 0.22],
+		 ["c6", 0.0, 1.58, 0.22],
+		 ["c6l", 0.34, 1.58, 0.22],
+		 //top
+		 ["c7r",-0.43, -1.60, 0.59],
+		 ["c7", 0.0, -1.60, 0.59],
+		 ["c7l", 0.43, -1.60, 0.59],
+		 ["c8rr",-0.86, -0.92, 0.66],
+		 ["c8r",-0.43, -0.97, 0.62],
+		 //["c8", 0.0, -1.00, 0.62],
+		 ["c8l", 0.43, -0.97, 0.62],
+		 ["c8ll", 0.86, -0.92, 0.66],
+		 ["c9rr",-0.86, -0.27, 0.35],
+		 ["c9r",-0.34, -0.27, 0.35],
+		 //["c9", 0.0, -0.27, 0.35],
+		 ["c9l", 0.34, -0.27, 0.35],
+		 ["c9ll", 0.86, -0.27, 0.35],
+		 ["c10rr",-0.86, 0.46, 0.70],
+		 ["c10r",-0.56, 0.50, 0.70],
+		 //["c10", 0.0, 0.50, 0.70],
+		 ["c10l", 0.56, 0.50, 0.70],
+		 ["c10ll", 0.86, 0.46, 0.70],
+		 ["c11r",-0.59, 1.00, 0.70],
+		 ["c11l", 0.59, 1.00, 0.70],
+		 ["c12r",-0.59, 1.58, 0.70],
+		 ["c12", 0.0, 1.58, 0.70],
+		 ["c12l", 0.59, 1.58, 0.70],
+		 //front suspension axis points
+		 {"nodeWeight":7.5},
+		 //lower
+		 {"group":"super_lowermounts_a_F"},
+		 ["fx1r",-0.29, -1.45, 0.22],
+		 ["fx1l", 0.29, -1.45, 0.22],
+		 {"group":"super_lowermounts_b_F"},
+		 ["fx2r",-0.29, -1.11, 0.22],
+		 ["fx2l", 0.29, -1.11, 0.22],
+		 {"nodeWeight":5.5},
+		 {"group":"super_uppermounts_F"},
+		 //upper
+		 ["fx3r",-0.42, -1.41, 0.44],
+		 ["fx3l", 0.42, -1.41, 0.44],
+		 ["fx4r",-0.42, -1.16, 0.44],
+		 ["fx4l", 0.42, -1.16, 0.44],
+		 {"group":"super_shocktop_F"},
+		 {"nodeWeight":4},
+		 //shock top
+		 ["fs2r",-0.38,-1.30,0.47],
+		 ["fs2l", 0.38,-1.30,0.47],
+		 //rear suspension axis points
+		 {"nodeWeight":7.5},
+		 {"group":"super_lowermounts_R"},
+		 //lower
+		 ["rx1r",-0.34, 1.06, 0.22],
+		 ["rx1l", 0.34, 1.06, 0.22],
+		 ["rx2r",-0.34, 1.48, 0.22],
+		 ["rx2l", 0.34, 1.48, 0.22],
+		 {"nodeWeight":5.5},
+		 {"group":"super_uppermounts_R"},
+		 //upper
+		 ["rx3r",-0.43, 1.16, 0.44],
+		 ["rx3l", 0.43, 1.16, 0.44],
+		 ["rx4r",-0.43, 1.48, 0.44],
+		 ["rx4l", 0.43, 1.48, 0.44],
+		 //shock top
+		 {"group":"super_shocktop_R"},
+		 {"nodeWeight":4},
+		 ["rs2r",-0.39,1.386,0.53],
+		 ["rs2l", 0.39,1.386,0.53],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"optional":true},
+		  //engine soft mounts
+	      {"beamSpring":4001000,"beamDamp":400},
+		  {"beamDeform":110000,"beamStrength":2500000},
+		  ["e1r","c4r"],
+		  //["e1r","c4"],
+		  //["e1l","c4"],
+		  ["e1l","c4l"],
+		  
+		  ["e1r","c5r"],
+		  //["e1r","c5"],
+		  //["e1l","c5"],
+		  ["e1l","c5l"],
+		  
+		  ["e2r","c5r"],
+		  //["e2r","c5"],
+		  //["e2l","c5"],
+		  ["e2l","c5l"],
+		  
+		  ["e2r","c6r"],
+		  ["e2r","c6"],
+		  ["e2l","c6"],
+		  ["e2l","c6l"],
+		  
+		  ["e3r","c10r"],
+		  ["e3l","c10l"],
+		  
+		  ["e2r","c12r"],
+		  ["e2r","c12"],
+		  ["e2l","c12"],
+		  ["e2l","c12l"],
+		  ["e1r","c10r"],
+		  ["e1l","c10l"],
+		  
+		  //transmission soft mounts
+		  ["tra1r","c6r"],
+		  ["tra1r","c6"],
+		  ["tra1l","c6"],
+		  ["tra1l","c6l"],
+		  
+		  ["tra1r","c5r"],
+		  ["tra1l","c5l"],
+		  
+		  ["tra1r","rx1r"],
+		  ["tra1l","rx1l"],
+		  ["tra1r","rx2r"],
+		  ["tra1l","rx2l"],
+		  
+		  ["tra1r","rx3r"],
+		  ["tra1l","rx3l"],
+		  ["tra1r","rx4r"],
+		  ["tra1l","rx4l"],
+		  
+		  ["tra2","c6r"],
+		  ["tra2","c6"],
+		  ["tra2","c6l"],
+		  
+		  //engine limiters
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.28}, 
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":220000,"beamStrength":400000},
+		  {"beamLimitSpring":6001000,"beamLimitDamp":350},
+		  
+		  {"optional":false},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  
+		  
+		  //front suspension axis points
+		  {"beamSpring":9501000,"beamDamp":400,"beamDeform":40000,"beamStrength":"FLT_MAX"},
+		  //lower
+		  ["fx1r","fx2r"],
+		  ["fx1l","fx2l"],
+		  ["fx1r","fx1l"],
+		  ["fx2r","fx2l"],
+		  ["fx1r","fx2l"],
+		  ["fx1l","fx2r"],
+		  
+		  //attach to frame
+		  ["fx1r","c1r"],
+		  ["fx1r","c1"],
+		  ["fx1l","c1"],
+		  ["fx1l","c1l"],
+		  
+		  ["fx2r","c2r"],
+		  //["fx2r","c2"],
+		  //["fx2l","c2"],
+		  ["fx2l","c2l"],
+		  
+		  ["fx1r","c7r"],
+		  ["fx1r","c7"],
+		  ["fx1l","c7"],
+		  ["fx1l","c7l"],
+		  
+		  ["fx2r","c8r"],
+		  ["fx2r","c8l"],
+		  ["fx2l","c8r"],
+		  ["fx2l","c8l"],
+		  
+		  ["fx2r","c2rr"],
+		  ["fx2l","c2ll"],
+		  
+		  {"beamSpring":6001000,"beamDamp":300,"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  //upper
+		  ["fx3r","fx4r"],
+		  ["fx3l","fx4l"],
+		  ["fx3r","fx3l"],
+		  ["fx4r","fx4l"],
+		  ["fx3r","fx4l"],
+		  ["fx3l","fx4r"],
+		  
+		  //attach to lower
+		  ["fx3r","fx1r"],
+		  ["fx3l","fx1l"],
+		  ["fx4r","fx2r"],
+		  ["fx4l","fx2l"],
+		  
+		  ["fx3r","fx2r"],
+		  ["fx3l","fx2l"],
+		  ["fx1r","fx4r"],
+		  ["fx1l","fx4l"],
+		  
+		  //attach to frame
+		  ["fx3r","c7r"],
+		  ["fx3r","c7"],
+		  ["fx3l","c7"],
+		  ["fx3l","c7l"],
+		  
+		  ["fx4r","c8r"],
+		  ["fx4r","c8l"],
+		  ["fx4l","c8r"],
+		  ["fx4l","c8l"],
+		  
+		  ["fx3r","c1r"],
+		  ["fx3r","c1"],
+		  ["fx3l","c1"],
+		  ["fx3l","c1l"],
+		  
+		  ["fx4r","c2r"],
+		  //["fx4r","c2"],
+		  //["fx4l","c2"],
+		  ["fx4l","c2l"],
+		  
+		  ["fx4r","c2rr"],
+		  ["fx4l","c2ll"],
+		  ["fx4r","c8rr"],
+		  ["fx4l","c8ll"],
+		  
+		  
+		  //front shock top
+		  ["fs2r","fx3r"],
+		  ["fs2r","fx4r"],
+		  ["fs2l","fx3l"],
+		  ["fs2l","fx4l"],
+		  
+		  ["fs2r","c2r"],
+		  ["fs2r","c8r"],
+		  ["fs2r","c1r"],
+		  ["fs2r","c7r"],
+		  
+		  ["fs2l","c2l"],
+		  ["fs2l","c8l"],
+		  ["fs2l","c1l"],
+		  ["fs2l","c7l"],
+		  //rear suspension axis points
+		  {"beamSpring":9501000,"beamDamp":400,"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  //lower
+		  ["rx1r","rx2r"],
+		  ["rx1l","rx2l"],
+		  ["rx1r","rx1l"],
+		  ["rx2r","rx2l"],
+		  ["rx1r","rx2l"],
+		  ["rx1l","rx2r"],
+		  
+		  //attach to frame
+		  ["rx1r","c5r"],
+		  //["rx1r","c5"],
+		  //["rx1l","c5"],
+		  ["rx1l","c5l"],
+		  
+		  ["rx2r","c6r"],
+		  ["rx2r","c6"],
+		  ["rx2l","c6"],
+		  ["rx2l","c6l"],
+		  
+		  ["rx1r","c11r"],
+		  
+		  ["rx1l","c11l"],
+		  
+		  ["rx2r","c12r"],
+		  ["rx2r","c12"],
+		  ["rx2l","c12"],
+		  ["rx2l","c12l"],
+		  
+		  ["rx2r","c6r"],
+		  ["rx2l","c6l"],
+		  
+		  {"beamSpring":6001000,"beamDamp":300,"beamDeform":40000,"beamStrength":"FLT_MAX"},
+		  //upper
+		  ["rx3r","rx4r"],
+		  ["rx3l","rx4l"],
+		  ["rx3r","rx3l"],
+		  ["rx4r","rx4l"],
+		  ["rx3r","rx4l"],
+		  ["rx3l","rx4r"],
+		  
+		  //attach to lower
+		  ["rx3r","rx1r"],
+		  ["rx3l","rx1l"],
+		  ["rx4r","rx2r"],
+		  ["rx4l","rx2l"],
+		  
+		  ["rx3r","rx2r"],
+		  ["rx3l","rx2l"],
+		  ["rx1r","rx4r"],
+		  ["rx1l","rx4l"],
+		  
+		  //attach to frame
+		  ["rx3r","c11r"],
+		  ["rx3l","c11l"],
+		  
+		  ["rx4r","c12r"],
+		  ["rx4r","c12"],
+		  ["rx4l","c12"],
+		  ["rx4l","c12l"],
+		  
+		  ["rx3r","c5r"],
+		  //["rx3r","c5"],
+		  //["rx3l","c5"],
+		  ["rx3l","c5l"],
+		  
+		  ["rx4r","c6r"],
+		  ["rx4r","c6"],
+		  ["rx4l","c6"],
+		  ["rx4l","c6l"],
+		  
+		  ["rx4r","c6r"],
+		  ["rx4l","c6l"],
+		  ["rx4r","c12r"],
+		  ["rx4l","c12l"],
+		  
+		  //rear shock top
+		  ["rs2r","rx3r"],
+		  ["rs2r","rx4r"],
+		  ["rs2l","rx3l"],
+		  ["rs2l","rx4l"],
+		  
+		  ["rs2r","c6r"],
+		  ["rs2r","c12r"],
+		  ["rs2r","c5r"],
+		  ["rs2r","c11r"],
+		  
+		  ["rs2l","c6l"],
+		  ["rs2l","c12l"],
+		  ["rs2l","c5l"],
+		  ["rs2l","c11l"],
+		  
+	      {"beamSpring":9501000,"beamDamp":400,"beamDeform":140000,"beamStrength":"FLT_MAX"},
+		  //chassis front core
+		  //widthwise strong
+		  ["c1r","c1"],
+		  ["c1l","c1"],
+		  ["c7r","c7"],
+		  ["c7l","c7"],
+		  //vertical
+		  ["c1r","c7r"],
+		  ["c1","c7"],
+		  ["c1l","c7l"],
+	      {"beamDeform":35000,"beamStrength":"FLT_MAX"},
+		  ["c1r","c2r"],
+		  //["c1","c2"],
+		  ["c1l","c2l"],
+		  ["c7r","c8r"],
+		  ["c7l","c8l"],
+		  
+		  ["c1","c2r"],
+		  ["c1","c2l"],
+		  //["c2","c1r"],
+		  //["c2","c1l"],
+		  
+		  
+		  ["c7","c8r"],
+		  ["c7","c8l"],
+		  ["c8l","c7r"],
+		  ["c8r","c7l"],
+		  
+		  ["c1r","c2rr"],
+		  ["c1l","c2ll"],
+		  ["c7r","c8rr"],
+		  ["c7l","c8ll"],
+		  
+		  //["c7","c2"],
+		  
+		  
+		  //surf crossing
+		  ["c1r","c7"],
+		  ["c1l","c7"],
+		  ["c7r","c1"],
+		  ["c7l","c1"],
+		  
+		  ["c1r","c8r"],
+		  ["c1l","c8l"],
+		  ["c2r","c7r"],
+		  ["c2l","c7l"],
+		  
+		  
+		  //firewall
+	      {"beamDeform":125000,"beamStrength":"FLT_MAX"},
+		  //main shape widthwise
+		  ["c2rr","c2r"],
+		  ["c2r","c2l"],
+		  ["c2l","c2ll"],
+		  ["c8rr","c8r"],
+		  ["c8r","c8l"],
+		  ["c8l","c8ll"],
+		  //vertical
+		  ["c2rr","c8rr"],
+		  ["c2r","c8r"],
+		  ["c2l","c8l"],
+		  ["c2ll","c8ll"],
+	      {"beamDeform":40000,"beamStrength":"FLT_MAX"},
+		  //surf crossing
+		  ["c2rr","c8r"],
+		  ["c2r","c8rr"],
+		  ["c2r","c8l"],
+		  ["c2l","c8r"],
+		  ["c2l","c8ll"],
+		  ["c2ll","c8l"],
+		  
+	      {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+		  //floor main shape lengthwise
+		  ["c2rr","c3rr"],
+		  ["c2r","c3r"],
+		  ["c2l","c3l"],
+		  ["c2ll","c3ll"],
+		  ["c3rr","c4rr"],
+		  ["c3r","c4r"],
+		  ["c3l","c4l"],
+		  ["c3ll","c4ll"],
+		  
+		  ["c8rr","c9rr"],
+		  ["c8r","c9r"],
+		  ["c8l","c9l"],
+		  ["c8ll","c9ll"],
+		  ["c9rr","c10rr"],
+		  ["c9r","c10r"],
+		  ["c9l","c10l"],
+		  ["c9ll","c10ll"],
+		  
+	      {"beamDeform":40000,"beamStrength":"FLT_MAX"},
+		  //widthwise
+		  ["c3rr","c3r"],
+		  ["c3r","c3l"],
+		  ["c3ll","c3l"],
+		  ["c4rr","c4r"],
+		  ["c4r","c4l"],
+		  ["c4ll","c4l"],
+		  
+		  ["c9rr","c9r"],
+		  ["c9r","c9l"],
+		  ["c9ll","c9l"],
+		  ["c10rr","c10r"],
+		  ["c10r","c10l"],
+		  ["c10ll","c10l"],
+	      {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+		  //vertical
+		  ["c3rr","c9rr"],
+		  ["c3r","c9r"],
+		  ["c3l","c9l"],
+		  ["c3ll","c9ll"],
+		  
+		  ["c4rr","c10rr"],
+		  ["c4r","c10r"],
+		  ["c4l","c10l"],
+		  ["c4ll","c10ll"],
+		  
+	      {"beamDeform":70000,"beamStrength":"FLT_MAX"},
+		  //surf cross sides
+		  ["c2rr","c9rr"],
+		  ["c8rr","c3rr"],
+		  ["c2r","c9r"],
+		  ["c8r","c3r"],
+		  ["c2l","c9l"],
+		  ["c8l","c3l"],
+		  ["c2ll","c9ll"],
+		  ["c8ll","c3ll"],
+		  
+		  ["c3rr","c10rr"],
+		  ["c9rr","c4rr"],
+		  ["c3r","c10r"],
+		  ["c9r","c4r"],
+		  ["c3l","c10l"],
+		  ["c9l","c4l"],
+		  ["c3ll","c10ll"],
+		  ["c9ll","c4ll"],
+	      {"beamDeform":40000,"beamStrength":"FLT_MAX"},
+		  //bottom
+		  ["c2rr","c3r"],
+		  ["c2r","c3rr"],
+		  ["c2r","c3l"],
+		  ["c2l","c3r"],
+		  ["c2l","c3ll"],
+		  ["c2ll","c3l"],
+		  
+		  ["c3rr","c4r"],
+		  ["c3r","c4rr"],
+		  ["c3r","c4l"],
+		  ["c3l","c4r"],
+		  ["c3l","c4ll"],
+		  ["c3ll","c4l"],
+		  
+		  //top
+		  ["c8rr","c9r"],
+		  ["c8r","c9rr"],
+		  ["c8r","c9l"],
+		  ["c8l","c9r"],
+		  ["c8l","c9ll"],
+		  ["c8ll","c9l"],
+		  
+		  ["c9rr","c10r"],
+		  ["c9r","c10rr"],
+		  ["c9r","c10l"],
+		  ["c9l","c10r"],
+		  ["c9l","c10ll"],
+		  ["c9ll","c10l"],
+		  
+		  //width
+		  ["c3rr","c9r"],
+		  ["c3r","c9rr"],
+		  ["c3r","c9l"],
+		  ["c3l","c9r"],
+		  ["c3l","c9ll"],
+		  ["c3ll","c9l"],
+		  
+		  ["c4rr","c10r"],
+		  ["c4r","c10rr"],
+		  ["c4r","c10l"],
+		  ["c4l","c10r"],
+		  ["c4l","c10ll"],
+		  ["c4ll","c10l"],
+		  
+		  //engine bay
+	      {"beamDeform":80000,"beamStrength":"FLT_MAX"},
+		  ["c4r","c5r"],
+		  ["c4l","c5l"],
+		  ["c5r","c6r"],
+		  ["c5l","c6l"],
+		  
+		  ["c10r","c11r"],
+		  //["c10","c11"],
+		  ["c10l","c11l"],
+		  ["c11r","c12r"],
+		  //["c11","c12"],
+		  ["c11l","c12l"],
+		  
+		  ["c5r","c5l"],
+		  ["c6r","c6"],
+		  ["c6l","c6"],
+		  
+		  ["c12r","c12"],
+		  ["c12l","c12"],
+		  
+		  ["c5r","c11r"],
+		  //["c5","c11"],
+		  ["c5l","c11l"],
+		  
+		  ["c6r","c12r"],
+		  ["c6","c12"],
+		  ["c6l","c12l"],
+		  
+	      {"beamDeform":33000,"beamStrength":"FLT_MAX"},
+		  //corner
+		  ["c4rr","c5r"],
+		  ["c4ll","c5l"],
+		  ["c10rr","c11r"],
+		  ["c10ll","c11l"],
+		  
+		  //cross
+		  ["c4r","c5l"],
+		  ["c4l","c5r"],
+		  ["c5r","c6"],
+		  ["c5l","c6"],
+		  ["c6r","c5l"],
+		  ["c6l","c5r"],
+		  
+		  ["c10l","c11r"],
+		  ["c10r","c11l"],
+		  ["c12","c11r"],
+		  ["c12","c11l"],
+		  
+		  
+		  //["c5r","c11r"],
+		  //["c5l","c11l"],
+		  
+		  ["c6","c12r"],
+		  ["c6","c12l"],
+		  ["c6r","c12"],
+		  ["c6l","c12"],
+		  
+		  ["c10r","c5r"],
+		  ["c10l","c5l"],
+		  ["c4r","c11r"],
+		  ["c4l","c11l"],
+		  
+		  ["c11r","c6r"],
+		  //["c11","c6"],
+		  ["c11l","c6l"],
+		  ["c12r","c5r"],
+		  ["c12","c5r"],
+		  ["c12","c5l"],
+		  ["c12l","c5l"],
+	]
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+"super_fueltank": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Fuel Tank",
+	}
+    "slotType" : "super_fueltank",
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_fueltank", ["super_chassis","super_shocktop_R","super_uppermounts_R","super_lowermounts_R"]],
+	],
+	 "engine":{
+		"fuelTankBeams":["super_fueltank_a","super_fueltank_b","super_fueltank_c"]
+		"fuelCapacity":50
+		},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //fuel tank beams
+		  {"beamSpring":101000,"beamDamp":20},
+		  {"beamDeform":6000,"beamStrength":48000},
+		  ["c12r","c12l",{"name":"super_fueltank_a"}],
+		  ["c12r","c11l",{"name":"super_fueltank_b"}],
+		  ["c12l","c11r",{"name":"super_fueltank_c"}],
+		  
+		  
+	],
+}
+"steer_01a": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Racing Wheel",
+	}
+    "slotType" : "super_steer",	 
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//steering wheel
+		["steering"  , "steer_01a"      , "c3r","c3l","c4r",  {"x":10, "y":0, "z":0}, {"x":0, "y":0, "z":460}    , {"x":0, "y":0, "z":0}, -1, 1, 0, 1],
+	 ],
+}
+}

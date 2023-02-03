@@ -1,0 +1,57 @@
+{
+"van_towhitch": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Tow Hitch",
+	}
+    "slotType" : "van_towhitch",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_towhitch", ["van_framerear","van_towhitch"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"selfCollision":true}
+		 //--TOW HITCH--
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_towhitch"}
+		 {"nodeWeight":4},
+		 ["tw", 0.0, 3.37, 0.53],
+		 {"group":""}
+	],
+	
+	"ties":[
+		["id1:", "maxLen", "rate", "short", "long", "group", "maxforce"],
+		["tw", 0.75, 1, 1, 1, "van_towhitch", 10000000],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--TOW HITCH--
+		  {"beamSpring":1601000,"beamDamp":150},
+		  {"beamDeform":16000,"beamStrength":500000},
+		  ["tw","fr19r"],
+		  ["tw","fr19"],
+		  ["tw","fr19l"],
+		  ["tw","fr20r"],
+		  ["tw","fr20"],
+		  ["tw","fr20l"],
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//towhitch
+			{"group":"van_towhitch"},
+			{"group":""},
+			
+	],
+}
+}

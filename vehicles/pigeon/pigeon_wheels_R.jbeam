@@ -1,0 +1,103 @@
+{
+"pigeon_wheel_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Rear Wheels",
+	}
+    "slotType" : "pigeon_wheel_R",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //rear wheels
+		 ["pigeon_wheel_RR", ["wheel_RR","wheelhub_RR"], ["wheel"]],
+		 ["pigeon_wheel_RL", ["wheel_RL","wheelhub_RL"], ["wheel"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR LIVE AXLE SUSPENSION--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.7},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"wheelhub_RR"},
+		 ["ax1r", -0.445, 1.01, 0.23],
+		 {"group":"wheelhub_RL"},
+		 ["ax1l", 0.445, 1.01, 0.23],
+		 {"collision":true}
+		 //wheel nodes
+		 {"group":"wheelhub_RR"},
+		 ["axwr", -0.65, 1.01, 0.23],
+		 {"group":"wheelhub_RL"},
+		 ["axwl", 0.65, 1.01, 0.23],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR WHEELS--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":2401000,"beamDamp":40},
+		  {"beamDeform":75000,"beamStrength":360000},
+		  
+		  ["ax1r","axwr"],
+		  ["ax1l","axwl"],
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  
+	],
+	"hubWheelsTSG": [			
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.24},
+			{"hubRadius":0.14},
+			{"wheelOffset":0.025},
+			{"hubWidth":0.145},
+			{"tireWidth":0.145},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":801000, "hubBeamDamp":15},
+			{"beamSpring":801000, "beamDamp":15},
+			{"hubBeamDeform":45000, "hubBeamStrength":90000},
+			{"beamDeform":45000,"beamStrength":90000},
+			{"hubNodeWeight":0.35},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":80000,"wheelSideBeamDamp":250,"wheelSideBeamDeform":33000,"wheelSideBeamStrength":34000},
+			{"wheelReinforcementBeamSpring":8000,"wheelReinforcementBeamDamp":70,"wheelReinforcementBeamDeform":33000,"wheelReinforcementBeamStrength":34000},
+			{"wheelTreadBeamSpring":301000,"wheelTreadBeamDamp":100,"wheelTreadBeamDeform":33000,"wheelTreadBeamStrength":34000},
+			{"wheelPeripheryBeamSpring":301000,"wheelPeripheryBeamDamp":100,"wheelPeripheryBeamDeform":33000,"wheelPeripheryBeamStrength":34000},
+			{"springExpansion":801000, "dampExpansion":15},
+			{"nodeWeight":0.35},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.05},
+			
+			//rear
+			{"selfCollision":false}
+			{"collision":true}
+			{"axleBeams":["axle_RL"]}
+            ["RL", "wheel_RL", "ax1l", "axwl", 9999,  "ax2", 1]
+			{"axleBeams":["axle_RR"]}
+            ["RR", "wheel_RR", "ax1r", "axwr", 9999,  "ax2", -1],
+			{"selfCollision":true}
+			{"axleBeams":[]}
+			{"propulsed":0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+}

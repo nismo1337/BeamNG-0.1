@@ -1,0 +1,220 @@
+{
+"pigeon_suspension_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Front Suspension",
+	}
+    "slotType" : "pigeon_suspension_F",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"slots": [
+		["type", "default"]
+		["pigeon_spring_F","pigeon_spring_F"],
+		["pigeon_brake_F","pigeon_brake_F"],
+		["pigeon_wheel_F","pigeon_wheel_F"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_arm_F", ["pigeon_arm_F","pigeon_mounts_F"]],
+		 ["pigeon_hub_F", ["pigeon_hub_F","pigeon_arm_F"]],
+		 ["pigeon_steering", ["pigeon_arm_F","pigeon_steernode","pigeon_frame"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FRONT A-ARM SUSPENSION--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.8},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"group":"pigeon_arm_F"},
+		 ["fa1", 0.0, -0.825, 0.22],
+		 ["fa2", 0.0, -0.75, 0.38],
+		 //front hub
+		 {"group":"pigeon_hub_F"},
+		 ["fh1r",-0.11, -1.12, 0.33],
+		 ["fh1l", 0.11, -1.12, 0.33],
+		 {"collision":false}
+		 {"nodeWeight":2.4},
+		 {"group":"pigeon_turnwheel_F"},
+		 //turny wheel
+		 ["tw1r",-0.1, -0.770, 0.339],
+		 ["tw1l", 0.1, -0.770, 0.339],
+		 ["tw2", 0.0, -0.860, 0.352],
+		 ["tw3", 0.0, -0.679, 0.296],
+		 //
+		 {"nodeWeight":1.8},
+		 ["fa3", 0, -0.61, 0.33],
+		 //steer node
+		 {"nodeWeight":1.2},
+		 {"group":"pigeon_steernode"},
+		 ["st", 0.286, -0.7716, 0.3355],
+		 {"collision":true}
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //steer node
+		  {"beamSpring":2851000,"beamDamp":30},
+		  {"beamDeform":5000,"beamStrength":360000},
+		  ["st","f4ll"],
+		  ["st","f4"],
+		  ["st","f2ll"],
+		  ["st","f2"],
+		  ["st","f5ll"],
+		  ["st","f7ll"],
+		  
+		  //--FRONT A-ARM SUSPENSION--
+		  {"beamSpring":3601000,"beamDamp":40},
+		  {"beamDeform":75000,"beamStrength":360000},
+		  //arm
+		  ["fa1","fx1r"]
+		  ["fa1","fx1l"],
+		  ["fa2","fx1r"]
+		  ["fa2","fx1l"],
+		  //wheel hinge
+		  ["fa1","fh1r"],
+		  ["fa1","fh1l"],
+		  ["fa2","fh1r"],
+		  ["fa2","fh1l"],
+		  
+		  ["fh1r","fh1l"],
+		  
+		  //hydro attach point
+		  ["fa3","fx1r"],
+		  ["fa3","fx1l"],
+		  ["fa3","fa1"],
+		  ["fa3","fa2"],
+		  
+		  //turn wheel
+		  ["tw1r","tw1l"],
+		  ["tw1r","tw2"],
+		  ["tw1r","tw3"],
+		  ["tw1l","tw2"],
+		  ["tw1l","tw3"],
+		  ["tw2","tw3"],
+		  //attach
+		  ["tw1r","fa1"],
+		  ["tw1r","fa2"],
+		  ["tw2","fa1"],
+		  ["tw2","fa2"],
+		  ["tw3","fa1"],
+		  ["tw3","fa2"],
+		  
+		  ["tw1r","fh1r"],
+		  ["tw1r","fh1l"],
+		  ["tw1l","fh1r"],
+		  ["tw1l","fh1l"],
+		  ["tw2","fh1r"],
+		  ["tw2","fh1l"],
+		  ["tw3","fh1r"],
+		  ["tw3","fh1l"],
+		  
+		  {"breakGroup":"wheel_F"},
+		  ["fa1","fw1r"],
+		  ["fa2","fw1r"],
+		  ["fw1r","fh1r"],
+		  ["fw1r","fh1l"],
+		  ["fa1","fw1l"],
+		  ["fa2","fw1l"],
+		  ["fw1l","fh1l"],
+		  ["fw1l","fh1r"],
+		  
+		  ["tw1r","fw1r"],
+		  ["tw1r","fw1l"],
+		  ["tw1l","fw1r"],
+		  ["tw1l","fw1l"],
+		  ["tw2","fw1r"],
+		  ["tw2","fw1l"],
+		  ["tw3","fw1r"],
+		  ["tw3","fw1l"],
+		  {"breakGroup":""},
+		  
+		  
+		  {"beamDeform":48000,"beamStrength":280000},
+		  {"beamLimitSpring":851000,"beamLimitDamp":250},
+		  {"optional":true},
+		  //front limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1000000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.45, "beamShortBound":0.45},
+		  {"beamLongBound":0.3, "beamShortBound":0.13},
+		  //collide
+		  ["fh1r","f8"],
+		  ["fh1l","f8"],
+		  ["fh1r","f6"],
+		  ["fh1l","f6"],
+		  
+		  ["fh1r","b12"],
+		  ["fh1l","b12"],
+		  {"optional":false},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"propulsed":0},
+	],
+}
+"pigeon_brake_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Front Brake",
+	}
+    "slotType" : "pigeon_brake_F",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"brakeTorque":800},
+			{"parkingTorque":0},
+	],
+}
+"pigeon_spring_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Front Torsion Bars",
+	}
+    "slotType" : "pigeon_spring_F",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //["pigeon_leaf", ["pigeon_rearshockmounts", "pigeon_rearshocktop"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"hydros": [
+			["id1:","id2:","factor"],
+			{"beamSpring":6101000,"beamDamp":100,"beamDeform":200000,"beamStrength":300000},
+			["tw1r","fa3",-0.42],
+			["tw1l","fa3",0.42],
+	]
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--FRONT SHOCKS--
+		  {"beamSpring":25000,"beamDeform":200000,"beamStrength":300000},
+		  {"beamLimitSpring":1001000,"beamLimitDamp":500},
+		  {"beamDamp":600},
+		  {"beamPrecompression":1.2, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.25},
+		  ["fh1r","f7",{"beamDampRebound":750}],
+		  ["fh1l","f7",{"beamDampRebound":750}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+}

@@ -1,0 +1,228 @@
+{
+"van_mirror_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Right Mirror",
+	}
+    "slotType" : "van_mirror_R",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_mirror_R", ["van_mirror_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.94},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"van_mirror_R"},
+		 ["mi1r",-1.02, -0.86, 1.59],
+		 ["mi2r",-1.19, -0.83, 1.59],
+		 ["mi3r",-1.03, -0.86, 1.41],
+		 ["mi4r",-1.22, -0.83, 1.41],
+		 ["mi5r",-1.07, -0.99, 1.50],
+		 {"collision":false}
+		 {"selfCollision":false}
+		 {"group":""},
+		 ["mi6r",-1.04, -0.895, 1.35],
+		 ["mi7r",-1.01, -0.895, 1.46],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--MIRRORS--
+		  {"beamSpring":951000,"beamDamp":100},
+		  {"beamDeform":7000,"beamStrength":125000},
+		  //mirror
+		  //r
+		  ["mi1r","mi2r"],
+		  ["mi1r","mi3r"],
+		  ["mi1r","mi4r"],
+		  ["mi1r","mi5r"],
+		  ["mi2r","mi3r"],
+		  ["mi2r","mi4r"],
+		  ["mi2r","mi5r"],
+		  ["mi3r","mi4r"],
+		  ["mi3r","mi5r"],
+		  ["mi4r","mi5r"],
+		  
+		  //attach
+		  {"beamDeform":7200,"beamStrength":16000},
+		  {"beamSpring":951000,"beamDamp":150},
+		  {"breakGroup":"van_mirror_R"},
+		  ["mi1r","mi7r"],
+		  ["mi2r","mi7r"],
+		  ["mi3r","mi7r"],
+		  ["mi4r","mi7r"],
+		  ["mi5r","mi7r"],
+		  ["mi6r","mi7r"],
+		  
+		  ["mi1r","mi6r"],
+		  ["mi2r","mi6r"],
+		  ["mi3r","mi6r"],
+		  ["mi4r","mi6r"],
+		  ["mi5r","mi6r"],
+		  {"beamSpring":91000,"beamDamp":150},
+		  {"breakGroupType":1},
+		  ["mi2r","d8r"],
+		  ["mi4r","d8r"],
+		  ["mi4r","d4r"],
+		  {"breakGroupType":0},
+		  {"beamDeform":96000,"beamStrength":46000},
+		  {"beamSpring":1951000,"beamDamp":150},
+		  ["mi6r","d10r"],
+		  ["mi7r","d10r"],
+		  ["mi6r","d4r"],
+		  ["mi7r","d4r"],
+		  ["mi6r","d7r"],
+		  ["mi7r","d7r"],
+		  
+		  ["mi6r","d8r"],
+		  ["mi7r","d8r"],
+		  ["mi6r","d5r"],
+		  ["mi7r","d5r"],
+		  
+		  {"breakGroup":""},
+		  //--MIRROR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":951000,"beamDamp":0},
+		  {"beamLimitSpring":951000,"beamLimitDamp":100},
+		  {"beamDeform":2500,"beamStrength":200000},
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//right mirror
+			{"group":"van_mirror_R"},
+			["mi2r","mi1r","mi3r"],
+			["mi2r","mi3r","mi4r"],
+			
+			["mi1r","mi2r","mi5r"],
+			["mi2r","mi4r","mi5r"],
+			["mi4r","mi3r","mi5r"],
+			["mi3r","mi1r","mi5r"],
+			
+	],
+}
+"van_mirror_L": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Left Mirror",
+	}
+    "slotType" : "van_mirror_L",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_mirror_L", ["van_mirror_L"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.94},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"van_mirror_L"},
+		 ["mi1l", 1.02, -0.86, 1.59],
+		 ["mi2l", 1.19, -0.83, 1.59],
+		 ["mi3l", 1.03, -0.86, 1.41],
+		 ["mi4l", 1.22, -0.83, 1.41],
+		 ["mi5l", 1.07, -0.99, 1.50],
+		 {"collision":false}
+		 {"selfCollision":false}
+		 {"group":""},
+		 ["mi6l", 1.04, -0.895, 1.35],
+		 ["mi7l", 1.01, -0.895, 1.46],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--MIRRORS--
+		  {"beamSpring":951000,"beamDamp":100},
+		  {"beamDeform":7000,"beamStrength":125000},
+		  //mirror
+		  //l
+		  ["mi1l","mi2l"],
+		  ["mi1l","mi3l"],
+		  ["mi1l","mi4l"],
+		  ["mi1l","mi5l"],
+		  ["mi2l","mi3l"],
+		  ["mi2l","mi4l"],
+		  ["mi2l","mi5l"],
+		  ["mi3l","mi4l"],
+		  ["mi3l","mi5l"],
+		  ["mi4l","mi5l"],
+		  
+		  //attach
+		  {"beamDeform":7200,"beamStrength":16000},
+		  {"beamSpring":951000,"beamDamp":150},
+		  {"breakGroup":"van_mirror_L"},
+		  ["mi1l","mi7l"],
+		  ["mi2l","mi7l"],
+		  ["mi3l","mi7l"],
+		  ["mi4l","mi7l"],
+		  ["mi5l","mi7l"],
+		  ["mi6l","mi7l"],
+		  
+		  ["mi1l","mi6l"],
+		  ["mi2l","mi6l"],
+		  ["mi3l","mi6l"],
+		  ["mi4l","mi6l"],
+		  ["mi5l","mi6l"],
+		  {"beamSpring":91000,"beamDamp":150},
+		  {"breakGroupType":1},
+		  ["mi2l","d8l"],
+		  ["mi4l","d8l"],
+		  ["mi4l","d4l"],
+		  {"breakGroupType":0},
+		  {"beamDeform":96000,"beamStrength":46000},
+		  {"beamSpring":1951000,"beamDamp":150},
+		  ["mi6l","d10l"],
+		  ["mi7l","d10l"],
+		  ["mi6l","d4l"],
+		  ["mi7l","d4l"],
+		  ["mi6l","d7l"],
+		  ["mi7l","d7l"],
+		  
+		  ["mi6l","d8l"],
+		  ["mi7l","d8l"],
+		  ["mi6l","d5l"],
+		  ["mi7l","d5l"],
+		  
+		  {"breakGroup":""},
+		  //--MIRROR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":951000,"beamDamp":0},
+		  {"beamLimitSpring":951000,"beamLimitDamp":100},
+		  {"beamDeform":2500,"beamStrength":200000},
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//left mirror
+			{"group":"van_mirror_L"},
+			["mi1l","mi2l","mi3l"],
+			["mi3l","mi2l","mi4l"],
+			
+			["mi2l","mi1l","mi5l"],
+			["mi4l","mi2l","mi5l"],
+			["mi3l","mi4l","mi5l"],
+			["mi1l","mi3l","mi5l"],
+			
+	],
+}
+}

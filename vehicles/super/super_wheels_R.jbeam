@@ -1,0 +1,94 @@
+{
+"super_wheel_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Rear Wheels",
+	}
+    "slotType" : "super_wheel_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["super_wheel_RR", ["wheel_RR","wheelhub_RR"], ["super_wheel","super"]],
+		 ["super_wheel_RL", ["wheel_RL","wheelhub_RL"], ["super_wheel","super"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //rear wheel
+		 {"nodeWeight":3.8},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"wheelhub_RR"},
+		 ["rw1r",-0.62,1.25,0.31],
+		 ["rw1rr",-0.87,1.25,0.31],
+		 {"group":"wheelhub_RL"},
+		 ["rw1l",0.62,1.25,0.31],
+		 ["rw1ll",0.87,1.25,0.31],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //--REAR RUNNING GEAR--
+		  {"beamSpring":10501000,"beamDamp":200,"beamDeform":100000,"beamStrength":"FLT_MAX"},
+		  //rear wheel
+		  ["rw1r","rw1rr"],
+		  ["rw1l","rw1ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.32},
+			{"hubRadius":0.20},
+			{"wheelOffset":-0.07},
+			{"hubWidth":0.255},
+			{"tireWidth":0.255},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":25},
+			{"beamSpring":1601000, "beamDamp":25},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.59},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":240000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":45000,"wheelSideBeamStrength":55000},
+			{"wheelReinforcementBeamSpring":102000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":45000,"wheelReinforcementBeamStrength":55000},
+			{"wheelTreadBeamSpring":501000,"wheelTreadBeamDamp":140,"wheelTreadBeamDeform":45000,"wheelTreadBeamStrength":55000},
+			{"wheelPeripheryBeamSpring":501000,"wheelPeripheryBeamDamp":140,"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":55000},
+			{"springExpansion":1601000, "dampExpansion":25},
+			{"nodeWeight":0.59},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.30},
+			
+			//rear
+			{"selfCollision":false}
+			{"collision":true}
+			{"axleBeams":["axle_RR"]}
+            ["RR", "wheel_RR", "rw1rr", "rw1r", 9999,  "ra1r", 1],
+			{"axleBeams":["axle_RL"]}
+            ["RL", "wheel_RL", "rw1ll", "rw1l", 9999,  "ra1l", -1]
+			{"axleBeams":[]}
+			{"propulsed":0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

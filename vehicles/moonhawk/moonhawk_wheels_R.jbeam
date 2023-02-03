@@ -1,0 +1,112 @@
+{
+"moonhawk_wheel_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Rear Wheels",
+	}
+    "slotType" : "moonhawk_wheel_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["steelwheel_01a_15x7_RR", ["wheel_RR","wheelhub_RR"], ["steelwheel_01a"]],
+		 ["steelwheel_01a_15x7_RL", ["wheel_RL","wheelhub_RL"], ["steelwheel_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //rear wheel nodes
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"nodeWeight":6.0},
+		 {"group":"wheelhub_RR"},
+		 ["ax1r", -0.705, 1.43, 0.32],
+		 {"group":"wheelhub_RL"},
+		 ["ax1l", 0.705, 1.43, 0.32],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"group":"wheelhub_RR"},
+		 ["axwr", -0.85, 1.43, 0.32],
+		 {"group":"wheelhub_RL"},
+		 ["axwl", 0.85, 1.43, 0.32],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //rear wheels
+		  {"breakGroupType":0},
+		  {"beamSpring":7001000,"beamDamp":50},
+		  {"beamDeform":65000,"beamStrength":620000},
+		  //{"breakGroup":"wheel_RR"},
+		  ["ax1r","axwr"],
+		  //{"breakGroup":"wheel_RL"},
+		  ["ax1l","axwl"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.345},
+			{"hubRadius":0.20},
+			{"wheelOffset":-0.035},
+			{"hubWidth":0.205},
+			{"tireWidth":0.195},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":35}
+			{"beamSpring":1601000, "beamDamp":35},
+			{"hubBeamDeform":26000, "hubBeamStrength":70000},
+			{"beamDeform":26000,"beamStrength":70000},
+			{"hubNodeWeight":0.65},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":160000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":45000,"wheelSideBeamStrength":50000},
+			{"wheelReinforcementBeamSpring":38000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":45000,"wheelReinforcementBeamStrength":50000},
+			{"wheelTreadBeamSpring":651000,"wheelTreadBeamDamp":160,"wheelTreadBeamDeform":45000,"wheelTreadBeamStrength":50000},
+			{"wheelPeripheryBeamSpring":651000,"wheelPeripheryBeamDamp":160,"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":50000},
+			{"springExpansion":1601000, "dampExpansion":35},
+			{"nodeWeight":0.65},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.05},
+			
+			//rear
+			{"selfCollision":false}
+			{"collision":true}
+			{"hubcapBreakGroup":"hubcap_RR"},
+			{"hubcapGroup":"hubcap_RR"},
+			{"axleBeams":["axle_RR","driveshaft"]}
+            ["RR", "wheel_RR", "axwr", "ax1r", 9999,  "ax2r", 1],
+			{"hubcapBreakGroup":"hubcap_RL"},
+			{"hubcapGroup":"hubcap_RL"},
+			{"axleBeams":["axle_RL","driveshaft"]}
+            ["RL", "wheel_RL", "axwl", "ax1l", 9999,  "ax2l",-1]
+			{"selfCollision":true}
+			{"axleBeams":[""]}
+			{"enableABS":false}
+			{"hubcapBreakGroup":""},
+			{"hubcapGroup":""},
+			{"enableHubcaps":false},
+			{"propulsed":0}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+	],
+}
+}

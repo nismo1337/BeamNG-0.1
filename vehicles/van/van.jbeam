@@ -1,0 +1,43 @@
+{
+"van": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series",
+	}
+    "slotType" : "main",
+	"slots": [
+		["type", "default"]
+		["van_frame","van_frame"],
+	],
+	"dragCoef":12,
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"refNodes":[
+		["ref:", "back:", "left:", "up:"]
+		["fr9", "fr10", "fr9l", "fr11"]
+		],
+	
+	"cameraExternal":{
+		"distance":6.5,
+		"distanceMin":4,
+		"offset":{"x":0, "y":0.3, "z":0.75},
+		"fov":70,
+		},
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+}

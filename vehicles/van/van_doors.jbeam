@@ -1,0 +1,547 @@
+{
+"van_door_FR": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Right Front Door",
+	}
+    "slotType" : "van_door_FR",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"slots": [
+		["type", "default"]
+		["van_mirror_R","van_mirror_R"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_door_FR", ["van_door_FR"]],
+		 //["van_doorpanel_FR", ["van_door_FR"],["van_interior"]],
+		 {"deformGroup":"van_doorglass_FR_break", "deformMaterialBase":"van_glass", "deformMaterialDamaged":"van_glass_dmg"}
+         ["van_doorglass_FR", ["van_door_FR"]],
+		 {"deformGroup":""}
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 //--DOOR--
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_door_FR"},
+		 {"nodeWeight":3.0},
+		 ["d1r",-1.01,-0.94, 0.45],
+		 ["d2r",-1.01,-0.47, 0.45],
+		 ["d3r",-1.01,0.05, 0.45],
+		 
+		 {"selfCollision":false}
+		 ["d4r",-1.04,-1.05, 0.89],
+		 ["d5r",-1.04,-0.50, 0.89],
+		 ["d6r",-1.04,0.05, 0.89],
+		 
+		 {"selfCollision":true}
+		 ["d7r",-1.02,-1.05, 1.32],
+		 {"selfCollision":false}
+		 ["d8r",-1.02,-0.50, 1.32],
+		 {"selfCollision":true}
+		 ["d9r",-1.02,0.05, 1.32],
+		 
+		 {"selfCollision":false}
+		 ["d10r",-0.94, -0.79, 1.67],
+		 ["d11r",-0.82, -0.51, 1.99],
+		 {"selfCollision":true}
+		 ["d12r",-0.84, 0.05, 2.00],
+		 {"selfCollision":false}
+		 ["d13r",-0.95, 0.05, 1.67],
+		 
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 ["d14r",-0.72, -0.06, 0.99],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--RIGHT DOOR--
+		  {"beamSpring":2651000,"beamDamp":200},
+		  {"beamDeform":48500,"beamStrength":"FLT_MAX"},
+		  //door main shape
+		  ["d1r","d2r"],
+		  ["d2r","d3r"],
+		  ["d4r","d5r"],
+		  ["d5r","d6r"],
+		  ["d7r","d8r"],
+		  ["d8r","d9r"],
+		  
+		  ["d7r","d10r"],
+		  ["d13r","d9r"],
+		  
+		  {"beamStrength":450000},
+		  ["d10r","d11r"],
+		  ["d11r","d12r"],
+		  ["d12r","d13r"],
+		  
+		  {"beamStrength":"FLT_MAX"},
+		  ["d1r","d4r"],
+		  ["d2r","d5r"],
+		  ["d3r","d6r"],
+		  ["d4r","d7r"],
+		  ["d5r","d8r"],
+		  ["d6r","d9r"],
+		  
+		  
+		  {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  {"beamStrength":450000},
+		  {"deformGroup":"van_doorglass_FR_break", "triggerStrength":9000}
+		  ["d11r","d7r"],
+		  ["d12r","d10r"],
+		  ["d13r","d11r"],
+		  ["d12r","d9r"],
+		  
+		  {"deformGroup":""}
+		 
+		  {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+		  {"beamStrength":"FLT_MAX"},
+		  ["d1r","d7r"],
+		  ["d2r","d8r"],
+		  ["d3r","d9r"],
+		  
+		  ["d8r","d10r"],
+		  ["d8r","d13r"],
+		  
+		  ["d4r","d10r"],
+		  
+		  ["d5r","d10r"],
+		  
+		  ["d5r","d13r"],
+		  
+		  ["d6r","d13r"],
+		  
+		  //lengthwise
+		  {"beamStrength":"FLT_MAX"},
+		  ["d1r","d3r"],
+		  ["d4r","d6r"],
+		  ["d4r","d3r"],
+		  
+		  {"deformGroup":"van_doorglass_FR_break", "triggerStrength":5000}
+		  ["d7r","d9r"],
+		  
+		  {"deformGroup":""}
+		  
+		  //surficial crossing
+		  ["d1r","d5r"],
+		  ["d2r","d4r"],
+		  ["d2r","d6r"],
+		  ["d3r","d5r"],
+		  ["d4r","d8r"],
+		  ["d5r","d7r"],
+		  ["d5r","d9r"],
+		  ["d6r","d8r"],
+		  //rigidifier
+		  {"beamSpring":2651000,"beamDamp":250},
+		  {"beamDeform":2050,"beamStrength":"FLT_MAX"},
+		  ["d1r","d14r"],
+		  ["d2r","d14r"],
+		  ["d3r","d14r"],
+		  ["d4r","d14r"],
+		  ["d5r","d14r"],
+		  ["d6r","d14r"],
+		  {"deformGroup":"van_doorglass_FR_break", "triggerStrength":5000}
+		  ["d7r","d14r"],
+		  ["d8r","d14r"],
+		  ["d9r","d14r"],
+		  {"beamSpring":2251000,"beamDamp":200},
+		  ["d10r","d14r"],
+		  ["d13r","d14r"],
+		  {"beamStrength":450000},
+		  ["d11r","d14r"],
+		  ["d12r","d14r"],
+		  
+		  {"deformGroup":""}
+		  
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":25000,"beamStrength":60000},
+		  //["d13r","c2rr"],
+		  
+		  //--DOOR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamSpring":2651000,"beamDamp":0},
+		  {"beamLimitSpring":2651000,"beamLimitDamp":250},
+		  {"beamDeform":11200,"beamStrength":280000},
+		  ["d11r","r2"],
+		  
+		  ["d12r","r3"],
+		  
+		  
+		  //
+		  ["d10r","r1"],
+		  //["d13r","r4",{"optional":true}],
+		  
+		  ["d3r","fr10r"],
+		  
+		  ["d3r","fr12r"],
+		  
+		  ["d2r","fr11r"],
+		  
+		  ["d2r","fr9r"],
+		  
+		  //["d9r","c4",{"optional":true}],
+		  
+		  
+		  ["d5r","f6rr"],
+		  
+		  
+		  ["d6r","c2rr"],
+		  
+		  ["d9r","c2rr"],
+		  
+		  ["d3r","c3rr"],
+		  
+		  ["d3r","c4rr"],
+		  
+		  //strong
+		  {"beamDeform":19500,"beamStrength":90000},
+		  ["d8r","c4rr"],
+		  
+		  ["d7r","f3r"],
+		  
+		  ["d4r","f6r"],
+		  
+		  ["d5r","c3rr"],
+		  //door hinge
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamSpring":2651000,"beamDamp":200},
+		  {"beamDeform":19000,"beamStrength":32000},
+		  //r
+		  {"breakGroup":"van_doorhinge_a_R"},
+		  ["d1r","f8rr"],
+		  ["d1r","f3rr"],
+		  ["d7r","f3r"],
+		  ["d1r","fr8r"],
+		  {"beamDeform":22000,"beamStrength":94000},
+		  {"breakGroup":"van_doorhinge_b_R"},
+		  ["d7r","f3rr"],
+		  ["d7r","f8rr"],
+		  ["d1r","fr8r"],
+		  ["d7r","f6r"],
+		  
+		  {"breakGroup":""},
+		  //--DOOR LATCH--
+		  {"beamDeform":7500,"beamStrength":10500},
+		  {"breakGroup":"van_doorlatch_R"},
+		  ["d14r","c3rr"],
+		  ["d6r","c3rr"],
+		  ["d14r","c4rr"],
+		  ["d6r","c4rr"],
+		  ["d9r","c3rr"],
+		  ["d9r","c4rr"],
+		  
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":250000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"van_doorhinge_a_R"},
+		  ["d3r","fr10r"],
+		  {"breakGroup":"van_doorhinge_b_R"},
+		  ["d9r","fr10r"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//right door
+			{"group":"van_door_FR"},
+			["d2r","d1r","d4r"],
+			["d2r","d4r","d5r"],
+			["d3r","d2r","d5r"],
+			["d3r","d5r","d6r"],
+			["d5r","d4r","d7r"],
+			["d5r","d7r","d8r"],
+			["d6r","d5r","d8r"],
+			["d6r","d8r","d9r"],
+			
+			["d8r","d7r","d10r"],
+			["d8r","d10r","d11r"],
+			["d8r","d11r","d12r"],
+			["d8r","d12r","d9r"],
+			
+	],
+}
+"van_door_FL": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Left Front Door",
+	}
+    "slotType" : "van_door_FL",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"slots": [
+		["type", "default"]
+		["van_mirror_L","van_mirror_L"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_door_FL", ["van_door_FL"]],
+		 //["van_doorpanel_L", ["van_door_FL"],["van_interior"]],
+		 {"deformGroup":"van_doorglass_FL_break", "deformMaterialBase":"van_glass", "deformMaterialDamaged":"van_glass_dmg"}
+         ["van_doorglass_FL", ["van_door_FL"]],
+		 {"deformGroup":""}
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--DOOR--
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_door_FL"},
+		 {"nodeWeight":3.5},
+		 ["d1l",1.01,-0.94, 0.45],
+		 ["d2l",1.01,-0.47, 0.45],
+		 ["d3l",1.01,0.05, 0.45],
+		 
+		 {"nodeWeight":2.5},
+		 {"selfCollision":false}
+		 ["d4l",1.04,-1.05, 0.89],
+		 ["d5l",1.04,-0.50, 0.89],
+		 ["d6l",1.04,0.05, 0.89],
+		 
+		 {"selfCollision":true}
+		 ["d7l",1.02,-1.05, 1.32],
+		 {"selfCollision":false}
+		 ["d8l",1.02,-0.50, 1.32],
+		 {"selfCollision":true}
+		 ["d9l",1.02,0.05, 1.32],
+		 
+		 {"nodeWeight":2},
+		 {"selfCollision":false}
+		 ["d10l",0.94, -0.79, 1.67],
+		 ["d11l",0.82, -0.51, 1.99],
+		 {"selfCollision":true}
+		 ["d12l",0.84, 0.05, 2.00],
+		 {"selfCollision":false}
+		 ["d13l",0.95, 0.05, 1.67],
+		 
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 {"nodeWeight":3.5},
+		 ["d14l",0.72, -0.06, 0.99],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--LEFT DOOR--
+		  {"beamSpring":2651000,"beamDamp":200},
+		  {"beamDeform":48500,"beamStrength":"FLT_MAX"},
+		  //door main shape
+		  
+		  ["d1l","d2l"],
+		  ["d2l","d3l"],
+		  ["d4l","d5l"],
+		  ["d5l","d6l"],
+		  ["d7l","d8l"],
+		  ["d8l","d9l"],
+		  
+		  ["d7l","d10l"],
+		  ["d13l","d9l"],
+		  {"beamStrength":450000},
+		  
+		  ["d10l","d11l"],
+		  ["d11l","d12l"],
+		  ["d12l","d13l"],
+		  {"beamStrength":"FLT_MAX"},
+		  
+		  
+		  ["d1l","d4l"],
+		  ["d2l","d5l"],
+		  ["d3l","d6l"],
+		  ["d4l","d7l"],
+		  ["d5l","d8l"],
+		  ["d6l","d9l"],
+		  
+		  {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  {"beamStrength":450000},
+		  
+		  {"deformGroup":"van_doorglass_FL_break", "triggerStrength":9000}
+		  ["d11l","d7l"],
+		  ["d12l","d10l"],
+		  ["d13l","d11l"],
+		  ["d12l","d9l"],
+		 
+		  {"deformGroup":""}
+		 
+		  {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+		  {"beamStrength":"FLT_MAX"},
+		  
+		  ["d1l","d7l"],
+		  ["d2l","d8l"],
+		  ["d3l","d9l"],
+		  ["d8l","d10l"],
+		  ["d8l","d13l"],
+		  ["d4l","d10l"],
+		  ["d5l","d10l"],
+		  ["d5l","d13l"],
+		  ["d6l","d13l"],
+		  
+		  //lengthwise
+		  {"beamStrength":"FLT_MAX"},
+		  ["d4l","d6l"],
+		  ["d1l","d3l"],
+		  ["d4l","d3l"],
+		  
+		  {"deformGroup":"van_doorglass_FL_break", "triggerStrength":5000}
+		  ["d7l","d9l"],
+		  
+		  {"deformGroup":""}
+		  
+		  //surficial crossing
+		  ["d1l","d5l"],
+		  ["d2l","d4l"],
+		  ["d2l","d6l"],
+		  ["d3l","d5l"],
+		  ["d4l","d8l"],
+		  ["d5l","d7l"],
+		  ["d5l","d9l"],
+		  ["d6l","d8l"],
+		  //rigidifier
+		  
+		  {"beamDeform":2050,"beamStrength":"FLT_MAX"},
+		  {"beamSpring":2651000,"beamDamp":250},
+		  ["d1l","d14l"],
+		  ["d2l","d14l"],
+		  ["d3l","d14l"],
+		  ["d4l","d14l"],
+		  ["d5l","d14l"],
+		  ["d6l","d14l"],
+		  {"deformGroup":"van_doorglass_FL_break", "triggerStrength":5000}
+		  ["d7l","d14l"],
+		  ["d8l","d14l"],
+		  ["d9l","d14l"],
+		  {"beamSpring":2251000,"beamDamp":200},
+		  ["d10l","d14l"],
+		  ["d13l","d14l"],
+		  {"beamStrength":450000},
+		  ["d11l","d14l"],
+		  ["d12l","d14l"],
+		  {"deformGroup":""}
+		  
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":25000,"beamStrength":60000},
+		  //["d13l","c2ll"],
+		  
+		  //--DOOR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamSpring":2651000,"beamDamp":0},
+		  {"beamLimitSpring":2651000,"beamLimitDamp":250},
+		  {"beamDeform":11200,"beamStrength":280000},
+		  ["d11l","r2"],
+		  ["d12l","r3"],
+		  
+		  //
+		  ["d10l","r1"],
+		  
+		  //["d13l","r4",{"optional":true}],
+		  
+		  ["d3l","fr10l"],
+		  
+		  ["d3l","fr12l"],
+		  
+		  ["d2l","fr11l"],
+		  
+		  ["d2l","fr9l"],
+		  
+		  //["d9l","c4",{"optional":true}],
+		  
+		  
+		  ["d5l","f6ll"],
+		  
+		  ["d6l","c2ll"],
+		  
+		  ["d9l","c2ll"],
+		  
+		  ["d3l","c3ll"],
+		  
+		  ["d3l","c4ll"],
+		  
+		  //strong
+		  {"beamDeform":19500,"beamStrength":90000},
+		  ["d8l","c4ll"],
+		  
+		  ["d5l","c3ll"],
+		  
+		  ["d7l","f3l"],
+		  
+		  ["d4l","f6l"],
+		  //door hinge
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamSpring":2651000,"beamDamp":200},
+		  {"beamDeform":19000,"beamStrength":32000},
+		  {"breakGroup":"van_doorhinge_a_L"},
+		  ["d1l","f8ll"],
+		  ["d1l","f3ll"],
+		  ["d7l","f3l"],
+		  ["d1l","fr8l"],
+		  {"beamDeform":22000,"beamStrength":94000},
+		  {"breakGroup":"van_doorhinge_b_L"},
+		  ["d7l","f3ll"],
+		  ["d7l","f8ll"],
+		  ["d1l","fr8l"],
+		  ["d7l","f6l"],
+		  
+		  {"breakGroup":""},
+		  //--DOOR LATCH--
+		  {"beamDeform":7500,"beamStrength":10500},
+		  {"breakGroup":"van_doorlatch_L"},
+		  ["d14l","c3ll"],
+		  ["d6l","c3ll"],
+		  ["d14l","c4ll"],
+		  ["d6l","c4ll"],
+		  ["d9l","c3ll"],
+		  ["d9l","c4ll"],
+		  
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":250000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"van_doorhinge_a_L"},
+		  ["d3l","fr10l"],
+		  {"breakGroup":"van_doorhinge_b_L"},
+		  ["d9l","fr10l"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//left door
+			{"group":"van_door_FL"},
+			["d1l","d2l","d4l"],
+			["d4l","d2l","d5l"],
+			["d2l","d3l","d5l"],
+			["d5l","d3l","d6l"],
+			["d4l","d5l","d7l"],
+			["d7l","d5l","d8l"],
+			["d5l","d6l","d8l"],
+			["d8l","d6l","d9l"],
+			
+			["d7l","d8l","d10l"],
+			["d10l","d8l","d11l"],
+			["d11l","d8l","d12l"],
+			["d12l","d8l","d9l"],
+			
+	],
+}
+}

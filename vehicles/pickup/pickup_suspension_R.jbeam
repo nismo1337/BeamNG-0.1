@@ -1,0 +1,427 @@
+{
+"pickup_axle_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Live Rear Axle Suspension",
+	}
+    "slotType" : "pickup_suspension_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"slots": [
+		["type", "default"]
+		["pickup_brake_R","pickup_brake_R"],
+		["pickup_wheel_R","pickup_wheel_R"],
+		["pickup_spring_R","pickup_spring_R"],
+		["pickup_shock_R","pickup_shock_R"],
+		["pickup_differential_R","pickup_differential_R"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //rear axle
+		 ["pickup_hub_R", ["pickup_rearaxle", "pickup_rearshockmounts"]],
+		 ["pickup_axle_R", ["pickup_rearaxle", "pickup_rearshockmounts", "pickup_engine","pickup_transmission"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR LIVE AXLE SUSPENSION--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":6.8},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"pickup_rearaxle"},
+		 ["ax2r", -0.70, 1.487, 0.55],
+		 ["ax2l", 0.70, 1.487, 0.55],
+		 ["ax3r", -0.70, 1.387, 0.41],
+		 ["ax3l", 0.70, 1.387, 0.41],
+		 {"collision":true}
+		 ["ax1", 0.0, 1.55, 0.31],
+		 ["ax2", 0.0, 1.487, 0.55],
+		 ["ax3", 0.0, 1.28, 0.41],
+		 {"group":"pickup_rearshockmounts"},
+		 //shock mounting nodes
+		 ["axshr", -0.43, 1.58, 0.29],
+		 ["axshl", 0.43, 1.58, 0.29],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--REAR LIVE AXLE SUSPENSION--
+		  {"beamSpring":9501000,"beamDamp":100},
+		  {"beamDeform":95000,"beamStrength":360000},
+		  ["ax2r","ax2"],
+		  ["ax2","ax2l"],
+		  ["ax3r","ax3"],
+		  ["ax3","ax3l"],
+		  //
+		  ["ax2l","ax3l"],
+		  ["ax1","ax2"],
+		  ["ax1","ax3"],
+		  ["ax2","ax3"],
+		  ["ax2r","ax3r"],
+		  
+		  //crossing
+		  ["ax2r","ax1"],
+		  ["ax2l","ax1"],
+		  ["ax3r","ax1"],
+		  ["ax3l","ax1"],
+		  
+		  ["ax3r","ax2"],
+		  ["ax3l","ax2"],
+		  
+		  ["ax2r","ax3"],
+		  ["ax2l","ax3"],
+		  
+		  {"beamSpring":9501000,"beamDamp":100},
+		  {"beamDeform":95000,"beamStrength":360000},
+		  //shock mounts
+		  ["axshr","ax2r"],
+		  ["axshr","ax3r"],
+		  ["axshr","ax1"],
+		  ["axshr","ax2"],
+		  ["axshr","ax3"],
+		  
+		  ["axshl","ax2l"],
+		  ["axshl","ax3l"],
+		  ["axshl","ax1"],
+		  ["axshl","ax2"],
+		  ["axshl","ax3"],
+		  
+		  {"beamSpring":2501000,"beamDamp":350},
+		  {"beamDeform":48000,"beamStrength":250000},
+		  //locator arms
+		  ["ax2r","fr10r"],
+		  ["ax2l","fr10l"],
+		  
+		  {"beamSpring":6001000,"beamDamp":400},
+		  {"optional":true},
+		  {"breakGroupType":1},
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","fr10r"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","fr10l"],
+		  {"optional":false},
+		  {"breakGroupType":0},
+		  {"breakGroup":""},
+		  
+		  //driveshaft
+		  {"optional":true},
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":5500,"beamStrength":6500},
+		  {"beamLimitSpring":10501000,"beamLimitDamp":1200},
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":0.01},
+		  ["ax3","tra1", {"name":"driveshaft"}],
+		  
+		  //--REAR WHEELS--
+		  {"optional":true},
+		  {"beamSpring":9501000,"beamDamp":100},
+		  {"beamDeform":115000,"beamStrength":360000},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax2r","axwr"],
+		  ["ax3r","axwr"],
+		  
+		  ["ax1r","ax3"],
+		  ["ax1r","ax2"],
+		  ["ax1r","ax1", {"name":"axle_RR"}],
+		  ["ax1r","ax2r"],
+		  ["ax1r","ax3r"],
+		  
+		  {"breakGroup":"wheel_RL"},
+		  ["ax2l","axwl"],
+		  ["ax3l","axwl"],
+		  
+		  ["ax1l","ax3"],
+		  ["ax1l","ax2"],
+		  ["ax1l","ax1", {"name":"axle_RL"}],
+		  ["ax1l","ax2l"],
+		  ["ax1l","ax3l"],
+		  //to wheels
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","ax1"],
+		  ["axwr","ax2"],
+		  ["axwr","ax3"],
+		  ["axshr","axwr"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","ax1"],
+		  ["axwl","ax2"],
+		  ["axwl","ax3"],
+		  ["axshl","axwl"],
+		  
+		  //shock mounts
+		  {"breakGroup":"wheel_RR"},
+		  ["axshr","ax1r"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axshl","ax1l"],
+		  {"breakGroup":""},
+		  
+		  {"beamSpring":9501000,"beamDamp":100},
+		  {"beamDeform":48000,"beamStrength":280000},
+		  {"beamLimitSpring":9501000,"beamLimitDamp":1200},
+		  //rear limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1300000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.45, "beamShortBound":0.45},
+		  //["ax1","fr17"],
+		  {"beamLongBound":0.145, "beamShortBound":0.145},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax1r","fr17"],
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","fr17"],
+		  {"breakGroup":""},
+		  {"beamLongBound":0.4, "beamShortBound":0.2},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax1r","fr14l"],
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","fr14r"],
+		  {"breakGroup":""},
+		  ["ax2r","fr14l"],
+		  ["ax2l","fr14r"],
+		  
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  //rear limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1300000},
+		  //bed
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.48, "beamShortBound":0.28},
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","b14rr"],
+		  ["axwr","b10rr"],
+		  
+		  ["ax1r","b14rr"],
+		  ["ax1r","b10rr"],
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","b14ll"],
+		  ["ax1l","b10ll"],
+		  
+		  ["axwl","b14ll"],
+		  ["axwl","b10ll"],
+		  
+		  {"breakGroup":""},
+		  
+		  //bed
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.48, "beamShortBound":0.28},
+		  {"optional":true},
+		  /*
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","b14rr"],
+		  ["axwr","b10rr"],
+		  
+		  ["ax1r","b14rr"],
+		  ["ax1r","b10rr"],
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","b14ll"],
+		  ["ax1l","b10ll"],
+		  
+		  ["axwl","b14ll"],
+		  ["axwl","b10ll"],
+		  
+		  {"breakGroup":""},
+		  */
+		  
+		  {"optional":false},
+		  //rear limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1300000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.35, "beamShortBound":0.15},
+		  ["axshr","fr17"],
+		  ["axshl","fr17"],
+		  //["ax1","fr17"],
+		  {"beamLongBound":0.145, "beamShortBound":0.145},
+		  ["ax2r","fr17"],
+		  ["ax2l","fr17"],
+		  ["ax2","fr17r"],
+		  ["ax2","fr17l"],
+		  
+		  {"beamLongBound":0.4, "beamShortBound":0.2},
+		  ["ax2r","fr14l"],
+		  ["ax2l","fr14r"],
+		  
+		  {"optional":true},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  //rear limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1300000},
+		  //bed
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.48, "beamShortBound":0.28},
+		  ["ax1","fr19r"],
+		  ["ax1","fr20r"],
+		  ["ax1","fr19l"],
+		  ["ax1","fr20l"],
+		  ["ax2","fr19r"],
+		  ["ax2","fr20r"],
+		  ["ax2","fr19l"],
+		  ["ax2","fr20l"],
+		  
+		  
+		  {"optional":false},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],		
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"propulsed":1}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+"pickup_brake_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Rear Brakes",
+	}
+    "slotType" : "pickup_brake_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["pickup_disc_RR", ["wheel_RR","wheelhub_RR"], ["pickup"]],
+		 ["pickup_disc_RL", ["wheel_RL","wheelhub_RL"], ["pickup"]],
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//brakes
+			{"enableABS":true}
+			{"ABSthreshold":3},
+			{"brakeTorque":1300},
+			{"parkingTorque":4500},
+	],
+	"engine": {
+		"ABSrate":12
+	},
+}
+"pickup_spring_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Rear Springs",
+	}
+    "slotType" : "pickup_spring_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_leaf_R", ["pickup_rearaxle", "pickup_leaftop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  //lateral location
+		  {"beamSpring":6501000,"beamDamp":400},
+		  {"beamDeform":48000,"beamStrength":280000},
+		  ["ax3","fr10r"],
+		  ["ax3","fr10l"],
+		  //--REAR SPRINGS--
+		  {"beamSpring":70000,"beamDeform":100000,"beamStrength":200000},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  {"beamDamp":0},
+		  {"beamPrecompression":1.21, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.34},
+		  ["axshr","fr17r",{"beamDampRebound":0}],
+		  ["axshl","fr17l",{"beamDampRebound":0}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"pickup_shock_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Rear Shocks",
+	}
+    "slotType" : "pickup_shock_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_shock_R", ["pickup_rearshockmounts", "pickup_rearshocktop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR SHOCKS--
+		  {"beamSpring":0,"beamDeform":100000,"beamStrength":200000},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  {"beamDamp":1600},
+		  {"beamPrecompression":1.21, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.34},
+		  ["axshr","fr17r",{"beamDampRebound":2200}],
+		  ["axshl","fr17l",{"beamDampRebound":2200}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"pickup_spring_R_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Sport Rear Leaf Springs",
+	}
+    "slotType" : "pickup_spring_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_leaf_R", ["pickup_rearaxle", "pickup_leaftop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  //lateral location
+		  {"beamSpring":5501000,"beamDamp":350},
+		  {"beamDeform":48000,"beamStrength":280000},
+		  ["ax3","fr10r"],
+		  ["ax3","fr10l"],
+		  //--REAR SPRINGS--
+		  {"beamSpring":90000,"beamDeform":100000,"beamStrength":200000},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  {"beamDamp":0},
+		  {"beamPrecompression":1.105, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.34},
+		  ["axshr","fr17r",{"beamDampRebound":0}],
+		  ["axshl","fr17l",{"beamDampRebound":0}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"pickup_shock_R_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Sport Rear Shocks",
+	}
+    "slotType" : "pickup_shock_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_shock_R", ["pickup_rearshockmounts", "pickup_rearshocktop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR SHOCKS--
+		  {"beamSpring":0,"beamDeform":100000,"beamStrength":200000},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  {"beamDamp":2600},
+		  {"beamPrecompression":1.105, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.34},
+		  ["axshr","fr17r",{"beamDampRebound":3200}],
+		  ["axshl","fr17l",{"beamDampRebound":3200}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"pickup_differential_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Rear Differential",
+	}
+	"engine":{
+		"differential":3.73,
+		},
+    "slotType" : "pickup_differential_R",
+}
+}

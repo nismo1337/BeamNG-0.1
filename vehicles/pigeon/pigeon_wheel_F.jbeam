@@ -1,0 +1,88 @@
+{
+"pigeon_wheel_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Front Wheel",
+	}
+    "slotType" : "pigeon_wheel_F",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //front wheel
+		 ["pigeon_wheel_F", ["wheel_F"]],
+		 //brake discs
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FRONT A-ARM SUSPENSION SUSPENSION--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.7},
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"group":"wheel_F"},
+		 ["fw1r",-0.07, -1.12, 0.33],
+		 ["fw1l", 0.07, -1.12, 0.33],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--FRONT WHEEL--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":2401000,"beamDamp":40},
+		  {"beamDeform":75000,"beamStrength":360000},
+		  
+		  ["fw1r","fw1r"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//general settings
+			{"radius":0.24},
+			{"hubRadius":0.14},
+			{"wheelOffset":0.0},
+			{"hubWidth":0.145},
+			{"tireWidth":0.145},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":801000, "hubBeamDamp":15},
+			{"beamSpring":801000, "beamDamp":15},
+			{"hubBeamDeform":45000, "hubBeamStrength":90000},
+			{"beamDeform":45000,"beamStrength":90000},
+			{"hubNodeWeight":0.35},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":80000,"wheelSideBeamDamp":250,"wheelSideBeamDeform":33000,"wheelSideBeamStrength":34000},
+			{"wheelReinforcementBeamSpring":8000,"wheelReinforcementBeamDamp":70,"wheelReinforcementBeamDeform":33000,"wheelReinforcementBeamStrength":34000},
+			{"wheelTreadBeamSpring":301000,"wheelTreadBeamDamp":100,"wheelTreadBeamDeform":33000,"wheelTreadBeamStrength":34000},
+			{"wheelPeripheryBeamSpring":301000,"wheelPeripheryBeamDamp":100,"wheelPeripheryBeamDeform":33000,"wheelPeripheryBeamStrength":34000},
+			{"springExpansion":801000, "dampExpansion":15},
+			{"nodeWeight":0.35},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.05},
+			
+			//front
+			{"selfCollision":false}
+			{"collision":true}
+            ["F", "wheel_F", "fw1r", "fw1l", 9999,  "fa1", 1]
+			{"selfCollision":true}
+			{"propulsed":0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+}

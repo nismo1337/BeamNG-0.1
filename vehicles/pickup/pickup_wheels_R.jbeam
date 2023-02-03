@@ -1,0 +1,204 @@
+{
+"pickup_wheel_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Rear Wheels",
+	}
+    "slotType" : "pickup_wheel_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //rear wheels
+		 ["pickup_alloy_RR", ["wheel_RR","wheelhub_RR"], ["pickup_alloy"]],
+		 ["pickup_alloy_RL", ["wheel_RL","wheelhub_RL"], ["pickup_alloy"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR WHEELS--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":6.9},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"wheelhub_RR"},
+		 ["ax1r", -0.63, 1.487, 0.41],
+		 {"group":"wheelhub_RL"},
+		 ["ax1l", 0.63, 1.487, 0.41],
+		 {"collision":true}
+		 //wheel nodes
+		 {"group":"wheelhub_RR"},
+		 ["axwr", -0.895, 1.487, 0.41],
+		 {"group":"wheelhub_RL"},
+		 ["axwl", 0.895, 1.487, 0.41],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR WHEELS--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":9001000,"beamDamp":20},
+		  {"beamDeform":95000,"beamStrength":640000},
+		  
+		  ["ax1r","axwr"],
+		  ["ax1l","axwl"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.375},
+			{"hubRadius":0.22},
+			{"wheelOffset":0.075},
+			{"hubWidth":0.225},
+			{"tireWidth":0.215},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":20},
+			{"beamSpring":1601000, "beamDamp":20},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.8},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":260000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":27000,"wheelSideBeamStrength":32000},
+			{"wheelReinforcementBeamSpring":56000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":27000,"wheelReinforcementBeamStrength":32000},
+			{"wheelTreadBeamSpring":601000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":27000,"wheelTreadBeamStrength":32000},
+			{"wheelPeripheryBeamSpring":601000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":27000,"wheelPeripheryBeamStrength":32000},
+			{"springExpansion":1601000, "dampExpansion":20},
+			{"nodeWeight":0.8},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.05},
+			
+			//rear
+			{"selfCollision":false}
+			{"collision":true}
+			{"axleBeams":["axle_RL","driveshaft"]}
+            ["RL", "wheel_RL", "ax1l", "axwl", 9999,  "ax2l", 1]
+			{"axleBeams":["axle_RR","driveshaft"]}
+            ["RR", "wheel_RR", "ax1r", "axwr", 9999,  "ax2r", -1],
+			{"axleBeams":[]}
+			{"propulsed":0}
+			{"enableABS":false}
+			{"selfCollision":true}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+"pickup_wheel_R_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Sport Rear Wheels",
+	}
+    "slotType" : "pickup_wheel_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //rear wheels
+		 ["wheel_02a_18x10_RR", ["wheel_RR","wheelhub_RR"], ["wheel_02a"]],
+		 ["wheel_02a_18x10_RL", ["wheel_RL","wheelhub_RL"], ["wheel_02a"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR WHEELS--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":6.9},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"wheelhub_RR"},
+		 ["ax1r", -0.63, 1.487, 0.41],
+		 {"group":"wheelhub_RL"},
+		 ["ax1l", 0.63, 1.487, 0.41],
+		 {"collision":true}
+		 //wheel nodes
+		 {"group":"wheelhub_RR"},
+		 ["axwr", -0.895, 1.487, 0.41],
+		 {"group":"wheelhub_RL"},
+		 ["axwl", 0.895, 1.487, 0.41],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR WHEELS--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":8501000,"beamDamp":20},
+		  {"beamDeform":95000,"beamStrength":640000},
+		  
+		  ["ax1r","axwr"],
+		  ["ax1l","axwl"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.375},
+			{"hubRadius":0.24},
+			{"wheelOffset":0.06},
+			{"hubWidth":0.275},
+			{"tireWidth":0.265},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1551000, "hubBeamDamp":20},
+			{"beamSpring":1551000, "beamDamp":20},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.8},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":300000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":27000,"wheelSideBeamStrength":32000},
+			{"wheelReinforcementBeamSpring":98000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":27000,"wheelReinforcementBeamStrength":32000},
+			{"wheelTreadBeamSpring":601000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":27000,"wheelTreadBeamStrength":32000},
+			{"wheelPeripheryBeamSpring":601000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":27000,"wheelPeripheryBeamStrength":32000},
+			{"springExpansion":1551000, "dampExpansion":20},
+			{"nodeWeight":0.8},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.1},
+			
+			//rear
+			{"selfCollision":false}
+			{"collision":true}
+			{"axleBeams":["axle_RL","driveshaft"]}
+            ["RL", "wheel_RL", "ax1l", "axwl", 9999,  "ax2l", 1]
+			{"axleBeams":["axle_RR","driveshaft"]}
+            ["RR", "wheel_RR", "ax1r", "axwr", 9999,  "ax2r", -1],
+			{"axleBeams":[]}
+			{"propulsed":0}
+			{"enableABS":false}
+			{"selfCollision":true}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+}

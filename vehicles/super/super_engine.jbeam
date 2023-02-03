@@ -1,0 +1,246 @@
+{
+"super_engine": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide V12 Engine",
+	}
+    "slotType" : "super_engine",
+	"slots": [
+		["type", "default"]
+		["super_exhaust","super_exhaust"],
+		["super_transaxle","super_transaxle_M"],
+	],
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //engine
+		 ["super_engine", ["super_engine"]],
+		 ["super_header", ["super_engine","super_chassis","super_shocktop_R","super_uppermounts_R","super_lowermounts_R"]],
+		 ["super_radiator", ["super_chassis"]],
+	],
+	
+	"enginetorque":[
+		["rpm", "torque"]
+		[0, 0],
+		[500, 100],
+		[1000, 165],
+		[2000, 230],
+		[3000, 292],
+		[4000, 320],
+		[5000, 343],
+		[6000, 328],
+		[7000, 295],
+		[8000, 225],
+	],
+	/*
+	"enginetorque":[
+		["rpm", "torque"]
+		[0, 0],
+		[500, 75],
+		[1000, 124],
+		[2000, 173],
+		[3000, 219],
+		[4000, 240],
+		[5000, 257],
+		[6000, 246],
+		[7000, 221],
+		[8000, 169],
+	],
+	*/
+	"engine":{
+		"idleRPM":1200,
+		"shiftDownRPM":3200,
+		"shiftUpRPM":7400,
+		"maxRPM":8000,
+		"inertia":0.12,
+		"friction":7
+		"burnEfficiency":0.4
+		"throttleSensitivity":2
+		"fuelTankBeams":["super_fueltank"]
+		},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 {"selfCollision":false},
+		 {"collision":true}
+		 //engine box
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"super_engine"},
+		 {"nodeWeight":19},
+		 ["e1r",-0.11, 0.55, 0.31],
+		 ["e1l", 0.11, 0.55, 0.31],
+		 ["e2r",-0.11, 1.05, 0.31],
+		 ["e2l", 0.11, 1.05, 0.31],
+		 ["e3r",-0.26, 0.55, 0.72],
+		 ["e3l", 0.26, 0.55, 0.72],
+		 ["e4r",-0.26, 1.05, 0.72],
+		 ["e4l", 0.26, 1.05, 0.72],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":14001000,"beamDamp":300},
+		  {"beamDeform":2000000,"beamStrength":"FLT_MAX"},
+		  //engine
+		  ["e1r","e1l"],
+		  ["e2r","e2l"],
+		  ["e3r","e3l"],
+		  ["e4r","e4l"],
+		  
+		  ["e1r","e2r"],
+		  ["e1l","e2l"],
+		  ["e3r","e4r"],
+		  ["e3l","e4l"],
+		  
+		  ["e1r","e3r"],
+		  ["e1l","e3l"],
+		  ["e2r","e4r"],
+		  ["e2l","e4l"],
+		  
+		  ["e2r","e3r"],
+		  ["e2l","e3l"],
+		  ["e2r","e3l"],
+		  ["e2l","e3r"],
+		  
+		  ["e1r","e4r"],
+		  ["e1l","e4l"],
+		  ["e1r","e4l"],
+		  ["e1l","e4r"],
+		  
+		  ["e1r","e2l"],
+		  ["e1l","e2r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  
+		  ["e1r","e3l"],
+		  ["e1l","e3r"],
+		  ["e2r","e4l"],
+		  ["e2l","e4r"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+	],
+}
+"super_transaxle_M": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide 5-Speed Manual Transaxle",
+	}
+    "slotType" : "super_transaxle",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //engine
+		 ["super_transaxle", ["super_engine","super_transaxle"]],
+	],
+	"engine":{
+		"transmissionType":"manual",
+		"differential":3.45,
+		// -1, 0 (neutral), 1, etc
+		"gears":[-2.65, 0, 3.03, 2.11, 1.54, 1.19, 0.83]
+		"clutchDuration":0.1
+		"clutchTorque":1000
+		//temporary until manual is coded
+		"viscousCoupling":7
+		"lockingTorqueLimit":400
+		"enableLocking":true
+		},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 {"selfCollision":false},
+		 {"collision":true}
+		 //transaxle
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"super_transaxle"},
+		 {"nodeWeight":12},
+		 ["tra1r",-0.13, 1.25, 0.385],
+		 ["tra1l",0.13, 1.25, 0.385],
+		 ["tra2",0.0, 1.55, 0.425],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //transaxle
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":14001000,"beamDamp":300},
+		  {"beamDeform":2000000,"beamStrength":"FLT_MAX"},
+		  ["tra1r","e2r"],
+		  ["tra1l","e2l"],
+		  ["tra1r","e4r"],
+		  ["tra1l","e4l"],
+		  
+		  ["tra1r","e2l"],
+		  ["tra1l","e2r"],
+		  ["tra1r","e4l"],
+		  ["tra1l","e4r"],
+		  
+		  
+		  ["tra2","e2l"],
+		  ["tra2","e2r"],
+		  ["tra2","e4l"],
+		  ["tra2","e4r"],
+		  
+		  ["tra1r","tra2"],
+		  ["tra1l","tra2"],
+		  ["tra1r","tra1l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"propulsed":1},
+	],
+}
+"super_exhaust": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Exhaust",
+	}
+    "slotType" : "super_exhaust",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //exhaust
+		 ["super_exhaust", ["super_chassis","super_body","super_shocktop_R","super_uppermounts_R","super_lowermounts_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+	],
+}
+}

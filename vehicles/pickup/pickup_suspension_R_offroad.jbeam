@@ -1,0 +1,77 @@
+{
+"pickup_spring_R_offroad": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Rear Springs",
+	}
+    "slotType" : "pickup_spring_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_leaf_R_offroad", ["pickup_rearaxle", "pickup_leaftop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  //lateral location
+		  {"beamSpring":5501000,"beamDamp":350},
+		  {"beamDeform":54000,"beamStrength":320000},
+		  ["ax3","fr10r"],
+		  ["ax3","fr10l"],
+		  //--REAR SPRINGS--
+		  {"beamSpring":45000,"beamDeform":130000,"beamStrength":260000},
+		  {"beamLimitSpring":201000,"beamLimitDamp":1000},
+		  {"beamDamp":0},
+		  {"beamPrecompression":1.44, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.32},
+		  ["axshr","fr17r",{"beamDampRebound":0}],
+		  ["axshl","fr17l",{"beamDampRebound":0}],
+		  
+		  //hard limit
+		  {"beamSpring":5001000,"beamDamp":1000},
+		  {"beamPrecompression":0.35, "beamType":"|SUPPORT", "beamLongBound":4, "beamShortBound":1},
+		  ["axshr","fr17r"],
+		  ["axshl","fr17l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"pickup_shock_R_offroad": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Rear Shocks",
+	}
+    "slotType" : "pickup_shock_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_shock_R", ["pickup_rearshockmounts", "pickup_rearshocktop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR SHOCKS--
+		  {"beamSpring":0,"beamDeform":130000,"beamStrength":260000},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":5000},
+		  {"beamDamp":2400},
+		  {"beamPrecompression":1.44, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.32},
+		  ["axshr","fr17r",{"beamDampRebound":3900}],
+		  ["axshl","fr17l",{"beamDampRebound":3900}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"pickup_differential_R_offroad": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Rear Differential",
+	}
+	"engine":{
+		"differential":4.64,
+		},
+    "slotType" : "pickup_differential_R",
+}
+}

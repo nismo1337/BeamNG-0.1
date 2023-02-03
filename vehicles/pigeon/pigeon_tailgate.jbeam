@@ -1,0 +1,153 @@
+{
+"pigeon_tailgate": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Tailgate",
+	}
+    "slotType" : "pigeon_tailgate",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_tailgate", ["pigeon_tailgate"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--tailgate--
+		 {"frictionCoef":1},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"nodeWeight":1},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"group":"pigeon_tailgate"},
+		 ["t1rr",-0.57, 1.73, 0.80],
+		 ["t1", 0.0, 1.73, 0.80],
+		 ["t1ll", 0.57, 1.73, 0.80],
+		 
+		 ["t2rr",-0.57, 1.73, 0.52],
+		 ["t2", 0.0, 1.73, 0.52],
+		 ["t2ll", 0.57, 1.73, 0.52],
+		 
+		 {"selfCollision":false}
+		 ["t3rr",-0.57, 1.69, 0.52],
+		 ["t3", 0.0, 1.69, 0.52],
+		 ["t3ll", 0.57, 1.69, 0.52],
+		 {"group":""},
+		 {"collision":false}
+		 //rigidifier
+		 ["t4", 0.0, 1.56, 0.65],
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"optional":true},
+		  {"beamType":"|SUPPORT", "beamLongBound":4},
+		  {"beamSpring":361000,"beamDamp":40},
+		  {"beamLimitSpring":361000,"beamLimitDamp":40},
+		  {"beamDeform":25000,"beamStrength":120000},
+		  //tailgate support beams
+		  {"optional":false},
+		  {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //tailgate main shape
+	      {"beamSpring":861000,"beamDamp":70},
+		  {"beamDeform":25000,"beamStrength":100000},
+		  ["t1rr","t1"],
+		  ["t1ll","t1"],
+		  ["t2rr","t2"],
+		  ["t2ll","t2"],
+		  ["t3rr","t3"],
+		  ["t3ll","t3"],
+		  
+		  ["t1rr","t2rr"],
+		  ["t1rr","t3rr"],
+		  ["t1","t2"],
+		  ["t1","t3"],
+		  ["t1ll","t2ll"],
+		  ["t1ll","t3ll"],
+		  
+		  ["t2rr","t3rr"],
+		  ["t2","t3"],
+		  ["t2ll","t3ll"],
+		  
+		  {"beamDeform":6000,"beamStrength":100000},
+		  //surficial crossing
+		  ["t1","t2rr"],
+		  ["t1","t2ll"],
+		  ["t2","t1rr"],
+		  ["t2","t1ll"],
+		  ["t1","t3rr"],
+		  ["t1","t3ll"],
+		  ["t3","t1rr"],
+		  ["t3","t1ll"],
+		  ["t2","t3rr"],
+		  ["t2","t3ll"],
+		  ["t3","t2rr"],
+		  ["t3","t2ll"],
+		  
+		  {"beamDeform":4000,"beamStrength":12000},
+		  //rigids
+		  ["t1rr","t1ll"],
+		  ["t2rr","t2ll"],
+		  ["t3rr","t3ll"],
+		  
+		  {"beamDeform":4000,"beamStrength":11000},
+		  //rigidifier
+		  ["t1rr","t4"],
+		  ["t2rr","t4"],
+		  ["t3rr","t4"],
+		  ["t1","t4"],
+		  ["t2","t4"],
+		  ["t3","t4"],
+		  ["t1ll","t4"],
+		  ["t2ll","t4"],
+		  ["t3ll","t4"],
+		  
+		  {"beamDeform":16000,"beamStrength":32000},
+		  //hinge
+		  {"breakGroup":"pigeon_tailgatehinge_R"},
+		  ["t2","be8rr"],
+		  ["t3","be8rr"],
+		  ["t2rr","be8rr"],
+		  ["t3rr","be8rr"],
+		  
+		  {"breakGroup":"pigeon_tailgatehinge_L"},
+		  ["t2","be8ll"],
+		  ["t3","be8ll"],
+		  ["t2ll","be8ll"],
+		  ["t3ll","be8ll"],
+		  {"beamDeform":5000,"beamStrength":9000},
+		  //latch
+		  {"breakGroup":"pigeon_tailgatelatch_R"},
+		  ["t1","be12rr"],
+		  ["t1rr","be12rr"],
+		  ["t1","be8rr"],
+		  ["t1rr","be8rr"],
+		  ["t1rr","be11rr"],
+		  {"breakGroup":"pigeon_tailgatelatch_L"},
+		  ["t1","be12ll"],
+		  ["t1ll","be12ll"],
+		  ["t1","be8ll"],
+		  ["t1ll","be8ll"],
+		  ["t1ll","be11ll"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"pigeon_tailgate"},
+			["t1","t2","t2rr"],
+			["t1","t2rr","t1rr"],
+			["t2","t1","t2ll"],
+			["t1","t1ll","t2ll"],
+			//inner
+			["t1","t2","t2ll"],
+			["t1","t2ll","t1ll"],
+			["t2","t1","t2rr"],
+			["t1","t1rr","t2rr"],
+			{"group":""},
+	],
+}
+}

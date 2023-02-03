@@ -1,0 +1,534 @@
+{
+"fullsize_door_RR": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Rear Right Door",
+	}
+    "slotType" : "fullsize_door_RR",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_door_RR", ["fullsize_door_RR"]],
+		 ["fullsize_doorpanel_RR", ["fullsize_door_RR"]],
+		 {"deformGroup":"fullsize_doorglass_RR_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_doorglass_RR", ["fullsize_door_RR"]],
+		 {"deformGroup":""}
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //rear right door
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"selfCollision":true},
+		 {"collision":true},
+		 {"group":"fullsize_door_RR"},
+		 {"nodeWeight":3},
+		 ["d15r",-0.94,0.39, 0.25],
+		 ["d16r",-0.94,1.07, 0.25],
+		 {"selfCollision":false},
+		 ["d17r",-0.99,0.40, 0.60],
+		 ["d18r",-0.99,1.14, 0.61],
+		 {"selfCollision":true},
+		 {"nodeWeight":2},
+		 ["d19r",-0.94,0.39, 0.94],
+		 {"selfCollision":false},
+		 ["d20r",-0.94,0.86, 0.94],
+		 {"selfCollision":true},
+		 ["d21r",-0.96,1.34, 0.94],
+		 
+		 {"selfCollision":false},
+		 {"nodeWeight":1.7},
+		 ["d22r", -0.83, 0.45, 1.17],
+		 ["d23r", -0.68, 0.49, 1.39],
+		 ["d24r", -0.68, 0.80, 1.39],
+		 ["d25r", -0.69, 1.14, 1.37],
+		 ["d26r", -0.81, 1.24, 1.15],
+		 
+		 //rigidifier
+		 {"selfCollision":false},
+		 {"collision":false}
+		 {"nodeWeight":2},
+		 ["d27r",-0.54, 1.17, 0.74],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--DOORS--
+		  //rear
+		  {"beamSpring":1751000,"beamDamp":300},
+		  {"beamDeform":96500,"beamStrength":"FLT_MAX"},
+		  //rear door main shape
+		  //r
+		  ["d15r","d16r"],
+		  ["d17r","d18r"],
+		  ["d19r","d20r"],
+		  ["d20r","d21r"],
+		  ["d19r","d22r"],
+		  ["d22r","d23r"],
+		  ["d23r","d24r"],
+		  ["d24r","d25r"],
+		  ["d25r","d26r"],
+		  ["d26r","d21r"],
+		  
+		  ["d15r","d17r"],
+		  ["d16r","d18r"],
+		  ["d17r","d19r"],
+		  ["d18r","d20r"],
+		  ["d18r","d21r"],
+		  
+		  {"beamDeform":54600,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  //r
+		  ["d15r","d19r"],
+		  ["d16r","d19r"],
+		  ["d16r","d20r"],
+		  ["d16r","d21r"],
+		  
+		  ["d20r","d26r"],
+		  ["d24r","d26r"],
+		  ["d23r","d25r"],
+		  {"deformGroup":"fullsize_doorglass_RR_break", "triggerStrength":32500}
+		  
+		  ["d22r","d20r"],
+		  ["d26r","d20r"],
+		  
+		  ["d25r","d21r"],
+		  ["d22r","d24r"],
+		  ["d19r","d23r"],
+		  
+		  ["d22r","d17r"],
+		  ["d26r","d18r"],
+		  
+		  ["d19r","d21r"],
+		  {"deformGroup":""}
+		  
+		  //surficial crossing
+		  //r
+		  ["d15r","d18r"],
+		  ["d16r","d17r"],
+		  ["d18r","d19r"],
+		  ["d20r","d17r"],
+		  //rigidifier
+		  {"beamSpring":1751000,"beamDamp":500},
+		  {"beamDeform":34000,"beamStrength":"FLT_MAX"},
+		  ["d15r","d27r"],
+		  ["d16r","d27r"],
+		  ["d17r","d27r"],
+		  ["d18r","d27r"],
+		  {"deformGroup":"fullsize_doorglass_RR_break", "triggerStrength":19500}
+		  ["d19r","d27r"],
+		  ["d20r","d27r"],
+		  ["d21r","d27r"],
+		  {"beamSpring":1451000,"beamDamp":400},		  
+		  ["d22r","d27r"],
+		  ["d23r","d27r"],
+		  ["d24r","d27r"],
+		  ["d25r","d27r"],
+		  ["d26r","d27r"],
+		  
+		  {"deformGroup":""}
+
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":45000,"beamStrength":120000},
+		  //["d13r","f3rr"],
+		  
+		  //rear door support beams
+		  {"beamSpring":1751000,"beamDamp":0},
+		  {"beamLimitSpring":1751000,"beamLimitDamp":200},
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamDeform":36500,"beamStrength":200000},
+		  //["d21r","rf3r"],
+		  
+		  //["d16r","f3rr"],
+		  
+		  ["d20r","q1r"],
+		  
+		  //["d23r","rf2"],
+		  
+		  //["d22r","rf2r"],
+		  
+		  //["d24r","rf3"],
+		  
+		  //["d25r","rf4"],
+		  
+		  //["d23r","rf4r"],
+		  
+		  //["d23r","p5r"],
+		  
+		  //["d23r","p6r"],
+		  
+		  ["d16r","f4r"],
+		  
+		  ["d16r","f9r"],
+		  
+		  ["d21r","tb1r"],
+		  
+		  
+		  
+		  //["d25r","q1r"],
+		  
+		  ["d25r","rf4r"],
+		  
+		  //["d21r","f4rr"],
+		  
+		  //["d17r","f3rr"],
+		  
+		  //["d23r","rf1r"],
+		  
+		  //["d23r","rf3r"],
+		  
+		  ["d20r","p6r"],
+		  
+		  //["d18r","p4r"],
+		  
+		  ["d15r","f3r"],
+		  //["d17r","f3r"],
+		  //["d17r","f9r"],
+		  ["d19r","f9r"],
+		  
+		  ["d15r","f2rr"],
+		  
+		  //rear door anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":1000000,"beamStrength":10000000},
+		  {"beamLimitSpring":2051000,"beamLimitDamp":200},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.02, "beamShortBound":1.0},
+		  ["d15r","d21r"],
+		  
+		  ["d16r","d25r"],
+		  ["d15r","d23r"],
+		  
+		  //rear door hinge
+		  {"beamSpring":3251000,"beamDamp":350},
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":98000,"beamStrength":108000},
+		  
+		  {"breakGroup":"fullsize_doorhinge_a_RR"},
+		  ["d15r","f3rr"],
+		  ["d15r","f4rr"],
+		  ["d19r","f3rr"],
+		  ["d19r","f4rr"],
+		  
+		  {"breakGroup":"fullsize_doorhinge_b_RR"},
+		  ["d15r","p4r"],
+		  ["d15r","p5r"],
+		  ["d19r","p4r"],
+		  ["d19r","p5r"],
+		  
+		  {"breakGroup":""},
+		  //--REAR DOOR LATCH--
+		  {"beamSpring":1851000,"beamDamp":250},
+		  {"beamDeform":32000,"beamStrength":44000},
+		  {"breakGroup":"fullsize_doorlatch_RR"},
+		  ["d27r","q1r"],
+		  ["d27r","q5r"],
+		  ["d18r","q1r"],
+		  ["d18r","q5r"],
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":150000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"fullsize_doorhinge_a_RR"},
+		  ["d27r","f9r"],
+		  {"breakGroup":"fullsize_doorhinge_b_RR"},
+		  ["d19r","f9r"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//rear right door
+			{"group":"fullsize_door_RR"},
+			["d17r","d16r","d15r"],
+			["d17r","d18r","d16r"],
+			["d19r","d18r","d17r"],
+			["d19r","d20r","d18r"],
+			["d20r","d21r","d18r"],
+			["d22r","d20r","d19r"],
+			["d24r","d22r","d23r"],
+			["d24r","d20r","d22r"],
+			["d24r","d26r","d20r"],
+			["d25r","d26r","d24r"],
+			["d26r","d21r","d20r"],
+			
+			{"group":""},
+			
+			
+	],
+}
+"fullsize_door_RL": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Rear Left Door",
+	}
+    "slotType" : "fullsize_door_RL",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_door_RL", ["fullsize_door_RL"]],
+		 ["fullsize_doorpanel_RL", ["fullsize_door_RL"]],
+		 {"deformGroup":"fullsize_doorglass_RL_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_doorglass_RL", ["fullsize_door_RL"]],
+		 {"deformGroup":""}
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //rear left door
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"selfCollision":true},
+		 {"collision":true},
+		 {"group":"fullsize_door_RL"},
+		 {"nodeWeight":3},
+		 ["d15l",0.94,0.39, 0.25],
+		 ["d16l",0.94,1.07, 0.25],
+		 {"selfCollision":false},
+		 ["d17l",0.99,0.40, 0.60],
+		 ["d18l",0.99,1.14, 0.61],
+		 {"selfCollision":true},
+		 {"nodeWeight":2},
+		 ["d19l",0.94,0.39, 0.94],
+		 {"selfCollision":false},
+		 ["d20l",0.94,0.86, 0.94],
+		 {"selfCollision":true},
+		 ["d21l",0.96,1.34, 0.94],
+		 
+		 {"selfCollision":false},
+		 {"nodeWeight":1.7},
+		 ["d22l", 0.83, 0.45, 1.17],
+		 ["d23l", 0.68, 0.49, 1.39],
+		 ["d24l", 0.68, 0.80, 1.39],
+		 ["d25l", 0.69, 1.14, 1.37],
+		 ["d26l", 0.81, 1.24, 1.15],
+		 
+		 //rigidifier
+		 {"selfCollision":false},
+		 {"collision":false}
+		 {"nodeWeight":2},
+		 ["d27l",0.54, 1.17, 0.74],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		 //--DOORS--
+		  //rear
+		  {"beamSpring":1751000,"beamDamp":300},
+		  {"beamDeform":96500,"beamStrength":"FLT_MAX"},
+		  //rear door main shape
+		  //l
+		  ["d15l","d16l"],
+		  ["d17l","d18l"],
+		  ["d19l","d20l"],
+		  ["d20l","d21l"],
+		  ["d19l","d22l"],
+		  ["d22l","d23l"],
+		  ["d23l","d24l"],
+		  ["d24l","d25l"],
+		  ["d25l","d26l"],
+		  ["d26l","d21l"],
+		  
+		  ["d15l","d17l"],
+		  ["d16l","d18l"],
+		  ["d17l","d19l"],
+		  ["d18l","d20l"],
+		  ["d18l","d21l"],
+		  
+		  
+		  {"beamDeform":54600,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  //l
+		  
+		  ["d15l","d19l"],
+		  ["d16l","d19l"],
+		  ["d16l","d20l"],
+		  ["d16l","d21l"],
+		  
+		  ["d20l","d26l"],
+		  ["d24l","d26l"],
+		  ["d23l","d25l"],
+		  {"deformGroup":"fullsize_doorglass_RL_break", "triggerStrength":32500}
+		  
+		  ["d22l","d20l"],
+		  ["d26l","d20l"],
+		  
+		  ["d25l","d21l"],
+		  ["d22l","d24l"],
+		  ["d19l","d23l"],
+		  
+		  ["d22l","d17l"],
+		  ["d26l","d18l"],
+		  
+		  ["d19l","d21l"],
+		  {"deformGroup":""}
+		  
+		  //surficial crossing
+		  //l
+		  ["d15l","d18l"],
+		  ["d16l","d17l"],
+		  ["d18l","d19l"],
+		  ["d20l","d17l"],
+		  //rigidifier
+		  {"beamSpring":1751000,"beamDamp":500},
+		  {"beamDeform":34000,"beamStrength":"FLT_MAX"},
+		  ["d15l","d27l"],
+		  ["d16l","d27l"],
+		  ["d17l","d27l"],
+		  ["d18l","d27l"],
+		  {"deformGroup":"fullsize_doorglass_RL_break", "triggerStrength":19500}
+		  ["d19l","d27l"],
+		  ["d20l","d27l"],
+		  ["d21l","d27l"],		  
+		  {"beamSpring":1451000,"beamDamp":400},
+		  ["d22l","d27l"],
+		  ["d23l","d27l"],
+		  ["d24l","d27l"],
+		  ["d25l","d27l"],
+		  ["d26l","d27l"],
+		  		  
+		  {"deformGroup":""}
+
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":45000,"beamStrength":120000},
+		  //["d13l","f3ll"],
+		  
+		  //rear door support beams
+		  {"beamSpring":1751000,"beamDamp":0},
+		  {"beamLimitSpring":1751000,"beamLimitDamp":200},
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamDeform":36500,"beamStrength":200000},
+		  //["d21l","rf3l"],
+		  
+		  //["d16l","f3ll"],
+		  
+		  ["d20l","q1l"],
+		  
+		  //["d23l","rf2"],
+		  
+		  //["d22l","rf2l"],
+		  
+		  //["d24l","rf3"],
+		  
+		  //["d25l","rf4"],
+		  
+		  //["d23l","rf4l"],
+		  
+		  //["d23l","p5l"],
+		  
+		  //["d23l","p6l"],
+		  
+		  ["d16l","f4l"],
+		  
+		  ["d16l","f9l"],
+		  
+		  ["d21l","tb1l"],
+		  
+		  
+		  
+		  //["d25l","q1l"],
+		  
+		  ["d25l","rf4l"],
+		  
+		  //["d21l","f4ll"],
+		  
+		  //["d17l","f3ll"],
+		  
+		  //["d23l","rf1l"],
+		  
+		  //["d23l","rf3l"],
+		  
+		  ["d20l","p6l"],
+		  
+		  //["d18l","p4l"],
+		  
+		  ["d15l","f3l"],
+		  //["d17l","f3l"],
+		  //["d17l","f9l"],
+		  ["d19l","f9l"],
+		  
+		  ["d15l","f2ll"],
+		  
+		  //rear door anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":1000000,"beamStrength":10000000},
+		  {"beamLimitSpring":2051000,"beamLimitDamp":200},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.02, "beamShortBound":1.0},
+		  ["d15l","d21l"],
+		  
+		  ["d16l","d25l"],
+		  ["d15l","d23l"],
+		  
+		  //rear door hinge
+		  {"beamSpring":3251000,"beamDamp":350},
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":98000,"beamStrength":108000},
+		  {"breakGroup":"fullsize_doorhinge_a_RL"},
+		  ["d15l","f3ll"],
+		  ["d15l","f4ll"],
+		  ["d19l","f3ll"],
+		  ["d19l","f4ll"],
+		  
+		  {"breakGroup":"fullsize_doorhinge_b_RL"},
+		  ["d15l","p4l"],
+		  ["d15l","p5l"],
+		  ["d19l","p4l"],
+		  ["d19l","p5l"],
+		  {"breakGroup":""},
+		  //--REAR DOOR LATCH--
+		  {"beamSpring":1851000,"beamDamp":250},
+		  {"beamDeform":32000,"beamStrength":44000},
+		  {"breakGroup":"fullsize_doorlatch_RL"},
+		  ["d27l","q1l"],
+		  ["d27l","q5l"],
+		  ["d18l","q1l"],
+		  ["d18l","q5l"],
+		  
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":150000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"fullsize_doorhinge_a_RL"},
+		  ["d27l","f9l"],
+		  {"breakGroup":"fullsize_doorhinge_b_RL"},
+		  ["d19l","f9l"],
+		  {"breakGroup":""},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//rear left door
+			{"group":"fullsize_door_RL"},
+			["d17l","d15l","d16l"],
+			["d17l","d16l","d18l"],
+			["d19l","d17l","d18l"],
+			["d19l","d18l","d20l"],
+			["d20l","d18l","d21l"],
+			["d22l","d19l","d20l"],
+			["d24l","d23l","d22l"],
+			["d24l","d22l","d20l"],
+			["d24l","d20l","d26l"],
+			["d25l","d24l","d26l"],
+			["d26l","d20l","d21l"],
+			
+			{"group":""},
+	],
+}
+}

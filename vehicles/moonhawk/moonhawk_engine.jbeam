@@ -1,0 +1,258 @@
+{
+"moonhawk_engine": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk 5.1L V8 Engine",
+	}
+    "slotType" : "moonhawk_engine",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"slots": [
+		["type", "default"]
+		//["moonhawk_exhaust","moonhawk_exhaust"],
+		["moonhawk_transmission","moonhawk_transmission_M"],
+		["moonhawk_radiator","moonhawk_radiator"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //["moonhawk_engine", ["moonhawk_engine"]],
+	],
+	"enginetorque":[
+		["rpm", "torque"]
+		[0, 0],
+		[500, 130],
+		[1000, 200],
+		[2000, 280],
+		[3000, 310],
+		[4000, 320],
+		[5000, 310],
+	],
+	"engine":{
+		"idleRPM":900,
+		"shiftDownRPM":2500,
+		"shiftUpRPM":4500,
+		"maxRPM":5000,
+		"inertia":0.17,
+		"friction":12
+		"burnEfficiency":0.4
+		"throttleSensitivity":1.8
+	},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //4.5L V8 Engine
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"group":"moonhawk_engine"},
+		 {"nodeWeight":26},
+		 ["e1r", -0.13, -1.07, 0.32],
+		 ["e1l", 0.13, -1.07, 0.32],
+		 ["e2r", -0.13, -1.61, 0.32],
+		 ["e2l", 0.13, -1.61, 0.32],
+		 ["e3r", -0.32, -1.07, 0.70],
+		 ["e3l", 0.32, -1.07, 0.70],
+		 ["e4r", -0.32, -1.61, 0.70],
+		 ["e4l", 0.32, -1.61, 0.70],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":11001000,"beamDamp":200},
+		  {"beamDeform":900000,"beamStrength":"FLT_MAX"},
+		  //engine
+		  ["e1r","e1l"],
+		  ["e2r","e2l"],
+		  ["e3r","e3l"],
+		  ["e4r","e4l"],
+		  
+		  ["e1r","e2r"],
+		  ["e1l","e2l"],
+		  ["e3r","e4r"],
+		  ["e3l","e4l"],
+		  
+		  ["e1r","e3r"],
+		  ["e1l","e3l"],
+		  ["e2r","e4r"],
+		  ["e2l","e4l"],
+		  
+		  ["e2r","e3r"],
+		  ["e2l","e3l"],
+		  ["e2r","e3l"],
+		  ["e2l","e3r"],
+		  
+		  ["e1r","e4r"],
+		  ["e1l","e4l"],
+		  ["e1r","e4l"],
+		  ["e1l","e4r"],
+		  
+		  ["e1r","e2l"],
+		  ["e1l","e2r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  
+		  ["e1r","e3l"],
+		  ["e1l","e3r"],
+		  ["e2r","e4l"],
+		  ["e2l","e4r"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			
+	],
+}
+"moonhawk_radiator": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Radiator",
+	}
+    "slotType" : "moonhawk_radiator",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //["moonhawk_radiator", ["moonhawk_radiator"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //4.5L V8 Engine
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true},
+		 {"collision":true}
+		 {"group":"moonhawk_radiator"},
+		 {"nodeWeight":4},
+		 ["rad1", 0.0, -2.05, 0.6],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":2001000,"beamDamp":200},
+		  {"beamDeform":30000,"beamStrength":50000},
+		  //radiator
+		  ["rad1","s1"],
+		  ["rad1","s1r"],
+		  ["rad1","s1l"],
+		  ["rad1","s3r"],
+		  ["rad1","s3l"],
+		  ["rad1","s5"],
+		  ["rad1","s6"],
+		  ["rad1","s6r"],
+		  ["rad1","s6l"],
+		  
+		  //to engine
+		  {"beamSpring":201000,"beamDamp":200},
+		  {"beamDeform":20000,"beamStrength":30000},
+		  ["rad1","e4r"],
+		  ["rad1","e4l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+"moonhawk_exhaust": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Exhaust",
+	}
+    "slotType" : "moonhawk_exhaust",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_exhaust", ["moonhawk_body","moonhawk_lowermounts_R"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			
+	],
+}
+"moonhawk_transmission_M": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk 4-Speed Manual Transmission",
+	}
+	"engine":{
+		"transmissionType":"manual",
+		// -1, 0 (neutral), 1, etc
+		"gears":[-2.63, 0, 2.49, 1.91, 1.44, 1.0]
+		"clutchDuration":0.15
+		"clutchTorque":400
+		"viscousCoupling":6
+		"lockingTorqueLimit":500
+		"enableLocking":true
+	},
+	"slots": [
+		["type", "default"]
+		["moonhawk_driveshaft","moonhawk_driveshaft"],
+	],
+    "slotType" : "moonhawk_transmission",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_transmission", ["moonhawk_engine","moonhawk_transmission"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--4 Speed Manual--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"group":"moonhawk_transmission"},
+		 {"nodeWeight":35},
+		 ["tra1", 0.0, -0.38, 0.32],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--TRANSMISSION CONE--
+		  {"beamSpring":11001000,"beamDamp":200},
+		  {"beamDeform":900000,"beamStrength":"FLT_MAX"},
+		  ["tra1","e1r"],
+		  ["tra1","e3r"],
+		  ["tra1","e1l"],
+		  ["tra1","e3l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			
+	],
+}
+}

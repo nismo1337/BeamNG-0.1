@@ -1,0 +1,112 @@
+{
+"van_wheel_R_heavy": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Heavy Duty Rear Wheels",
+	}
+    "slotType" : "van_wheel_R_heavy",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //tires
+		 ["tire_225_75_R16_RR_inner", ["wheel_RR_inner"]],
+		 ["tire_225_75_R16_RL_inner", ["wheel_RL_inner"]],
+		 ["tire_225_75_R16_RR_outer", ["wheel_RR_outer"]],
+		 ["tire_225_75_R16_RL_outer", ["wheel_RL_outer"]],
+		 //wheels
+		 ["steelwheel_04a_16x8_RR_inner", ["wheel_RR_inner"]],
+		 ["steelwheel_04a_16x8_RL_inner", ["wheel_RL_inner"]],
+		 ["steelwheel_04a_16x8_RR_outer", ["wheel_RR_outer"]],
+		 ["steelwheel_04a_16x8_RL_outer", ["wheel_RL_outer"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR WHEELS--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":11.0},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"wheelhub_RR"},
+		 ["ax1r", -0.63, 2.537, 0.39],
+		 {"group":"wheelhub_RL"},
+		 ["ax1l", 0.63, 2.537, 0.39],
+		 {"collision":true}
+		 //wheel nodes
+		 {"group":"wheelhub_RR"},
+		 ["axwr", -1.06, 2.537, 0.39],
+		 {"group":"wheelhub_RL"},
+		 ["axwl", 1.06, 2.537, 0.39],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR WHEELS--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":8501000,"beamDamp":20},
+		  {"beamDeform":135000,"beamStrength":790000},
+		  
+		  ["ax1r","axwr"],
+		  ["ax1l","axwl"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.375},
+			{"hubRadius":0.205},
+			{"wheelOffset":0.285},
+			{"hubWidth":0.225},
+			{"tireWidth":0.215},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":20},
+			{"beamSpring":1601000, "beamDamp":20},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.8},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":240000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":27000,"wheelSideBeamStrength":32000},
+			{"wheelReinforcementBeamSpring":48000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":27000,"wheelReinforcementBeamStrength":32000},
+			{"wheelTreadBeamSpring":601000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":27000,"wheelTreadBeamStrength":32000},
+			{"wheelPeripheryBeamSpring":601000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":27000,"wheelPeripheryBeamStrength":32000},
+			{"springExpansion":1601000, "dampExpansion":20},
+			{"nodeWeight":0.8},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.25},
+			
+			//rear
+			{"selfCollision":true}
+			{"collision":true}
+			{"axleBeams":["axle_RL","driveshaft"]}
+            ["RL_inner", "wheel_RL_inner", "ax1l", "axwl", 9999,  "ax2l", 1, {"wheelOffset":0.035}]
+            ["RL_outer", "wheel_RL_outer", "ax1l", "axwl", 9999,  "ax2l", 1, {"brakeTorque":0,"parkingTorque":0}],
+			{"axleBeams":["axle_RR","driveshaft"]}
+            ["RR_inner", "wheel_RR_inner", "ax1r", "axwr", 9999,  "ax2r", -1, {"wheelOffset":0.035}],
+            ["RR_outer", "wheel_RR_outer", "ax1r", "axwr", 9999,  "ax2r", -1, {"brakeTorque":0,"parkingTorque":0}],
+			{"axleBeams":[]}
+			{"propulsed":0}
+			{"selfCollision":true}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+}

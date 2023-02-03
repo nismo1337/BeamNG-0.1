@@ -1,0 +1,38 @@
+{
+"van_taillight": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Taillights",
+	}
+    "slotType" : "van_taillight",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //lights
+		 {"deformGroup":"van_taillight_L_break", "deformMaterialBase":"van_taillight_L", "deformMaterialDamaged":"van_lights_dmg"}
+		 ["van_taillight_L", ["van_body"]],
+		 
+		 {"deformGroup":"van_taillight_R_break", "deformMaterialBase":"van_taillight_R", "deformMaterialDamaged":"van_lights_dmg"}
+		 ["van_taillight_R", ["van_body"]],
+		 
+		 {"deformGroup":""},
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+	],
+}
+}

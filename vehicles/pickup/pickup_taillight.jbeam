@@ -1,0 +1,46 @@
+{
+"pickup_taillight": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Taillights",
+	}
+    "slotType" : "pickup_taillight",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //lights
+		 {"deformGroup":"pickup_taillight_L_break", "deformMaterialBase":"pickup_taillight_L", "deformMaterialDamaged":"pickup_lights_dmg"}
+		 ["pickup_taillight_L", ["pickup_framebed","pickup_bed"]],
+		 
+		 {"deformGroup":"pickup_taillight_R_break", "deformMaterialBase":"pickup_taillight_R", "deformMaterialDamaged":"pickup_lights_dmg"}
+		 ["pickup_taillight_R", ["pickup_framebed","pickup_bed"]],
+		 
+		 {"deformGroup":"pickup_taillight_L_break", "deformMaterialBase":"pickup_reverselight", "deformMaterialDamaged":"pickup_lights_dmg"}
+		 ["pickup_reverselight_L", ["pickup_framebed","pickup_bed"]],
+		 
+		 {"deformGroup":"pickup_taillight_R_break", "deformMaterialBase":"pickup_reverselight", "deformMaterialDamaged":"pickup_lights_dmg"}
+		 ["pickup_reverselight_R", ["pickup_framebed","pickup_bed"]],
+		 {"deformGroup":""}
+		 {"deformGroup":""},
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+			
+			
+	],
+}
+}

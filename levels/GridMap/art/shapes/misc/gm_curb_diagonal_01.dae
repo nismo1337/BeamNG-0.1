@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.65.0 r52859</authoring_tool>
+    </contributor>
+    <created>2012-12-23T10:58:40</created>
+    <modified>2012-12-23T10:58:40</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="ColorEffectR27G177B88-material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.08561849 0.5550975 0.2773633 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="GridMat-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="ColorEffectR225G87B143-material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.7036979 0.2735316 0.4466724 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="ColorEffectR27G177B88-material-material" name="ColorEffectR27G177B88-material">
+      <instance_effect url="#ColorEffectR27G177B88-material-effect"/>
+    </material>
+    <material id="GridMat-material" name="GridMat">
+      <instance_effect url="#GridMat-effect"/>
+    </material>
+    <material id="ColorEffectR225G87B143-material-material" name="ColorEffectR225G87B143-material">
+      <instance_effect url="#ColorEffectR225G87B143-material-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Colmesh-1-mesh" name="Colmesh-1">
+      <mesh>
+        <source id="Colmesh-1-mesh-positions">
+          <float_array id="Colmesh-1-mesh-positions-array" count="30">-3.000193 -4 -0.2 -3.999863 -4 -0.2 3.998007 3.988369 -0.2 -4 3.976737 -0.2 -3.000193 -4 0.1996834 -3.999863 -4 0.1996834 3.998007 3.988369 0.1996834 -4 3.976737 0.1996834 3.998007 3.003407 -0.1999999 3.998007 2.983551 0.1996834</float_array>
+          <technique_common>
+            <accessor source="#Colmesh-1-mesh-positions-array" count="10" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Colmesh-1-mesh-normals">
+          <float_array id="Colmesh-1-mesh-normals-array" count="33">0 -1 0 -0.001454234 0.9999989 0 0.706759 -0.7072362 -0.01756721 1 0 0 -1 -1.72013e-5 2.98253e-7 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Colmesh-1-mesh-normals-array" count="11" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Colmesh-1-mesh-vertices">
+          <input semantic="POSITION" source="#Colmesh-1-mesh-positions"/>
+        </vertices>
+        <polylist material="ColorEffectR27G177B88-material-material" count="11">
+          <input semantic="VERTEX" source="#Colmesh-1-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Colmesh-1-mesh-normals" offset="1"/>
+          <vcount>4 4 4 4 4 3 3 3 3 3 3 </vcount>
+          <p>1 0 0 0 4 0 5 0 2 1 3 1 7 1 6 1 0 2 8 2 9 2 4 2 8 3 2 3 6 3 9 3 3 4 1 4 5 4 7 4 3 5 2 5 8 5 1 6 3 6 8 6 8 7 0 7 1 7 9 8 6 8 7 8 5 9 9 9 7 9 5 10 4 10 9 10</p>
+        </polylist>
+      </mesh>
+      <extra><technique profile="MAYA"><double_sided>1</double_sided></technique></extra>
+    </geometry>
+    <geometry id="ind_bld_c300_001-mesh" name="ind_bld_c300.001">
+      <mesh>
+        <source id="ind_bld_c300_001-mesh-positions">
+          <float_array id="ind_bld_c300_001-mesh-positions-array" count="78">-2.983551 -3.983551 -0.2 -3.023262 -4 -0.2 -3.976737 -4 -0.2 -4 -3.976737 -0.2 3.976737 4 -0.2 4 3.976737 -0.2 -4 3.976737 -0.2 -3.976737 4 -0.2 -2.983551 -3.983551 0.1794916 -3.009635 -3.976737 0.2 -3.023262 -4 0.1794916 -4 -3.976737 0.1794916 -3.976737 -4 0.1794916 -3.976737 -3.976737 0.2 4 3.976737 0.1794916 3.976737 4 0.1794916 3.976737 3.976737 0.2 -3.976737 3.976737 0.2 -3.976737 4 0.1794916 -4 3.976737 0.1794916 4 3.023262 -0.1999999 3.983551 2.983551 -0.1999999 3.983551 2.983551 0.1794915 4 3.023262 0.1794915 3.976737 3.009635 0.1999999 0.483551 -0.483551 0.2</float_array>
+          <technique_common>
+            <accessor source="#ind_bld_c300_001-mesh-positions-array" count="26" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ind_bld_c300_001-mesh-normals">
+          <float_array id="ind_bld_c300_001-mesh-normals-array" count="102">0 -1 0 0 1 0 0.7071068 -0.7071068 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 -1 0 0 0.299748 -0.7236581 0.6216673 -0.5516018 -0.5516018 0.6256764 0.5516018 0.5516018 0.6256764 -0.5516018 0.5516018 0.6256764 0.723658 -0.2997479 0.6216672 0 -0.6613077 0.7501147 0 0.6613077 0.7501147 0.6613077 0 0.7501147 -0.6613077 0 0.7501147 -0.7071068 -0.7071068 0 -0.7071068 0.7071068 0 0.3826823 -0.92388 0 0.7071068 0.7071068 0 0.4676166 -0.4676166 0.750113 0.4676159 -0.4676159 0.7501139 0.4676167 -0.4676167 0.7501128 0.92388 -0.3826823 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#ind_bld_c300_001-mesh-normals-array" count="34" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ind_bld_c300_001-mesh-map-0">
+          <float_array id="ind_bld_c300_001-mesh-map-0-array" count="232">-3.979062 -7.39316 -3.031871 -7.393114 -3.032182 -7.016278 -3.978637 -7.01646 3.978657 1.390004 -3.979039 1.389897 -3.978577 1.010356 3.978183 1.010431 -4.310899 -3.840511 5.560312 -3.840709 5.560317 -3.460513 -4.310891 -3.460365 4.391927 0.02749031 4.39404 0.9799722 4.014945 0.980813 4.012995 0.02861946 -3.984325 -6.987196 3.983852 0.98089 -3.98426 0.9809452 -3.984325 -6.987196 3.983851 0.01201885 3.983852 0.98089 -3.984325 -6.987196 0.4841497 -3.487593 3.983851 0.01201885 -3.984325 -6.987196 -3.015551 -6.987205 0.4841497 -3.487593 -4.395707 0.9809386 -4.395586 -6.9872 -4.015395 -6.987196 -4.015507 0.9809442 -2.9898 -7.013516 -3.015551 -6.987205 -3.032182 -7.016278 -4.009812 -7.011079 -3.978637 -7.01646 -3.984325 -6.987196 4.009603 1.004966 3.978183 1.010431 3.983852 0.98089 -3.98426 0.9809452 -3.978577 1.010356 -4.009942 1.004932 4.010143 -0.01392668 4.012995 0.02861946 3.983851 0.01201885 -3.015551 -6.987205 -3.984325 -6.987196 -3.978637 -7.01646 -3.032182 -7.016278 3.978183 1.010431 -3.978577 1.010356 -3.98426 0.9809452 3.983852 0.98089 4.012995 0.02861946 4.014945 0.980813 3.983852 0.98089 3.983851 0.01201885 -4.015507 0.9809442 -4.015395 -6.987196 -3.984325 -6.987196 -3.98426 0.9809452 -3.979062 -7.39316 -3.978637 -7.01646 -4.009812 -7.011079 -4.012191 -7.392982 -3.978577 1.010356 -3.979039 1.389897 -4.012393 1.389685 -4.009942 1.004932 -2.988888 -7.39301 -2.9898 -7.013516 -3.032182 -7.016278 -3.031871 -7.393114 4.009603 1.004966 4.01204 1.389816 3.978657 1.390004 3.978183 1.010431 5.573979 -3.42942 0.6247174 -3.429358 5.560317 -3.460513 0.6247174 -3.429358 -4.310891 -3.460365 5.560317 -3.460513 0.6247174 -3.429358 -4.324544 -3.429295 -4.310891 -3.460365 4.391927 0.02749031 4.012995 0.02861946 4.010143 -0.01392668 4.391722 -0.01572996 -4.392957 1.416657 -4.369651 1.393365 3.595743 1.396173 -4.392957 1.416657 3.595743 1.396173 3.618976 1.419422 -4.395707 9.381999 -4.392957 1.416657 3.618976 1.419422 -4.395707 9.381999 3.618976 1.419422 3.618649 2.3743 -4.395707 9.381999 3.618649 2.3743 3.601907 2.41468 3.601907 2.41468 -3.377795 9.389201 -4.395707 9.381999 -4.395707 9.381999 -3.377795 9.389201 -4.37242 9.405303 -4.37242 9.405303 -3.377795 9.389201 -3.417566 9.405657</float_array>
+          <technique_common>
+            <accessor source="#ind_bld_c300_001-mesh-map-0-array" count="116" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="ind_bld_c300_001-mesh-vertices">
+          <input semantic="POSITION" source="#ind_bld_c300_001-mesh-positions"/>
+        </vertices>
+        <polylist material="GridMat-material" count="34">
+          <input semantic="VERTEX" source="#ind_bld_c300_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#ind_bld_c300_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#ind_bld_c300_001-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 3 3 3 3 4 3 3 3 3 3 4 4 4 4 4 4 4 4 3 3 3 4 3 3 3 3 3 3 3 3 </vcount>
+          <p>2 0 0 1 0 1 10 0 2 12 0 3 4 1 4 7 1 5 18 1 6 15 1 7 0 2 8 21 2 9 22 2 10 8 2 11 20 3 12 5 3 13 14 3 14 23 3 15 13 4 16 16 4 17 17 4 18 13 5 19 24 5 20 16 5 21 13 6 22 25 6 23 24 6 24 13 7 25 9 7 26 25 7 27 6 8 28 3 8 29 11 8 30 19 8 31 8 9 32 9 9 33 10 9 34 11 10 35 12 10 36 13 10 37 14 11 38 15 11 39 16 11 40 17 12 41 18 12 42 19 12 43 22 13 44 23 13 45 24 13 46 9 14 47 13 14 48 12 14 49 10 14 50 15 15 51 18 15 52 17 15 53 16 15 54 23 16 55 14 16 56 16 16 57 24 16 58 19 17 59 11 17 60 13 17 61 17 17 62 2 18 63 12 18 64 11 18 65 3 18 66 18 19 67 7 19 68 6 19 69 19 19 70 0 20 71 8 20 72 10 20 73 1 20 74 14 21 75 5 21 76 4 21 77 15 21 78 24 22 79 25 22 80 22 22 81 25 23 82 8 23 83 22 23 84 25 24 85 9 24 86 8 24 87 20 25 88 23 25 89 22 25 90 21 25 91 6 26 92 7 26 93 4 26 94 6 27 95 4 27 96 5 27 97 3 28 98 6 28 99 5 28 100 3 29 101 5 29 102 20 29 103 3 30 104 20 30 105 21 30 106 21 31 107 0 31 108 3 31 109 3 32 110 0 32 111 2 32 112 2 33 113 0 33 114 1 33 115</p>
+        </polylist>
+      </mesh>
+      <extra><technique profile="MAYA"><double_sided>1</double_sided></technique></extra>
+    </geometry>
+    <geometry id="Untitled_001-mesh" name="Untitled.001">
+      <mesh>
+        <source id="Untitled_001-mesh-positions">
+          <float_array id="Untitled_001-mesh-positions-array" count="24">-3.092402 -3.779648 -8.011638 -3.092402 3.779648 -8.011638 3.092402 3.779648 -8.011638 3.092402 -3.779648 -8.011638 -3.092402 -3.779648 8.011638 -3.092402 3.779648 8.011638 3.092402 3.779648 8.011638 3.092402 -3.779648 8.011638</float_array>
+          <technique_common>
+            <accessor source="#Untitled_001-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_001-mesh-normals">
+          <float_array id="Untitled_001-mesh-normals-array" count="0"/>
+          <technique_common>
+            <accessor source="#Untitled_001-mesh-normals-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_001-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_001-mesh-positions"/>
+        </vertices>
+        <lines count="12">
+          <input semantic="VERTEX" source="#Untitled_001-mesh-vertices" offset="0"/>
+          <p>1 0 0 3 0 4 2 1 1 5 3 2 2 6 3 7 5 4 4 7 6 5 7 6</p>
+        </lines>
+      </mesh>
+      <extra><technique profile="MAYA"><double_sided>1</double_sided></technique></extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="base00" name="base00" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <node id="detail50" name="detail50" type="NODE">
+          <translate sid="location">0 0 0</translate>
+          <rotate sid="rotationZ">0 0 1 0</rotate>
+          <rotate sid="rotationY">0 1 0 0</rotate>
+          <rotate sid="rotationX">1 0 0 0</rotate>
+          <scale sid="scale">1 1 1</scale>
+        </node>
+        <node id="detail300" name="detail300" type="NODE">
+          <translate sid="location">0 0 0</translate>
+          <rotate sid="rotationZ">0 0 1 0</rotate>
+          <rotate sid="rotationY">0 1 0 0</rotate>
+          <rotate sid="rotationX">1 0 0 0</rotate>
+          <scale sid="scale">1 1 1</scale>
+        </node>
+        <node id="start01" name="start01" type="NODE">
+          <translate sid="location">0 0 0</translate>
+          <rotate sid="rotationZ">0 0 1 0</rotate>
+          <rotate sid="rotationY">0 1 0 0</rotate>
+          <rotate sid="rotationX">1 0 0 0</rotate>
+          <scale sid="scale">1 1 1</scale>
+          <node id="Colmesh-1" name="Colmesh-1" type="NODE">
+            <translate sid="location">0 0 0</translate>
+            <rotate sid="rotationZ">0 0 1 0</rotate>
+            <rotate sid="rotationY">0 1 0 0</rotate>
+            <rotate sid="rotationX">1 0 0 0</rotate>
+            <scale sid="scale">1 1 1</scale>
+            <instance_geometry url="#Colmesh-1-mesh">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="ColorEffectR27G177B88-material-material" target="#ColorEffectR27G177B88-material-material"/>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+          <node id="ind_bld_c10" name="ind_bld_c10" type="NODE">
+            <translate sid="location">0 0 0</translate>
+            <rotate sid="rotationZ">0 0 1 0</rotate>
+            <rotate sid="rotationY">0 1 0 0</rotate>
+            <rotate sid="rotationX">1 0 0 0</rotate>
+            <scale sid="scale">1 1 1</scale>
+            <instance_geometry url="#ind_bld_c300_001-mesh">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="GridMat-material" target="#GridMat-material">
+                    <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+        </node>
+        <node id="detail80" name="detail80" type="NODE">
+          <translate sid="location">0 0 0</translate>
+          <rotate sid="rotationZ">0 0 1 0</rotate>
+          <rotate sid="rotationY">0 1 0 0</rotate>
+          <rotate sid="rotationX">1 0 0 0</rotate>
+          <scale sid="scale">1 1 1</scale>
+        </node>
+        <node id="collision-1" name="collision-1" type="NODE">
+          <translate sid="location">0 0 0</translate>
+          <rotate sid="rotationZ">0 0 1 0</rotate>
+          <rotate sid="rotationY">0 1 0 0</rotate>
+          <rotate sid="rotationX">1 0 0 0</rotate>
+          <scale sid="scale">1 1 1</scale>
+        </node>
+      </node>
+      <node id="bounds" name="bounds" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <node id="Untitled" name="Untitled" type="NODE">
+          <translate sid="location">0 0 0.001985155</translate>
+          <rotate sid="rotationZ">0 0 1 0</rotate>
+          <rotate sid="rotationY">0 1 0 0</rotate>
+          <rotate sid="rotationX">1 0 0 0</rotate>
+          <scale sid="scale">1.300325 1.066317 0.02574953</scale>
+          <instance_geometry url="#Untitled_001-mesh">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="ColorEffectR225G87B143-material-material" target="#ColorEffectR225G87B143-material-material"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

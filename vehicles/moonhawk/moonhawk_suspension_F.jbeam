@@ -1,0 +1,570 @@
+{
+"moonhawk_suspension_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Independent Front Suspension",
+	}
+    "slotType" : "moonhawk_suspension_F",
+	"slots": [
+		["type", "default"]
+		["moonhawk_hubcap_F","moonhawk_hubcap_F"],
+		["moonhawk_brake_F","moonhawk_brake_F"],
+		["moonhawk_wheel_F","moonhawk_wheel_F"],
+		["moonhawk_coilover_F","moonhawk_coilover_F"],
+		["moonhawk_swaybar_F","moonhawk_swaybar_F"],
+		["moonhawk_steering","moonhawk_steering"],
+	],
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_upperarm_F", ["moonhawk_uppermounts_a_F","moonhawk_uppermounts_b_F","moonhawk_upperarm"]],
+		 ["moonhawk_lowerarm_F", ["moonhawk_lowermounts_a_F","moonhawk_lowermounts_b_F","moonhawk_lowerarm_FR","moonhawk_lowerarm_FL","moonhawk_shockbottom_F"]],
+		 
+		 ["moonhawk_hub_FR", ["moonhawk_hub_FR","moonhawk_lowerarm_FR","moonhawk_upperarm","moonhawk_tierod_F"]],
+		 ["moonhawk_hub_FL", ["moonhawk_hub_FL","moonhawk_lowerarm_FL","moonhawk_upperarm","moonhawk_tierod_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front independent suspension
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"nodeWeight":5.1},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"moonhawk_hub_FR"},
+		 ["fw2r", -0.735, -1.23, 0.33],
+		 {"group":"moonhawk_hub_FL"},
+		 ["fw2l", 0.735, -1.23, 0.33],
+		 //front hub
+		 //this is the steering axis
+		 {"nodeWeight":5.5},
+		 {"group":"moonhawk_lowerarm_FR"},
+		 ["fh1r", -0.654, -1.45, 0.20],
+		 {"group":"moonhawk_lowerarm_FL"},
+		 ["fh1l", 0.654, -1.45, 0.20],
+		 {"group":"moonhawk_upperarm"},
+		 ["fh2r", -0.664, -1.385, 0.49],
+		 ["fh2l", 0.664, -1.385, 0.49],
+		 {"group":"moonhawk_tierod_F"},
+		 {"selfCollision":false}
+		 //tie rod goes here
+		 ["fh3r", -0.677, -1.575, 0.255],
+		 ["fh3l", 0.677, -1.575, 0.255],
+		 {"nodeWeight":5.1},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"moonhawk_shockbottom_F"},
+		 //bottom of shock
+		 ["fh4r", -0.49, -1.39, 0.17],
+		 ["fh4l", 0.49, -1.39, 0.17],
+		 //anti-pop node
+		 //["fh6r", -0.48, -1.39, 0.17],
+		 //["fh6l", 0.48, -1.39, 0.17],
+		 //extra hub rigidification node
+		 {"nodeWeight":5.1},
+		 {"group":"moonhawk_hub_FR"},
+		 ["fh5r", -0.754, -1.32, 0.31],
+		 {"group":"moonhawk_hub_FL"},
+		 ["fh5l", 0.754, -1.32, 0.31],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //double wishbone suspension
+		  //front limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":160000,"beamStrength":470000},
+		  {"beamLimitSpring":2001000,"beamLimitDamp":200},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.22},
+		  //firewall
+		  {"breakGroupType":1},
+		  {"optional":true},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw1r","b1rr"],
+		  ["fw1r","b1r"],
+		  ["fw1rr","b1rr"],
+		  ["fw1rr","b1r"],
+		  {"breakGroup":"wheel_FL"},
+		  ["fw1l","b1ll"],
+		  ["fw1l","b1l"],
+		  ["fw1ll","b1ll"],
+		  ["fw1ll","b1l"],
+		  {"optional":false},
+		  {"breakGroup":""},
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.12},
+		  //front end collide
+		  
+		  {"optional":true},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw1r","f22rr"],
+		  ["fw1r","f25rr"],
+		  
+		  {"breakGroup":"wheel_FL"},
+		  ["fw1l","f22ll"],
+		  ["fw1l","f25ll"],
+		  {"optional":false},
+		  {"breakGroup":""},
+		  
+		  
+		  {"beamLimitSpring":2001000,"beamLimitDamp":200},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.4},
+		  //extension limit
+		  {"beamSpring":0,"beamDamp":500},
+		  ["fh4r","fx3r"],
+		  ["fh4l","fx3l"],
+		  ["fh4r","fx4r"],
+		  ["fh4l","fx4l"],
+		  
+		  ["fh1r","f23rr"],
+		  ["fh1l","f23ll"],
+		  
+		  {"beamSpring":0,"beamDamp":0}
+		  //steering anti invert
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.25, "beamShortBound":0.25},
+		  
+		  ["fw2r","fx2r"]
+		  ["fw2l","fx2l"]
+		  
+		  ["fw2r","fx1r"]
+		  ["fw2l","fx1l"]
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.25, "beamShortBound":0.20},
+		  ["fh3r","fx1r"],
+		  ["fh3l","fx1l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.32, "beamShortBound":0.25},
+		  {"optional":true},
+		  {"breakGroup":"wheel_FR"},
+		  //["fw1rr","f2rr"],
+		  //["fw1rr","f1r"],
+		  {"breakGroup":"wheel_FL"},
+		  //["fw1ll","f2ll"],
+		  //["fw1ll","f1l"],
+		  
+		  {"optional":false},
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.05},
+		  ["fh2r","fs1l"],
+		  ["fh2l","fs1r"],
+		  
+		  {"breakGroupType":0},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":190000,"beamStrength":550000},
+	      {"beamSpring":10501000,"beamDamp":250},
+		  //front hub
+		  ["fh1r","fh2r"],
+		  ["fh1l","fh2l"],
+		  ["fh1r","fh3r"],
+		  ["fh1l","fh3l"],
+		  ["fh1r","fh4r"],
+		  ["fh1l","fh4l"],
+		  ["fh2r","fh3r"],
+		  ["fh2l","fh3l"],
+		  //["fh1r","fh6r"],
+		  //["fh1l","fh6l"],
+		  
+		  ["fh1r","fh5r"],
+		  ["fh1l","fh5l"],
+		  ["fh2r","fh5r"],
+		  ["fh2l","fh5l"],
+		  ["fh3r","fh5r"],
+		  ["fh3l","fh5l"],
+		  
+		  ["fw2r","fh5r"],
+		  ["fw2l","fh5l"],
+		  
+		  ["fh1r","fw2r"],
+		  ["fh2r","fw2r"],
+		  ["fh3r","fw2r"],
+		  
+		  ["fh1l","fw2l"],
+		  ["fh2l","fw2l"],
+		  ["fh3l","fw2l"],
+		  //detach
+		  {"optional":true},
+		  {"beamDeform":135000,"beamStrength":240000},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw1r","fh5r"],
+		  ["fw1rr","fh5r"],
+		  {"breakGroup":"wheel_FL"},
+		  ["fw1l","fh5l"],
+		  ["fw1ll","fh5l"],
+		  
+		  {"breakGroup":""},
+		  {"beamDeform":135000,"beamStrength":240000},
+		  //attach to wheel
+		  {"breakGroup":"wheel_FR"},
+		  ["fh1r","fw1r"],
+		  ["fh2r","fw1r"],
+		  ["fh3r","fw1r"],
+		  
+		  ["fh1r","fw1rr"],
+		  ["fh2r","fw1rr"],
+		  ["fh3r","fw1rr"],
+		  
+		  {"breakGroup":"wheel_FL"},
+		  ["fh1l","fw1l"],
+		  ["fh2l","fw1l"],
+		  ["fh3l","fw1l"],
+		  
+		  ["fh1l","fw1ll"],
+		  ["fh2l","fw1ll"],
+		  ["fh3l","fw1ll"],
+		  
+		  {"breakGroup":""},
+	      {"beamSpring":10501000,"beamDamp":250},
+		  {"beamDeform":180000,"beamStrength":240000},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw2r","fw1r"],
+		  ["fw2r","fw1rr"],
+		  {"breakGroup":"wheel_FL"},
+		  ["fw2l","fw1l"],
+		  ["fw2l","fw1ll"],
+		  
+		  {"breakGroup":""},
+		  {"optional":false},
+	      {"beamSpring":10501000,"beamDamp":200},
+		  {"beamDeform":50000,"beamStrength":280000},
+		  //lower arm
+		  ["fx2r","fh1r"],
+		  ["fx2l","fh1l"],
+		  ["fx2r","fh4r"],
+		  ["fx2l","fh4l"],
+		  //["fx2r","fh6r"],
+		  //["fx2l","fh6l"],
+		  //["fh4r","fh6r"],
+		  //["fh4l","fh6l"],
+		  
+		  {"beamDeform":90000,"beamStrength":280000},
+		  ["fx1r","fh1r"],
+		  ["fx1l","fh1l"],
+		  
+		  ["fx1r","fh4r"],
+		  ["fx1l","fh4l"],
+		  //["fx1r","fh6r"],
+		  //["fx1l","fh6l"],
+	      {"beamSpring":8501000,"beamDamp":200},
+		  {"beamPrecompression":1.05},
+		  //upper arm
+		  {"beamDeform":50000,"beamStrength":190000},
+		  ["fh2r","fx3r"],
+		  ["fh2l","fx3l"],
+		  ["fh2r","fx4r"],
+		  ["fh2l","fx4l"],
+		  {"beamPrecompression":1},
+		  /*
+	      {"beamSpring":0,"beamDamp":400},
+		  //front end damping
+		  ["f6rr","f15rr"],
+		  ["f6r","f15r"],
+		  ["f6r","f15"],
+		  ["f6l","f15"],
+		  ["f6l","f15l"],
+		  ["f6ll","f15ll"],
+		  
+		  */
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"propulsed":0}
+	],
+}
+"moonhawk_brake_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Disc Brakes",
+	}
+    "slotType" : "moonhawk_brake_F",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["moonhawk_brakedisc_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["moonhawk"]],
+		 ["moonhawk_brakedisc_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["moonhawk"]],
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//brakes
+			{"enableABS":false}
+			{"brakeTorque":1600},
+			{"parkingTorque":0},
+	],
+}
+"moonhawk_coilover_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Coilovers",
+	}
+    "slotType" : "moonhawk_coilover_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_coilover_F", ["moonhawk_shockbottom_F","moonhawk_shocktop_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //front shocks		 
+		  {"beamPrecompression":1.33, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.25}, 
+		  {"beamSpring":99000,"beamDeform":68000,"beamStrength":188000},
+		  {"beamDamp":2500},
+		  {"beamLimitSpring":241000,"beamLimitDamp":1600},
+		  ["fh4r","fs1r",{"beamDampRebound":3400}],
+		  ["fh4l","fs1l",{"beamDampRebound":3400}],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"moonhawk_swaybar_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Sway Bar",
+	}
+    "slotType" : "moonhawk_swaybar_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_swaybar_F", ["moonhawk_lowerarm_FR","moonhawk_lowerarm_FL","moonhawk_swaymounts_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front anti-roll
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"collision":false}
+		 {"selfCollision":false},
+		 {"group":""},
+		 {"nodeWeight":2.6},
+		 ["arbf", 0.0, -1.35, 0.44],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //--FRONT ANTI-ROLL--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+	      {"beamSpring":4001000,"beamDamp":150},
+		  {"beamDeform":120000,"beamStrength":640000},
+		  //rigid beams
+		  ["arbf","fh1r"],
+		  ["arbf","fh1l"],
+	      {"beamSpring":1451000,"beamDamp":250},
+		  //front anti-roll
+		  ["arbf","fx2r"],
+		  ["arbf","fx2l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+			
+			
+	],
+}
+"moonhawk_steering": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Steering",
+	}
+    "slotType" : "moonhawk_steering",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+		"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front parallelogram steering
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"collision":false}
+		 {"selfCollision":false},
+		 {"group":""},
+		 {"nodeWeight":5.3},
+		 {"group":"moonhawk_tierod_M"},
+		 //["st1r",-0.31,-1.52, 0.26],
+		 //["st1l", 0.31,-1.52, 0.26],
+		 
+		 //["st2r",-0.31,-1.56, 0.35],
+		 //["st2l", 0.31,-1.56, 0.35],
+		 
+		 {"group":"moonhawk_tierod_F"},
+		 //["st3r",-0.239,-1.49, 0.30],
+		 //["st3l", 0.239,-1.49, 0.30],
+		 
+		 ["st3r",-0.31,-1.52, 0.30],
+		 ["st3l", 0.31,-1.52, 0.30],
+		 
+		 //["st4r",-0.228,-1.57, 0.30],
+		 //["st4l", 0.228,-1.58, 0.30],
+		 
+		 {"group":"moonhawk_idler"},
+		 ["st5r",-0.31,-1.61, 0.23],
+		 {"group":"moonhawk_pitman"},
+		 ["st5l", 0.31,-1.61, 0.23],
+		 
+		 {"group":"moonhawk_idler"},
+		 ["st6r",-0.31,-1.65, 0.32],
+		 {"group":"moonhawk_pitman"},
+		 ["st6l", 0.31,-1.65, 0.32],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--FRONT PARALLELOGRAM STEERING
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+	      {"beamSpring":9501000,"beamDamp":200},
+		  {"beamDeform":68000,"beamStrength":96000},
+		  //tie rod
+		  ["fh3r","st3r"],
+		  ["fh3l","st3l"],
+		  
+		  //["fh3r","st4r"],
+		  //["fh3l","st4l"],
+		  
+	      {"beamSpring":9501000,"beamDamp":200},
+		  {"beamDeform":76000,"beamStrength":120000},
+		  //steering linkage
+		  //["st1r","st3r"],
+		  //["st1l","st3l"],
+		  
+		  //["st2r","st3r"],
+		  //["st2l","st3l"],
+		  
+		  //["st3r","st4r"],
+		  //["st3l","st4l"],
+		  
+		  //["st1r","st4r"],
+		  //["st1l","st4l"],
+		  
+		  //["st2r","st4r"],
+		  //["st2l","st4l"],
+		  
+		  ["st3r","st5r"],
+		  ["st3l","st5l"],
+		  
+		  //["st2r","st5r"],
+		  //["st2l","st5l"],
+		  
+		  //["st1r","st2r"],
+		  //["st1l","st2l"],
+		  ["st3r","st6r"],
+		  ["st3l","st6l"],
+		  //["st2r","st6r"],
+		  //["st2l","st6l"],
+		  ["st5r","st6r"],
+		  ["st5l","st6l"],
+		  
+		  //["st1r","st1l"],
+		  //["st2r","st2l"],
+		  ["st3r","st3l"],
+		  //["st4r","st4l"],
+		  
+		  //["st2r","st1l"],
+		  //["st1r","st2l"],
+		  //["st4r","st3l"],
+		  //["st3r","st4l"],
+		  
+		  //["st6r","st6l"],
+		  //["st5r","st5l"],
+		  
+		  
+		  //attach to frame
+		  //r
+		  {"beamDeform":13000,"beamStrength":100000},
+		  ["st5r","f21r"],
+		  ["st5r","f24r"],
+		  
+		  ["st6r","f21r"],
+		  ["st6r","f24r"],
+		  
+		  {"beamDeform":28000,"beamStrength":100000},
+		  ["st5r","f20rr"],
+		  ["st5r","f20r"],
+		  ["st5r","f23rr"],
+		  ["st5r","f23r"],
+		  
+		  ["st6r","f20rr"],
+		  ["st6r","f20r"],
+		  ["st6r","f23rr"],
+		  ["st6r","f23r"],
+		  
+		  //l
+		  {"beamDeform":13000,"beamStrength":100000},
+		  ["st5l","f21l"],
+		  ["st5l","f24l"],
+		  
+		  ["st6l","f21l"],
+		  ["st6l","f24l"],
+		  
+		  {"beamDeform":28000,"beamStrength":100000},
+		  ["st5l","f20ll"],
+		  ["st5l","f20l"],
+		  ["st5l","f23ll"],
+		  ["st5l","f23l"],
+		  
+		  ["st6l","f20ll"],
+		  ["st6l","f20l"],
+		  ["st6l","f23ll"],
+		  ["st6l","f23l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_tierod_F", ["moonhawk_tierod_F","moonhawk_idler","moonhawk_pitman","wheelhub_a_FR","wheelhub_a_FL"]],
+		 ["moonhawk_tierod_M", ["moonhawk_tierod_F","moonhawk_idler","moonhawk_pitman",]],
+		 ["moonhawk_idler", ["moonhawk_idler","moonhawk_tierod_F"]],
+		 ["moonhawk_pitman", ["moonhawk_pitman","moonhawk_tierod_F"]],
+		 ["moonhawk_idlerbracket", ["moonhawk_idler","moonhawk_frame","moonhawk_swaymounts_F"]],
+		 ["moonhawk_steeringbox", ["moonhawk_frame","moonhawk_swaymounts_F"]],
+	],
+	"hydros": [
+			["id1:","id2:","factor"],
+			{"beamSpring":18001000,"beamDamp":60,"beamDeform":105000,"beamStrength":145000},
+		    //["st4r","st5r", -0.51],
+		    //["st4l","st5l", 0.51],
+		    //["st4r","st6r", -0.51],
+		    //["st4l","st6l", 0.51],
+			{"breakGroup":"moonhawk_steering_F"},
+			["st3l","st6r",-0.11],
+			["st3r","st6l", 0.11],
+			{"breakGroup":""},
+	]
+}
+}

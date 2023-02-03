@@ -1,0 +1,604 @@
+{
+"van_IFS": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Independent Front Suspension",
+	}
+    "slotType" : "van_suspension_F",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"slots": [
+		["type", "default"]
+		["van_coilover_IFS","van_coilover_IFS"],
+		//["van_transfercase","van_transfercase"],
+		["van_brake_F","van_brake_F"],
+		["van_wheel_F","van_wheel_F"],
+		["van_swaybar_F","van_swaybar_F"],
+		["van_steering","van_steering"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //front running gear
+		 ["van_hub_FR", ["van_hub1_R", "van_hub4_R","van_lowerarm_R","van_upperarm_R"]],
+		 ["van_hub_FL", ["van_hub1_L", "van_hub4_L","van_lowerarm_L","van_upperarm_L"]],
+		 ["van_lowerarm", ["van_lowerarm_R", "van_lowerarm_L", "van_shockbottom", "van_lowermounts"]],
+		 ["van_upperarm", ["van_upperarm_R", "van_upperarm_L", "van_uppermounts"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FRONT INDEPENDENT SUSPENSION--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //lower arm
+		 {"collision":false}
+		 {"selfCollision":false}
+		 {"nodeWeight":4.4},
+		 {"group":"van_shockbottom"},
+		 ["a1r", -0.595, -1.50, 0.383],
+		 ["a1l", 0.595, -1.50, 0.383],
+		 {"collision":true}
+		 //["a2r", -0.52, -1.59, 0.34],
+		 //["a2l", 0.52, -1.59, 0.34],
+		 //["a3r", -0.52, -1.41, 0.34],
+		 //["a3l", 0.52, -1.41, 0.34],
+		 {"collision":false}
+		 {"nodeWeight":7.4},
+		 {"group":"van_lowerarm_R"},
+		 ["a4r", -0.73, -1.48, 0.35],
+		 {"group":"van_lowerarm_L"},
+		 ["a4l", 0.73, -1.48, 0.35],
+		 {"nodeWeight":6.2},
+		 //upper arm
+		 {"collision":false}
+		 {"group":"van_upperarm_R"},
+		 ["a5r", -0.72, -1.436, 0.65],
+		 {"group":"van_upperarm_L"},
+		 ["a5l", 0.72, -1.436, 0.65],
+		 //shock hinge anti-pop
+		 {"nodeWeight":4.4},
+		 {"group":""},
+		 {"collision":true}
+		 ["a6r", -0.575, -1.50, 0.32],
+		 ["a6l", 0.575, -1.50, 0.32],
+		 {"nodeWeight":7.4},
+		 //hub
+		 {"collision":false}
+		 {"group":"van_hub1_R"},
+		 ["hu1r", -0.68, -1.305, 0.355],
+		 {"group":"van_hub1_L"},
+		 ["hu1l", 0.68, -1.305, 0.355],
+		 {"collision":false}
+		 {"nodeWeight":6.6},
+		 {"group":"van_hub4_R"},
+		 ["hu4r", -0.72, -1.64, 0.48],
+		 {"group":"van_hub4_L"},
+		 ["hu4l", 0.72, -1.64, 0.48],
+		 {"collision":false}
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--FRONT INDEPENDENT SUSPENSION--
+		  {"optional":true},
+		  {"breakGroupType":1},
+		  //front limiters
+		  {"beamLimitSpring":8001000,"beamLimitDamp":1200},
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1000000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.25, "beamShortBound":0.25},
+		  
+		  //["hu1r","fr3"],
+		  //["hu1l","fr3"],
+		  //["hu1r","fr7"],
+		  //["hu1l","fr7"],
+		  
+		  
+		  //["hu4r","fr2"],
+		  //["hu4l","fr2"],
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.12, "beamShortBound":0.12},
+		  ["hu1r","fr2"],
+		  ["hu1l","fr2"],
+		  
+		  ["hu1r","fr6"],
+		  ["hu1l","fr6"],
+		  /*
+		  ["a5r","fr6r"],
+		  ["a5l","fr6l"],
+		  ["a5r","fr7r"],
+		  ["a5l","fr7l"],
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.10, "beamShortBound":0.10},
+		  ["hu1r","al2l"],
+		  ["hu1l","al2r"],
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.04, "beamShortBound":0.4},
+		  //["a1r","f2r"],
+		  //["a1l","f2l"],
+		  //["hu1r","f2r"],
+		  //["hu1l","f2l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.45, "beamShortBound":0.45},
+		  ["hu1r","fr3r"],
+		  ["hu1l","fr3l"],
+		  ["hu1r","fr7r"],
+		  ["hu1l","fr7l"],
+		  */
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.08},
+		  //anti-invert
+		  ["a5r","fr3"],
+		  ["a5l","fr3"],
+		  ["a1r","fr3"],
+		  ["a1l","fr3"],
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.2, "beamShortBound":0.4},
+		  ["hu1r","fr4r"],
+		  ["hu1l","fr4l"],
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.15},
+		  //["hu5r","fr3"],
+		  //["hu5l","fr3"],
+		  ["hu4r","fr3"],
+		  ["hu4l","fr3"],
+		  
+		  ["a5r","al1r"],
+		  ["a5r","al2r"],
+		  
+		  ["a5l","al1l"],
+		  ["a5l","al2l"],
+		  {"optional":true},
+		  {"beamLimitSpring":8001000,"beamLimitDamp":1200},
+		  //front end collide
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.95, "beamShortBound":0.15},
+		  //["hu1r","f7rr"],
+		  //["hu1r","fr1r"],
+		  //["hu1r","fr5r"],
+		  ["a4r","f7rr"],
+		  ["a4r","fr1r"],
+		  ["a4r","fr5r"],
+		  
+		  //["hu1l","f7ll"],
+		  //["hu1l","fr1l"],
+		  //["hu1l","fr5l"],
+		  ["a4l","f7ll"],
+		  ["a4l","fr1l"],
+		  ["a4l","fr5l"],
+		  
+		  
+		  
+		  //firewall collide
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1000000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.35, "beamShortBound":0.25},
+		  ["a4r","f8rr"],
+		  ["a4l","f8ll"],
+		  ["a5r","f8rr"],
+		  ["a5l","f8ll"],
+		  ["a4r","f6rr"],
+		  ["a4l","f6ll"],
+		  ["a5r","f6rr"],
+		  ["a5l","f6ll"],
+		  ["a4r","f6r"],
+		  ["a4l","f6l"],
+		  ["a5r","f6r"],
+		  ["a5l","f6l"],
+		  
+		  
+		  //wheel connections
+		  {"optional":true},
+		  //front limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1300000},
+		  {"beamLimitSpring":8001000,"beamLimitDamp":1200},
+		  //front end collide
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.95, "beamShortBound":0.15},
+		  
+		  {"breakGroup":"wheel_FR"},
+		  ["hu2r","f7rr"],
+		  ["hu2r","fr1r"],
+		  ["hu2r","fr5r"],
+		  //["hu3r","f7rr"],
+		  
+		  
+		  {"breakGroup":"wheel_FL"},
+		  ["hu2l","f7ll"], 
+		  ["hu2l","fr1l"],
+		  ["hu2l","fr5l"],
+		  //["hu3l","f7ll"],
+		  
+		 
+		  
+		  //firewall collide
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1300000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.35, "beamShortBound":0.25},
+		  {"breakGroup":"wheel_FR"},
+		  ["hu2r","f6rr"],
+		  ["hu2r","f6r"],
+		  ["hu2r","f8rr"],
+		  ["fr8r","hu2r"],
+		  ["fr4r","hu2r"],
+		  
+		  {"breakGroup":"wheel_FL"},
+		  ["hu2l","f6ll"],
+		  ["hu2l","f6l"],
+		  ["hu2l","f8ll"],
+		  ["fr8l","hu2l"],
+		  ["fr4l","hu2l"],
+		  
+		  
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  
+		  {"breakGroupType":0},
+		  {"optional":true},
+		  //front hub
+		  {"beamSpring":11501000,"beamDamp":100},
+		  {"beamDeform":145000,"beamStrength":320000},
+		  {"breakGroup":"wheel_FR"},
+		  //["hu5r","hu3r"],
+		  //["hu2r","hu5r"],
+		  ["hu1r","hu2r"],
+		  ["hu2r","a5r"],
+		  ["hu2r","a4r"],
+		  ["hu3r","a5r"],
+		  ["hu3r","a4r"],
+		  ["hu3r","hu1r"],
+		  ["hu3r","hu2r"],
+		  ["hu4r","hu2r"],
+		  ["hu4r","hu3r"],
+		  
+		  {"breakGroup":"wheel_FL"},
+		  //["hu5l","hu3l"],
+		  //["hu2l","hu5l"],
+		  ["hu1l","hu2l"],
+		  ["hu2l","a5l"],
+		  ["hu2l","a4l"],
+		  ["hu3l","a5l"],
+		  ["hu3l","a4l"],
+		  ["hu3l","hu1l"],
+		  ["hu3l","hu2l"],
+		  ["hu4l","hu2l"],
+		  ["hu4l","hu3l"],
+		  
+		  {"optional":false},
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  
+		  //hub
+		  {"beamSpring":11501000,"beamDamp":100},
+		  {"beamDeform":145000,"beamStrength":360000},
+		  ["a4r","a5r"],
+		  ["a4l","a5l"],
+		  
+		  
+		  ["hu1r","a5r"],
+		  ["hu1l","a5l"],
+		  ["hu1r","a4r"],
+		  ["hu1l","a4l"],
+		  
+		  ["hu4r","hu1r"],
+		  ["hu4l","hu1l"],
+		  ["hu4r","a4r"],
+		  ["hu4l","a4l"],
+		  ["hu4r","a5r"],
+		  ["hu4l","a5l"],
+		  
+		  //stupid anti-pop
+		  
+		  //["hu5r","hu4r"],
+		  //["hu5l","hu4l"],
+		  //["hu5r","hu1r"],
+		  //["hu5l","hu1l"],
+		  
+		  //["hu5r","a4r"],
+		  //["hu5l","a4l"],
+		  //["hu5r","a5r"],
+		  //["hu5l","a5l"],
+		  
+		  
+		  //upper arm
+		  {"beamSpring":8801000,"beamDamp":100},
+		  {"beamDeform":85000,"beamStrength":180000},
+		  ["a5l","au1l"],
+		  ["a5l","au2l"],
+		  ["a5r","au1r"],
+		  ["a5r","au2r"],
+		  
+		  //lower arm		  
+		  {"beamSpring":11501000,"beamDamp":100},
+		  {"beamDeform":95000,"beamStrength":305000},
+		  /*
+		  ["a1l","a2l"],
+		  ["a1r","a2r"],
+		  ["a2r","a3r"],
+		  ["a2l","a4l"],
+		  ["a2r","a4r"],
+		  ["a1l","a3l"],
+		  ["a1r","a3r"],
+		  ["a2l","a3l"],
+		  ["a2l","a6l"],
+		  ["a2r","a6r"],
+		  ["a3l","a4l"],
+		  ["a3r","a4r"],
+		  ["a3l","a6l"],
+		  ["a3r","a6r"],
+		  */
+		  ["a1l","a4l"],
+		  ["a1r","a4r"],
+		  ["a1l","a6l"],
+		  ["a1r","a6r"],
+		  {"beamDeform":125000,"beamStrength":305000},
+		  ["a4l","a6l"],
+		  ["a4r","a6r"],
+		  {"beamDeform":60000,"beamStrength":275000},
+		  //attach to frame axis points
+		  ["a1l","al2l"],
+		  //["a2l","al2l"],
+		  //["a3l","al2l"],
+		  ["a4l","al2l"],
+		  ["a6l","al2l"],
+		  
+		  ["a1r","al2r"],
+		  //["a2r","al2r"],
+		  //["a3r","al2r"],
+		  ["a4r","al2r"],
+		  ["a6r","al2r"],
+		  
+		  {"beamDeform":105000,"beamStrength":275000},
+		  ["a1r","al1r"],
+		  //["a2r","al1r"],
+		  //["a3r","al1r"],
+		  ["a4r","al1r"],
+		  ["a6r","al1r"],
+		  
+		  ["a1l","al1l"],
+		  //["a2l","al1l"],
+		  //["a3l","al1l"],
+		  ["a4l","al1l"],
+		  ["a6l","al1l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],	
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"propulsed":0}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+	],
+}
+"van_brake_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Front Brakes",
+	}
+    "slotType" : "van_brake_F",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["van_disc_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["van"]],
+		 ["van_disc_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["van"]],
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//brakes
+			{"brakeTorque":2500},
+			{"parkingTorque":0},
+	],
+}
+"van_brake_F_heavy": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Heavy Duty Front Brakes",
+	}
+    "slotType" : "van_brake_F",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["van_disc_FR_heavy", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["van"]],
+		 ["van_disc_FL_heavy", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["van"]],
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//brakes
+			{"brakeTorque":2500},
+			{"parkingTorque":0},
+	],
+}
+"van_coilover_IFS": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series IFS Coilovers",
+	}
+    "slotType" : "van_coilover_IFS",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_coilover", ["van_shockbottom","van_shocktop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  
+		  //--FRONT SHOCKS--
+		  {"beamSpring":70000,"beamDeform":100000,"beamStrength":200000},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  {"beamDamp":3000},
+		  {"beamPrecompression":1.47, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.46},
+		  ["a1l","sh1l", {"beamDampRebound":3600}],
+		  ["a1r","sh1r", {"beamDampRebound":3600}],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"van_coilover_IFS_heavy": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Heavy Duty IFS Coilovers",
+	}
+    "slotType" : "van_coilover_IFS",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_coilover", ["van_shockbottom","van_shocktop"]],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  
+		  //--FRONT SHOCKS--
+		  {"beamSpring":100000,"beamDeform":100000,"beamStrength":200000},
+		  {"beamLimitSpring":3001000,"beamLimitDamp":2000},
+		  {"beamDamp":3000},
+		  {"beamPrecompression":1.60, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.46},
+		  ["a1l","sh1l", {"beamDampRebound":3600}],
+		  ["a1r","sh1r", {"beamDampRebound":3600}],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"van_swaybar_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Front Sway Bar",
+	}
+    "slotType" : "van_swaybar_F",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--ANTI-ROLL--
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"nodeWeight":2.8},
+		 {"group":""},
+		 //front
+		 ["arbf", 0.0, -1.74, 0.62],
+		 //rear
+		 //["arbr", 0.0, 1.00, 0.54],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--ANTI-ROLL--
+		  //rigid beams
+		  {"beamSpring":10001000,"beamDamp":80},
+		  {"beamDeform":100000,"beamStrength":350000},
+		  ["a4r","arbf"],
+		  ["a4l","arbf"],
+		  
+		  //front
+		  {"beamSpring":955000,"beamDamp":450},
+		  ["arbf","fr2r"],
+		  ["arbf","fr2l"],
+		  ["arbf","fr6r"],
+		  ["arbf","fr6l"],
+		  //rear
+		  //{"beamSpring":45000,"beamDamp":80},
+		  
+		  {"optional":true},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.2, "beamShortBound":0.2},
+		  //anti-roll anti-pop
+		  ["arbf","f4"],
+		  
+		  {"optional":false},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+"van_steering": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Steering",
+	}
+    "slotType" : "van_steering",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_tierod", ["van_lowermounts","van_hub1_R","van_hub1_L"]],
+	],
+	"hydros": [
+			["id1:","id2:","factor"],
+			{"beamSpring":21001000,"beamDamp":40,"beamDeform":50000,"beamStrength":70000},
+			["hu1r","al2r", -0.255],
+			["hu1l","al2l", 0.255]
+	],
+}
+"van_transfercase": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Front Transfer Case",
+	}
+    "slotType" : "van_transfercase",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_transfercase", ["van_framefront","van_framecab","van_lowermounts","van_uppermounts","van_shocktop"]],
+		 ["van_halfshaft", ["van_lowermounts", "van_framefront","van_lowerarm"]],
+	],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"optional":true},
+		  //halfshafts
+		  {"beamLimitSpring":8001000,"beamLimitDamp":300},
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":10000,"beamStrength":12000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.025, "beamShortBound":0.025},
+		  {"breakGroupType":1},
+		  {"breakGroup":"wheel_FR"},
+		  ["hu2r","al1r", {"name":"axle_a_FR"}],
+		  ["hu2r","al2r", {"name":"axle_b_FR"}],
+		  {"breakGroup":"wheel_FL"},
+		  ["hu2l","al1l", {"name":"axle_a_FL"}],
+		  ["hu2l","al2l", {"name":"axle_b_FL"}],
+		  
+		  {"optional":false},
+		  {"breakGroupType":0},
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"propulsed":1}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

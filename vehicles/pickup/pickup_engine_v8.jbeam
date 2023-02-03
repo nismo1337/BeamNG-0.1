@@ -1,0 +1,130 @@
+{
+"pickup_engine_v8": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series 4.5L V8 Engine",
+	}
+    "slotType" : "pickup_engine",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_engine_v8", ["pickup_engine"]],
+		 ["pickup_header_v8", ["pickup_engine","pickup_framecab"]],
+	],
+	"slots": [
+		["type", "default"]
+		["pickup_exhaust_v8","pickup_exhaust_v8"],
+		["pickup_transmission","pickup_transmission_A"],
+	],
+	"enginetorque":[
+		["rpm", "torque"]
+		[0, 0],
+		[500, 150],
+		[1000, 230],
+		[2000, 360],
+		[3000, 420],
+		[4000, 390],
+		[5000, 330],
+		[6000, 220],
+	],
+	"engine":{
+		"idleRPM":1000,
+		"shiftDownRPM":3200,
+		"shiftUpRPM":5000,
+		"maxRPM":6000,
+		"inertia":0.16,
+		"friction":10,
+		"burnEfficiency":0.45
+		"throttleSensitivity":1.8
+		},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //--4.5L V8 Engine-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":23},
+		 {"group":"pickup_engine"},
+		 ["e1r", -0.13, -1.14, 0.43],//engine node 2
+		 ["e1l", 0.13, -1.14, 0.43],//engine node 1
+		 ["e2r", -0.13, -1.68, 0.43],
+		 ["e2l", 0.13, -1.68, 0.43],//engine node 3
+		 ["e3r", -0.32, -1.14, 0.85],
+		 ["e3l", 0.32, -1.14, 0.85],
+		 ["e4r", -0.32, -1.68, 0.85],
+		 ["e4l", 0.32, -1.68, 0.85],
+		 
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--ENGINE CUBE--
+		  {"beamSpring":15001000,"beamDamp":300},
+		  {"beamDeform":95000,"beamStrength":"FLT_MAX"},
+		  ["e1r","e1l"],
+		  ["e1r","e2r"],
+		  ["e1r","e2l"],
+		  ["e1r","e3r"],
+		  ["e1r","e3l"],
+		  ["e1r","e4r"],
+		  ["e1r","e4l"],
+		  ["e1l","e2r"],
+		  ["e1l","e2l"],
+		  ["e1l","e3r"],
+		  ["e1l","e3l"],
+		  ["e1l","e4r"],
+		  ["e1l","e4l"],
+		  ["e2r","e2l"],
+		  ["e2r","e3r"],
+		  ["e2r","e3l"],
+		  ["e2r","e4r"],
+		  ["e2r","e4l"],
+		  ["e2l","e3r"],
+		  ["e2l","e3l"],
+		  ["e2l","e4r"],
+		  ["e2l","e4l"],
+		  ["e3r","e3l"],
+		  ["e3r","e4r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  ["e3l","e4l"],
+		  ["e4r","e4l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//engine
+	],
+}
+"pickup_exhaust_v8": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series V8 Exhaust",
+	}
+    "slotType" : "pickup_exhaust_v8",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_exhaust_v8", ["pickup_framefront", "pickup_framecab", "pickup_rearshocktop", "pickup_framebed", "pickup_lowermounts", "pickup_uppermounts", "pickup_shocktop", "pickup_leaftop"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

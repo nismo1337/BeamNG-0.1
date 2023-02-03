@@ -1,0 +1,190 @@
+{
+"pickup_engine_i6": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series 4.1L I6 Engine",
+	}
+    "slotType" : "pickup_engine",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_engine_i6", ["pickup_engine"]],
+		 ["pickup_header_i6", ["pickup_engine","pickup_framecab"]],
+	],
+	"slots": [
+		["type", "default"]
+		["pickup_exhaust_i6","pickup_exhaust_i6"],
+		["pickup_transmission","pickup_transmission_A"],
+	],
+	"enginetorque":[
+		["rpm", "torque"]
+		[0, 0],
+		[500, 165],
+		[1000, 250],
+		[2000, 345],
+		[3000, 370],
+		[4000, 340],
+		[5000, 275],
+		[6000, 205],
+	],
+	"engine":{
+		"idleRPM":1000,
+		"shiftDownRPM":2800,
+		"shiftUpRPM":5000,
+		"maxRPM":6000,
+		"inertia":0.16,
+		"friction":11
+		"burnEfficiency":0.4
+		"throttleSensitivity":1.7
+		},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //--4.1L I6 Engine-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":22},
+		 {"group":"pickup_engine"},
+		 ["e1r", -0.14, -1.07, 0.43],//engine node 2
+		 ["e1l", 0.14, -1.07, 0.43],//engine node 1
+		 ["e2r", -0.14, -1.72, 0.43],
+		 ["e2l", 0.14, -1.72, 0.43],//engine node 3
+		 ["e3r", -0.15, -1.07, 0.88],
+		 ["e3l", 0.15, -1.07, 0.88],
+		 ["e4r", -0.15, -1.72, 0.88],
+		 ["e4l", 0.15, -1.72, 0.88],
+		 
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--ENGINE CUBE--
+		  {"beamSpring":15001000,"beamDamp":300},
+		  {"beamDeform":95000,"beamStrength":"FLT_MAX"},
+		  ["e1r","e1l"],
+		  ["e1r","e2r"],
+		  ["e1r","e2l"],
+		  ["e1r","e3r"],
+		  ["e1r","e3l"],
+		  ["e1r","e4r"],
+		  ["e1r","e4l"],
+		  ["e1l","e2r"],
+		  ["e1l","e2l"],
+		  ["e1l","e3r"],
+		  ["e1l","e3l"],
+		  ["e1l","e4r"],
+		  ["e1l","e4l"],
+		  ["e2r","e2l"],
+		  ["e2r","e3r"],
+		  ["e2r","e3l"],
+		  ["e2r","e4r"],
+		  ["e2r","e4l"],
+		  ["e2l","e3r"],
+		  ["e2l","e3l"],
+		  ["e2l","e4r"],
+		  ["e2l","e4l"],
+		  ["e3r","e3l"],
+		  ["e3r","e4r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  ["e3l","e4l"],
+		  ["e4r","e4l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//engine
+	],
+}
+"pickup_exhaust_i6": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series I6 Exhaust",
+	}
+    "slotType" : "pickup_exhaust_i6",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_exhaust_i6", ["pickup_framefront", "pickup_framecab", "pickup_rearshocktop", "pickup_framebed", "pickup_lowermounts", "pickup_uppermounts", "pickup_shocktop", "pickup_leaftop"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+"pickup_transmission_A": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series 4-Speed Automatic Transmission",
+	}
+	"engine":{
+		"transmissionType":"automatic",
+		"lowShiftDownRPM":1300,
+		"lowShiftUpRPM":2800,
+		"highShiftDownRPM":2300,
+		"highShiftUpRPM":4800,
+		// -1, 0 (neutral), 1, etc
+		"gears":[-2.8, 0, 2.8, 1.53, 1.0, 0.72]
+		"clutchDuration":0.2
+		"viscousCoupling":8
+		"lockingTorqueLimit":500
+		"enableLocking":true
+		},
+    "slotType" : "pickup_transmission",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_transmission", ["pickup_engine","pickup_transmission"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //--4 Speed Auto-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":33.7},
+		 {"group":"pickup_transmission"},
+		 ["tra1", 0.0, -0.59, 0.48], 
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--TRANSMISSION CONE--
+		  {"beamSpring":15001000,"beamDamp":300},
+		  {"beamDeform":95000,"beamStrength":"FLT_MAX"},
+		  ["tra1","e1r"],
+		  ["tra1","e3r"],
+		  ["tra1","e1l"],
+		  ["tra1","e3l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			
+	],
+}
+}

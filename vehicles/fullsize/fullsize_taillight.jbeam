@@ -1,0 +1,44 @@
+{
+"fullsize_taillight": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Taillights",
+	}
+    "slotType" : "fullsize_taillight",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_taillight", ["fullsize_body"]],
+		 ["fullsize_taillight_R", ["fullsize_body"]],
+		 ["fullsize_taillight_L", ["fullsize_body"]],
+		 {"deformGroup":"fullsize_taillight_R_break", "deformMaterialBase":"fullsize_lights", "deformMaterialDamaged":"fullsize_lights_dmg"}
+		 ["fullsize_taillightglass_R", ["fullsize_body"]],
+		 {"deformGroup":"fullsize_taillight_L_break", "deformMaterialBase":"fullsize_lights", "deformMaterialDamaged":"fullsize_lights_dmg"}
+		 ["fullsize_taillightglass_L", ["fullsize_body"]],
+		 
+		 {"deformGroup":""},
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+			
+			
+	],
+}
+}

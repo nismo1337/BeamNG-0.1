@@ -1,0 +1,490 @@
+{
+"van_reardoor_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Right Rear Door",
+	}
+    "slotType" : "van_reardoor_R",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_reardoor_R", ["van_reardoor_R"]],
+		 {"deformGroup":"van_reardoorglass_R_break", "deformMaterialBase":"van_glass", "deformMaterialDamaged":"van_glass_dmg"}
+         ["van_reardoorglass_R", ["van_reardoor_R"]],
+		 {"deformGroup":""}
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 //--DOOR--
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_reardoor_R"},
+		 {"nodeWeight":2.7},
+		 ["rd1r",-0.01, 3.17, 0.72],
+		 ["rd1rr",-0.83, 3.17, 0.72],
+		 
+		 ["rd2r",-0.01, 3.18, 0.93],
+		 ["rd2rr",-0.83, 3.18, 0.93],
+		 
+		 ["rd3r",-0.01, 3.16, 1.33],
+		 ["rd3rr",-0.83, 3.16, 1.33],
+		 
+		 ["rd4r",-0.01, 3.12, 1.67],
+		 ["rd4rr",-0.79, 3.12, 1.67],
+		 ["rd5r",-0.01, 3.00, 2.01],
+		 ["rd5rr",-0.71, 3.00, 2.00],
+		 
+		 {"selfCollision":false}
+		 //dent nodes
+		 ["rd6r",-0.43, 3.17, 0.72],
+		 ["rd7r",-0.43, 3.18, 0.93],
+		 ["rd8r",-0.43, 3.16, 1.33],
+		 
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 ["rd9r",-0.43, 3.00, 1.39],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--RIGHT DOOR--
+		  {"beamSpring":2351000,"beamDamp":150},
+		  {"beamDeform":72500,"beamStrength":"FLT_MAX"},
+		  //door main shape
+		  ["rd1rr","rd6r"],
+		  ["rd1r","rd6r"],
+		  ["rd2rr","rd7r"],
+		  ["rd2r","rd7r"],
+		  ["rd3rr","rd8r"],
+		  ["rd3r","rd8r"],
+		  
+		  
+		  ["rd1r","rd2r"],
+		  ["rd6r","rd7r"],
+		  ["rd1rr","rd2rr"],
+		  ["rd2r","rd3r"],
+		  ["rd7r","rd8r"],
+		  ["rd2rr","rd3rr"],
+		  ["rd3r","rd4r"],
+		  ["rd8r","rd9r"],
+		  ["rd3rr","rd4rr"],
+		  
+		  //["rd4r","rd4rr"],
+		  ["rd5r","rd5rr"],
+		  ["rd4r","rd5r"],
+		  ["rd4rr","rd5rr"],
+		  
+		  {"beamDeform":8800,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  {"beamStrength":450000},
+		  {"deformGroup":"van_reardoorglass_R_break", "triggerStrength":9000}
+		  ["rd5rr","rd4r"],
+		  ["rd5r","rd4rr"],
+		  
+		  ["rd4r","rd3rr"],
+		  ["rd4rr","rd3r"],
+		  
+		  ["rd4r","rd8r"],
+		  ["rd4rr","rd8r"],
+		  
+		  ["rd3r","rd5r"],
+		  ["rd3rr","rd5rr"],
+		  
+		  ["rd1r","rd3r"],
+		  ["rd1rr","rd3rr"],
+		  ["rd6r","rd8r"],
+		  
+		  ["rd8r","rd5r"],
+		  ["rd8r","rd5rr"],
+		  {"deformGroup":""}
+		 
+		  {"beamDeform":14000,"beamStrength":"FLT_MAX"},
+		  ["rd1r","rd1rr"],
+		  ["rd2r","rd2rr"],
+		  ["rd3r","rd3rr"],
+		  
+		  //lengthwise
+		  {"beamStrength":"FLT_MAX"},
+		  {"deformGroup":"van_reardoorglass_R_break", "triggerStrength":5000}
+		  {"deformGroup":""}
+		  
+		  //surficial crossing
+		  ["rd1rr","rd7r"],
+		  ["rd2rr","rd6r"],
+		  ["rd2rr","rd8r"],
+		  ["rd3rr","rd7r"],
+		  
+		  ["rd1r","rd7r"],
+		  ["rd2r","rd6r"],
+		  ["rd2r","rd8r"],
+		  ["rd3r","rd7r"],
+		  
+		  {"deformGroup":""}
+		  
+		  //rigidifier
+		  {"beamDeform":4850,"beamStrength":"FLT_MAX"},
+		  {"deformGroup":"van_reardoorglass_R_break", "triggerStrength":5000}
+		  {"beamSpring":2051000,"beamDamp":150},
+		  ["rd1r","rd9r"],
+		  ["rd1rr","rd9r"],
+		  ["rd2r","rd9r"],
+		  ["rd2rr","rd9r"],
+		  ["rd3r","rd9r"],
+		  ["rd3rr","rd9r"],
+		  {"beamStrength":450000},
+		  ["rd4r","rd9r"],
+		  ["rd4rr","rd9r"],
+		  ["rd5r","rd9r"],
+		  ["rd5rr","rd9r"],
+		  
+		  ["rd6r","rd9r"],
+		  ["rd7r","rd9r"],
+		  ["rd8r","rd9r"],
+		  
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":25000,"beamStrength":60000},
+		  //["d13r","c2rr"],
+		  
+		  //--DOOR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamSpring":2351000,"beamDamp":0},
+		  {"beamLimitSpring":2351000,"beamLimitDamp":200},
+		  {"beamDeform":12900,"beamStrength":280000},
+		  ["rd5r","r8"],
+		  ["rd5rr","r8rr"],
+		  
+		  ["rd4rr","v24rr"],
+		  ["rd3rr","v18rr"],
+		  
+		  ["rd1rr","v6rr"],
+		  
+		  ["rd1r","fr18"],
+		  
+		  ["rd6r","fr18r"],
+		  
+		  ["rd5r","r9rr"],
+		  //door hinge
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamSpring":2651000,"beamDamp":200},
+		  {"beamDeform":26000,"beamStrength":47000},
+		  //r
+		  {"breakGroup":"van_reardoorhinge_a_R"},
+		  ["rd3rr","v18r"],
+		  ["rd2rr","v12r"],
+		  ["rd8r","v18r"],
+		  ["rd6r","v12r"],
+		  {"breakGroup":"van_reardoorhinge_b_R"},
+		  ["rd2rr","v18r"],
+		  ["rd3rr","v12r"],
+		  ["rd7r","v18r"],
+		  ["rd7r","v12r"],
+		  ["rd8r","v12r"],
+		  {"breakGroup":""},
+		  //--DOOR LATCH--
+		  {"beamDeform":16500,"beamStrength":18500},
+		  {"breakGroup":"van_reardoorlatch_a_R"},
+		  ["rd1r","fr20"],
+		  ["rd6r","fr20"],
+		  ["rd2r","fr20"],
+		  {"breakGroup":"van_reardoorlatch_b_R"},
+		  ["rd5r","r9"],
+		  ["rd4r","r9"],
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":250000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"van_reardoorhinge_a_R"},
+		  ["rd3r","fr17"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//right rear door
+			{"group":"van_reardoor_R"},
+			["rd2r","rd1r","rd6r"],
+			["rd2r","rd6r","rd7r"],
+			["rd7r","rd6r","rd1rr"],
+			["rd7r","rd1rr","rd2rr"],
+			["rd3r","rd2r","rd7r"],
+			["rd3r","rd7r","rd8r"],
+			["rd8r","rd7r","rd2rr"],
+			["rd8r","rd2rr","rd3rr"],
+			
+			["rd5r","rd4r","rd4rr"],
+			["rd5r","rd4rr","rd5rr"],
+			["rd4r","rd3r","rd8r"],
+			["rd4r","rd8r","rd4rr"],
+			["rd4rr","rd8r","rd3rr"],
+			
+	],
+}
+"van_reardoor_L": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Left Rear Door",
+	}
+    "slotType" : "van_reardoor_L",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_reardoor_L", ["van_reardoor_L"]],
+		 {"deformGroup":"van_reardoorglass_L_break", "deformMaterialBase":"van_glass", "deformMaterialDamaged":"van_glass_dmg"}
+         ["van_reardoorglass_L", ["van_reardoor_L"]],
+		 {"deformGroup":""}
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 //--DOOR--
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_reardoor_L"},
+		 {"nodeWeight":3.0},
+		 ["rd1l", 0.01, 3.17, 0.72],
+		 ["rd1ll", 0.83, 3.17, 0.72],
+		 
+		 {"nodeWeight":2.7},
+		 ["rd2l", 0.01, 3.18, 0.93],
+		 ["rd2ll", 0.83, 3.18, 0.93],
+		 
+		 ["rd3l", 0.01, 3.16, 1.33],
+		 ["rd3ll", 0.83, 3.16, 1.33],
+		 
+		 {"nodeWeight":2.5},
+		 ["rd4l", 0.01, 3.12, 1.67],
+		 ["rd4ll", 0.79, 3.12, 1.67],
+		 ["rd5l", 0.01, 3.00, 2.01],
+		 ["rd5ll", 0.71, 3.00, 2.00],
+		 
+		 {"selfCollision":false}
+		 //dent nodes
+		 ["rd6l", 0.43, 3.17, 0.72],
+		 ["rd7l", 0.43, 3.18, 0.93],
+		 ["rd8l", 0.43, 3.16, 1.33],
+		 
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 {"nodeWeight":3.0},
+		 ["rd9l", 0.43, 3.00, 1.39],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--LEFT DOOR--
+		  {"beamSpring":2351000,"beamDamp":150},
+		  {"beamDeform":72500,"beamStrength":"FLT_MAX"},
+		  //door main shape
+		  ["rd1ll","rd6l"],
+		  ["rd1l","rd6l"],
+		  ["rd2ll","rd7l"],
+		  ["rd2l","rd7l"],
+		  ["rd3ll","rd8l"],
+		  ["rd3l","rd8l"],
+		  
+		  
+		  ["rd1l","rd2l"],
+		  ["rd6l","rd7l"],
+		  ["rd1ll","rd2ll"],
+		  ["rd2l","rd3l"],
+		  ["rd7l","rd8l"],
+		  ["rd2ll","rd3ll"],
+		  ["rd3l","rd4l"],
+		  ["rd8l","rd9l"],
+		  ["rd3ll","rd4ll"],
+		  
+		  //["rd4l","rd4ll"],
+		  ["rd5l","rd5ll"],
+		  ["rd4l","rd5l"],
+		  ["rd4ll","rd5ll"],
+		  
+		  {"beamDeform":8800,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  {"beamStrength":450000},
+		  {"deformGroup":"van_reardoorglass_L_break", "triggerStrength":9000}
+		  ["rd5ll","rd4l"],
+		  ["rd5l","rd4ll"],
+		  
+		  ["rd4l","rd3ll"],
+		  ["rd4ll","rd3l"],
+		  
+		  ["rd4l","rd8l"],
+		  ["rd4ll","rd8l"],
+		  
+		  ["rd3l","rd5l"],
+		  ["rd3ll","rd5ll"],
+		  
+		  ["rd1l","rd3l"],
+		  ["rd1ll","rd3ll"],
+		  ["rd6l","rd8l"],
+		  
+		  ["rd8l","rd5l"],
+		  ["rd8l","rd5ll"],
+		  
+		  {"deformGroup":""}
+		 
+		  {"beamDeform":14000,"beamStrength":"FLT_MAX"},
+		  ["rd1l","rd1ll"],
+		  ["rd2l","rd2ll"],
+		  ["rd3l","rd3ll"],
+		  
+		  //lengthwise
+		  {"beamStrength":"FLT_MAX"},
+		  {"deformGroup":"van_reardoorglass_L_break", "triggerStrength":5000}
+		  {"deformGroup":""}
+		  
+		  //surficial crossing
+		  ["rd1ll","rd7l"],
+		  ["rd2ll","rd6l"],
+		  ["rd2ll","rd8l"],
+		  ["rd3ll","rd7l"],
+		  
+		  ["rd1l","rd7l"],
+		  ["rd2l","rd6l"],
+		  ["rd2l","rd8l"],
+		  ["rd3l","rd7l"],
+		  
+		  {"deformGroup":""}
+		  
+		  //rigidifier
+		  {"beamDeform":4850,"beamStrength":"FLT_MAX"},
+		  {"deformGroup":"van_reardoorglass_L_break", "triggerStrength":5000}
+		  {"beamSpring":2051000,"beamDamp":150},
+		  ["rd1l","rd9l"],
+		  ["rd1ll","rd9l"],
+		  ["rd2l","rd9l"],
+		  ["rd2ll","rd9l"],
+		  ["rd3l","rd9l"],
+		  ["rd3ll","rd9l"],
+		  {"beamStrength":450000},
+		  ["rd4l","rd9l"],
+		  ["rd4ll","rd9l"],
+		  ["rd5l","rd9l"],
+		  ["rd5ll","rd9l"],
+		  
+		  ["rd6l","rd9l"],
+		  ["rd7l","rd9l"],
+		  ["rd8l","rd9l"],
+		  
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":25000,"beamStrength":60000},
+		  //["d13l","c2ll"],
+		  
+		  //--DOOR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamSpring":2351000,"beamDamp":0},
+		  {"beamLimitSpring":2351000,"beamLimitDamp":200},
+		  {"beamDeform":12900,"beamStrength":280000},
+		  ["rd5l","r8"],
+		  ["rd5ll","r8ll"],
+		  
+		  ["rd4ll","v24ll"],
+		  ["rd3ll","v18ll"],
+		  
+		  ["rd1ll","v6ll"],
+		  
+		  ["rd1l","fr18"],
+		  
+		  ["rd6l","fr18l"],
+		  
+		  ["rd5l","r9ll"],
+		  
+		  {"optional":true},
+		  ["rd5r","rd5ll"],
+		  ["rd5l","rd5rr"],
+		  ["rd3r","rd8l"],
+		  ["rd3l","rd8r"],
+		  ["rd2r","rd7l"],
+		  ["rd2l","rd7r"],
+		  ["rd1r","rd6l"],
+		  ["rd1l","rd6r"],
+		  {"optional":false},
+		  
+		  //door hinge
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamSpring":2651000,"beamDamp":200},
+		  {"beamDeform":26000,"beamStrength":47000},
+		  //r
+		  {"breakGroup":"van_reardoorhinge_a_L"},
+		  ["rd3ll","v18l"],
+		  ["rd2ll","v12l"],
+		  ["rd8l","v18l"],
+		  ["rd6l","v12l"],
+		  {"breakGroup":"van_reardoorhinge_b_L"},
+		  ["rd2ll","v18l"],
+		  ["rd3ll","v12l"],
+		  ["rd7l","v18l"],
+		  ["rd7l","v12l"],
+		  ["rd8l","v12l"],
+		  {"breakGroup":""},
+		  //--DOOR LATCH--
+		  {"beamDeform":16500,"beamStrength":18500},
+		  {"breakGroup":"van_reardoorlatch_a_L"},
+		  ["rd1l","fr20"],
+		  ["rd6l","fr20"],
+		  ["rd2l","fr20"],
+		  {"breakGroup":"van_reardoorlatch_b_L"},
+		  ["rd5l","r9"],
+		  ["rd4l","r9"],
+		  {"optional":true},
+		  {"beamDeform":16500,"beamStrength":18500},
+		  {"breakGroup":"van_reardoorlatch_M"},
+		  ["rd3r","rd3l"],
+		  ["rd2r","rd2l"],
+		  ["rd2r","rd3l"],
+		  ["rd3r","rd2l"],
+		  ["rd3r","rd4l"],
+		  ["rd4r","rd3l"],
+		  {"optional":false},
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":250000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"van_reardoorhinge_a_L"},
+		  ["rd3l","fr17"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//left rear door
+			{"group":"van_reardoor_L"},
+			["rd1l","rd2l","rd6l"],
+			["rd2l","rd7l","rd6l"],
+			["rd6l","rd7l","rd1ll"],
+			["rd7l","rd2ll","rd1ll"],
+			["rd3l","rd7l","rd2l"],
+			["rd3l","rd8l","rd7l"],
+			["rd7l","rd8l","rd2ll"],
+			["rd8l","rd3ll","rd2ll"],
+			
+			["rd5l","rd4ll","rd4l"],
+			["rd5l","rd5ll","rd4ll"],
+			["rd4l","rd8l","rd3l"],
+			["rd8l","rd4l","rd4ll"],
+			["rd3ll","rd8l","rd4ll"],
+			
+	],
+}
+}

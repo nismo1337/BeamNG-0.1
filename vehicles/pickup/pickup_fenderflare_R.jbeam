@@ -1,0 +1,27 @@
+{
+"pickup_fenderflare_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Rear Fender Flares",
+	}
+    "slotType" : "pickup_fenderflare_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_fenderflare_R", ["pickup_bed"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

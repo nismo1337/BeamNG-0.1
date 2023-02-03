@@ -1,0 +1,375 @@
+{
+"super_suspension_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Independent Front Suspension",
+	}
+    "slotType" : "super_suspension_F",
+	"slots": [
+		["type", "default"]
+		["super_coilover_F","super_coilover_F"],
+		["super_brake_F","super_brake_F"],
+		["super_wheel_F","super_wheel_F"],
+		["super_swaybar_F","super_swaybar_F"],
+		["super_steering","super_steering"],
+	],
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_lowerarm_F", ["super_lowerarm_FR","super_lowerarm_FL","super_shockbottom_F","super_lowermounts_a_F","super_lowermounts_b_F"]],
+		 ["super_upperarm_F", ["super_upperarm_F","super_uppermounts_F"]],
+		 ["super_hub_FR", ["super_upperarm_F","super_lowerarm_FR","super_tierod_F","super_hub_F"]],
+		 ["super_hub_FL", ["super_upperarm_F","super_lowerarm_FL","super_tierod_F","super_hub_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FRONT INDEPENDENT SUSPENSION--
+		 {"nodeWeight":3.8},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //front wheel hub
+		 {"group":"super_lowerarm_FR"},
+		 ["fa1r",-0.65, -1.30, 0.21],
+		 {"group":"super_lowerarm_FL"},
+		 ["fa1l", 0.65, -1.30, 0.21],
+		 {"group":"super_upperarm_F"},
+		 {"nodeWeight":3.3},
+		 ["fa2r",-0.65, -1.25, 0.50],
+		 ["fa2l", 0.65, -1.25, 0.50],
+		 {"group":"super_tierod_F"},
+		 //tierod
+		 ["fa3r",-0.63, -1.11, 0.22],
+		 ["fa3l", 0.63, -1.11, 0.22],
+		 {"nodeWeight":2.4},
+		 //hub
+		 ["fa4r",-0.67,-1.08,0.34],
+		 ["fa4l", 0.67,-1.08,0.34],
+		 {"nodeWeight":3.0},
+		 {"group":"super_shockbottom_F"},
+		 //shock bottom
+		 ["fs1r",-0.576,-1.30,0.237],
+		 ["fs1l", 0.576,-1.30,0.237],
+		 {"group":""},
+		 {"nodeWeight":1.9},
+		 //shock bottom anti-pop
+		 ["fs3r",-0.58,-1.30,0.15],
+		 ["fs3l", 0.58,-1.30,0.15],
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--FRONT RUNNING GEAR--
+		  {"beamSpring":10001000,"beamDamp":220,"beamDeform":150000,"beamStrength":"FLT_MAX"},
+		  //front hub
+		  ["fa1r","fa2r"],
+		  ["fa1l","fa2l"],
+		  
+		  ["fa4r","fa1r"],
+		  ["fa4r","fa2r"],
+		  ["fa4r","fa3r"],
+		  
+		  ["fa4l","fa1l"],
+		  ["fa4l","fa2l"],
+		  ["fa4l","fa3l"],
+		  
+		  //tierod
+		  ["fa1r","fa3r"],
+		  ["fa2r","fa3r"],
+		  ["fa1l","fa3l"],
+		  ["fa2l","fa3l"],
+		  
+		  {"optional":true},
+		  //detach
+		  {"beamSpring":6001000,"beamDamp":220,"beamDeform":155000,"beamStrength":320000},
+		  {"breakGroup":"wheel_FR"},
+		  ["fa4r","fw1r"],
+		  ["fa4r","fw1rr"],
+		  
+		  ["fa1r","fw1r"],
+		  ["fa1r","fw1rr"],
+		  ["fa2r","fw1r"],
+		  ["fa2r","fw1rr"],
+		  
+		  ["fw1r","fa3r"],
+		  ["fw1rr","fa3r"],
+		  
+		  {"breakGroup":"wheel_FL"},
+		  ["fa4l","fw1l"],
+		  ["fa4l","fw1ll"],
+		  
+		  ["fa1l","fw1l"],
+		  ["fa1l","fw1ll"],
+		  ["fa2l","fw1l"],
+		  ["fa2l","fw1ll"],
+		  
+		  ["fw1l","fa3l"],
+		  ["fw1ll","fa3l"],
+		  {"optional":false},
+		  {"breakGroup":""},
+		  //lower arm
+		  {"beamSpring":10001000,"beamDamp":220,"beamDeform":55000,"beamStrength":220000},
+		  ["fx2r","fa1r"],
+		  ["fx2l","fa1l"],
+		  ["fx2r","fs1r"],
+		  ["fx2l","fs1l"],
+		  
+		  {"beamSpring":10001000,"beamDamp":220,"beamDeform":80000,"beamStrength":220000},
+		  
+		  ["fx1r","fs1r"],
+		  ["fx1l","fs1l"],
+		  
+		  ["fa1r","fs1r"],
+		  ["fa1l","fs1l"],
+		  
+		  ["fx1r","fa1r"],
+		  ["fx1l","fa1l"],
+		  
+		  {"beamSpring":4001000,"beamDamp":130,"beamDeform":120000,"beamStrength":"FLT_MAX"},
+		  //shock bottom anti-pop
+		  ["fs1r","fs3r"],
+		  ["fs1l","fs3l"],
+		  
+		  ["fs3r","fa1r"],
+		  ["fs3l","fa1l"],
+		  ["fs3r","fx1r"],
+		  ["fs3l","fx1l"],
+		  ["fs3r","fx2r"],
+		  ["fs3l","fx2l"],
+		  //upper arm
+		  {"beamSpring":6501000,"beamDamp":180,"beamDeform":60000,"beamStrength":195000},
+		  ["fx3r","fa2r"],
+		  ["fx4r","fa2r"],
+		  ["fx3l","fa2l"],
+		  ["fx4l","fa2l"],
+		  {"beamLimitSpring":5501000,"beamLimitDamp":300},
+		  //front limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":800000},
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.15, "beamShortBound":0.1},
+		  //anti-invert
+		  ["fa2r","fs2r"],
+		  ["fa2r","fs2r"],
+		  ["fa2l","fs2l"],
+		  ["fa2l","fs2l"],
+		  
+		  //steering anti-invert
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.185, "beamShortBound":0.12},
+		  ["fa3r","fx1r"],
+		  ["fa3l","fx1l"],
+		  
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.165, "beamShortBound":0.6},
+		  ["fa3r","c2r"],
+		  ["fa3l","c2l"],
+		  {"optional":true},
+		  //front end collide
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.18},
+		  ["fa1r","f6rr"],
+		  ["fa1l","f6ll"],
+		  
+		  
+		  ["fa1r","f6r"],
+		  ["fa1l","f6l"],
+		  
+		  
+		  ["fa2r","f6r"],
+		  ["fa2l","f6l"],
+		  ["fa2r","f6rr"],
+		  ["fa2l","f6ll"],
+		  
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.32},
+		  ["fa1r","f4rr"],
+		  ["fa1l","f4rr"],
+		  ["fa1r","f4r"],
+		  ["fa1l","f4r"],
+		  
+		  {"optional":false},
+		  //firewall collide
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.17},
+		  ["fa1r","c2r"],
+		  ["fa1l","c2l"],
+		  ["fa1r","c2rr"],
+		  ["fa1l","c2ll"],
+		  ["fa2r","c2r"],
+		  ["fa2l","c2l"],
+		  ["fa2r","c2rr"],
+		  ["fa2l","c2ll"],
+		  
+		  ["fa2r","c8rr"],
+		  ["fa2l","c8ll"],
+		  ["fa2r","c8r"],
+		  ["fa2l","c8l"],
+		  ["fa1r","c8r"],
+		  ["fa1l","c8l"],
+		  
+		  {"optional":true},
+		  //compression stopper
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.15},
+		  ["fa1r","f1rr"],
+		  ["fa1l","f1ll"], 
+		  ["fa1r","f2rr"],
+		  ["fa1l","f2ll"],
+		  ["fa1r","f2r"],
+		  ["fa1l","f2l"],
+		  ["fa2r","f2r"],
+		  ["fa2l","f2l"],
+		  
+		  ["fs1r","f2rr"],
+		  ["fs1l","f2ll"],
+		  
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.35},
+		  ["fa2r","f3r"],
+		  ["fa2l","f3l"],
+		  ["fa2r","f3rr"],
+		  ["fa2l","f3ll"],
+		  {"optional":false},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"propulsed":0},
+	],
+}
+"super_swaybar_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Front Sway Bar",
+	}
+    "slotType" : "super_swaybar_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_swaybar_F", ["super_lowerarm_FR","super_lowerarm_FL","super_shockbottom_F","super_lowermounts_a_F","super_lowermounts_b_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":false}
+		 {"selfCollision":false},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":""},
+		 {"nodeWeight":2.6},
+		 //front anti-roll
+		 ["arbf", 0.0, -1.42, 0.45],
+		 
+		 
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--ANTI-ROLL--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+	      {"beamSpring":5001000,"beamDamp":300},
+		  {"beamDeform":300000,"beamStrength":1000000},
+		  //rigid beams
+		  ["arbf","fa1r"],
+		  ["arbf","fa1l"],
+		  
+	      {"beamSpring":4401000,"beamDamp":300},
+		  //front anti-roll
+		  ["arbf","fx2r"],
+		  ["arbf","fx2l"],
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+"super_steering": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Steering",
+	}
+    "slotType" : "super_steering",
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_tierod", ["super_tierod_F","super_lowermounts_a_F","super_lowermounts_b_F"]],
+	],
+	"hydros": [
+			["id1:","id2:","factor"],
+			{"beamSpring":21501000,"beamDamp":250,"beamDeform":83000,"beamStrength":98000},
+			["fa3r","fx2r",-0.28],
+			["fa3l","fx2l",0.28],
+	]
+}
+"super_brake_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Front Brakes",
+	}
+    "slotType" : "super_brake_F",
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["super_brakedisc_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["super"]],
+		 ["super_brakedisc_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["super"]],
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"brakeTorque":1400},
+			{"parkingTorque":0},
+	],
+}
+"super_coilover_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Front Coilovers",
+	}
+    "slotType" : "super_coilover_F",
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_coilover_F", ["super_shockbottom_F","super_shocktop_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  {"beamPrecompression":1.30, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.3},
+		  {"beamLimitSpring":2001000,"beamLimitDamp":400},
+		  {"beamSpring":66000,"beamDeform":250000,"beamStrength":450000},
+		  {"beamDamp":4000},
+		  //front shocks
+		  ["fs1r","fs2r",{"beamDampRebound":6000}],
+		  ["fs1l","fs2l",{"beamDampRebound":6000}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

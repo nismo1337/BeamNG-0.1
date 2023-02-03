@@ -1,0 +1,643 @@
+{
+"pigeon": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon",
+	}
+    "slotType" : "main",
+	"slots": [
+		["type", "default"]
+		//bodywork
+		["pigeon_body","pigeon_body"],
+		["pigeon_bed","pigeon_bed"],
+		["pigeon_bumper_F","pigeon_bumper_F"],
+		["pigeon_bumper_R","pigeon_bumper_R"],
+		//engine
+		["pigeon_engine","pigeon_engine"],
+		//running gear
+		["pigeon_suspension_R","pigeon_axle_R"],
+		["pigeon_suspension_F","pigeon_suspension_F"],
+	],
+	"dragCoef":12,
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"scalenodeWeight":1,
+	"zeroOutSelfCollision":false,
+	"refNodes":[
+		["ref:", "back:", "left:", "up:"]
+		["f2", "f1", "f1ll", "f3"]
+		],
+	"cameraExternal":{
+		"distance":6.5,
+		"distanceMin":4,
+		"offset":{"x":0, "y":0, "z":0},
+		"fov":70,
+		},
+	"camerasInternal":[
+		["x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+		{"nodeWeight":1},
+	    {"selfCollision":false}
+	    {"collision":false}
+		{"beamSpring":50000,"beamDamp":750},
+		//hood cam
+		[0.0, -0.4, 1.3, 75, "f1rr","f1","f1ll","f2rr","f2","f2ll"],
+		//fender cam
+		//[-1.3, 0.3, 0.65, 75, "c3r","c5r","c5l","c3l","c4r","c4l"],
+		{"beamSpring":900, "beamDamp":120},
+		//dash cam
+		[0.28, 0.1, 1.3, 75, "f1rr","f1","f1ll","f2rr","f2","f2ll"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_frame", ["pigeon_frame","pigeon_mounts_F","pigeon_leafmounts"]],
+		 ["pigeon_fueltank", ["pigeon_frame","pigeon_mounts_F","pigeon_leafmounts"]],
+		 {"rotation":{"x":0, "y":0, "z":0}, "translation":{"x":0, "y":0, "z":0}},
+		 //{"disableSection":1},
+		 //{"debugPositioning":true},
+		 {"isCollisionMesh":false},
+		 //chassis
+		 ],
+		 
+	     "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true},
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":3.8},
+		 //middle frame floor
+		 {"group":"pigeon_frame"},
+		 ["f1rr",-0.57, 0.23, 0.26],
+		 {"group":"pigeon_axle"},
+		 ["f1", 0.0, 0.23, 0.26],
+		 {"group":"pigeon_frame"},
+		 ["f1ll", 0.57, 0.23, 0.26],
+		 
+		 ["f2rr",-0.57, -0.57, 0.26],
+		 ["f2",0.0, -0.57, 0.30],
+		 ["f2ll", 0.57, -0.57, 0.26],
+		 {"nodeWeight":3.1},
+		 //upper
+		 ["f3rr",-0.57, 0.23, 0.40],
+		 ["f3", 0.0, 0.23, 0.40],
+		 ["f3ll", 0.57, 0.23, 0.40],
+		 
+		 ["f4rr",-0.57, -0.57, 0.40],
+		 ["f4", 0.0, -0.57, 0.43],
+		 ["f4ll", 0.57, -0.57, 0.40],
+		 {"selfCollision":false},
+		 {"nodeWeight":4.5},
+		 //axis points
+		 {"group":"pigeon_mounts_F"},
+		 ["fx1r",-0.14, -0.44, 0.2811],
+		 ["fx1l", 0.14, -0.44, 0.2811],
+		 {"selfCollision":true},
+		 {"group":"pigeon_frame"},
+		 {"nodeWeight":3.8},
+		 //front
+		 ["f5rr",-0.48, -1.02, 0.41],
+		 ["f5", 0.0, -1.12, 0.61],
+		 ["f5ll", 0.48, -1.02, 0.41],
+		 ["f6rr",-0.4, -1.38, 0.43],
+		 ["f6", 0.0, -1.38, 0.43],
+		 ["f6ll", 0.4, -1.38, 0.43],
+		 {"nodeWeight":3.1},
+		 //upper
+		 ["f7rr",-0.48, -1.02, 0.51],
+		 ["f7", 0.0, -1.13, 0.67],
+		 ["f7ll", 0.48, -1.02, 0.51],
+		 ["f8rr",-0.4, -1.38, 0.54],
+		 ["f8", 0.0, -1.38, 0.54],
+		 ["f8ll", 0.4, -1.38, 0.54],
+		 //rear frame
+		 //fuel tank weight
+		 {"nodeWeight":11.0},
+		 ["f9rr",-0.46, 0.80, 0.34],
+		 ["f9", 0.0, 0.96, 0.39],
+		 ["f9ll", 0.46, 0.80, 0.34],
+		 {"group":"pigeon_leafmounts"},
+		 ["f10rr",-0.46, 1.28, 0.34],
+		 {"group":"pigeon_frame"},
+		 ["f10", 0.0, 1.07, 0.39],
+		 {"group":"pigeon_leafmounts"},
+		 ["f10ll", 0.46, 1.28, 0.34],
+		 {"group":"pigeon_frame"},
+		 ["f11rr",-0.46, 1.67, 0.34],
+		 ["f11", 0.0, 1.67, 0.34],
+		 ["f11ll", 0.46, 1.67, 0.34],
+		 //upper
+		 {"nodeWeight":3.1},
+		 ["f12rr",-0.46, 0.80, 0.45],
+		 ["f12", 0.0, 0.96, 0.45],
+		 ["f12ll", 0.46, 0.80, 0.45],
+		 ["f13rr",-0.46, 1.28, 0.45],
+		 ["f13", 0.0, 1.07, 0.45],
+		 ["f13ll", 0.46, 1.28, 0.45],
+		 ["f14rr",-0.46, 1.67, 0.45],
+		 ["f14", 0.0, 1.67, 0.45],
+		 ["f14ll", 0.46, 1.67, 0.45],
+		 {"group":"pigeon_leafmounts"},
+		 //rear leaf nodes
+		 ["rx1r",-0.41, 0.633, 0.256],
+		 ["rx1l", 0.41, 0.633, 0.256],
+		 {"nodeWeight":2.0},
+		 //front upper support
+		 {"selfCollision":false},
+		 {"group":"pigeon_frame"},
+		 ["f15rr",-0.34, -1.12, 0.86],
+		 ["f15", 0.0, -1.12, 0.86],
+		 ["f15ll", 0.34, -1.12, 0.86],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"optional":true},
+		  //engine soft mounts
+	      {"beamSpring":801000,"beamDamp":100},
+		  {"beamDeform":85000,"beamStrength":150000},
+		  ["e2r","f2rr"],
+		  ["e2r","f2"],
+		  ["e2l","f2"],
+		  ["e2l","f2ll"],
+		  
+		  ["e1r","f2rr"],
+		  ["e1r","f2"],
+		  ["e1l","f2"],
+		  ["e1l","f2ll"],
+		  
+		  ["e1r","f1rr"],
+		  ["e1r","f1"],
+		  ["e1l","f1"],
+		  ["e1l","f1ll"],
+		  
+		  ["e1r","fx1r"],
+		  ["e1l","fx1l"],
+		  ["e2r","fx1r"],
+		  ["e2l","fx1l"],
+		  //transmission
+		  
+		  ["tra1","f1rr"],
+		  ["tra1","f1"],
+		  ["tra1","f1ll"],
+		  ["tra1","f3"],
+		  
+		  ["tra1","fx1r"],
+		  ["tra1","fx1l"],
+		  //engine limiters
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.6}, 
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":180000,"beamStrength":600000},
+		  {"beamLimitSpring":801000,"beamLimitDamp":100},
+		  
+		  {"optional":false},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //extra frame rigids
+		  {"beamSpring":2401000,"beamDamp":180},
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  ["f12rr","f14rr"],
+		  ["f12ll","f14ll"],
+		  
+		  ["f3rr","f13rr"],
+		  ["f3ll","f13ll"],
+		  
+		  ["f1rr","f10rr"],
+		  ["f1ll","f10ll"],
+		  
+		  ["f1rr","f13rr"],
+		  ["f1ll","f13ll"],
+		  
+		  ["f12rr","f4rr"],
+		  ["f12","f4"],
+		  ["f12ll","f4ll"],
+		  ["f9rr","f2rr"],
+		  ["f9","f2"],
+		  ["f9ll","f2ll"],
+		  
+		  //front upper support
+		  {"beamSpring":2401000,"beamDamp":180},
+		  {"beamDeform":14000,"beamStrength":"FLT_MAX"},
+		  //main shape widthwise
+		  ["f15rr","f15"],
+		  ["f15ll","f15"],
+		  //vertical
+		  ["f15rr","f7rr"],
+		  ["f15ll","f7ll"],
+		  
+		  //cross
+		  ["f15rr","f7"],
+		  ["f15ll","f7"],
+		  ["f7rr","f15"],
+		  ["f7ll","f15"],
+		  //corner
+		  ["f15rr","f4rr"],
+		  ["f15ll","f4ll"],
+		  ["f15rr","f8rr"],
+		  ["f15","f8rr"],
+		  ["f15","f8ll"],
+		  ["f15ll","f8ll"],
+		  
+		  //rear frame
+		  {"beamSpring":2401000,"beamDamp":180},
+		  {"beamDeform":35000,"beamStrength":"FLT_MAX"},
+		  //main shape lengthwise
+		  ["f1rr","f9rr"],
+		  ["f1ll","f9ll"],
+		  ["f9rr","f10rr"],
+		  ["f9ll","f10ll"],
+		  ["f10rr","f11rr"],
+		  ["f10ll","f11ll"],
+		  
+		  ["f3rr","f12rr"],
+		  ["f3ll","f12ll"],
+		  ["f12rr","f13rr"],
+		  ["f12ll","f13ll"],
+		  ["f13rr","f14rr"],
+		  ["f13ll","f14ll"],
+		  
+		  ["f9","f10"],
+		  ["f12","f13"],
+		  
+		  //main shape widthwise
+		  ["f9rr","f9"],
+		  ["f9ll","f9"],
+		  ["f10rr","f10"],
+		  ["f10ll","f10"],
+		  ["f12rr","f12"]
+		  ["f12ll","f12"]
+		  ["f13rr","f13"]
+		  ["f13ll","f13"]
+		  
+		  ["f11rr","f11"],
+		  ["f11ll","f11"],
+		  ["f14rr","f14"],
+		  ["f14ll","f14"],
+		  
+		  {"beamDeform":85000,"beamStrength":"FLT_MAX"},
+		  //main shape vertical
+		  ["f9rr","f12rr"],
+		  ["f9","f12"],
+		  ["f9ll","f12ll"],
+		  ["f10rr","f13rr"],
+		  ["f10","f13"],
+		  ["f10ll","f13ll"],
+		  ["f11rr","f14rr"],
+		  ["f11","f14"],
+		  ["f11ll","f14ll"],
+		  
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+		  //lengthwise surf cross
+		  ["f3rr","f9rr"],
+		  ["f3ll","f9ll"],
+		  ["f1rr","f12rr"],
+		  ["f1ll","f12ll"],
+		  ["f9rr","f13rr"],
+		  ["f9ll","f13ll"],
+		  ["f12rr","f10rr"],
+		  ["f12ll","f10ll"],
+		  ["f10rr","f14rr"],
+		  ["f10ll","f14ll"],
+		  ["f13rr","f11rr"],
+		  ["f13ll","f11ll"],
+		  
+		  ["f10","f12"],
+		  ["f9","f13"],
+		  
+		  {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+		  //widthwise surf cross rear face
+		  ["f14rr","f11"],
+		  ["f14ll","f11"],
+		  ["f11rr","f14"],
+		  ["f11ll","f14"],
+		  
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+		  //widthwise surf cross
+		  ["f9rr","f12"],
+		  ["f9ll","f12"],
+		  ["f12rr","f9"],
+		  ["f12ll","f9"],
+		  ["f10rr","f13"],
+		  ["f10ll","f13"],
+		  ["f13rr","f10"],
+		  ["f13ll","f10"],
+		  
+		  //corner rigids
+		  ["f9rr","f10"],
+		  ["f9ll","f10"],
+		  ["f10rr","f9"],
+		  ["f10ll","f9"],
+		  ["f12rr","f13"],
+		  ["f12ll","f13"],
+		  ["f13rr","f12"],
+		  ["f13ll","f12"],
+		  
+		  ["f1","f9rr"],
+		  ["f1","f9ll"],
+		  ["f3","f12rr"],
+		  ["f3","f12ll"],
+		  ["f3","f9rr"],
+		  ["f3","f9ll"],
+		  ["f1","f12rr"],
+		  ["f1","f12ll"],
+		  
+		  ["f10rr","f11"],
+		  ["f10ll","f11"],
+		  ["f13rr","f14"],
+		  ["f13ll","f14"],
+		  {"beamDeform":55000,"beamStrength":"FLT_MAX"},
+		  //rear leaf nodes
+		  ["f1rr","rx1r"],
+		  ["f1ll","rx1l"],
+		  ["f9rr","rx1r"],
+		  ["f9ll","rx1l"],
+		  ["f3rr","rx1r"],
+		  ["f3ll","rx1l"],
+		  ["f12rr","rx1r"],
+		  ["f12ll","rx1l"],
+		  ["f3","rx1r"],
+		  ["f3","rx1l"],
+		  ["f1","rx1r"],
+		  ["f1","rx1l"],
+		  
+		  //front frame
+		  {"beamSpring":2401000,"beamDamp":180},
+		  {"beamDeform":35000,"beamStrength":"FLT_MAX"},
+		  //main shape lengthwise
+		  ["f2rr","f5rr"],
+		  ["f2ll","f5ll"],
+		  ["f5rr","f6rr"],
+		  ["f5ll","f6ll"],
+		  ["f4rr","f7rr"],
+		  ["f4ll","f7ll"],
+		  ["f7rr","f8rr"],
+		  ["f7ll","f8ll"],
+		  //main shape widthwise
+		  ["f6rr","f6"],
+		  ["f6ll","f6"],
+		  ["f8rr","f8"],
+		  ["f8ll","f8"],
+		  
+		  ["f5rr","f5"],
+		  ["f5ll","f5"],
+		  ["f7rr","f7"],
+		  ["f7ll","f7"],
+		  
+		  {"beamDeform":85000,"beamStrength":"FLT_MAX"},
+		  //main shape vertical
+		  ["f5rr","f7rr"],
+		  ["f5","f7"],
+		  ["f5ll","f7ll"],
+		  ["f6rr","f8rr"],
+		  //["f6","f8"],
+		  ["f6ll","f8ll"],
+		  
+		  {"beamDeform":55000,"beamStrength":"FLT_MAX"},
+		  //front surf cross
+		  ["f6rr","f8"],
+		  ["f6ll","f8"],
+		  ["f8rr","f6"],
+		  ["f8ll","f6"],
+		  
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  //lengthwise surf cross
+		  ["f4rr","f5rr"],
+		  ["f4ll","f5ll"],
+		  ["f2rr","f7rr"],
+		  ["f2ll","f7ll"],
+		  ["f5rr","f8rr"],
+		  ["f5ll","f8ll"],
+		  ["f6rr","f7rr"],
+		  ["f6ll","f7ll"],
+		  
+		  //widthwise cross
+		  ["f7rr","f5"],
+		  ["f7ll","f5"],
+		  ["f5rr","f7"],
+		  ["f5ll","f7"],
+		  
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  ["f8rr","f7"],
+		  ["f8ll","f7"],
+		  ["f6rr","f5"],
+		  ["f6ll","f5"],
+		  
+		  ["f4rr","f7"],
+		  ["f4ll","f7"],
+		  ["f2rr","f5"],
+		  ["f2ll","f5"],
+		  
+		  ["f7rr","f8"],
+		  ["f7ll","f8"],
+		  ["f5rr","f6"],
+		  ["f5ll","f6"],
+		  
+		  ["f7rr","f4"],
+		  ["f7ll","f4"],
+		  ["f5rr","f2"],
+		  ["f5ll","f2"],
+		  
+		  ["f7rr","f2"],
+		  ["f7ll","f2"],
+		  ["f5rr","f4"],
+		  ["f5ll","f4"],
+		  
+		  
+		  //main floor
+		  {"beamSpring":2401000,"beamDamp":180},
+		  {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+		  //main shape widthwise
+		  ["f1rr","f1"],
+		  ["f1ll","f1"],
+		  ["f2rr","f2"],
+		  ["f2ll","f2"],
+		  ["f3rr","f3"],
+		  ["f3ll","f3"],
+		  ["f4rr","f4"],
+		  ["f4ll","f4"],
+		  //main shape lengthwise
+		  ["f1rr","f2rr"],
+		  ["f1","f2"],
+		  ["f1ll","f2ll"],
+		  ["f3rr","f4rr"],
+		  ["f3","f4"],
+		  ["f3ll","f4ll"],
+		  {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+		  //main shape vertical
+		  ["f1rr","f3rr"],
+		  ["f1","f3"],
+		  ["f1ll","f3ll"],
+		  ["f2rr","f4rr"],
+		  ["f2","f4"],
+		  ["f2ll","f4ll"],
+		  {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+		  //surf cross
+		  ["f1rr","f2"],
+		  ["f1ll","f2"],
+		  ["f2rr","f1"],
+		  ["f2ll","f1"],
+		  ["f3rr","f4"],
+		  ["f3ll","f4"],
+		  ["f4rr","f3"],
+		  ["f4ll","f3"],
+		  //width cross
+		  ["f1rr","f3"],
+		  ["f1ll","f3"],
+		  ["f3rr","f1"],
+		  ["f3ll","f1"],
+		  ["f2rr","f4"],
+		  ["f2ll","f4"],
+		  ["f4rr","f2"],
+		  ["f4ll","f2"],
+		  //length cross
+		  ["f1rr","f4rr"],
+		  ["f1","f4"],
+		  ["f1ll","f4ll"],
+		  ["f2rr","f3rr"],
+		  ["f2","f3"],
+		  ["f2ll","f3ll"],
+		  {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+		  //front axis points
+		  ["fx1r","fx1l"],
+		  ["fx1r","f2rr"],
+		  ["fx1r","f2"],
+		  ["fx1l","f2"],
+		  ["fx1l","f2ll"],
+		  ["fx1r","f4rr"],
+		  ["fx1r","f4"],
+		  ["fx1l","f4"],
+		  ["fx1l","f4ll"],
+		  
+		  {"beamDeform":35000,"beamStrength":"FLT_MAX"},
+		  ["fx1r","f1rr"],
+		  ["fx1r","f1"],
+		  ["fx1l","f1"],
+		  ["fx1l","f1ll"],
+		  ["fx1r","f3rr"],
+		  ["fx1r","f3"],
+		  ["fx1l","f3"],
+		  ["fx1l","f3ll"],
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  
+	]
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"pigeon_frame"},
+			//top
+			["f14","f14rr","f13rr"],
+			["f14","f13rr","f13"],
+			["f14ll","f14","f13ll"],
+			["f14","f13","f13ll"],
+			["f13","f13rr","f12rr"],
+			["f13","f12rr","f12"],
+			["f13ll","f13","f12ll"],
+			["f13","f12","f12ll"],
+			["f12","f12rr","f3rr"],
+			["f12","f3rr","f3"],
+			["f12ll","f12","f3ll"],
+			["f12","f3","f3ll"],
+			["f3","f3rr","f4rr"],
+			["f3","f4rr","f4"],
+			["f3ll","f3","f4ll"],
+			["f3","f4","f4ll"],
+			["f4","f4rr","f7rr"],
+			["f4","f7rr","f7"],
+			["f4ll","f4","f7ll"],
+			["f4","f7","f7ll"],
+			["f7","f7rr","f8rr"],
+			["f7","f8rr","f8"],
+			["f7ll","f7","f8ll"],
+			["f7","f8","f8ll"],
+			
+			//front face
+			["f8","f8rr","f6rr"],
+			["f8","f6rr","f6"],
+			["f8ll","f8","f6ll"],
+			["f8","f6","f6ll"],
+			
+			//right side
+			["f12rr","f9rr","f1rr"],
+			["f12rr","f1rr","f3rr"],
+			["f13rr","f10rr","f9rr"],
+			["f13rr","f9rr","f12rr"],
+			["f14rr","f11rr","f10rr"],
+			["f14rr","f10rr","f13rr"],
+			["f3rr","f1rr","f2rr"],
+			["f3rr","f2rr","f4rr"],
+			["f4rr","f2rr","f5rr"],
+			["f4rr","f5rr","f7rr"],
+			["f7rr","f5rr","f6rr"],
+			["f7rr","f6rr","f8rr"],
+			
+			//left side
+			["f12ll","f1ll","f9ll"],
+			["f12ll","f3ll","f1ll"],
+			["f10ll","f13ll","f9ll"],
+			["f12ll","f9ll","f13ll"],
+			["f14ll","f10ll","f11ll"],
+			["f14ll","f13ll","f10ll"],
+			["f3ll","f2ll","f1ll"],
+			["f3ll","f4ll","f2ll"],
+			["f4ll","f5ll","f2ll"],
+			["f4ll","f7ll","f5ll"],
+			["f7ll","f6ll","f5ll"],
+			["f7ll","f8ll","f6ll"],
+			
+			//upper support
+			["f15","f15rr","f8rr"],
+			["f15","f8rr","f8"],
+			["f15ll","f15","f8ll"],
+			["f15","f8","f8ll"],
+			
+			["f15rr","f7rr","f8rr"],
+			["f15ll","f8ll","f7ll"],
+			
+			["f15ll","f7ll","f7"],
+			["f15ll","f7","f15"],
+			["f15rr","f7","f7rr"],
+			["f15rr","f15","f7"],
+			
+			//rear face
+			["f14ll","f11ll","f11"],
+			["f14ll","f11","f14"],
+			["f11rr","f14rr","f11"],
+			["f14rr","f14","f11"],
+			
+			//bottom
+			["f11","f11ll","f10ll"],
+			["f11","f10ll","f10"],
+			["f11rr","f11","f10rr"],
+			["f10","f10rr","f11"],
+			
+			["f10","f10ll","f9ll"],
+			["f10","f9ll","f9"],
+			["f10rr","f10","f9rr"],
+			["f9","f9rr","f10"],
+			
+			["f9","f9ll","f1ll"],
+			["f9","f1ll","f1"],
+			["f9rr","f9","f1rr"],
+			["f1","f1rr","f9"],
+			
+			["f1","f1ll","f2ll"],
+			["f1","f2ll","f2"],
+			["f1rr","f1","f2rr"],
+			["f2","f2rr","f1"],
+			
+			["f5rr","f2rr","f2"],
+			["f5rr","f2","f5"],
+			["f2ll","f5ll","f2"],
+			["f5ll","f5","f2"],
+			
+			["f6rr","f5rr","f5"],
+			["f6rr","f5","f6"],
+			["f5ll","f6ll","f5"],
+			["f6ll","f6","f5"],
+			{"group":""},
+	],
+}
+}

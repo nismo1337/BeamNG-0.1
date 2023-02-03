@@ -1,0 +1,266 @@
+{
+"moonhawk_innerfender_FR": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Right Inner Fender",
+	}
+    "slotType" : "moonhawk_innerfender_FR",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_innerfender_FR", ["moonhawk_innerfender_FR"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_innerfender_FR"},
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"nodeWeight":1.0},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //inner fender FR
+		 ["if1rr",-0.90,-2.02, 0.57],
+		 ["if1r",-0.53,-2.02, 0.57],
+		 ["if2rr",-0.94,-1.79, 0.57],
+		 {"selfCollision":true}
+		 ["if2r",-0.40,-1.76, 0.57],
+		 {"selfCollision":false}
+		 ["if3rr",-0.94,-1.63, 0.78],
+		 {"selfCollision":true}
+		 ["if3r",-0.51,-1.63, 0.83],
+		 {"selfCollision":false}
+		 ["if4rr",-0.94,-1.23, 0.78],
+		 {"selfCollision":true}
+		 ["if4r",-0.51,-1.23, 0.83],
+		 {"selfCollision":false}
+		 ["if5rr",-0.93,-1.01, 0.42],
+		 ["if5r",-0.40,-1.01, 0.42],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //inner fender main shape widthwise
+		  ["if1rr","if1r"],
+		  ["if2rr","if2r"],
+		  ["if3rr","if3r"],
+		  ["if4rr","if4r"],
+		  ["if5rr","if5r"],
+		  
+		  //lengthwise
+		  ["if1rr","if2rr"],
+		  ["if2rr","if3rr"],
+		  ["if3rr","if4rr"],
+		  ["if4rr","if5rr"],
+		  ["if1r","if2r"],
+		  ["if2r","if3r"],
+		  ["if3r","if4r"],
+		  ["if4r","if5r"],
+		  
+		  {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+		  //cross
+		  ["if1rr","if2r"],
+		  ["if1r","if2rr"],
+		  ["if2rr","if3r"],
+		  ["if2r","if3rr"],
+		  ["if3rr","if4r"],
+		  ["if3r","if4rr"],
+		  ["if4rr","if5r"],
+		  ["if4r","if5rr"],
+		  
+		  {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+		  //rigids
+		  ["if1rr","if3rr"],
+		  ["if1r","if3r"],
+		  ["if2rr","if4rr"],
+		  ["if2r","if4r"],
+		  ["if3rr","if5rr"],
+		  ["if3r","if5r"],
+		  
+		  //attach
+		  {"beamDeform":15000,"beamStrength":35000},
+		  {"optional":true},
+		  ["if1r","s4r"],
+		  ["if1r","s3r"],
+		  
+		  ["if1rr","s4rr"],
+		  ["if1rr","s3rr"],
+		  
+		  ["if1rr","s1rr"],
+		  ["if1r","s1r"],
+		  {"beamDeform":7000,"beamStrength":35000},
+		  ["if2r","s4r"],
+		  ["if2r","s3r"],
+		  
+		  ["if2rr","s4rr"],
+		  ["if2rr","s3rr"],
+		  
+		  {"optional":false},
+		  {"beamDeform":25000,"beamStrength":55000},
+		  //rear
+		  ["if5r","f1r"],
+		  ["if5r","f2rr"],
+		  ["if5rr","f1r"],
+		  ["if5rr","f2rr"],
+		  ["if5r","f10r"],
+		  ["if5r","f11rr"],
+		  ["if5rr","f10r"],
+		  ["if5rr","f11rr"],
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_innerfender_FR"},
+			["if2rr","if1rr","if1r"],
+			["if2rr","if1r","if2r"],
+			["if3rr","if2rr","if2r"],
+			["if3rr","if2r","if3r"],
+			["if4rr","if3rr","if3r"],
+			["if4rr","if3r","if4r"],
+			["if5rr","if4rr","if4r"],
+			["if5rr","if4r","if5r"],
+			
+			["if4r","if5r","if2r"],
+			["if4r","if2r","if3r"],
+	],
+}
+"moonhawk_innerfender_FL": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Right Inner Fendel",
+	}
+    "slotType" : "moonhawk_innerfender_FL",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_innerfender_FL", ["moonhawk_innerfender_FL"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_innerfender_FL"},
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"nodeWeight":1.4},
+		 {"FLictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //inner fender FL
+		 ["if1ll", 0.90,-2.02, 0.57],
+		 ["if1l", 0.53,-2.02, 0.57],
+		 ["if2ll", 0.94,-1.79, 0.57],
+		 {"selfCollision":true}
+		 ["if2l", 0.40,-1.76, 0.57],
+		 {"selfCollision":false}
+		 ["if3ll", 0.94,-1.63, 0.78],
+		 {"selfCollision":true}
+		 ["if3l", 0.51,-1.63, 0.83],
+		 {"selfCollision":false}
+		 ["if4ll", 0.94,-1.23, 0.78],
+		 {"selfCollision":true}
+		 ["if4l", 0.51,-1.23, 0.83],
+		 {"selfCollision":false}
+		 ["if5ll", 0.93,-1.01, 0.42],
+		 ["if5l", 0.40,-1.01, 0.42],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //inner fender main shape widthwise
+		  ["if1ll","if1l"],
+		  ["if2ll","if2l"],
+		  ["if3ll","if3l"],
+		  ["if4ll","if4l"],
+		  ["if5ll","if5l"],
+		  
+		  //lengthwise
+		  ["if1ll","if2ll"],
+		  ["if2ll","if3ll"],
+		  ["if3ll","if4ll"],
+		  ["if4ll","if5ll"],
+		  ["if1l","if2l"],
+		  ["if2l","if3l"],
+		  ["if3l","if4l"],
+		  ["if4l","if5l"],
+		  
+		  {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+		  //cross
+		  ["if1ll","if2l"],
+		  ["if1l","if2ll"],
+		  ["if2ll","if3l"],
+		  ["if2l","if3ll"],
+		  ["if3ll","if4l"],
+		  ["if3l","if4ll"],
+		  ["if4ll","if5l"],
+		  ["if4l","if5ll"],
+		  
+		  {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+		  //rigids
+		  ["if1ll","if3ll"],
+		  ["if1l","if3l"],
+		  ["if2ll","if4ll"],
+		  ["if2l","if4l"],
+		  ["if3ll","if5ll"],
+		  ["if3l","if5l"],
+		  
+		  //attach
+		  {"beamDeform":15000,"beamStrength":35000},
+		  {"optional":true},
+		  ["if1l","s4l"],
+		  ["if1l","s3l"],
+		  
+		  ["if1ll","s4ll"],
+		  ["if1ll","s3ll"],
+		  
+		  ["if1ll","s1ll"],
+		  ["if1l","s1l"],
+		  {"beamDeform":7000,"beamStrength":35000},
+		  ["if2l","s4l"],
+		  ["if2l","s3l"],
+		  
+		  ["if2ll","s4ll"],
+		  ["if2ll","s3ll"],
+		  
+		  {"optional":false},
+		  {"beamDeform":25000,"beamStrength":55000},
+		  //rear
+		  ["if5l","f1l"],
+		  ["if5l","f2ll"],
+		  ["if5ll","f1l"],
+		  ["if5ll","f2ll"],
+		  ["if5l","f10l"],
+		  ["if5l","f11ll"],
+		  ["if5ll","f10l"],
+		  ["if5ll","f11ll"],
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_innerfender_FL"},
+			["if1ll","if2ll","if1l"],
+			["if2ll","if2l","if1l"],
+			["if2ll","if3ll","if2l"],
+			["if3ll","if3l","if2l"],
+			["if3ll","if4ll","if3l"],
+			["if4ll","if4l","if3l"],
+			["if4ll","if5ll","if4l"],
+			["if5ll","if5l","if4l"],
+			
+			["if4l","if2l","if5l"],
+			["if4l","if3l","if2l"],
+	],
+}
+}

@@ -1,0 +1,548 @@
+{
+"super_fender_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Right Fender",
+	}
+    "slotType" : "super_fender_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_fender_R", ["super_fender_R"]],
+		 
+		 ["super_fendersignal_R", ["super_fender_R",]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 //--FENDER--
+		 {"nodeWeight":1.1},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true},
+		 {"collision":true}
+		 //r
+		 {"group":"super_fender_R"},
+		 ["fe1r",-0.45, -1.99, 0.59],
+		 ["fe2r",-0.47, -1.71, 0.69],
+		 ["fe3r",-0.50, -1.33, 0.80],
+		 ["fe4r",-0.49, -0.96, 0.77],
+		 
+		 ["fe5r",-0.84, -1.91, 0.57],
+		 ["fe6r",-0.86, -1.65, 0.68],
+		 ["fe7r",-0.87, -1.27, 0.80],
+		 ["fe8r",-0.88, -1.03, 0.77],
+		 ["fe9r",-0.89, -0.80, 0.75],
+		 
+		 ["fe10r",-0.90, -1.56, 0.58],
+		 ["fe11r",-0.91, -1.27, 0.67],
+		 ["fe12r",-0.92, -0.98, 0.57],
+		 ["fe13r",-0.91, -0.77, 0.54],
+		 
+		 ["fe14r",-0.84, -1.85, 0.31],
+		 ["fe15r",-0.86, -1.64, 0.28],
+		 ["fe16r",-0.89, -0.93, 0.27],
+		 ["fe17r",-0.89, -0.74, 0.27],
+		
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--FENDERS--
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":851000,"beamDamp":250},
+		  {"beamDeform":96500,"beamStrength":"FLT_MAX"},
+		  //main shape
+		  //r
+		  ["fe1r","fe2r"],
+		  ["fe2r","fe3r"],
+		  ["fe3r","fe4r"],
+		  ["fe5r","fe6r"],
+		  ["fe6r","fe7r"],
+		  ["fe7r","fe8r"],
+		  ["fe8r","fe9r"],
+		  ["fe10r","fe11r"],
+		  ["fe11r","fe12r"],
+		  ["fe12r","fe13r"],
+		  ["fe14r","fe15r"],
+		  ["fe16r","fe17r"],
+		  //vertical/widthwise
+		  ["fe6r","fe2r"],
+		  ["fe7r","fe3r"],
+		  ["fe8r","fe4r"],
+		  ["fe9r","fe4r"],
+		  
+		  ["fe10r","fe6r"],
+		  ["fe11r","fe7r"],
+		  ["fe12r","fe8r"],
+		  ["fe13r","fe9r"],
+		  ["fe14r","fe5r"],
+		  ["fe15r","fe10r"],
+		  ["fe16r","fe12r"],
+		  ["fe17r","fe13r"],
+		  
+		  
+		  {"beamDeform":8500,"beamStrength":"FLT_MAX"},
+		  //weak
+		  ["fe5r","fe1r"],
+		  ["fe5r","fe2r"],
+		  ["fe6r","fe1r"],
+		  {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+		  //cross
+		  //r
+		  //["fe1r","fe6r"],
+		  //["fe2r","fe5r"],
+		  ["fe2r","fe7r"],
+		  ["fe3r","fe6r"],
+		  ["fe4r","fe7r"],
+		  
+		  ["fe10r","fe5r"],
+		  ["fe10r","fe7r"],
+		  ["fe11r","fe6r"],
+		  ["fe11r","fe8r"],
+		  ["fe12r","fe7r"],
+		  ["fe12r","fe9r"],
+		  ["fe13r","fe8r"],
+		  
+		  ["fe14r","fe10r"],
+		  ["fe15r","fe5r"],
+		  ["fe15r","fe11r"],
+		  ["fe16r","fe11r"],
+		  ["fe16r","fe13r"],
+		  ["fe17r","fe12r"],
+		  
+		  ["fe3r","fe8r"],
+		  
+		  
+		  ["fe3l","fe8l"],
+		  {"beamDeform":10500,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  ["fe14r","fe1r"],
+		  ["fe10r","fe2r"],
+		  ["fe11r","fe3r"],
+		  ["fe12r","fe4r"],
+		  ["fe13r","fe4r"],
+		  
+		  //
+		  ["fe15r","fe6r"],
+		  ["fe15r","fe7r"],
+		  ["fe16r","fe7r"],
+		  ["fe16r","fe8r"],
+		  ["fe17r","fe9r"],
+		  
+		  //
+		  ["fe15r","fe2r"],
+		  ["fe16r","fe3r"],
+		  ["fe17r","fe4r"],
+		  
+		  //lengthwise rigids
+		  ["fe1r","fe3r"],
+		  ["fe2r","fe4r"],
+		  ["fe5r","fe7r"],
+		  ["fe6r","fe8r"],
+		  ["fe7r","fe9r"],
+		  ["fe5r","fe11r"],
+		  ["fe10r","fe12r"],
+		  ["fe11r","fe13r"],
+		  
+		  //attach
+		  {"beamDeform":17500,"beamStrength":36000},
+		  //r
+		  {"breakGroup":"super_fender_a_R"},
+		  ["fe4r","fi1rr"],
+		  
+		  ["fe9r","fi1rr"],
+		  ["fe9r","c8rr"],
+		  ["fe13r","c8rr"],
+		  ["fe13r","fi1rr"],
+		  ["fe17r","c2rr"],
+		  ["fe16r","c2rr"],
+		  
+		  ["fe8r","fi1rr"],
+		  ["fe8r","f1rr"],
+		  
+		  ["fe13r","c2rr"],
+		  
+		  ["fe9r","fi1r"],
+		  
+		  {"breakGroup":"super_fender_b_R"},
+		  ["fe4r","fi1r"],
+		  ["fe4r","c8r"],
+		  ["fe3r","f2r"],
+		  ["fe4r","f2r"],
+		  ["fe2r","f3r"],
+		  
+		  {"breakGroup":"super_fender_c_R"},
+		  ["fe1r","f4r"],
+		  ["fe5r","f4rr"],
+		  ["fe6r","f4rr"],
+		  ["fe6r","f3rr"],
+		  ["fe10r","f3rr"],
+		  ["fe14r","f6rr"],
+		  ["fe15r","f5rr"],
+		  
+		  {"breakGroup":""},
+		  //fender support beams
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":851000,"beamDamp":250},
+		  {"beamLimitSpring":851000,"beamLimitDamp":250},
+		  {"beamDeform":18000,"beamStrength":200000},
+		  //r
+		  ["fe17r","c2r"],
+		  ["fe13r","c8r"],
+		  //["fe9r","fi1r"],
+		  ["fe5r","f4r"],
+		  ["fe1r","f4rr"],
+		  ["fe14r","f6r"],
+		  ["fe15r","c1r"],
+		  ["fe10r","c7r"],
+		  ["fe11r","c7r"],
+		  ["fe11r","c8r"],
+		  ["fe12r","c8r"],
+		  
+		  ["fe16r","c2r"],
+		  
+		  ["fe1r","c1r"],
+		  ["fe5r","f6rr"],
+		  ["fe6r","f5rr"],
+		  ["fe2r","c7r"],
+		  
+		  ["fe11r","c1r"],
+		  ["fe11r","c2r"],
+		  
+		  ["fe7r","f2rr"],
+		  
+		  ["fe9r","p1r"],
+		  ["fe9r","p2r"],
+		  ["fe17r","c3rr"],
+		  ["fe9r","c2rr"],
+		  ["fe13r","c2rr"],
+		  ["fe4r","c2r"],
+		  ["fe7r","f2rr"],
+		  ["fe7r","c2rr"],
+		  ["fe11r","c2rr"],
+		  ["fe3r","c2r"],
+		  //fender anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":200000,"beamStrength":30000000},
+		  {"beamLimitSpring":601000,"beamLimitDamp":150},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":1.0},
+		  ["fe1r","fe4r"],
+		  ["fe5r","fe9r"],
+		  
+		  ["fe4r","fe13r"],
+		  ["fe14r","fe17r"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			//right fender
+			{"group":"super_fender_R"},
+			["fe1r","fe2r","fe5r"],
+			["fe5r","fe2r","fe6r"],
+			["fe2r","fe3r","fe6r"],
+			["fe6r","fe3r","fe7r"],
+			["fe3r","fe4r","fe7r"],
+			["fe7r","fe4r","fe8r"],
+			["fe8r","fe4r","fe9r"],
+			["fe5r","fe6r","fe10r"],
+			["fe6r","fe7r","fe10r"],
+			["fe10r","fe7r","fe11r"],
+			["fe7r","fe8r","fe11r"],
+			["fe11r","fe8r","fe12r"],
+			["fe8r","fe9r","fe12r"],
+			["fe12r","fe9r","fe13r"],
+			["fe5r","fe10r","fe14r"],
+			["fe14r","fe10r","fe15r"],
+			["fe10r","fe11r","fe15r"],
+			["fe16r","fe11r","fe12r"],
+			["fe12r","fe13r","fe16r"],
+			["fe16r","fe13r","fe17r"],
+			
+			{"group":""},
+			
+			
+	],
+}"super_fender_L": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Left Fender",
+	}
+    "slotType" : "super_fender_L",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_fender_L", ["super_fender_L"]],
+		 
+		 ["super_fendersignal_L", ["super_fender_L"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 //--FENDER--
+		 {"nodeWeight":1.1},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true},
+		 {"collision":true}
+		 //l
+		 {"group":"super_fender_L"},
+		 ["fe1l", 0.45, -1.99, 0.59],
+		 ["fe2l", 0.47, -1.71, 0.69],
+		 ["fe3l", 0.50, -1.33, 0.80],
+		 ["fe4l", 0.49, -0.96, 0.77],
+		 
+		 ["fe5l", 0.84, -1.91, 0.57],
+		 ["fe6l", 0.86, -1.65, 0.68],
+		 ["fe7l", 0.87, -1.27, 0.80],
+		 ["fe8l", 0.88, -1.03, 0.77],
+		 ["fe9l", 0.89, -0.80, 0.75],
+		 
+		 ["fe10l", 0.90, -1.56, 0.58],
+		 ["fe11l", 0.91, -1.27, 0.67],
+		 ["fe12l", 0.92, -0.98, 0.57],
+		 ["fe13l", 0.91, -0.77, 0.54],
+		 
+		 ["fe14l", 0.84, -1.85, 0.31],
+		 ["fe15l", 0.86, -1.64, 0.28],
+		 ["fe16l", 0.89, -0.93, 0.27],
+		 ["fe17l", 0.89, -0.74, 0.27],
+		 
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--FENDERS--
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":851000,"beamDamp":250},
+		  {"beamDeform":96500,"beamStrength":"FLT_MAX"},
+		  //main shape
+		  
+		  //l
+		  ["fe1l","fe2l"],
+		  ["fe2l","fe3l"],
+		  ["fe3l","fe4l"],
+		  ["fe5l","fe6l"],
+		  ["fe6l","fe7l"],
+		  ["fe7l","fe8l"],
+		  ["fe8l","fe9l"],
+		  ["fe10l","fe11l"],
+		  ["fe11l","fe12l"],
+		  ["fe12l","fe13l"],
+		  ["fe14l","fe15l"],
+		  ["fe16l","fe17l"],
+		  //vertical/widthwise
+		  ["fe6l","fe2l"],
+		  ["fe7l","fe3l"],
+		  ["fe8l","fe4l"],
+		  ["fe9l","fe4l"],
+		  
+		  ["fe10l","fe6l"],
+		  ["fe11l","fe7l"],
+		  ["fe12l","fe8l"],
+		  ["fe13l","fe9l"],
+		  ["fe14l","fe5l"],
+		  ["fe15l","fe10l"],
+		  ["fe16l","fe12l"],
+		  ["fe17l","fe13l"],
+		  
+		  {"beamDeform":8500,"beamStrength":"FLT_MAX"},
+		  //weak
+		  ["fe5l","fe1l"],
+		  ["fe5l","fe2l"],
+		  ["fe6l","fe1l"],
+		  {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+		  //cross
+		  //l
+		  //["fe1l","fe6l"],
+		  //["fe2l","fe5l"],
+		  ["fe2l","fe7l"],
+		  ["fe3l","fe6l"],
+		  ["fe4l","fe7l"],
+		  
+		  ["fe10l","fe5l"],
+		  ["fe10l","fe7l"],
+		  ["fe11l","fe6l"],
+		  ["fe11l","fe8l"],
+		  ["fe12l","fe7l"],
+		  ["fe12l","fe9l"],
+		  ["fe13l","fe8l"],
+		  
+		  ["fe14l","fe10l"],
+		  ["fe15l","fe5l"],
+		  ["fe15l","fe11l"],
+		  ["fe16l","fe11l"],
+		  ["fe16l","fe13l"],
+		  ["fe17l","fe12l"],
+		  
+		  ["fe3l","fe8l"],
+		  {"beamDeform":10500,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  ["fe14l","fe1l"],
+		  ["fe10l","fe2l"],
+		  ["fe11l","fe3l"],
+		  ["fe12l","fe4l"],
+		  ["fe13l","fe4l"],
+		  
+		  //
+		  ["fe15l","fe6l"],
+		  ["fe15l","fe7l"],
+		  ["fe16l","fe7l"],
+		  ["fe16l","fe8l"],
+		  ["fe17l","fe9l"],
+		  
+		  //
+		  ["fe15l","fe2l"],
+		  ["fe16l","fe3l"],
+		  ["fe17l","fe4l"],
+		  
+		  //lengthwise rigids
+		  ["fe1l","fe3l"],
+		  ["fe2l","fe4l"],
+		  ["fe5l","fe7l"],
+		  ["fe6l","fe8l"],
+		  ["fe7l","fe9l"],
+		  ["fe5l","fe11l"],
+		  ["fe10l","fe12l"],
+		  ["fe11l","fe13l"],
+		  
+		  //attach
+		  {"beamDeform":17500,"beamStrength":36000},
+		  //l
+		  {"breakGroup":"super_fender_a_L"},
+		  ["fe4l","fi1ll"],
+		  
+		  ["fe9l","fi1ll"],
+		  ["fe9l","c8ll"],
+		  ["fe13l","c8ll"],
+		  ["fe13l","fi1ll"],
+		  ["fe17l","c2ll"],
+		  ["fe16l","c2ll"],
+		  
+		  ["fe8l","fi1ll"],
+		  ["fe8l","f1ll"],
+		  
+		  ["fe13l","c2ll"],
+		  
+		  ["fe9l","fi1l"],
+		  
+		  {"breakGroup":"super_fender_b_L"},
+		  ["fe4l","fi1l"],
+		  ["fe4l","c8l"],
+		  ["fe3l","f2l"],
+		  ["fe4l","f2l"],
+		  ["fe2l","f3l"],
+		  
+		  {"breakGroup":"super_fender_c_L"},
+		  ["fe1l","f4l"],
+		  ["fe5l","f4ll"],
+		  ["fe6l","f4ll"],
+		  ["fe6l","f3ll"],
+		  ["fe10l","f3ll"],
+		  ["fe14l","f6ll"],
+		  ["fe15l","f5ll"],
+		  {"breakGroup":""},
+		  //fender support beams
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":851000,"beamDamp":250},
+		  {"beamLimitSpring":851000,"beamLimitDamp":250},
+		  {"beamDeform":18000,"beamStrength":200000},
+		  //l
+		  ["fe17l","c2l"],
+		  ["fe13l","c8l"],
+		  //["fe9l","fi1l"],
+		  ["fe5l","f4l"],
+		  ["fe1l","f4ll"],
+		  ["fe14l","f6l"],
+		  ["fe15l","c1l"],
+		  ["fe10l","c7l"],
+		  ["fe11l","c7l"],
+		  ["fe11l","c8l"],
+		  ["fe12l","c8l"],
+		  
+		  ["fe16l","c2l"],
+		  
+		  ["fe1l","c1l"],
+		  ["fe5l","f6ll"],
+		  ["fe6l","f5ll"],
+		  ["fe2l","c7l"],
+		  
+		  
+		  ["fe11l","c1l"],
+		  ["fe11l","c2l"],
+		  
+		  ["fe7l","f2ll"],
+		  
+		  ["fe9l","p1l"],
+		  ["fe9l","p2l"],
+		  ["fe17l","c3ll"],
+		  ["fe9l","c2ll"],
+		  ["fe13l","c2ll"],
+		  ["fe4l","c2l"],
+		  ["fe7l","f2ll"],
+		  ["fe7l","c2ll"],
+		  ["fe11l","c2ll"],
+		  ["fe3l","c2l"],
+		  
+		  
+		  //fender anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":200000,"beamStrength":30000000},
+		  {"beamLimitSpring":601000,"beamLimitDamp":150},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":1.0},
+		  ["fe1l","fe4l"],
+		  ["fe5l","fe9l"],
+		  
+		  ["fe4l","fe13l"],
+		  ["fe14l","fe17l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			//left fender
+			{"group":"super_fender_L"},
+			["fe2l","fe1l","fe5l"],
+			["fe2l","fe5l","fe6l"],
+			["fe3l","fe2l","fe6l"],
+			["fe3l","fe6l","fe7l"],
+			["fe4l","fe3l","fe7l"],
+			["fe4l","fe7l","fe8l"],
+			["fe4l","fe8l","fe9l"],
+			["fe6l","fe5l","fe10l"],
+			["fe7l","fe6l","fe10l"],
+			["fe7l","fe10l","fe11l"],
+			["fe8l","fe7l","fe11l"],
+			["fe8l","fe11l","fe12l"],
+			["fe9l","fe8l","fe12l"],
+			["fe9l","fe12l","fe13l"],
+			["fe10l","fe5l","fe14l"],
+			["fe10l","fe14l","fe15l"],
+			["fe11l","fe10l","fe15l"],
+			["fe11l","fe16l","fe12l"],
+			["fe13l","fe12l","fe16l"],
+			["fe13l","fe16l","fe17l"],
+			
+			{"group":""},
+			
+			
+	],
+}
+}

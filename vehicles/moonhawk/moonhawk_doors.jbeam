@@ -1,0 +1,374 @@
+{
+"moonhawk_door_R": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Right Door",
+	}
+    "slotType" : "moonhawk_door_R",
+	"slots": [
+		["type", "default"]
+		["moonhawk_mirror_R","moonhawk_mirror_R"],
+	],
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_door_R", ["moonhawk_door_R"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //--DOOR--
+		 {"collision":true},
+		 {"selfCollision":true},
+		 {"group":"moonhawk_door_R"},
+		 {"nodeWeight":2.6},
+		 ["d1r",-0.91,-0.68, 0.27],
+		 ["d2r",-0.91, 0.03, 0.28],
+		 ["d3r",-0.915, 0.705, 0.27],
+		 
+		 {"selfCollision":false},
+		 ["d4r",-0.98,-0.72, 0.65],
+		 ["d5r",-0.98,0.03, 0.65],
+		 ["d6r",-0.99,0.735, 0.65],
+		 
+		 {"selfCollision":true},
+		 ["d7r",-0.92,-0.58, 0.95],
+		 {"selfCollision":false},
+		 ["d8r",-0.94,0.03, 0.95],
+		 {"selfCollision":true},
+		 ["d9r",-0.935,0.70, 0.945],
+		 
+		 //rigidifier
+		 {"selfCollision":false},
+		 {"collision":false}
+		 {"nodeWeight":2.4},
+		 ["d14r",-0.72, 0.46, 0.64],
+		 //hinge node
+		 ["d10r",-0.97,-0.72, 0.32],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":2501000,"beamDamp":170},
+		  //door main shape
+		  ["d1r","d2r"],
+		  ["d2r","d3r"],
+		  ["d4r","d5r"],
+		  ["d5r","d6r"],
+		  ["d7r","d8r"],
+		  ["d8r","d9r"],
+		  
+		  
+		  ["d1r","d4r"],
+		  ["d2r","d5r"],
+		  ["d3r","d6r"],
+		  ["d4r","d7r"],
+		  ["d5r","d8r"],
+		  ["d6r","d9r"],
+		  {"beamDeform":18000,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  ["d1r","d7r"],
+		  ["d2r","d8r"],
+		  ["d3r","d9r"],
+		  
+		  
+		  //lengthwise
+		  ["d1r","d3r"],
+		  ["d4r","d6r"],
+		  ["d7r","d9r"],
+		  ["d4r","d3r"],
+		  
+		  
+		  //surficial crossing
+		  ["d1r","d5r"],
+		  ["d2r","d4r"],
+		  ["d2r","d6r"],
+		  ["d3r","d5r"],
+		  ["d4r","d8r"],
+		  ["d5r","d7r"],
+		  ["d5r","d9r"],
+		  ["d6r","d8r"],
+		  
+		  
+		  //rigidifier
+		  {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+		  ["d1r","d14r"],
+		  ["d2r","d14r"],
+		  ["d3r","d14r"],
+		  ["d4r","d14r"],
+		  ["d5r","d14r"],
+		  ["d6r","d14r"],
+		  ["d7r","d14r"],
+		  ["d8r","d14r"],
+		  ["d9r","d14r"],
+		  
+		  //hinge
+		  ["d1r","d10r"],
+		  ["d4r","d10r"],
+		  ["d7r","d10r"],
+		  
+		  ["d2r","d10r"],
+		  ["d5r","d10r"],
+		  ["d8r","d10r"],
+		  
+		  //door support beams
+		  {"beamLimitSpring":2501000,"beamLimitDamp":200},
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamDeform":64000,"beamStrength":400000},
+		  
+		  ["d9r","q2r"],
+		  ["d6r","q8r"],
+		  ["d3r","b5rr"],
+		  ["d6r","q1r"],
+		  ["d6r","b5rr"],
+		  
+		  ["d3r","b4r"],
+		  ["d2r","b3r"],
+		  ["d1r","b2r"],
+		  ["d7r","b11r"],
+		  
+		  ["d4r","b2r"],
+		  
+		  //door hinge
+		  {"beamSpring":2501000,"beamDamp":250},
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":56000,"beamStrength":72000},
+		  {"breakGroup":"moonhawk_doorhinge_a_R"},
+		  
+		  ["d10r","b11rr"],
+		  ["d4r","b11rr"],
+		  ["d10r","b10rr"],
+		  ["d4r","b10rr"],
+
+		  {"breakGroup":"moonhawk_doorhinge_b_R"},
+		  ["d4r","b2rr"],
+		  ["d10r","b2rr"],
+		  ["d4r","b1rr"],
+		  ["d10r","b1rr"],
+		  
+		  
+		  {"breakGroup":"moonhawk_doorlatch_R"},
+		  //--TEMPORARY DOOR LATCH--
+		  {"beamDeform":36000,"beamStrength":49000},
+		  
+		  ["d9r","q1r"],
+		  ["d9r","q7r"],
+		  
+		  ["d14r","q7r"],
+		  ["d6r","q7r"],
+		  
+		  ["d3r","q7r"],
+		  ["d9r","q7r"],
+		  
+		  {"breakGroup":""},
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_door_R"},
+			["d9r","d6r","d5r"],
+			["d9r","d5r","d8r"],
+			["d8r","d5r","d4r"],
+			["d8r","d4r","d7r"],
+			["d6r","d3r","d2r"],
+			["d6r","d2r","d5r"],
+			["d5r","d2r","d1r"],
+			["d5r","d1r","d4r"],
+			
+	],
+}
+"moonhawk_door_L": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Left Door",
+	}
+    "slotType" : "moonhawk_door_L",
+	"slots": [
+		["type", "default"]
+		["moonhawk_mirror_L","moonhawk_mirror_L"],
+	],
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_door_L", ["moonhawk_door_L"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //--DOOR--
+		 {"collision":true},
+		 {"selfCollision":true},
+		 {"group":"moonhawk_door_L"},
+		 {"nodeWeight":2.6},
+		 ["d1l", 0.91,-0.68, 0.27],
+		 ["d2l", 0.91, 0.03, 0.28],
+		 ["d3l", 0.915, 0.705, 0.27],
+		 
+		 {"selfCollision":false},
+		 ["d4l", 0.98,-0.72, 0.65],
+		 ["d5l", 0.98,0.03, 0.65],
+		 ["d6l", 0.99,0.735, 0.65],
+		 
+		 {"selfCollision":true},
+		 ["d7l", 0.92,-0.58, 0.95],
+		 {"selfCollision":false},
+		 ["d8l", 0.94,0.03, 0.95],
+		 {"selfCollision":true},
+		 ["d9l", 0.935,0.70, 0.945],
+		 
+		 //rigidifier
+		 {"selfCollision":false},
+		 {"collision":false}
+		 {"nodeWeight":2.4},
+		 ["d14l", 0.72, 0.46, 0.64],
+		 //hinge node
+		 ["d10l", 0.97,-0.72, 0.32],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":2501000,"beamDamp":170},
+		  //door main shape
+		  ["d1l","d2l"],
+		  ["d2l","d3l"],
+		  ["d4l","d5l"],
+		  ["d5l","d6l"],
+		  ["d7l","d8l"],
+		  ["d8l","d9l"],
+		  
+		  
+		  ["d1l","d4l"],
+		  ["d2l","d5l"],
+		  ["d3l","d6l"],
+		  ["d4l","d7l"],
+		  ["d5l","d8l"],
+		  ["d6l","d9l"],
+		  {"beamDeform":18000,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  ["d1l","d7l"],
+		  ["d2l","d8l"],
+		  ["d3l","d9l"],
+		  
+		  
+		  //lengthwise
+		  ["d1l","d3l"],
+		  ["d4l","d6l"],
+		  ["d7l","d9l"],
+		  ["d4l","d3l"],
+		  
+		  
+		  //surficial crossing
+		  ["d1l","d5l"],
+		  ["d2l","d4l"],
+		  ["d2l","d6l"],
+		  ["d3l","d5l"],
+		  ["d4l","d8l"],
+		  ["d5l","d7l"],
+		  ["d5l","d9l"],
+		  ["d6l","d8l"],
+		  
+		  
+		  //rigidifier
+		  {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+		  ["d1l","d14l"],
+		  ["d2l","d14l"],
+		  ["d3l","d14l"],
+		  ["d4l","d14l"],
+		  ["d5l","d14l"],
+		  ["d6l","d14l"],
+		  ["d7l","d14l"],
+		  ["d8l","d14l"],
+		  ["d9l","d14l"],
+		  
+		  //hinge
+		  ["d1l","d10l"],
+		  ["d4l","d10l"],
+		  ["d7l","d10l"],
+		  
+		  ["d2l","d10l"],
+		  ["d5l","d10l"],
+		  ["d8l","d10l"],
+		  
+		  //door support beams
+		  {"beamLimitSpring":2501000,"beamLimitDamp":200},
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamDeform":64000,"beamStrength":400000},
+		  
+		  ["d9l","q2l"],
+		  ["d6l","q8l"],
+		  ["d3l","b5ll"],
+		  ["d6l","q1l"],
+		  ["d6l","b5ll"],
+		  
+		  ["d3l","b4l"],
+		  ["d2l","b3l"],
+		  ["d1l","b2l"],
+		  ["d7l","b11l"],
+		  
+		  ["d4l","b2l"],
+		  
+		  //door hinge
+		  {"beamSpring":2501000,"beamDamp":250},
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":56000,"beamStrength":72000},
+		  {"breakGroup":"moonhawk_doorhinge_a_L"},
+		  
+		  ["d10l","b11ll"],
+		  ["d4l","b11ll"],
+		  ["d10l","b10ll"],
+		  ["d4l","b10ll"],
+
+		  {"breakGroup":"moonhawk_doorhinge_b_L"},
+		  ["d4l","b2ll"],
+		  ["d10l","b2ll"],
+		  ["d4l","b1ll"],
+		  ["d10l","b1ll"],
+		  
+		  
+		  {"breakGroup":"moonhawk_doollatch_l"},
+		  //--TEMPORARY DOOR LATCH--
+		  {"beamDeform":36000,"beamStrength":49000},
+		  ["d9l","q1l"],
+		  ["d9l","q7l"],
+		  
+		  ["d14l","q7l"],
+		  ["d6l","q7l"],
+		  
+		  ["d3l","q7l"],
+		  ["d9l","q7l"],
+		  {"breakGroup":""},
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_door_L"},
+			["d9l","d5l","d6l"],
+			["d5l","d9l","d8l"],
+			["d5l","d8l","d4l"],
+			["d4l","d8l","d7l"],
+			["d3l","d6l","d2l"],
+			["d2l","d6l","d5l"],
+			["d2l","d5l","d1l"],
+			["d1l","d5l","d4l"],
+			
+	],
+}
+}

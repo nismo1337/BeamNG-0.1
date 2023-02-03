@@ -1,0 +1,350 @@
+{
+"pickup_bumper_R_offroad": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Rear Bumper",
+	}
+    "slotType" : "pickup_bumper_R",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_bumper_R_offroad", ["pickup_bumper_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR BUMPER--
+		 {"collision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":1.3},
+		 {"frictionCoef":0.7},
+		 {"group":"pickup_bumper_R"},
+		 {"selfCollision":true}
+		 ["rb1rr",-0.93, 2.67, 0.69],
+		 {"selfCollision":false}
+		 ["rb1r",-0.52, 2.74, 0.69],
+		 ["rb1",0.0, 2.74, 0.69],
+		 ["rb1l",0.52, 2.74, 0.69],
+		 {"selfCollision":true}
+		 ["rb1ll",0.93, 2.67, 0.69],
+		 
+		 ["rb2rr",-0.91, 2.65, 0.57],
+		 {"selfCollision":false}
+		 ["rb2r",-0.51, 2.69, 0.52],
+		 ["rb2",0.0, 2.69, 0.52],
+		 ["rb2l",0.51, 2.69, 0.52],
+		 {"selfCollision":true}
+		 ["rb2ll",0.91, 2.65, 0.57],
+		 
+		 {"selfCollision":true}
+		 ["rb3rr",-0.95, 2.59, 0.69],
+		 {"selfCollision":false}
+		 ["rb3r",-0.47, 2.59, 0.69],
+		 ["rb3",0.0, 2.59, 0.69],
+		 ["rb3l",0.47, 2.59, 0.69],
+		 {"selfCollision":true}
+		 ["rb3ll",0.95, 2.59, 0.69],
+		 
+		 {"selfCollision":true}
+		 ["rb4rr",-0.92, 2.55, 0.52],
+		 {"selfCollision":false}
+		 ["rb4r",-0.46, 2.55, 0.47],
+		 ["rb4", 0.0, 2.55, 0.47],
+		 ["rb4l",0.46, 2.55, 0.47],
+		 {"selfCollision":true}
+		 ["rb4ll",0.92, 2.55, 0.52],
+		 
+		 {"group":""},
+		 {"selfCollision":false}
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--REAR BUMPER--
+		  {"beamSpring":1401000,"beamDamp":60},
+		  {"beamDeform":49000,"beamStrength":"FLT_MAX"},
+		  //main shape
+		  ["rb1rr","rb1r"],
+		  ["rb1r","rb1"],
+		  ["rb1","rb1l"],
+		  ["rb1l","rb1ll"],
+		  
+		  ["rb2rr","rb2r"],
+		  ["rb2r","rb2"],
+		  ["rb2","rb2l"],
+		  ["rb2l","rb2ll"],
+		  
+		  ["rb3rr","rb3r"],
+		  ["rb3r","rb3"],
+		  ["rb3","rb3l"],
+		  ["rb3l","rb3ll"],
+		  
+		  ["rb4rr","rb4r"],
+		  ["rb4r","rb4"],
+		  ["rb4","rb4l"],
+		  ["rb4l","rb4ll"],
+		  
+		  ["rb4rr","rb2rr"],
+		  ["rb4ll","rb2ll"],
+		  
+		  ["rb3rr","rb1rr"],
+		  ["rb3ll","rb1ll"],
+		  //vert
+		  ["rb1rr","rb2rr"],
+		  ["rb1r","rb2r"],
+		  ["rb1","rb2"],
+		  ["rb1l","rb2l"],
+		  ["rb1ll","rb2ll"],
+		  
+		  ["rb1rr","rb3rr"],
+		  ["rb1r","rb3r"],
+		  ["rb1","rb3"],
+		  ["rb1l","rb3l"],
+		  ["rb1ll","rb3ll"],
+		  
+		  ["rb2rr","rb4rr"],
+		  ["rb2r","rb4r"],
+		  ["rb2","rb4"],
+		  ["rb2l","rb4l"],
+		  ["rb2ll","rb4ll"],
+		  
+		  ["rb3rr","rb4rr"],
+		  ["rb3ll","rb4ll"],
+		  //surficial crossing
+		  {"beamDeform":13000,"beamStrength":"FLT_MAX"},
+		  ["rb1rr","rb2r"],
+		  ["rb1r","rb2rr"],
+		  ["rb1r","rb2"],
+		  ["rb1","rb2r"],
+		  ["rb1","rb2l"],
+		  ["rb1l","rb2"],
+		  ["rb1l","rb2ll"],
+		  ["rb1ll","rb2l"],
+		  
+		  ["rb3rr","rb2rr"],
+		  ["rb3ll","rb2ll"],
+		  ["rb4rr","rb1rr"],
+		  ["rb4ll","rb1ll"],
+		  
+		  ["rb1rr","rb3r"],
+		  ["rb1r","rb3rr"],
+		  ["rb1r","rb3"],
+		  ["rb1","rb3r"],
+		  ["rb1","rb3l"],
+		  ["rb1l","rb3"],
+		  ["rb1l","rb3ll"],
+		  ["rb1ll","rb3l"],
+		  
+		  ["rb2rr","rb4r"],
+		  ["rb2r","rb4rr"],
+		  ["rb2r","rb4"],
+		  ["rb2","rb4r"],
+		  ["rb2","rb4l"],
+		  ["rb2l","rb4"],
+		  ["rb2l","rb4ll"],
+		  ["rb2ll","rb4l"],
+		  
+		  ["rb3l","rb4ll"],
+		  ["rb3r","rb4rr"],
+		  ["rb3ll","rb4l"],
+		  ["rb3rr","rb4r"],
+		  
+		  //rigids
+		  {"beamDeform":13000,"beamStrength":"FLT_MAX"},
+		  ["rb4rr","rb2r"],
+		  ["rb4ll","rb2l"],
+		  
+		  ["rb4rr","rb1r"],
+		  ["rb4ll","rb1l"],
+		  
+		  ["rb3rr","rb2r"],
+		  ["rb3ll","rb2l"],
+		  
+		  ["rb1rr","rb1"],
+		  ["rb1r","rb1l"],
+		  ["rb1ll","rb1"],
+		  
+		  ["rb2rr","rb2"],
+		  ["rb2r","rb2l"],
+		  ["rb2ll","rb2"],
+		  
+		  ["rb3rr","rb3"],
+		  ["rb3r","rb3l"],
+		  ["rb3ll","rb3"],
+		  
+		  ["rb4rr","rb4"],
+		  ["rb4r","rb4l"],
+		  ["rb4ll","rb4"],
+		  
+		  //vertical
+		  
+		  ["rb3rr","rb2rr"],
+		  ["rb3r","rb2r"],
+		  ["rb3","rb2"],
+		  ["rb3l","rb2l"],
+		  ["rb3ll","rb2ll"],
+		  
+		  ["rb4rr","rb1rr"],
+		  ["rb4r","rb1r"],
+		  ["rb4","rb1"],
+		  ["rb4l","rb1l"],
+		  ["rb4ll","rb1ll"],
+		  
+		  //anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":1000000,"beamStrength":10000000},
+		  {"beamLimitSpring":1401000,"beamLimitDamp":60},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":1.0},
+		  ["rb1rr","rb1ll"],
+		  ["rb2rr","rb2ll"],
+		  ["rb3rr","rb3ll"],
+		  ["rb4rr","rb4ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  
+		  //attach
+		  {"beamSpring":301000,"beamDamp":100},
+		  {"beamDeform":9000,"beamStrength":17000},
+		  {"breakGroup":"pickup_rearbumper_R"},
+		  //r
+		  ["rb1rr","fr19r"],
+		  ["rb2rr","fr19r"],
+		  ["rb3rr","fr19r"],
+		  
+		  ["rb1r","fr19r"],
+		  ["rb2r","fr19r"],
+		  ["rb3r","fr19r"],
+		  ["rb1r","fr19"],
+		  ["rb2r","fr19"],
+		  ["rb3r","fr19"],
+		  
+		  ["rb1rr","fr20r"],
+		  ["rb2rr","fr20r"],
+		  ["rb3rr","fr20r"],
+		  ["rb1r","fr20r"],
+		  ["rb2r","fr20r"],
+		  ["rb3r","fr20r"],
+		  ["rb1r","fr20"],
+		  ["rb2r","fr20"],
+		  ["rb3r","fr20"],
+		  /*
+		  ["rb1","fr19r"],
+		  ["rb2","fr19r"],
+		  ["rb3","fr19r"],
+		  ["rb1","fr20r"],
+		  ["rb2","fr20r"],
+		  ["rb3","fr20r"],
+		  */
+		  {"breakGroup":"pickup_rearbumper_L"},
+		  //l
+		  ["rb1l","fr19"],
+		  ["rb2l","fr19"],
+		  ["rb3l","fr19"],
+		  ["rb1l","fr19l"],
+		  ["rb2l","fr19l"],
+		  ["rb3l","fr19l"],
+		  ["rb1ll","fr19l"],
+		  ["rb2ll","fr19l"],
+		  ["rb3ll","fr19l"],
+		  ["rb1l","fr20"],
+		  ["rb2l","fr20"],
+		  ["rb3l","fr20"],
+		  ["rb1l","fr20l"],
+		  ["rb2l","fr20l"],
+		  ["rb3l","fr20l"],
+		  ["rb1ll","fr20l"],
+		  ["rb2ll","fr20l"],
+		  ["rb3ll","fr20l"],
+		  /*
+		  ["rb1","fr19l"],
+		  ["rb2","fr19l"],
+		  ["rb3","fr19l"],
+		  ["rb1","fr20l"],
+		  ["rb2","fr20l"],
+		  ["rb3","fr20l"],
+		  */
+		  //attach soft
+		  {"beamSpring":151000,"beamDamp":100},
+		  {"beamDeform":6000,"beamStrength":17000},
+		  {"breakGroup":"pickup_rearbumper_R"},
+		  //r
+		  ["rb1r","fr15r"],
+		  ["rb2r","fr15r"],
+		  ["rb3r","fr15r"],
+		  ["rb1r","fr18r"],
+		  ["rb2r","fr18r"],
+		  ["rb3r","fr18r"],
+		  
+		  {"breakGroup":"pickup_rearbumper_L"},
+		  //l
+		  ["rb1l","fr15l"],
+		  ["rb2l","fr15l"],
+		  ["rb3l","fr15l"],
+		  ["rb1l","fr18l"],
+		  ["rb2l","fr18l"],
+		  ["rb3l","fr18l"],
+		  
+		  {"breakGroup":""},
+		  //--REAR BUMPER SUPPORT BEAMS--
+		  {"beamSpring":301000,"beamDamp":0},
+		  {"beamLimitSpring":301000,"beamLimitDamp":100},
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamDeform":7000,"beamStrength":80000},
+		  {"optional":true},
+		  
+		  ["rb3rr","b13rr"],
+		  ["rb4rr","b13rr"],
+		  ["rb3ll","b13ll"],
+		  ["rb4ll","b13ll"],
+		  
+		  ["rb1rr","b14rr"],
+		  ["rb1ll","b14ll"],
+		  ["rb2rr","b14rr"],
+		  ["rb2ll","b14ll"],
+		  {"optional":false},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//rear bumper
+			{"group":"pickup_bumper_R"},
+			["rb3rr","rb1rr","rb2rr"],
+			["rb3rr","rb2rr","rb4rr"],
+			
+			["rb2rr","rb1rr","rb1r"],
+			["rb2rr","rb1r","rb2r"],
+			["rb2r","rb1r","rb1"],
+			["rb2r","rb1","rb2"],
+			["rb1l","rb2l","rb1"],
+			["rb2l","rb2","rb1"],
+			["rb1ll","rb2ll","rb1l"],
+			["rb2ll","rb2l","rb1l"],
+			
+			["rb3ll","rb2ll","rb1ll"],
+			["rb3ll","rb4ll","rb2ll"],
+			
+			["rb1rr","rb3rr","rb1r"],
+			["rb3rr","rb3r","rb1r"],
+			["rb1r","rb3r","rb1"],
+			["rb3r","rb3","rb1"],
+			["rb3l","rb1l","rb1"],
+			["rb3l","rb1","rb3"],
+			["rb3ll","rb1ll","rb1l"],
+			["rb3ll","rb1l","rb3l"],
+			
+			["rb4rr","rb2rr","rb2r"],
+			["rb4r","rb4rr","rb2r"],
+			["rb4r","rb2r","rb4"],
+			["rb4","rb2r","rb2"],
+			["rb2l","rb4l","rb4"],
+			["rb2","rb2l","rb4"],
+			["rb2l","rb4ll","rb4l"],
+			["rb2ll","rb4ll","rb2l"],
+			
+	],
+}
+}

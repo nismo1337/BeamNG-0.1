@@ -1,0 +1,297 @@
+{
+"fullsize_trunk": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Trunk",
+	}
+    "slotType" : "fullsize_trunk",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_trunk", ["fullsize_trunk"]],
+		 {"deformGroup":"fullsize_reverselight_break", "deformMaterialBase":"fullsize_lights", "deformMaterialDamaged":"fullsize_lights_dmg"}
+		 ["fullsize_reverselight", ["fullsize_trunk"]],
+		 {"deformGroup":""},
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TRUNK--
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"group":"fullsize_trunk"},
+		 {"collision":true}
+		 {"nodeWeight":2.2},
+		 {"selfCollision":true},
+		 ["t1rr", -0.74, 1.88, 1.02],
+		 ["t1", 0, 1.98, 1.04],
+		 ["t1ll", 0.74, 1.88, 1.02],
+		 
+		 {"selfCollision":true},
+		 ["t2rr", -0.74, 2.28, 0.99],
+		 {"selfCollision":false},
+		 ["t2r", -0.28, 2.34, 1.00],
+		 ["t2l", 0.28, 2.34, 1.00],
+		 {"selfCollision":true},
+		 ["t2ll", 0.74, 2.28, 0.99],
+		 
+		 ["t3rr", -0.72, 2.71, 0.96],
+		 {"selfCollision":false},
+		 ["t3r", -0.37, 2.75, 0.96],
+		 ["t3", 0.0, 2.76, 0.96],
+		 ["t3l", 0.37, 2.75, 0.96],
+		 {"selfCollision":true},
+		 ["t3ll", 0.72, 2.71, 0.96],
+		 
+		 ["t4r", -0.52, 2.77, 0.68],
+		 ["t4", 0, 2.80, 0.68],
+		 ["t4l", 0.52, 2.77, 0.68],
+		 
+		 //rigidifier
+		 {"group":""},
+		 {"collision":false}
+		 {"selfCollision":false},
+		 ["t5",0.0, 2.37, 0.6],
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+//--TRUNK--
+		  {"beamSpring":2051000,"beamDamp":200},
+		  {"beamDeform":100500,"beamStrength":"FLT_MAX"},
+		  //trunk main shape
+		  ["t1rr","t1"],
+		  ["t1ll","t1"],
+		  
+		  ["t2rr","t2r"],
+		  ["t2r","t2l"],
+		  ["t2ll","t2l"],
+		  
+		  ["t3rr","t3r"],
+		  ["t3r","t3"],
+		  ["t3","t3l"],
+		  ["t3l","t3ll"],
+		  
+		  ["t4r","t4"],
+		  ["t4l","t4"],
+		  
+		  ["t1rr","t2rr"],
+		  ["t1ll","t2ll"],
+		  
+		  ["t1","t2r"],
+		  ["t1","t2l"],
+		  
+		  ["t2rr","t3rr"],
+		  ["t2r","t3r"],
+		  ["t2l","t3l"],
+		  ["t2ll","t3ll"],
+		  
+		  {"deformGroup":"fullsize_reverselight_break", "triggerStrength":1000}
+		  ["t3rr","t4r"],
+		  ["t3r","t4r"],
+		  ["t3","t4"],
+		  ["t3l","t4l"],
+		  ["t3ll","t4l"],
+		  {"deformGroup":""}
+		  
+		  ["t2r","t3"],
+		  ["t2l","t3"],
+		  //surficial crossing
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  ["t1rr","t2r"],
+		  ["t1ll","t2l"],
+		  ["t1","t2rr"],
+		  ["t1","t2ll"],
+		  ["t2r","t3rr"],
+		  ["t2l","t3ll"],
+		  ["t2rr","t3r"],
+		  ["t2ll","t3l"],
+		  
+		  {"deformGroup":"fullsize_reverselight_break", "triggerStrength":1000}
+		  ["t3r","t4"],
+		  ["t3l","t4"],
+		  ["t3","t4r"],
+		  ["t3","t4r"],
+		  {"deformGroup":""}
+		  
+		  //rigids
+		  {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+		  ["t1rr","t1ll"],
+		  ["t2rr","t2l"],
+		  ["t2r","t2ll"],
+		  
+		  ["t3rr","t3"],
+		  ["t3r","t3l"],
+		  ["t3","t3ll"],
+		  
+		  ["t1rr","t3rr"],
+		  ["t1","t3r"],
+		  ["t1","t3"],
+		  ["t1","t3l"],
+		  ["t1ll","t3ll"],
+		  
+		  ["t2rr","t4r"],
+		  ["t2r","t4r"],
+		  ["t2r","t4"],
+		  ["t2l","t4"],
+		  ["t2l","t4l"],
+		  ["t2ll","t4l"],
+		  
+		  ["t1rr","t3"],
+		  ["t1ll","t3"],
+		  
+		  ["t1rr","t3r"],
+		  ["t1ll","t3l"],
+		  
+		  //rigidifier
+		  {"beamDeform":14500,"beamStrength":"FLT_MAX"},
+		  {"beamSpring":2051000,"beamDamp":300},
+		  ["t1rr","t5"],
+		  ["t1","t5"],
+		  ["t1ll","t5"],
+		  
+		  ["t2rr","t5"],
+		  ["t2r","t5"],
+		  ["t2l","t5"],
+		  ["t2ll","t5"],
+		  
+		  ["t3rr","t5"],
+		  ["t3r","t5"],
+		  ["t3","t5"],
+		  ["t3l","t5"],
+		  ["t3ll","t5"],
+		  
+		  ["t4r","t5"],
+		  ["t4","t5"],
+		  ["t4l","t5"],
+		  
+		  //trunk hinge
+		  {"beamSpring":2051000,"beamDamp":200},
+		  {"beamDeform":90000,"beamStrength":130000},
+		  {"breakGroup":"fullsize_trunkhinge_R"},
+		  //r
+		  ["t1rr","tb1r"],
+		  ["t1","tb1l"],
+		  ["t2ll","tb1l"],
+		  ["t2r","tb1r"],
+		  
+		  {"breakGroup":"fullsize_trunkhinge_L"},
+		  //l
+		  ["t1ll","tb1l"],
+		  ["t1","tb1r"],
+		  ["t2rr","tb1r"],
+		  ["t2l","tb1l"],
+		  
+		  
+		  {"breakGroup":""},
+		  //trunk latch
+		  {"beamDeform":22000,"beamStrength":28000},
+		  {"breakGroup":"fullsize_trunklatch"},
+		  ["t4r","r7"],
+		  ["t4","r7"],
+		  ["t4l","r7"],
+		  
+		  {"breakGroup":""},
+		  
+		  //damping
+		  {"beamDeform":92000,"beamStrength":150000},
+		  {"beamSpring":0,"beamDamp":100},
+		  {"breakGroup":"fullsize_trunkhinge_R"},
+		  ["t3rr","r4rr"],
+		  {"breakGroup":"fullsize_trunkhinge_L"},
+		  ["t3ll","r4ll"],
+		  {"breakGroup":""},
+		  //anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":1000000,"beamStrength":10000000},
+		  {"beamLimitSpring":2051000,"beamLimitDamp":200},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.03, "beamShortBound":1.0},
+		  ["t2rr","t2ll"],
+		  ["t3rr","t3ll"],
+		  
+		  //trunk support beams
+		  {"beamType":"|SUPPORT", "beamLongBound":6},
+		  {"beamSpring":2051000,"beamDamp":200},
+		  {"beamLimitSpring":2051000,"beamLimitDamp":200},
+		  {"beamDeform":95000,"beamStrength":2500000},
+		  ["t1rr","r5rr"],
+		  ["t1ll","r5ll"],
+		  ["t1","r5"],
+		  
+		  ["t2rr","r6rr"],
+		  ["t2r","r6"],
+		  ["t2l","r6"],
+		  ["t2ll","r6ll"],
+		  
+		  ["t3rr","r7rr"],
+		  ["t3r","r7rr"],
+		  ["t3","r7"],
+		  ["t3l","r7ll"],
+		  ["t3ll","r7ll"],
+		  
+		  ["t4r","q8r"],
+		  ["t4l","q8l"],
+		  ["t4","r6"],
+		  /*
+		  ["t2rr","r3rr"],
+		  ["t2r","r3rr"],
+		  ["t2l","r3ll"],
+		  ["t2ll","r3ll"],
+		  
+		  ["t3rr","r4rr"],
+		  ["t3r","r4rr"],
+		  ["t3","r4"],
+		  ["t3l","r4ll"],
+		  ["t3ll","r4ll"],
+		  
+		  //to quarter panel
+		  ["t1rr","q1r"],
+		  ["t1ll","q1l"],
+		  ["t1","q2r"],
+		  ["t1","q2l"],
+		  ["t2r","q3r"],
+		  ["t2l","q3l"],
+		  ["t3r","q4r"],
+		  ["t3l","q4l"],
+		  */
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//trunk
+			{"group":"fullsize_trunk"},
+			["t1rr","t2r","t2rr"],
+			["t1rr","t1","t2r"],
+			["t1","t2l","t2r"],
+			["t1","t1ll","t2ll"],
+			["t1","t2ll","t2l"],
+			
+			["t2rr","t2r","t3rr"],
+			["t2r","t3r","t3rr"],
+			["t2l","t3l","t3"],
+			["t2r","t2l","t3"],
+			["t2r","t3","t3r"],
+			["t2l","t3ll","t3l"],
+			["t2l","t2ll","t3ll"],
+			
+			["t3rr","t3r","t4r"],
+			["t3r","t3","t4"],
+			["t3r","t4","t4r"],
+			["t3","t3l","t4"],
+			["t3l","t4l","t4"],
+			["t3l","t3ll","t4l"],
+			
+			{"group":""},
+			
+			
+	],
+}
+}

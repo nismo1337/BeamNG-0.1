@@ -1,0 +1,653 @@
+{
+"pigeon_body": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Body",
+	}
+    "slotType" : "pigeon_body",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"slots": [
+		["type", "default"]
+		["pigeon_door_R","pigeon_door_R"],
+		["pigeon_door_L","pigeon_door_L"],
+		["pigeon_hood","pigeon_hood"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_body", ["pigeon_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--BODY--
+		 {"frictionCoef":1},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"nodeWeight":0.70},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"group":"pigeon_body"},
+		 ["b1rr",-0.63, 0.28, 0.29],
+		 ["b1", 0.0, 0.28, 0.29],
+		 ["b1ll", 0.63, 0.28, 0.29],
+		 ["b2rr",-0.63, -0.11, 0.29],
+		 ["b2ll", 0.63, -0.11, 0.29],
+		 ["b3rr",-0.63, -0.51, 0.29],
+		 ["b3ll", 0.63, -0.51, 0.29],
+		 
+		 {"nodeWeight":0.60},
+		 ["b4rr",-0.59, -0.92, 0.37],
+		 ["b4ll", 0.59, -0.92, 0.37],
+		 ["b5rr",-0.55, -1.17, 0.4],
+		 ["b5ll", 0.55, -1.17, 0.4],
+		 ["b6rr",-0.50, -1.39, 0.41],
+		 ["b6ll", 0.50, -1.39, 0.41],
+		 
+		 {"nodeWeight":0.55},
+		 ["b7rr",-0.64, 0.28, 0.61],
+		 ["b7", 0.0, 0.28, 0.61],
+		 ["b7ll", 0.64, 0.28, 0.61],
+		 
+		 ["b8", 0.0, -0.23, 0.70],
+		 
+		 ["b9rr",-0.64, -0.51, 0.61],
+		 ["b9", 0.0, -0.53, 0.77],
+		 ["b9ll", 0.64, -0.51, 0.61],
+		 
+		 ["b10rr",-0.59, -0.92, 0.61],
+		 ["b10ll", 0.59, -0.92, 0.61],
+		 ["b11rr",-0.56, -1.17, 0.61],
+		 ["b11ll", 0.56, -1.17, 0.61],
+		 ["b12rr",-0.51, -1.40, 0.61],
+		 ["b12r",-0.26, -1.40, 0.61],
+		 ["b12", 0.0, -1.40, 0.59],
+		 ["b12l", 0.26, -1.40, 0.61],
+		 ["b12ll", 0.51, -1.40, 0.61],
+		 
+		 ["b13rr",-0.59, 0.28, 0.96],
+		 ["b13", 0.0, 0.28, 0.96],
+		 ["b13ll", 0.59, 0.28, 0.96],
+		 
+		 ["b15rr",-0.59, -0.55, 0.95],
+		 ["b15", 0.0, -0.57, 0.97],
+		 ["b15ll", 0.59, -0.55, 0.95],
+		 
+		 ["b16rr",-0.57, -0.92, 0.89],
+		 ["b16ll", 0.57, -0.92, 0.89],
+		 ["b17rr",-0.54, -1.17, 0.85],
+		 ["b17", 0.0, -1.17, 0.87],
+		 ["b17ll", 0.54, -1.17, 0.85],
+		 ["b18rr",-0.48 -1.40, 0.82],
+		 ["b18r",-0.25, -1.40, 0.83],
+		 ["b18", 0.0, -1.40, 0.83],
+		 ["b18l", 0.25, -1.40, 0.83],
+		 ["b18ll", 0.48, -1.40, 0.82],
+		 
+		 {"nodeWeight":0.45},
+		 //roof
+		 ["r1rr",-0.54, -0.37, 1.22],
+		 ["r1", 0.0, -0.38, 1.23],
+		 ["r1ll", 0.54, -0.37, 1.22],
+		 
+		 ["r2rr",-0.46, -0.22, 1.43],
+		 ["r2", 0.0, -0.24, 1.45],
+		 ["r2ll", 0.46, -0.22, 1.43],
+		 
+		 ["r3rr",-0.46, 0.28, 1.43],
+		 ["r3", 0.0, 0.28, 1.45],
+		 ["r3ll", 0.46, 0.28, 1.43],
+		 
+		 ["r4rr",-0.54, 0.28, 1.22],
+		 ["r4", 0.0, 0.28, 1.23],
+		 ["r4ll", 0.54, 0.28, 1.22],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //cab to frame damping
+	      {"beamSpring":0,"beamDamp":150},
+		  {"beamDeform":7000,"beamStrength":20000},
+		  //r
+		  ["b13rr","f13rr"],
+		  
+		  //m
+		  ["b13","f13"],
+		  
+		  //l
+		  ["b13ll","f13ll"],
+		  //body mounts
+	      {"beamSpring":361000,"beamDamp":10},
+		  {"beamDeform":6500,"beamStrength":15000},
+		  //r
+		  ["b1rr","f1rr"],
+		  ["b2rr","f1rr"],
+		  ["b2rr","f2rr"],
+		  ["b3rr","f2rr"],
+		  ["b1rr","f3rr"],
+		  ["b2rr","f3rr"],
+		  ["b2rr","f4rr"],
+		  ["b3rr","f4rr"],
+		  ["b9rr","f4rr"],
+		  
+		  //m
+		  ["b1","f1"],
+		  ["b1","f3"],
+		  
+		  ["b8","f4"],
+		  ["b9","f4"],
+		  
+		  //l
+		  ["b1ll","f1ll"],
+		  ["b2ll","f1ll"],
+		  ["b2ll","f2ll"],
+		  ["b3ll","f2ll"],
+		  ["b1ll","f3ll"],
+		  ["b2ll","f3ll"],
+		  ["b2ll","f4ll"],
+		  ["b3ll","f4ll"],
+		  ["b9ll","f4ll"],
+		  
+		  //front
+		  //r
+		  ["b4rr","f5rr"],
+		  ["b5rr","f5rr"],
+		  ["b6rr","f6rr"],
+		  ["b10rr","f7rr"],
+		  ["b11rr","f7rr"],
+		  ["b12rr","f8rr"],
+		  
+		  //m
+		  ["b12","f8"],
+		  ["b12","f6"],
+		  
+		  //l
+		  ["b4ll","f5ll"],
+		  ["b5ll","f5ll"],
+		  ["b6ll","f6ll"],
+		  ["b10ll","f7ll"],
+		  ["b11ll","f7ll"],
+		  ["b12ll","f8ll"],
+		  
+		  //upper
+		  //r
+		  ["b17rr","f15rr"],
+		  ["b18rr","f15rr"],
+		  ["b18r","f15rr"],
+		  ["b16rr","f15rr"],
+		  
+		  //m
+		  ["b18r","f15"],
+		  ["b18","f15"],
+		  ["b18l","f15"],
+		  ["b17","f15"],
+		  
+		  //l
+		  ["b17ll","f15ll"],
+		  ["b18ll","f15ll"],
+		  ["b18r","f15ll"],
+		  ["b16ll","f15ll"],
+		  //roof main shape lengthwise
+	      {"beamSpring":361000,"beamDamp":30},
+		  {"beamDeform":10000,"beamStrength":45000},
+		  ["b15rr","r1rr"],
+		  ["b15ll","r1ll"],
+		  
+		  ["r1rr","r2rr"],
+		  ["r1ll","r2ll"],
+		  
+		  ["r2rr","r3rr"],
+		  ["r2","r3"],
+		  ["r2ll","r3ll"],
+		  
+		  ["r3rr","r4rr"],
+		  ["r3","r4"],
+		  ["r3ll","r4ll"],
+		  
+		  ["r4rr","b13rr"],
+		  ["r4","b13"],
+		  ["r4ll","b13ll"],
+		  
+		  //widthwise
+		  ["r2rr","r2"],
+		  ["r2ll","r2"],
+		  ["r3rr","r3"],
+		  ["r3ll","r3"],
+		  ["r4rr","r4"],
+		  ["r4ll","r4"],
+		  
+		  //surf cross
+		  ["r2rr","r3"],
+		  ["r2ll","r3"],
+		  ["r3rr","r2"],
+		  ["r3ll","r2"],
+		  
+		  ["r3rr","r4"],
+		  ["r3ll","r4"],
+		  ["r4rr","r3"],
+		  ["r4ll","r3"],
+		  
+		  ["r4rr","b13"],
+		  ["r4ll","b13"],
+		  ["b13rr","r4"],
+		  ["b13ll","r4"],
+		  
+		  {"beamDeform":6000,"beamStrength":45000},
+		  //corner rigids
+		  ["r1rr","b15"],
+		  ["r1ll","b15"],
+		  ["r1rr","r2"],
+		  ["r1ll","r2"],
+		  
+		  ["r1rr","r3rr"],
+		  ["r1ll","r3ll"],
+		  ["r1rr","r3"],
+		  ["r1ll","r3"],
+		  
+		  ["r2rr","r4rr"]
+		  ["r2ll","r4ll"],
+		  ["r2","r4"],
+		  
+		  ["b13rr","r3rr"],
+		  ["b13","r3"],
+		  ["b13ll","r3ll"],
+		  
+		  ["b15rr","r2rr"],
+		  ["b15","r2rr"],
+		  ["b15","r2ll"],
+		  ["b15ll","r2ll"],
+		  
+		  ["r2","b15rr"],
+		  ["r2","b15ll"],
+		  
+		  ["r1rr","b9rr"],
+		  ["r1ll","b9ll"],
+		  
+		  ["r2rr","b13rr"],
+		  ["r2","b13"],
+		  ["r2ll","b13ll"],
+		  
+		  //width rigids
+		  ["r2rr","r2ll"],
+		  ["r3rr","r3ll"],
+		  ["r4rr","r4ll"],
+		  
+		  {"beamDeform":6000,"beamStrength":4000},
+		  {"deformGroup":"pigeon_windshield_break", "triggerStrength":5500},
+		  //windshield node
+		  ["r1","r1rr"],
+		  ["r1","r1ll"],
+		  ["r1","b15"],
+		  ["r1","r2"],
+		  ["r1","r2rr"],
+		  ["r1","r2ll"],
+		  ["r1","b15rr"],
+		  ["r1","b15ll"],
+		  
+		  ["r1","r3"],
+		  {"deformGroup":""},
+		  
+		  //body main shape lengthwise
+		  {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+		  ["b1rr","b2rr"],
+		  ["b1ll","b2ll"],
+		  ["b2rr","b3rr"],
+		  ["b2ll","b3ll"],
+		  ["b3rr","b4rr"],
+		  ["b3ll","b4ll"],
+		  ["b4rr","b5rr"],
+		  ["b4ll","b5ll"],
+		  ["b5rr","b6rr"],
+		  ["b5ll","b6ll"],
+		  
+		  ["b9rr","b10rr"],
+		  ["b9ll","b10ll"],
+		  ["b10rr","b11rr"],
+		  ["b10ll","b11ll"],
+		  ["b11rr","b12rr"],
+		  ["b11ll","b12ll"],
+		  
+		  ["b8","b9"],
+		  ["b1","b8"],
+		  
+		  ["b15rr","b16rr"],
+		  ["b15ll","b16ll"],
+		  ["b16rr","b17rr"],
+		  ["b16ll","b17ll"],
+		  ["b17rr","b18rr"],
+		  ["b17","b18"],
+		  ["b17ll","b18ll"],
+		  
+		  //vertical
+		  ["b1rr","b7rr"],
+		  ["b1","b7"],
+		  ["b1ll","b7ll"],
+		  ["b7rr","b13rr"],
+		  ["b7","b13"],
+		  ["b7ll","b13ll"],
+		  
+		  ["b3rr","b9rr"],
+		  ["b3ll","b9ll"],
+		  ["b9rr","b15rr"],
+		  ["b9","b15"],
+		  ["b9ll","b15ll"],
+		  
+		  ["b4rr","b10rr"],
+		  ["b4ll","b10ll"],
+		  ["b5rr","b11rr"],
+		  ["b5ll","b11ll"],
+		  ["b6rr","b12rr"],
+		  ["b6ll","b12ll"],
+		  
+		  ["b10rr","b16rr"],
+		  ["b10ll","b16ll"],
+		  ["b11rr","b17rr"],
+		  ["b11ll","b17ll"],
+		  ["b12rr","b18rr"],
+		  ["b12r","b18r"],
+		  ["b12","b18"],
+		  ["b12l","b18l"],
+		  ["b12ll","b18ll"],
+		  
+		  //widthwise
+		  ["b1rr","b1"],
+		  ["b1ll","b1"],
+		  ["b2rr","b8"],
+		  ["b2ll","b8"],
+		  ["b3rr","b9"],
+		  ["b3ll","b9"],
+		  
+		  ["b12rr","b12r"],
+		  ["b12r","b12"],
+		  ["b12l","b12"],
+		  ["b12ll","b12l"],
+		  
+		  ["b15rr","b15"],
+		  ["b15ll","b15"],
+		  
+		  ["b17rr","b17"],
+		  ["b17ll","b17"],
+		  
+		  ["b18r","b18"],
+		  ["b18l","b18"],
+		  ["b18rr","b18r"],
+		  ["b18ll","b18l"],
+		  
+		  ["b13rr","b13"],
+		  ["b13ll","b13"],
+		  
+		  ["b7rr","b7"],
+		  ["b7ll","b7"],
+		  
+		  //front surficial cross
+		  ["b18rr","b12r"],
+		  ["b18ll","b12l"],
+		  ["b12rr","b18r"],
+		  ["b12ll","b18l"],
+		  ["b12r","b18"],
+		  ["b12l","b18"],
+		  ["b18r","b12"],
+		  ["b18l","b12"],
+		  
+		  ["b6rr","b12r"],
+		  ["b6ll","b12l"],
+		  
+		  //side surficial cross
+		  ["b11rr","b6rr"],
+		  ["b11ll","b6ll"],
+		  ["b12rr","b5rr"],
+		  ["b12ll","b5ll"],
+		  
+		  ["b10rr","b5rr"],
+		  ["b10ll","b5ll"],
+		  ["b11rr","b4rr"],
+		  ["b11ll","b4ll"],
+		  
+		  ["b9rr","b4rr"],
+		  ["b9ll","b4ll"],
+		  ["b10rr","b3rr"],
+		  ["b10ll","b3ll"],
+		  
+		  ["b17rr","b12rr"],
+		  ["b17ll","b12ll"],
+		  ["b18rr","b11rr"],
+		  ["b18ll","b11ll"],
+		  
+		  ["b16rr","b11rr"],
+		  ["b16ll","b11ll"],
+		  ["b17rr","b10rr"],
+		  ["b17ll","b10ll"],
+		  
+		  ["b15rr","b10rr"],
+		  ["b15ll","b10ll"],
+		  ["b16rr","b9rr"],
+		  ["b16ll","b9ll"],
+		  
+		  //rear surficial cross
+		  ["b13ll","b7"],
+		  ["b13rr","b7"],
+		  ["b7ll","b13"],
+		  ["b7rr","b13"],
+		  ["b7ll","b1"],
+		  ["b7rr","b1"],
+		  ["b1ll","b7"],
+		  ["b1rr","b7"],
+		  
+		  //firewall surficial cross
+		  ["b15rr","b9"],
+		  ["b15ll","b9"],
+		  ["b9rr","b15"],
+		  ["b9ll","b15"],
+		  
+		  //top surficial cross
+		  ["b17rr","b18r"],
+		  ["b17ll","b18l"],
+		  ["b18r","b17"],
+		  ["b18l","b17"],
+		  
+		  //floor surficial cross
+		  ["b1","b2rr"],
+		  ["b1","b2ll"],
+		  ["b8","b3rr"],
+		  ["b8","b3ll"],
+		  ["b8","b1rr"],
+		  ["b8","b1ll"],
+		  
+		  ["b8","b7"],
+		  
+		  {"beamDeform":7000,"beamStrength":45000},
+		  //corner rigids
+		  ["b15","b16rr"],
+		  ["b15","b16ll"],
+		  ["b17","b16rr"],
+		  ["b17","b16ll"],
+		  
+		  ["b9","b10rr"],
+		  ["b9","b10ll"],
+		  
+		  ["b12","b11rr"],
+		  ["b12","b11ll"],
+		  
+		  ["b9rr","b2rr"],
+		  ["b9ll","b2ll"],
+		  ["b7rr","b2rr"],
+		  ["b7ll","b2ll"],
+		  ["b7","b2rr"],
+		  ["b7","b2ll"],
+		  ["b9","b2rr"],
+		  ["b9","b2ll"],
+		  
+		  ["b8","b15"],
+		  
+		  ["b17","b12"],
+		  
+		  ["b17","b12r"],
+		  ["b17","b12l"],
+		  
+		  ["b12","b17rr"],
+		  ["b12","b17ll"],
+		  
+		  ["b13rr","b2rr"],
+		  ["b13","b8"],
+		  ["b13ll","b2ll"],
+		  
+		  ["b15rr","b2rr"],
+		  ["b15ll","b2ll"],
+		  
+		  //vertical rigids
+		  ["b13rr","b1rr"],
+		  ["b13","b1"],
+		  ["b13ll","b1ll"],
+		  ["b15rr","b3rr"],
+		  ["b15ll","b3ll"],
+		  
+		  ["b16rr","b4rr"],
+		  ["b16ll","b4ll"],
+		  ["b17rr","b5rr"],
+		  ["b17ll","b5ll"],
+		  ["b18rr","b6rr"],
+		  ["b18ll","b6ll"],
+		  ["b18r","b6rr"],
+		  ["b18l","b6ll"],
+		  
+		  //width rigids
+		  ["b13rr","b13ll"],
+		  ["b7rr","b7ll"],
+		  ["b1rr","b1ll"],
+		  ["b15rr","b15ll"],
+		  ["b17rr","b17ll"],
+		  ["b18rr","b18"],
+		  ["b12rr","b12"],
+		  ["b18ll","b18"],
+		  ["b12ll","b12"],
+		  ["b18r","b18l"],
+		  ["b12r","b12l"],
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"pigeon_body"},
+			//left side
+			["b15ll","b16ll","b9ll"],
+			["b16ll","b10ll","b9ll"],
+			["b16ll","b17ll","b10ll"],
+			["b17ll","b11ll","b10ll"],
+			["b17ll","b18ll","b11ll"],
+			["b18ll","b12ll","b11ll"],
+			["b9ll","b10ll","b3ll"],
+			["b10ll","b4ll","b3ll"],
+			["b10ll","b11ll","b4ll"],
+			["b11ll","b5ll","b4ll"],
+			["b11ll","b12ll","b5ll"],
+			["b12ll","b6ll","b5ll"],
+			
+			["b13ll","b15ll","b9ll"],
+			["b13ll","b9ll","b7ll"],
+			["b7ll","b9ll","b2ll"],
+			["b9ll","b3ll","b2ll"],
+			["b7ll","b2ll","b1ll"],
+			["r1ll","b15ll","b13ll"],
+			["r1ll","b13ll","r4ll"],
+			["r2ll","r1ll","r4ll"],
+			["r2ll","r4ll","r3ll"],
+			
+			//right side
+			["b16rr","b15rr","b9rr"],
+			["b10rr","b16rr","b9rr"],
+			["b17rr","b16rr","b10rr"],
+			["b11rr","b17rr","b10rr"],
+			["b18rr","b17rr","b11rr"],
+			["b12rr","b18rr","b11rr"],
+			["b10rr","b9rr","b3rr"],
+			["b4rr","b10rr","b3rr"],
+			["b11rr","b10rr","b4rr"],
+			["b5rr","b11rr","b4rr"],
+			["b12rr","b11rr","b5rr"],
+			["b6rr","b12rr","b5rr"],
+			
+			["b15rr","b13rr","b9rr"],
+			["b9rr","b13rr","b7rr"],
+			["b9rr","b7rr","b2rr"],
+			["b3rr","b9rr","b2rr"],
+			["b2rr","b7rr","b1rr"],
+			["r1rr","b13rr","b15rr"],
+			["r4rr","b13rr","r1rr"],
+			["r1rr","r2rr","r4rr"],
+			["r4rr","r2rr","r3rr"],
+			
+			//top
+			["b15rr","b16rr","b15"],
+			["b15","b16rr","b16ll"],
+			["b15","b16ll","b15ll"],
+			["b16rr","b17rr","b17"],
+			["b16rr","b17","b16ll"],
+			["b17","b17ll","b16ll"],
+			["b17rr","b18rr","b18r"],
+			["b17rr","b18r","b17"],
+			["b18r","b18","b17"],
+			["b17","b18","b18l"],
+			["b17","b18l","b17ll"],
+			["b17ll","b18l","b18ll"],
+			
+			["r2rr","r1rr","r1"],
+			["r2rr","r1","r2"],
+			["r1ll","r2ll","r1"],
+			["r1","r2ll","r2"],
+			["r1rr","b15rr","b15"],
+			["r1rr","b15","r1"],
+			["r1ll","b15","b15ll"],
+			["r1","b15","r1ll"],
+			
+			["r3rr","r2rr","r2"],
+			["r3rr","r2","r3"],
+			["r2ll","r3ll","r2"],
+			["r3","r2","r3ll"],
+			
+			//rear
+			["r3","r3ll","r4ll"],
+			["r3","r4ll","r4"],
+			["r3rr","r3","r4rr"],
+			["r4","r4rr","r3"],
+			
+			["r4","r4ll","b13ll"],
+			["r4","b13ll","b13"],
+			["r4rr","r4","b13rr"],
+			["r4","b13","b13rr"],
+			["b13","b13ll","b7ll"],
+			["b13","b7ll","b7"],
+			["b13rr","b13","b7rr"],
+			["b13","b7","b7rr"],
+			["b7","b7ll","b1ll"],
+			["b7","b1ll","b1"],
+			["b7rr","b7","b1rr"],
+			["b7","b1","b1rr"],
+			
+			//bottom
+			["b8","b1","b1ll"],
+			["b8","b1ll","b2ll"],
+			["b9","b8","b2ll"],
+			["b9","b2ll","b3ll"],
+			["b8","b1rr","b1"],
+			["b8","b2rr","b1rr"],
+			["b8","b9","b2rr"],
+			["b9","b3rr","b2rr"],
+			
+			//front face
+			["b18rr","b12rr","b12r"],
+			["b18rr","b12r","b18r"],
+			["b18r","b12r","b12"],
+			["b18r","b12","b18"],
+			
+			["b12ll","b18ll","b12l"],
+			["b18ll","b18l","b12l"],
+			["b12l","b18l","b12"],
+			["b18l","b18","b12"],
+			{"group":""},
+	],
+}
+}

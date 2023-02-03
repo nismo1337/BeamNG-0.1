@@ -1,0 +1,2053 @@
+{
+"van_cargobox_heavy": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Cargo Box",
+	}
+    "slotType" : "van_upfit_heavy",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.30,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_cargobox_floorframe", ["van_cargobox_floorframe"]],
+		 ["van_cargobase", ["van_cargobox_floorframe","van_framerear"]],
+		 ["van_cargobox_wall", ["van_cargobox_wall_L","van_cargobox_wall_R"]],
+		 ["van_cargobox_front", ["van_cargobox_front"]],
+		 ["van_cargobox_roof", ["van_cargobox_roof"]],
+		 ["van_cargobox_roofcorner", ["van_cargobox_roofcorner"]],
+		 
+		 //lights
+		 ["van_cargobox_rooflights", ["van_cargobox_roof"]],
+		 ["van_cargobox_roofcornerlights", ["van_cargobox_roofcorner"]],
+		 ["van_cargobox_framelights", ["van_cargobox_floorframe"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 //--FLOOR/FRAME--
+		 {"group":"van_cargobox_floorframe"}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":4.6},
+		 ["cf1rr", -1.2, 4.47, 0.75],
+		 ["cf1r", -0.6, 4.47, 0.75],
+		 ["cf1", 0.0, 4.47, 0.75],
+		 ["cf1l", 0.6, 4.47, 0.75],
+		 ["cf1ll", 1.2, 4.47, 0.75],
+		 
+		 //["cf2rr", -1.2, 3.47, 0.75],
+		 ["cf2r", -0.4, 3.47, 0.75],
+		 ["cf2l", 0.4, 3.47, 0.75],
+		 //["cf2ll", 1.2, 3.47, 0.75],
+		 
+		 //["cf3rr", -1.2, 2.49, 0.75],
+		 ["cf3r", -0.4, 2.49, 0.75],
+		 ["cf3l", 0.4, 2.49, 0.75],
+		 //["cf3ll", 1.2, 2.49, 0.75],
+		 
+		 //["cf4rr", -1.2, 1.38, 0.75],
+		 ["cf4r", -0.4, 1.38, 0.75],
+		 ["cf4l", 0.4, 1.38, 0.75],
+		 //["cf4ll", 1.2, 1.38, 0.75],
+		 
+		 //["cf5rr", -1.2, 0.11, 0.75],
+		 ["cf5r", -0.4, 0.11, 0.75],
+		 ["cf5l", 0.4, 0.11, 0.75],
+		 //["cf5ll", 1.2, 0.11, 0.75],
+		 
+		 //upper
+		 ["cf11rr", -1.2, 4.47, 0.86],
+		 ["cf11r", -0.6, 4.47, 0.86],
+		 ["cf11", 0.0, 4.47, 0.86],
+		 ["cf11l", 0.6, 4.47, 0.86],
+		 ["cf11ll", 1.2, 4.47, 0.86],
+		 
+		 ["cf12rr", -1.2, 3.47, 0.86],
+		 ["cf12r", -0.4, 3.47, 0.86],
+		 ["cf12l", 0.4, 3.47, 0.86],
+		 ["cf12ll", 1.2, 3.47, 0.86],
+		 
+		 ["cf13rr", -1.2, 2.49, 0.86],
+		 ["cf13r", -0.4, 2.49, 0.86],
+		 ["cf13l", 0.4, 2.49, 0.86],
+		 ["cf13ll", 1.2, 2.49, 0.86],
+		 
+		 ["cf14rr", -1.2, 1.38, 0.86],
+		 ["cf14r", -0.4, 1.38, 0.86],
+		 ["cf14l", 0.4, 1.38, 0.86],
+		 ["cf14ll", 1.2, 1.38, 0.86],
+		 
+		 ["cf15rr", -1.2, 0.11, 0.86],
+		 ["cf15r", -0.4, 0.11, 0.86],
+		 ["cf15l", 0.4, 0.11, 0.86],
+		 ["cf15ll", 1.2, 0.11, 0.86],
+		 
+		 //rear step base thing
+		 ["cf6rr", -1.2, 4.40, 0.42],
+		 ["cf6r", -0.6, 4.40, 0.42],
+		 ["cf6", 0.0, 4.40, 0.42],
+		 ["cf6l", 0.6, 4.40, 0.42],
+		 ["cf6ll", 1.2, 4.40, 0.42],
+		 
+		 ["cf7rr", -1.2, 4.71, 0.42],
+		 ["cf7r", -0.6, 4.71, 0.42],
+		 ["cf7", 0.0, 4.71, 0.42],
+		 ["cf7l", 0.6, 4.71, 0.42],
+		 ["cf7ll", 1.2, 4.71, 0.42],
+		 
+		 //rear door frame perimeter
+		 ["cf8rrr", -1.2, 4.35, 1.58],
+		 ["cf8rr", -1.2, 4.47, 1.58],
+		 ["cf8r", -1.1, 4.47, 1.58],
+		 ["cf8l", 1.1, 4.47, 1.58],
+		 ["cf8ll", 1.2, 4.47, 1.58],
+		 ["cf8lll", 1.2, 4.35, 1.58],
+		 
+		 ["cf9rrr", -1.2, 4.35, 2.25],
+		 ["cf9rr", -1.2, 4.47, 2.25],
+		 ["cf9r", -1.1, 4.47, 2.25],
+		 ["cf9l", 1.1, 4.47, 2.25],
+		 ["cf9ll", 1.2, 4.47, 2.25],
+		 ["cf9lll", 1.2, 4.35, 2.25],
+		 
+		 ["cf10rr", -1.2, 4.47, 2.92],
+		 ["cf10r", -0.6, 4.47, 2.92],
+		 ["cf10", 0.0, 4.47, 2.92],
+		 ["cf10l", 0.6, 4.47, 2.92],
+		 ["cf10ll", 1.2, 4.47, 2.92],
+		 
+		 ["cf17rr", -1.2, 4.35, 2.92],
+		 ["cf17r", -0.6, 4.35, 2.92],
+		 ["cf17", 0.0, 4.35, 2.92],
+		 ["cf17l", 0.6, 4.35, 2.92],
+		 ["cf17ll", 1.2, 4.35, 2.92],
+		 
+		 {"collision":false}
+		 {"selfCollision":false}
+		 //rigidifying node
+		 ["cf16", 0.0, 4.47, 2.7],
+		 
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":4.6},
+		 //--WALL--
+		 {"group":"van_cargobox_wall_R"}
+		 ["cw1r", -1.2, 4.345, 0.885],
+		 ["cw2r", -1.2, 3.47, 0.885],
+		 ["cw3r", -1.2, 2.49, 0.885],
+		 ["cw4r", -1.2, 1.38, 0.885],
+		 ["cw5r", -1.2, 0.26, 0.885],
+		 ["cw6r", -1.2, 4.345, 1.58],
+		 ["cw7r", -1.2, 3.47, 1.58],
+		 ["cw8r", -1.2, 2.49, 1.58],
+		 ["cw9r", -1.2, 1.38, 1.58],
+		 ["cw10r", -1.2, 0.26, 1.58],
+		 ["cw11r", -1.2, 4.345, 2.25],
+		 ["cw12r", -1.2, 3.47, 2.25],
+		 ["cw13r", -1.2, 2.49, 2.25],
+		 ["cw14r", -1.2, 1.38, 2.25],
+		 ["cw15r", -1.2, 0.26, 2.25],
+		 ["cw16r", -1.2, 4.345, 2.84],
+		 ["cw17r", -1.2, 3.47, 2.84],
+		 ["cw18r", -1.2, 2.49, 2.84],
+		 ["cw19r", -1.2, 1.38, 2.84],
+		 ["cw20r", -1.2, 0.26, 2.84],
+		 {"group":"van_cargobox_wall_L"}
+		 ["cw1l", 1.2, 4.345, 0.885],
+		 ["cw2l", 1.2, 3.47, 0.885],
+		 ["cw3l", 1.2, 2.49, 0.885],
+		 ["cw4l", 1.2, 1.38, 0.885],
+		 ["cw5l", 1.2, 0.26, 0.885],
+		 ["cw6l", 1.2, 4.345, 1.58],
+		 ["cw7l", 1.2, 3.47, 1.58],
+		 ["cw8l", 1.2, 2.49, 1.58],
+		 ["cw9l", 1.2, 1.38, 1.58],
+		 ["cw10l", 1.2, 0.26, 1.58],
+		 ["cw11l", 1.2, 4.345, 2.25],
+		 ["cw12l", 1.2, 3.47, 2.25],
+		 ["cw13l", 1.2, 2.49, 2.25],
+		 ["cw14l", 1.2, 1.38, 2.25],
+		 ["cw15l", 1.2, 0.26, 2.25],
+		 ["cw16l", 1.2, 4.345, 2.84],
+		 ["cw17l", 1.2, 3.47, 2.84],
+		 ["cw18l", 1.2, 2.49, 2.84],
+		 ["cw19l", 1.2, 1.38, 2.84],
+		 ["cw20l", 1.2, 0.26, 2.84],
+		 {"group":""}
+		 {"collision":false}
+		 {"selfCollision":false}
+		 //rigidifying node
+		 {"group":"van_cargobox_wall_R"}
+		 ["cw21r", -0.95, 3.4, 2.0],
+		 ["cw22r", -0.95, 1.4, 2.0],
+		 {"group":"van_cargobox_wall_L"}
+		 ["cw21l", 0.95, 3.4, 2.0],
+		 ["cw22l", 0.95, 1.4, 2.0],
+		 //--FRONT--
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"group":"van_cargobox_front"}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":4.6},
+		 ["cff1rrr",-1.2, 0.24, 0.885],
+		 ["cff1rr",-1.03, 0.11, 0.885],
+		 ["cff1r",-0.4, 0.11, 0.885],
+		 ["cff1l", 0.4, 0.11, 0.885],
+		 ["cff1ll", 1.03, 0.11, 0.885],
+		 ["cff1lll", 1.2, 0.24, 0.885],
+		 
+		 ["cff2rrr",-1.2, 0.24, 1.58],
+		 ["cff2rr",-1.03, 0.11, 1.58],
+		 ["cff2r",-0.4, 0.11, 1.58],
+		 ["cff2l", 0.4, 0.11, 1.58],
+		 ["cff2ll", 1.03, 0.11, 1.58],
+		 ["cff2lll", 1.2, 0.24, 1.58],
+		 
+		 ["cff3rrr",-1.2, 0.24, 2.25],
+		 ["cff3rr",-1.03, 0.11, 2.25],
+		 ["cff3r",-0.4, 0.11, 2.25],
+		 ["cff3l", 0.4, 0.11, 2.25],
+		 ["cff3ll", 1.03, 0.11, 2.25],
+		 ["cff3lll", 1.2, 0.24, 2.25],
+		 
+		 ["cff4rrr",-1.2, 0.24, 2.69],
+		 ["cff4rr",-1.03, 0.11, 2.69],
+		 ["cff4r",-0.4, 0.11, 2.69],
+		 ["cff4l", 0.4, 0.11, 2.69],
+		 ["cff4ll", 1.03, 0.11, 2.69],
+		 ["cff4lll", 1.2, 0.24, 2.69],
+		 {"collision":false}
+		 {"selfCollision":false}
+		 //rigidifying node
+		 ["cff5", 0.0, 0.24, 2.0],
+		 //--ROOF--
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"group":"van_cargobox_roof"}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":4.6},
+		 ["cr1rr", -1.2, 4.47, 2.95],
+		 ["cr1r", -0.6, 4.47, 2.95],
+		 ["cr1", 0.0, 4.47, 2.95],
+		 ["cr1l", 0.6, 4.47, 2.95],
+		 ["cr1ll", 1.2, 4.47, 2.95],
+		 
+		 ["cr2rr", -1.2, 3.47, 2.95],
+		 ["cr2r", -0.4, 3.47, 2.95],
+		 ["cr2l", 0.4, 3.47, 2.95],
+		 ["cr2ll", 1.2, 3.47, 2.95],
+		 
+		 ["cr3rr", -1.2, 2.49, 2.95],
+		 ["cr3r", -0.4, 2.49, 2.95],
+		 ["cr3l", 0.4, 2.49, 2.95],
+		 ["cr3ll", 1.2, 2.49, 2.95],
+		 
+		 ["cr4rr", -1.2, 1.38, 2.95],
+		 ["cr4r", -0.4, 1.38, 2.95],
+		 ["cr4l", 0.4, 1.38, 2.95],
+		 ["cr4ll", 1.2, 1.38, 2.95],
+		 
+		 ["cr5rr", -1.2, 0.43, 2.95],
+		 ["cr5r", -0.4, 0.43, 2.95],
+		 ["cr5l", 0.4, 0.43, 2.95],
+		 ["cr5ll", 1.2, 0.43, 2.95],
+		 
+		 {"collision":false}
+		 {"selfCollision":false}
+		 //rigidifying node
+		 ["cr7", 0.0, 3.4, 2.75],
+		 ["cr8", 0.0, 1.4, 2.75],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 //--ROOF CORNER--
+		 {"group":"van_cargobox_roofcorner"}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":4.6},
+		 ["crc1rr", -1.2, 0.39, 2.95],
+		 ["crc1r", -0.4, 0.39, 2.95],
+		 ["crc1l", 0.4, 0.39, 2.95],
+		 ["crc1ll", 1.2, 0.39, 2.95],
+		 
+		 ["crc2rr", -1.2, 0.15, 2.90],
+		 ["crc2r", -0.4, 0.15, 2.90],
+		 ["crc2l", 0.4, 0.15, 2.90],
+		 ["crc2ll", 1.2, 0.15, 2.90],
+		 
+		 ["crc3rrr", -1.2, 0.24, 2.75],
+		 ["crc3rr", -1.03, 0.10, 2.75],
+		 ["crc3r", -0.4, 0.10, 2.75],
+		 ["crc3l", 0.4, 0.10, 2.75],
+		 ["crc3ll", 1.03, 0.10, 2.75],
+		 ["crc3lll", 1.2, 0.24, 2.75],
+		 
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":0.9, "beamType":"|SUPPORT", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //rear susp limiters
+		  {"beamSpring":3801000,"beamDamp":400},
+		  {"beamLimitSpring":3801000,"beamLimitDamp":400},
+		  {"beamDeform":200000,"beamStrength":400000},
+		  {"optional":true},
+		  {"breakGroupType":1},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax1r","cf13rr"],
+		  ["axwr","cf13rr"],
+		  
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","cf13ll"],
+		  ["axwl","cf13ll"],
+		  
+		  {"breakGroup":""},
+		  {"breakGroupType":0},
+		  {"optional":false},
+		  //support beams
+		  {"beamSpring":3801000,"beamDamp":400},
+		  {"beamDeform":20000,"beamStrength":40000},
+		  {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //r
+		  ["cff4rrr","cw19r"],
+		  ["cff3rrr","cw14r"],
+		  ["cff2rrr","cw9r"],
+		  ["cff1rrr","cw4r"],
+		  
+		  ["cff4rr","cw19r"],
+		  ["cff3rr","cw14r"],
+		  ["cff2rr","cw9r"],
+		  ["cff1rr","cw4r"],
+		  
+		  
+		  //l
+		  ["cff4lll","cw19l"],
+		  ["cff3lll","cw14l"],
+		  ["cff2lll","cw9l"],
+		  ["cff1lll","cw4l"],
+		  
+		  ["cff4ll","cw19l"],
+		  ["cff3ll","cw14l"],
+		  ["cff2ll","cw9l"],
+		  ["cff1ll","cw4l"],
+		  
+		  //roof corner
+		  ["crc1rr","cr4rr"],
+		  ["crc1r","cr4r"],
+		  ["crc1l","cr4l"],
+		  ["crc1ll","cr4ll"],
+		  
+		  ["crc3rr","cff3rr"],
+		  ["crc3r","cff3r"],
+		  ["crc3l","cff3l"],
+		  ["crc3ll","cff3ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--CARGO BOX ROOF CORNER
+		  //main shape
+		  {"beamSpring":5801000,"beamDamp":250},
+		  {"beamDeform":100000,"beamStrength":400000},
+		  //widthwise
+		  ["crc1rr","crc1r"],
+		  ["crc1r","crc1l"],
+		  ["crc1l","crc1ll"],
+		  ["crc2rr","crc2r"],
+		  ["crc2r","crc2l"],
+		  ["crc2l","crc2ll"],
+		  ["crc3rrr","crc3rr"],
+		  ["crc3rr","crc3r"],
+		  ["crc3r","crc3l"],
+		  ["crc3l","crc3ll"],
+		  ["crc3ll","crc3lll"],
+		  
+		  //lengthwise
+		  ["crc1rr","crc2rr"],
+		  ["crc1r","crc2r"],
+		  ["crc1l","crc2l"],
+		  ["crc1ll","crc2ll"],
+		  
+		  ["crc2rr","crc3rrr"],
+		  ["crc2rr","crc3rr"],
+		  ["crc2r","crc3r"],
+		  ["crc2l","crc3l"],
+		  ["crc2ll","crc3ll"],
+		  ["crc2ll","crc3lll"],
+		  
+		  //attach
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":16000,"beamStrength":25000},
+		  ["cr5rr","crc2rr"],
+		  ["cr5r","crc2r"],
+		  ["cr5l","crc2l"],
+		  ["cr5ll","crc2ll"],
+		  
+		  //side
+		  //r
+		  ["crc3rr","cw20r"],
+		  ["crc3rrr","cw20r"],
+		  ["crc3r","cw20r"],
+		  ["crc2rr","cw20r"],
+		  ["crc2r","cw20r"],
+		  
+		  //l
+		  ["crc3ll","cw20l"],
+		  ["crc3lll","cw20l"],
+		  ["crc3l","cw20l"],
+		  ["crc2ll","cw20l"],
+		  ["crc2l","cw20l"],
+		  
+		  //front
+		  //r
+		  ["crc3rrr","cff4rrr"],
+		  ["crc3rr","cff4rr"],
+		  ["crc3r","cff4r"],
+		  ["crc3r","cff4l"],
+		  ["crc3r","cff4rr"],
+		  
+		  ["crc2rr","cff4rr"],
+		  ["crc2r","cff4r"],
+		  ["crc2r","cff4l"],
+		  ["crc2r","cff4rr"],
+		  
+		  //l
+		  ["crc3lll","cff4lll"],
+		  ["crc3ll","cff4ll"],
+		  ["crc3l","cff4r"],
+		  ["crc3l","cff4l"],
+		  ["crc3l","cff4ll"],
+		  
+		  ["crc2ll","cff4ll"],
+		  ["crc2l","cff4r"],
+		  ["crc2l","cff4l"],
+		  ["crc2l","cff4ll"],
+		  
+		  {"beamDeform":15000,"beamStrength":200000},
+		  //surficial cross
+		  ["crc1rr","crc2r"],
+		  ["crc1r","crc2rr"],
+		  ["crc1r","crc2l"],
+		  ["crc1l","crc2r"],
+		  ["crc1l","crc2ll"],
+		  ["crc1ll","crc2l"],
+		  
+		  ["crc2rr","crc3r"],
+		  ["crc2r","crc3rrr"],
+		  ["crc2r","crc3rr"],
+		  ["crc2r","crc3l"],
+		  ["crc2l","crc3r"],
+		  ["crc2l","crc3ll"],
+		  ["crc2l","crc3lll"],
+		  ["crc2ll","crc3l"],
+		  
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":8000,"beamStrength":150000},
+		  //rigids
+		  //lengthwise
+		  ["crc1rr","crc3rrr"],
+		  ["crc1rr","crc3rr"],
+		  ["crc1r","crc3r"],
+		  ["crc1l","crc3l"],
+		  ["crc1ll","crc3ll"],
+		  ["crc1ll","crc3lll"],
+		  
+		  //widthwise
+		  ["crc1rr","crc1l"],
+		  ["crc1ll","crc1r"],
+		  ["crc2rr","crc2l"],
+		  ["crc2ll","crc2r"],
+		  
+		  ["crc3rrr","crc3r"],
+		  ["crc3rr","crc3l"],
+		  ["crc3r","crc3ll"],
+		  ["crc3l","crc3lll"],
+		  
+		  //--CARGO BOX ROOF--
+		  //main shape
+		  {"beamSpring":5801000,"beamDamp":250},
+		  {"beamDeform":100000,"beamStrength":400000},
+		  //widthwise
+		  ["cr1rr","cr1r"],
+		  ["cr1r","cr1"],
+		  ["cr1","cr1l"],
+		  ["cr1l","cr1ll"],
+		  ["cr2rr","cr2r"],
+		  ["cr2r","cr2l"],
+		  ["cr2l","cr2ll"],
+		  ["cr3rr","cr3r"],
+		  ["cr3r","cr3l"],
+		  ["cr3l","cr3ll"],
+		  ["cr4rr","cr4r"],
+		  ["cr4r","cr4l"],
+		  ["cr4l","cr4ll"],
+		  ["cr5rr","cr5r"],
+		  ["cr5r","cr5l"],
+		  ["cr5l","cr5ll"],
+		  
+		  //lengthwise
+		  ["cr1rr","cr2rr"],
+		  ["cr1r","cr2r"],
+		  ["cr1l","cr2l"],
+		  ["cr1ll","cr2ll"],
+		  
+		  ["cr2rr","cr3rr"],
+		  ["cr2r","cr3r"],
+		  ["cr2l","cr3l"],
+		  ["cr2ll","cr3ll"],
+		  
+		  ["cr3rr","cr4rr"],
+		  ["cr3r","cr4r"],
+		  ["cr3l","cr4l"],
+		  ["cr3ll","cr4ll"],
+		  
+		  ["cr4rr","cr5rr"],
+		  ["cr4r","cr5r"],
+		  ["cr4l","cr5l"],
+		  ["cr4ll","cr5ll"],
+		  
+		  
+		  {"beamDeform":15000,"beamStrength":200000},
+		  //surficial cross
+		  ["cr1rr","cr2r"],
+		  ["cr1r","cr2rr"],
+		  ["cr1r","cr2l"],
+		  ["cr2l","cr1"],
+		  ["cr2r","cr1"],
+		  ["cr1l","cr2r"],
+		  ["cr1l","cr2ll"],
+		  ["cr1ll","cr2l"],
+		  
+		  ["cr2rr","cr3r"],
+		  ["cr2r","cr3rr"],
+		  ["cr2r","cr3l"],
+		  ["cr2l","cr3r"],
+		  ["cr2l","cr3ll"],
+		  ["cr2ll","cr3l"],
+		  
+		  ["cr3rr","cr4r"],
+		  ["cr3r","cr4rr"],
+		  ["cr3r","cr4l"],
+		  ["cr3l","cr4r"],
+		  ["cr3l","cr4ll"],
+		  ["cr3ll","cr4l"],
+		  		  
+		  ["cr4rr","cr5r"],
+		  ["cr4r","cr5rr"],
+		  ["cr4r","cr5l"],
+		  ["cr4l","cr5r"],
+		  ["cr4l","cr5ll"],
+		  ["cr4ll","cr5l"],
+
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":8000,"beamStrength":150000},
+		  //rigids
+		  ["cr1rr","cr3rr"],
+		  ["cr1r","cr3r"],
+		  ["cr1l","cr3l"],
+		  ["cr1ll","cr3ll"],
+		  ["cr2rr","cr4rr"],
+		  ["cr2r","cr4r"],
+		  ["cr2l","cr4l"],
+		  ["cr2ll","cr4ll"],
+		  ["cr3rr","cr5rr"],
+		  ["cr3r","cr5r"],
+		  ["cr3l","cr5l"],
+		  ["cr3ll","cr5ll"],
+		  
+		  //["cr4rr","crc3rrr"],
+		  //["cr4rr","crc3rr"],
+		  //["cr4r","crc3r"],
+		  //["cr4l","crc3l"],
+		  //["cr4ll","crc3ll"],
+		  //["cr4ll","crc3lll"],
+		  
+		  //widthwise
+		  ["cr1rr","cr1l"],
+		  ["cr1r","cr1l"],
+		  ["cr1r","cr1ll"],
+		  ["cr2rr","cr2l"],
+		  ["cr2r","cr2ll"],
+		  ["cr3rr","cr3l"],
+		  ["cr3r","cr3ll"],
+		  ["cr4rr","cr4l"],
+		  ["cr4r","cr4ll"],
+		  ["cr5rr","cr5l"],
+		  ["cr5r","cr5ll"],
+		  
+		  
+		  //rigidifier
+		  {"beamSpring":1801000,"beamDamp":400},
+		  {"beamDeform":4000,"beamStrength":200000},
+		  ["cr1rr","cr7"],
+		  ["cr1r","cr7"],
+		  ["cr1l","cr7"],
+		  ["cr1ll","cr7"],
+		  ["cr2rr","cr7"],
+		  ["cr2r","cr7"],
+		  ["cr2l","cr7"],
+		  ["cr2ll","cr7"],
+		  ["cr3rr","cr7"],
+		  ["cr3r","cr7"],
+		  ["cr3l","cr7"],
+		  ["cr3ll","cr7"],
+		  ["cr3rr","cr8"],
+		  ["cr3r","cr8"],
+		  ["cr3l","cr8"],
+		  ["cr3ll","cr8"],
+		  ["cr4rr","cr8"],
+		  ["cr4r","cr8"],
+		  ["cr4l","cr8"],
+		  ["cr4ll","cr8"],
+		  ["cr5rr","cr8"],
+		  ["cr5r","cr8"],
+		  ["cr5l","cr8"],
+		  ["cr5ll","cr8"],
+		  
+		  ["cr7","cr8"],
+		  
+		  //attach
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":16000,"beamStrength":25000},
+		  //rear
+		  
+		  //r
+		  ["cr1rr","cf17rr"],
+		  ["cr1rr","cf10rr"],
+		  
+		  ["cr1r","cf17r"],
+		  ["cr1r","cf10r"],
+		  
+		  //m
+		  ["cr1","cf10"],
+		  ["cr1","cf17"],
+		  
+		  //l
+		  ["cr1ll","cf17ll"],
+		  ["cr1ll","cf10ll"],
+		  
+		  ["cr1l","cf17l"],
+		  ["cr1l","cf10l"],
+		  
+		  //side
+		  //r
+		  ["cr1rr","cw16r"],
+		  ["cr2rr","cw17r"],
+		  ["cr3rr","cw18r"],
+		  ["cr4rr","cw19r"],
+		  ["cr5rr","cw20r"],
+		  
+		  ["cr1r","cw16r"],
+		  ["cr2r","cw17r"],
+		  ["cr3r","cw18r"],
+		  ["cr4r","cw19r"],
+		  ["cr5r","cw20r"],
+		  
+		  //l
+		  ["cr1ll","cw16l"],
+		  ["cr2ll","cw17l"],
+		  ["cr3ll","cw18l"],
+		  ["cr4ll","cw19l"],
+		  ["cr5ll","cw20l"],
+		  
+		  ["cr1l","cw16l"],
+		  ["cr2l","cw17l"],
+		  ["cr3l","cw18l"],
+		  ["cr4l","cw19l"],
+		  ["cr5l","cw20l"],
+		  
+		  //front
+		  //r
+		  ["cr5rr","cff4rrr"],
+		  ["cr5rr","cff4rr"],
+		  ["cr5r","cff4r"],
+		  ["cr5r","cff4l"],
+		  
+		  //r
+		  ["cr5ll","cff4lll"],
+		  ["cr5ll","cff4ll"],
+		  ["cr5l","cff4l"],
+		  ["cr5l","cff4r"],
+		  //--CARGO BOX FRONT--
+		  //main shape
+		  {"beamSpring":5801000,"beamDamp":250},
+		  {"beamDeform":100000,"beamStrength":400000},
+		  //widthwise
+		  ["cff1rrr","cff1rr"],
+		  ["cff1rr","cff1r"],
+		  ["cff1r","cff1l"],
+		  ["cff1l","cff1ll"],
+		  ["cff1ll","cff1lll"],
+		  
+		  ["cff2rrr","cff2rr"],
+		  ["cff2rr","cff2r"],
+		  ["cff2r","cff2l"],
+		  ["cff2l","cff2ll"],
+		  ["cff2ll","cff2lll"],
+		  
+		  ["cff3rrr","cff3rr"],
+		  ["cff3rr","cff3r"],
+		  ["cff3r","cff3l"],
+		  ["cff3l","cff3ll"],
+		  ["cff3ll","cff3lll"],
+		  
+		  ["cff4rrr","cff4rr"],
+		  ["cff4rr","cff4r"],
+		  ["cff4r","cff4l"],
+		  ["cff4l","cff4ll"],
+		  ["cff4ll","cff4lll"],
+		  //vertical
+		  ["cff1rrr","cff2rrr"],
+		  ["cff1rr","cff2rr"],
+		  ["cff1r","cff2r"],
+		  ["cff1l","cff2l"],
+		  ["cff1ll","cff2ll"],
+		  ["cff1lll","cff2lll"],
+		  
+		  ["cff2rrr","cff3rrr"],
+		  ["cff2rr","cff3rr"],
+		  ["cff2r","cff3r"],
+		  ["cff2l","cff3l"],
+		  ["cff2ll","cff3ll"],
+		  ["cff2lll","cff3lll"],
+		  
+		  ["cff3rrr","cff4rrr"],
+		  ["cff3rr","cff4rr"],
+		  ["cff3r","cff4r"],
+		  ["cff3l","cff4l"],
+		  ["cff3ll","cff4ll"],
+		  ["cff3lll","cff4lll"],
+		  
+		  {"beamDeform":15000,"beamStrength":200000},
+		  //surficial cross
+		  //r
+		  ["cff1rrr","cff2rr"],
+		  ["cff1rr","cff2rrr"],
+		  ["cff2rrr","cff3rr"],
+		  ["cff2rr","cff3rrr"],
+		  ["cff3rrr","cff4rr"],
+		  ["cff3rr","cff4rrr"],
+		  
+		  ["cff1rr","cff2r"],
+		  ["cff1r","cff2rr"],
+		  ["cff2rr","cff3r"],
+		  ["cff2r","cff3rr"],
+		  ["cff3rr","cff4r"],
+		  ["cff3r","cff4rr"],
+		  //m
+		  ["cff1r","cff2l"],
+		  ["cff1l","cff2r"],
+		  ["cff2r","cff3l"],
+		  ["cff2l","cff3r"],
+		  ["cff3r","cff4l"],
+		  ["cff3l","cff4r"],
+		  //l
+		  ["cff1lll","cff2ll"],
+		  ["cff1ll","cff2lll"],
+		  ["cff2lll","cff3ll"],
+		  ["cff2ll","cff3lll"],
+		  ["cff3lll","cff4ll"],
+		  ["cff3ll","cff4lll"],
+		  
+		  ["cff1ll","cff2l"],
+		  ["cff1l","cff2ll"],
+		  ["cff2ll","cff3l"],
+		  ["cff2l","cff3ll"],
+		  ["cff3ll","cff4l"],
+		  ["cff3l","cff4ll"],
+		  
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":8000,"beamStrength":150000},
+		  //rigids
+		  ["cff1rrr","cff1r"],
+		  ["cff1rr","cff1l"],
+		  ["cff1r","cff1ll"],
+		  ["cff1l","cff1lll"],
+		  
+		  ["cff2rrr","cff2r"],
+		  ["cff2rr","cff2l"],
+		  ["cff2r","cff2ll"],
+		  ["cff2l","cff2lll"],
+		  
+		  ["cff3rrr","cff3r"],
+		  ["cff3rr","cff3l"],
+		  ["cff3r","cff3ll"],
+		  ["cff3l","cff3lll"],
+		  
+		  ["cff4rrr","cff4r"],
+		  ["cff4rr","cff4l"],
+		  ["cff4r","cff4ll"],
+		  ["cff4l","cff4lll"],
+		  
+		  ["cff1rrr","cff3rrr"],
+		  ["cff1rr","cff3rr"],
+		  ["cff1r","cff3r"],
+		  ["cff1l","cff3l"],
+		  ["cff1ll","cff3ll"],
+		  ["cff1lll","cff3lll"],
+		  
+		  ["cff2rrr","cff4rrr"],
+		  ["cff2rr","cff4rr"],
+		  ["cff2r","cff4r"],
+		  ["cff2l","cff4l"],
+		  ["cff2ll","cff4ll"],
+		  ["cff2lll","cff4lll"],
+		  
+		  //rigidifier
+		  {"beamSpring":1801000,"beamDamp":400},
+		  {"beamDeform":4000,"beamStrength":200000},
+		  ["cff1rrr","cff5"],
+		  ["cff1rr","cff5"],
+		  ["cff1r","cff5"],
+		  ["cff1l","cff5"],
+		  ["cff1ll","cff5"],
+		  ["cff1lll","cff5"],
+		  
+		  ["cff2rrr","cff5"],
+		  ["cff2rr","cff5"],
+		  ["cff2r","cff5"],
+		  ["cff2l","cff5"],
+		  ["cff2ll","cff5"],
+		  ["cff2lll","cff5"],
+		  
+		  ["cff3rrr","cff5"],
+		  ["cff3rr","cff5"],
+		  ["cff3r","cff5"],
+		  ["cff3l","cff5"],
+		  ["cff3ll","cff5"],
+		  ["cff3lll","cff5"],
+		  
+		  ["cff4rrr","cff5"],
+		  ["cff4rr","cff5"],
+		  ["cff4r","cff5"],
+		  ["cff4l","cff5"],
+		  ["cff4ll","cff5"],
+		  ["cff4lll","cff5"],
+		  
+		  //attach
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":16000,"beamStrength":25000},
+		  //r
+		  ["cff1rrr","cf15rr"],
+		  ["cff1rr","cf15rr"],
+		  
+		  ["cff1rr","cf15r"],
+		  ["cff1r","cf15r"],
+		  ["cff1rr","cf5r"],
+		  ["cff1r","cf5r"],
+		  ["cff1r","cf15l"],
+		  
+		  //l
+		  ["cff1lll","cf15ll"],
+		  ["cff1ll","cf15ll"],
+		  
+		  ["cff1ll","cf15l"],
+		  ["cff1l","cf15l"],
+		  ["cff1ll","cf5l"],
+		  ["cff1l","cf5l"],
+		  ["cff1l","cf15r"],
+		  
+		  //to cab
+		  {"beamDeform":4000,"beamStrength":18000},
+		  {"optional":true},
+		  //r
+		  ["cff3rr","r3rr"],
+		  ["cff3r","r3rr"],
+		  ["cff3r","r3"],
+		  
+		  ["cff2rr","r3rr"],
+		  ["cff2r","r3rr"],
+		  ["cff2r","r3"],
+		  
+		  ["cff2rr","r4rr"],
+		  ["cff2r","r4rr"],
+		  
+		  ["cff1rr","c3rr"],
+		  ["cff2rr","c4rr"],
+		  ["cff1rr","c4rr"],
+		  
+		  //l
+		  ["cff3ll","r3ll"],
+		  ["cff3l","r3ll"],
+		  ["cff3l","r3"],
+		  
+		  ["cff2ll","r3ll"],
+		  ["cff2l","r3ll"],
+		  ["cff2l","r3"],
+		  
+		  ["cff2ll","r4ll"],
+		  ["cff2l","r4ll"],
+		  
+		  ["cff1ll","c3ll"],
+		  ["cff2ll","c4ll"],
+		  ["cff1ll","c4ll"],
+		  {"optional":false},
+		  //--CARGO BOX WALL--
+		  //main shape
+		  {"beamSpring":5801000,"beamDamp":250},
+		  {"beamDeform":100000,"beamStrength":400000},
+		  //lengthwise
+		  //r
+		  ["cw1r","cw2r"],
+		  ["cw2r","cw3r"],
+		  ["cw3r","cw4r"],
+		  ["cw4r","cw5r"],
+		  ["cw6r","cw7r"],
+		  ["cw7r","cw8r"],
+		  ["cw8r","cw9r"],
+		  ["cw9r","cw10r"],
+		  ["cw11r","cw12r"],
+		  ["cw12r","cw13r"],
+		  ["cw13r","cw14r"],
+		  ["cw14r","cw15r"],
+		  ["cw16r","cw17r"],
+		  ["cw17r","cw18r"],
+		  ["cw18r","cw19r"],
+		  ["cw19r","cw20r"],
+		  //l
+		  ["cw1l","cw2l"],
+		  ["cw2l","cw3l"],
+		  ["cw3l","cw4l"],
+		  ["cw4l","cw5l"],
+		  ["cw6l","cw7l"],
+		  ["cw7l","cw8l"],
+		  ["cw8l","cw9l"],
+		  ["cw9l","cw10l"],
+		  ["cw11l","cw12l"],
+		  ["cw12l","cw13l"],
+		  ["cw13l","cw14l"],
+		  ["cw14l","cw15l"],
+		  ["cw16l","cw17l"],
+		  ["cw17l","cw18l"],
+		  ["cw18l","cw19l"],
+		  ["cw19l","cw20l"],
+		  
+		  //vertical
+		  //r
+		  ["cw1r","cw6r"],
+		  ["cw2r","cw7r"],
+		  ["cw3r","cw8r"],
+		  ["cw4r","cw9r"],
+		  ["cw5r","cw10r"],
+		  ["cw6r","cw11r"],
+		  ["cw7r","cw12r"],
+		  ["cw8r","cw13r"],
+		  ["cw9r","cw14r"],
+		  ["cw10r","cw15r"],
+		  ["cw11r","cw16r"],
+		  ["cw12r","cw17r"],
+		  ["cw13r","cw18r"],
+		  ["cw14r","cw19r"],
+		  ["cw15r","cw20r"],
+		  
+		  //l
+		  ["cw1l","cw6l"],
+		  ["cw2l","cw7l"],
+		  ["cw3l","cw8l"],
+		  ["cw4l","cw9l"],
+		  ["cw5l","cw10l"],
+		  ["cw6l","cw11l"],
+		  ["cw7l","cw12l"],
+		  ["cw8l","cw13l"],
+		  ["cw9l","cw14l"],
+		  ["cw10l","cw15l"],
+		  ["cw11l","cw16l"],
+		  ["cw12l","cw17l"],
+		  ["cw13l","cw18l"],
+		  ["cw14l","cw19l"],
+		  ["cw15l","cw20l"],
+		  
+		  {"beamDeform":15000,"beamStrength":200000},
+		  //surficial cross
+		  //r
+		  ["cw1r","cw7r"],
+		  ["cw2r","cw6r"],
+		  ["cw2r","cw8r"],
+		  ["cw3r","cw7r"],
+		  ["cw3r","cw9r"],
+		  ["cw4r","cw8r"],
+		  ["cw4r","cw10r"],
+		  ["cw5r","cw9r"],
+		  
+		  ["cw6r","cw12r"],
+		  ["cw7r","cw11r"],
+		  ["cw7r","cw13r"],
+		  ["cw8r","cw12r"],
+		  ["cw8r","cw14r"],
+		  ["cw9r","cw13r"],
+		  ["cw9r","cw15r"],
+		  ["cw10r","cw14r"],
+		  
+		  ["cw11r","cw17r"],
+		  ["cw12r","cw16r"],
+		  ["cw12r","cw18r"],
+		  ["cw13r","cw17r"],
+		  ["cw13r","cw19r"],
+		  ["cw14r","cw18r"],
+		  ["cw14r","cw20r"],
+		  ["cw15r","cw19r"],
+		  
+		  //l
+		  ["cw1l","cw7l"],
+		  ["cw2l","cw6l"],
+		  ["cw2l","cw8l"],
+		  ["cw3l","cw7l"],
+		  ["cw3l","cw9l"],
+		  ["cw4l","cw8l"],
+		  ["cw4l","cw10l"],
+		  ["cw5l","cw9l"],
+		  
+		  ["cw6l","cw12l"],
+		  ["cw7l","cw11l"],
+		  ["cw7l","cw13l"],
+		  ["cw8l","cw12l"],
+		  ["cw8l","cw14l"],
+		  ["cw9l","cw13l"],
+		  ["cw9l","cw15l"],
+		  ["cw10l","cw14l"],
+		  
+		  ["cw11l","cw17l"],
+		  ["cw12l","cw16l"],
+		  ["cw12l","cw18l"],
+		  ["cw13l","cw17l"],
+		  ["cw13l","cw19l"],
+		  ["cw14l","cw18l"],
+		  ["cw14l","cw20l"],
+		  ["cw15l","cw19l"],
+		  
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":8000,"beamStrength":150000},
+		  //rigids
+		  //r
+		  ["cw1r","cw3r"],
+		  ["cw2r","cw4r"],
+		  ["cw3r","cw5r"],
+		  
+		  ["cw6r","cw8r"],
+		  ["cw7r","cw9r"],
+		  ["cw8r","cw10r"],
+		  
+		  ["cw11r","cw13r"],
+		  ["cw12r","cw14r"],
+		  ["cw13r","cw15r"],
+		  
+		  ["cw16r","cw18r"],
+		  ["cw17r","cw19r"],
+		  ["cw18r","cw20r"],
+		  
+		  //l
+		  ["cw1l","cw3l"],
+		  ["cw2l","cw4l"],
+		  ["cw3l","cw5l"],
+		  
+		  ["cw6l","cw8l"],
+		  ["cw7l","cw9l"],
+		  ["cw8l","cw10l"],
+		  
+		  ["cw11l","cw13l"],
+		  ["cw12l","cw14l"],
+		  ["cw13l","cw15l"],
+		  
+		  ["cw16l","cw18l"],
+		  ["cw17l","cw19l"],
+		  ["cw18l","cw20l"],
+		  //vertical rigids
+		  //r
+		  ["cw1r","cw11r"],
+		  ["cw2r","cw12r"],
+		  ["cw3r","cw13r"],
+		  ["cw4r","cw14r"],
+		  ["cw5r","cw15r"],
+		  
+		  ["cw6r","cw16r"],
+		  ["cw7r","cw17r"],
+		  ["cw8r","cw18r"],
+		  ["cw9r","cw19r"],
+		  ["cw10r","cw20r"],
+		  
+		  //l
+		  ["cw1l","cw11l"],
+		  ["cw2l","cw12l"],
+		  ["cw3l","cw13l"],
+		  ["cw4l","cw14l"],
+		  ["cw5l","cw15l"],
+		  
+		  ["cw6l","cw16l"],
+		  ["cw7l","cw17l"],
+		  ["cw8l","cw18l"],
+		  ["cw9l","cw19l"],
+		  ["cw10l","cw20l"],
+		  
+		  //rigidifier
+		  {"beamSpring":1801000,"beamDamp":400},
+		  {"beamDeform":4000,"beamStrength":200000},
+		  //r
+		  ["cw1r","cw21r"],
+		  ["cw2r","cw21r"],
+		  ["cw3r","cw21r"],
+		  ["cw3r","cw22r"],
+		  ["cw4r","cw22r"],
+		  ["cw5r","cw22r"],
+		  ["cw6r","cw21r"],
+		  ["cw7r","cw21r"],
+		  ["cw8r","cw21r"],
+		  ["cw8r","cw22r"],
+		  ["cw9r","cw22r"],
+		  ["cw10r","cw22r"],
+		  ["cw11r","cw21r"],
+		  ["cw12r","cw21r"],
+		  ["cw13r","cw21r"],
+		  ["cw13r","cw22r"],
+		  ["cw14r","cw22r"],
+		  ["cw15r","cw22r"],
+		  ["cw16r","cw21r"],
+		  ["cw17r","cw21r"],
+		  ["cw18r","cw21r"],
+		  ["cw18r","cw22r"],
+		  ["cw19r","cw22r"],
+		  ["cw20r","cw22r"],
+		  
+		  ["cw21r","cw22r"],
+		  
+		  //l
+		  ["cw1l","cw21l"],
+		  ["cw2l","cw21l"],
+		  ["cw3l","cw21l"],
+		  ["cw3l","cw22l"],
+		  ["cw4l","cw22l"],
+		  ["cw5l","cw22l"],
+		  ["cw6l","cw21l"],
+		  ["cw7l","cw21l"],
+		  ["cw8l","cw21l"],
+		  ["cw8l","cw22l"],
+		  ["cw9l","cw22l"],
+		  ["cw10l","cw22l"],
+		  ["cw11l","cw21l"],
+		  ["cw12l","cw21l"],
+		  ["cw13l","cw21l"],
+		  ["cw13l","cw22l"],
+		  ["cw14l","cw22l"],
+		  ["cw15l","cw22l"],
+		  ["cw16l","cw21l"],
+		  ["cw17l","cw21l"],
+		  ["cw18l","cw21l"],
+		  ["cw18l","cw22l"],
+		  ["cw19l","cw22l"],
+		  ["cw20l","cw22l"],
+		  
+		  ["cw21l","cw22l"],
+		  
+		  //attach
+		  {"beamSpring":3801000,"beamDamp":250},
+		  {"beamDeform":16000,"beamStrength":25000},
+		  //r
+		  ["cw16r","cf10r"],
+		  ["cw16r","cf10rr"],
+		  ["cw17r","cf10rr"],
+		  ["cw11r","cf9rr"],
+		  ["cw11r","cf9r"],
+		  ["cw12r","cf9r"],
+		  ["cw12r","cf9rr"],
+		  ["cw11r","cf9rrr"],
+		  ["cw12r","cf9rrr"],
+		  ["cw6r","cf8rr"],
+		  ["cw6r","cf8r"],
+		  ["cw7r","cf8r"],
+		  ["cw7r","cf8rr"],
+		  ["cw6r","cf8rrr"],
+		  ["cw7r","cf8rrr"],
+		  
+		  ["cw1r","cf11rr"],
+		  ["cw1r","cf1rr"],
+		  ["cw2r","cf11rr"],
+		  ["cw2r","cf1rr"],
+		  ["cw1r","cf11r"],
+		  ["cw1r","cf11r"],
+		  ["cw2r","cf11r"],
+		  ["cw2r","cf11r"],
+		  
+		  ["cw2r","cf12rr"],
+		  ["cw3r","cf13rr"],
+		  ["cw4r","cf14rr"],
+		  ["cw5r","cf15rr"],
+		  
+		  ["cw2r","cf2r"],
+		  ["cw3r","cf3r"],
+		  ["cw4r","cf4r"],
+		  ["cw5r","cf5r"],
+		  ["cw2r","cf12r"],
+		  ["cw3r","cf13r"],
+		  ["cw4r","cf14r"],
+		  ["cw5r","cf15r"],
+		  
+		  //l
+		  ["cw16l","cf10l"],
+		  ["cw16l","cf10ll"],
+		  ["cw17l","cf10ll"],
+		  ["cw11l","cf9ll"],
+		  ["cw11l","cf9l"],
+		  ["cw12l","cf9l"],
+		  ["cw12l","cf9ll"],
+		  ["cw11l","cf9lll"],
+		  ["cw12l","cf9lll"],
+		  ["cw6l","cf8ll"],
+		  ["cw6l","cf8l"],
+		  ["cw7l","cf8l"],
+		  ["cw7l","cf8ll"],
+		  ["cw6l","cf8lll"],
+		  ["cw7l","cf8lll"],
+		  
+		  ["cw1l","cf11ll"],
+		  ["cw1l","cf1ll"],
+		  ["cw2l","cf11ll"],
+		  ["cw2l","cf1ll"],
+		  ["cw1l","cf11l"],
+		  ["cw1l","cf11l"],
+		  ["cw2l","cf11l"],
+		  ["cw2l","cf11l"],
+		  
+		  ["cw2l","cf12ll"],
+		  ["cw3l","cf13ll"],
+		  ["cw4l","cf14ll"],
+		  ["cw5l","cf15ll"],
+		  
+		  ["cw2l","cf2l"],
+		  ["cw3l","cf3l"],
+		  ["cw4l","cf4l"],
+		  ["cw5l","cf5l"],
+		  ["cw2l","cf12l"],
+		  ["cw3l","cf13l"],
+		  ["cw4l","cf14l"],
+		  ["cw5l","cf15l"],
+		  
+		  //attach to front
+		  //r
+		  ["cw4r","cff1rrr"],
+		  ["cw5r","cff1rrr"],
+		  ["cw5r","cff1rr"],
+		  ["cw5r","cff1r"],
+		  ["cw9r","cff2rrr"],
+		  ["cw10r","cff2rrr"],
+		  ["cw10r","cff2rr"],
+		  ["cw10r","cff2r"],
+		  ["cw14r","cff3rrr"],
+		  ["cw15r","cff3rrr"],
+		  ["cw15r","cff3rr"],
+		  ["cw15r","cff3r"],
+		  ["cw19r","cff4rrr"],
+		  ["cw20r","cff4rrr"],
+		  ["cw20r","cff4rr"],
+		  ["cw20r","cff4r"],
+		  
+		  //l
+		  ["cw4l","cff1lll"],
+		  ["cw5l","cff1lll"],
+		  ["cw5l","cff1ll"],
+		  ["cw5l","cff1l"],
+		  ["cw9l","cff2lll"],
+		  ["cw10l","cff2lll"],
+		  ["cw10l","cff2ll"],
+		  ["cw10l","cff2l"],
+		  ["cw14l","cff3lll"],
+		  ["cw15l","cff3lll"],
+		  ["cw15l","cff3ll"],
+		  ["cw15l","cff3l"],
+		  ["cw19l","cff4lll"],
+		  ["cw20l","cff4lll"],
+		  ["cw20l","cff4ll"],
+		  ["cw20l","cff4l"],
+		  
+		  //--CARGO BOX FLOOR/FRAME--
+		  //rear door frame perimeter
+		  {"beamSpring":3801000,"beamDamp":200},
+		  {"beamDeform":100000,"beamStrength":400000},
+		  ["cf11rr","cf8rr"],
+		  ["cf11ll","cf8ll"],
+		  ["cf11rr","cf8rrr"],
+		  ["cf11ll","cf8lll"],
+		  
+		  ["cf8rrr","cf9rrr"],
+		  ["cf8rr","cf9rr"],
+		  ["cf8r","cf9r"],
+		  ["cf8l","cf9l"],
+		  ["cf8ll","cf9ll"],
+		  ["cf8lll","cf9lll"],
+		  
+		  ["cf9rrr","cf17rr"],
+		  ["cf9rr","cf10rr"],
+		  ["cf9r","cf10rr"],
+		  ["cf9l","cf10ll"],
+		  ["cf9ll","cf10ll"],
+		  ["cf9lll","cf17ll"],
+		  
+		  ["cf17rr","cf10rr"],
+		  ["cf17r","cf10r"],
+		  ["cf17","cf10"],
+		  ["cf17l","cf10l"],
+		  ["cf17ll","cf10ll"],
+		  
+		  
+		  ["cf10rr","cf10r"],
+		  ["cf10r","cf10"],
+		  ["cf10","cf10l"],
+		  ["cf10l","cf10ll"],
+		  
+		  ["cf17rr","cf17r"],
+		  ["cf17r","cf17"],
+		  ["cf17","cf17l"],
+		  ["cf17l","cf17ll"],
+		  
+		  ["cf9rrr","cf9r"],
+		  ["cf9rrr","cf9rr"],
+		  ["cf9rr","cf9r"],
+		  ["cf9ll","cf9l"],
+		  ["cf9lll","cf9ll"],
+		  ["cf9lll","cf9l"],
+		  
+		  ["cf8rrr","cf8r"],
+		  ["cf8rrr","cf8rr"],
+		  ["cf8rr","cf8r"],
+		  ["cf8ll","cf8l"],
+		  ["cf8lll","cf8ll"],
+		  ["cf8lll","cf8l"],
+		  
+		  //weak/soft corners
+		  {"beamSpring":2801000,"beamDamp":200},
+		  {"beamDeform":20000,"beamStrength":250000},
+		  ["cf11rr","cf8r"],
+		  ["cf11ll","cf8l"],
+		  ["cf11r","cf8rr"],
+		  ["cf11l","cf8ll"],
+		  ["cf11r","cf8rrr"],
+		  ["cf11l","cf8lll"],
+		  //["cf12rr","cf8rrr"],
+		  //["cf12ll","cf8lll"],
+		  
+		  ["cf8rrr","cf9r"],
+		  ["cf8lll","cf9l"],
+		  ["cf8rr","cf9r"],
+		  ["cf8ll","cf9l"],
+		  ["cf8r","cf9rr"],
+		  ["cf8l","cf9ll"],
+		  ["cf8r","cf9rrr"],
+		  ["cf8l","cf9lll"],
+		 
+		  ["cf9rrr","cf10r"],
+		  ["cf9lll","cf10l"],
+		  ["cf9rr","cf10r"],
+		  ["cf9ll","cf10l"],
+		  ["cf9r","cf10r"],
+		  ["cf9l","cf10l"],
+		  ["cf9r","cf17rr"],
+		  ["cf9l","cf17ll"],
+		  
+		  ["cf9rrr","cf17r"],
+		  ["cf9lll","cf17l"],
+		  
+		  ["cf10rr","cf17r"],
+		  ["cf10r","cf17rr"],
+		  ["cf10r","cf17"],
+		  ["cf10","cf17r"],
+		  ["cf10","cf17l"],
+		  ["cf10l","cf17"],
+		  ["cf10l","cf17ll"],
+		  ["cf10ll","cf17l"],
+		  
+		  //rigidifying node
+		  ["cf10rr","cf16"],
+		  ["cf10r","cf16"],
+		  ["cf10","cf16"],
+		  ["cf10l","cf16"],
+		  ["cf10ll","cf16"],
+		  
+		  ["cf17rr","cf16"],
+		  ["cf17r","cf16"],
+		  ["cf17","cf16"],
+		  ["cf17l","cf16"],
+		  ["cf17ll","cf16"],
+		  
+		  ["cf9rr","cf16"],
+		  ["cf9r","cf16"],
+		  ["cf9l","cf16"],
+		  ["cf9ll","cf16"],
+		  
+		  ["cf8rr","cf9rrr"],
+		  ["cf8ll","cf9lll"],
+		  ["cf8rrr","cf9rr"],
+		  ["cf8lll","cf9ll"],
+		  
+		  ["cf9rr","cf17rr"],
+		  ["cf9ll","cf17ll"],
+		  ["cf9rrr","cf10rr"],
+		  ["cf9lll","cf10ll"],
+		  
+		  ["cf9r","cf17r"],
+		  ["cf9l","cf17l"],
+		  
+		  ["cf11r","cf8r"],
+		  ["cf11r","cf8rr"],
+		  ["cf11r","cf8rrr"],
+		  ["cf11l","cf8l"],
+		  ["cf11l","cf8ll"],
+		  ["cf11l","cf8lll"],
+		  
+		  ["cf11r","cf9r"],
+		  ["cf11r","cf9rr"],
+		  ["cf11r","cf9rrr"],
+		  ["cf11l","cf9l"],
+		  ["cf11l","cf9ll"],
+		  ["cf11l","cf9lll"],
+		  
+		  ["cf10r","cf8r"],
+		  ["cf10r","cf8rr"],
+		  ["cf10r","cf8rrr"],
+		  ["cf10l","cf8l"],
+		  ["cf10l","cf8ll"],
+		  ["cf10l","cf8lll"],
+		  
+		  ["cf17r","cf8r"],
+		  ["cf17r","cf8rr"],
+		  ["cf17r","cf8rrr"],
+		  ["cf17l","cf8l"],
+		  ["cf17l","cf8ll"],
+		  ["cf17l","cf8lll"],
+		  
+		  ["cf9lll","cf12l"],
+		  ["cf9rrr","cf12r"],
+		  ["cf9ll","cf12l"],
+		  ["cf9rr","cf12r"],
+		  ["cf9l","cf12l"],
+		  ["cf9r","cf12r"],
+		  
+		  ["cf8ll","cf12l"],
+		  ["cf8rr","cf12r"],
+		  ["cf8l","cf12l"],
+		  ["cf8r","cf12r"],
+		  
+		  //rear step thing
+		  {"beamSpring":3801000,"beamDamp":200},
+		  {"beamDeform":100000,"beamStrength":400000},
+		  ["cf6rr","cf6r"],
+		  ["cf6r","cf6"],
+		  ["cf6","cf6l"],
+		  ["cf6l","cf6ll"],
+		  
+		  ["cf7rr","cf7r"],
+		  ["cf7r","cf7"],
+		  ["cf7","cf7l"],
+		  ["cf7l","cf7ll"],
+		  
+		  ["cf6rr","cf7rr"],
+		  ["cf6r","cf7r"],
+		  ["cf6","cf7"],
+		  ["cf6l","cf7l"],
+		  ["cf6ll","cf7ll"],
+		  
+		  //surf cross
+		  ["cf6r","cf7rr"],
+		  ["cf6rr","cf7r"],
+		  ["cf6","cf7r"],
+		  ["cf6r","cf7"],
+		  ["cf6l","cf7"],
+		  ["cf6","cf7l"],
+		  ["cf6ll","cf7l"],
+		  ["cf6l","cf7ll"],
+		  
+		  //attach
+		  ["cf6rr","cf1rr"],
+		  ["cf6r","cf1r"],
+		  ["cf6","cf1"],
+		  ["cf6l","cf1l"],
+		  ["cf6ll","cf1ll"],
+		  
+		  ["cf7rr","cf1rr"],
+		  ["cf7r","cf1r"],
+		  ["cf7","cf1"],
+		  ["cf7l","cf1l"],
+		  ["cf7ll","cf1ll"],
+		  
+		  ["cf6rr","cf11rr"],
+		  ["cf6r","cf11r"],
+		  ["cf6","cf11"],
+		  ["cf6l","cf11l"],
+		  ["cf6ll","cf11ll"],
+		  
+		  ["cf7rr","cf11rr"],
+		  ["cf7r","cf11r"],
+		  ["cf7","cf11"],
+		  ["cf7l","cf11l"],
+		  ["cf7ll","cf11ll"],
+		  
+		  
+		  {"beamSpring":3801000,"beamDamp":200},
+		  {"beamDeform":150000,"beamStrength":400000},
+		  //floor main shape
+		  ["cf1rr","cf1r"],
+		  ["cf1r","cf1"],
+		  ["cf1l","cf1"],
+		  ["cf1ll","cf1l"],
+		  
+		  //["cf2rr","cf2r"],
+		  ["cf2r","cf2l"],
+		  //["cf2ll","cf2l"],
+		  
+		  //["cf3rr","cf3r"],
+		  ["cf3r","cf3l"],
+		  //["cf3ll","cf3l"],
+		  
+		  //["cf4rr","cf4r"],
+		  ["cf4r","cf4l"],
+		  //["cf4ll","cf4l"],
+		  
+		  //["cf5rr","cf5r"],
+		  ["cf5r","cf5l"],
+		  //["cf5ll","cf5l"],
+		  
+		  //["cf1rr","cf2rr"],
+		  ["cf1r","cf2r"],
+		  ["cf1","cf2r"],
+		  ["cf1","cf2l"],
+		  ["cf1l","cf2l"],
+		  //["cf1ll","cf2ll"],
+		  
+		  //["cf2rr","cf3rr"],
+		  ["cf2r","cf3r"],
+		  ["cf2l","cf3l"],
+		  //["cf2ll","cf3ll"],
+		  
+		  //["cf3rr","cf4rr"],
+		  ["cf3r","cf4r"],
+		  ["cf3l","cf4l"],
+		  //["cf3ll","cf4ll"],
+		  
+		  //["cf4rr","cf5rr"],
+		  ["cf4r","cf5r"],
+		  ["cf4l","cf5l"],
+		  //["cf4ll","cf5ll"],
+		  
+		  //surf cross
+		  ["cf12rr","cf1r"],
+		  ["cf11rr","cf2r"],
+		  ["cf11ll","cf2l"],
+		  ["cf12ll","cf1l"],
+		  
+		  ["cf12rr","cf1r"],
+		  ["cf12ll","cf1l"],
+		  ["cf12rr","cf11r"],
+		  ["cf12ll","cf11l"],
+		  
+		  ["cf13rr","cf2r"],
+		  ["cf3r","cf12rr"],
+		  ["cf3r","cf2l"],
+		  ["cf3l","cf2r"],
+		  ["cf3l","cf12ll"],
+		  ["cf13ll","cf2l"],
+		  
+		  ["cf14rr","cf3r"],
+		  ["cf4r","cf13rr"],
+		  ["cf4r","cf3l"],
+		  ["cf4l","cf3r"],
+		  ["cf4l","cf13ll"],
+		  ["cf14ll","cf3l"],
+		  
+		  ["cf15rr","cf4r"],
+		  ["cf5r","cf14rr"],
+		  ["cf5r","cf4l"],
+		  ["cf5l","cf4r"],
+		  ["cf5l","cf14ll"],
+		  ["cf15ll","cf4l"],
+		  
+		  //upper floor main shape
+		  ["cf11rr","cf11r"],
+		  ["cf11r","cf11"],
+		  ["cf11l","cf11"],
+		  ["cf11ll","cf11l"],
+		  
+		  ["cf12rr","cf12r"],
+		  ["cf12r","cf12l"],
+		  ["cf12ll","cf12l"],
+		  
+		  ["cf13rr","cf13r"],
+		  ["cf13r","cf13l"],
+		  ["cf13ll","cf13l"],
+		  
+		  ["cf14rr","cf14r"],
+		  ["cf14r","cf14l"],
+		  ["cf14ll","cf14l"],
+		  
+		  ["cf15rr","cf15r"],
+		  ["cf15r","cf15l"],
+		  ["cf15ll","cf15l"],
+		  
+		  ["cf11rr","cf12rr"],
+		  ["cf11r","cf12r"],
+		  ["cf11","cf12r"],
+		  ["cf11","cf12l"],
+		  ["cf11l","cf12l"],
+		  ["cf11ll","cf12ll"],
+		  
+		  ["cf12rr","cf13rr"],
+		  ["cf12r","cf13r"],
+		  ["cf12l","cf13l"],
+		  ["cf12ll","cf13ll"],
+		  
+		  ["cf13rr","cf14rr"],
+		  ["cf13r","cf14r"],
+		  ["cf13l","cf14l"],
+		  ["cf13ll","cf14ll"],
+		  
+		  ["cf14rr","cf15rr"],
+		  ["cf14r","cf15r"],
+		  ["cf14l","cf15l"],
+		  ["cf14ll","cf15ll"],
+		  
+		  {"beamDeform":60000,"beamStrength":350000},
+		  //surf cross
+		  ["cf12rr","cf11r"],
+		  ["cf11rr","cf12r"],
+		  ["cf11ll","cf12l"],
+		  ["cf12ll","cf11l"],
+		  
+		  ["cf13rr","cf12r"],
+		  ["cf13r","cf12rr"],
+		  ["cf13r","cf12l"],
+		  ["cf13l","cf12r"],
+		  ["cf13l","cf12ll"],
+		  ["cf13ll","cf12l"],
+		  
+		  ["cf14rr","cf13r"],
+		  ["cf14r","cf13rr"],
+		  ["cf14r","cf13l"],
+		  ["cf14l","cf13r"],
+		  ["cf14l","cf13ll"],
+		  ["cf14ll","cf13l"],
+		  
+		  ["cf15rr","cf14r"],
+		  ["cf15r","cf14rr"],
+		  ["cf15r","cf14l"],
+		  ["cf15l","cf14r"],
+		  ["cf15l","cf14ll"],
+		  ["cf15ll","cf14l"],
+		  
+		  {"beamDeform":200000,"beamStrength":800000},
+		  {"beamSpring":8801000,"beamDamp":300},
+		  //vertical
+		  ["cf1rr","cf11rr"],
+		  ["cf1r","cf11r"],
+		  ["cf1","cf11"],
+		  ["cf1l","cf11l"],
+		  ["cf1ll","cf11ll"],
+		  
+		  //["cf2rr","cf12rr"],
+		  ["cf2r","cf12r"],
+		  ["cf2l","cf12l"],
+		  //["cf2ll","cf12ll"],
+		  
+		  //["cf3rr","cf13rr"],
+		  ["cf3r","cf13r"],
+		  ["cf3l","cf13l"],
+		  //["cf3ll","cf13ll"],
+		  
+		  //["cf4rr","cf14rr"],
+		  ["cf4r","cf14r"],
+		  ["cf4l","cf14l"],
+		  //["cf4ll","cf14ll"],
+		  
+		  //["cf5rr","cf15rr"],
+		  ["cf5r","cf15r"],
+		  ["cf5l","cf15l"],
+		  //["cf5ll","cf15ll"],
+		  
+		  {"beamDeform":40000,"beamStrength":350000},
+		  {"beamSpring":3801000,"beamDamp":200},
+		  //cross lengthwise
+		  ["cf11rr","cf12rr"],
+		  ["cf12rr","cf11rr"],
+		  ["cf1r","cf12r"],
+		  ["cf2r","cf11r"],
+		  ["cf1l","cf12l"],
+		  ["cf2l","cf11l"],
+		  ["cf11ll","cf12ll"],
+		  ["cf12ll","cf11ll"],
+		  
+		  ["cf12rr","cf13rr"],
+		  ["cf13rr","cf12rr"],
+		  ["cf2r","cf13r"],
+		  ["cf3r","cf12r"],
+		  ["cf2l","cf13l"],
+		  ["cf3l","cf12l"],
+		  ["cf12ll","cf13ll"],
+		  ["cf13ll","cf12ll"],
+		  
+		  ["cf13rr","cf14rr"],
+		  ["cf14rr","cf13rr"],
+		  ["cf3r","cf14r"],
+		  ["cf4r","cf13r"],
+		  ["cf3l","cf14l"],
+		  ["cf4l","cf13l"],
+		  ["cf13ll","cf14ll"],
+		  ["cf14ll","cf13ll"],
+		  
+		  ["cf14rr","cf15rr"],
+		  ["cf15rr","cf14rr"],
+		  ["cf4r","cf15r"],
+		  ["cf5r","cf14r"],
+		  ["cf4l","cf15l"],
+		  ["cf5l","cf14l"],
+		  ["cf14ll","cf15ll"],
+		  ["cf15ll","cf14ll"],
+		  
+		  //widthwise
+		  ["cf1rr","cf11r"],
+		  ["cf1r","cf11rr"],
+		  ["cf1r","cf11"],
+		  ["cf1","cf11r"],
+		  ["cf1","cf11l"],
+		  ["cf1l","cf11"],
+		  ["cf1l","cf11ll"],
+		  ["cf1ll","cf11l"],
+		  
+		  //["cf2rr","cf12r"],
+		  ["cf2r","cf12rr"],
+		  ["cf2r","cf12l"],
+		  ["cf2l","cf12r"],
+		  ["cf2l","cf12ll"],
+		  //["cf2ll","cf12l"],
+		  
+		  //["cf3rr","cf13r"],
+		  ["cf3r","cf13rr"],
+		  ["cf3r","cf13l"],
+		  ["cf3l","cf13r"],
+		  ["cf3l","cf13ll"],
+		  //["cf3ll","cf13l"],
+		  
+		  //["cf4rr","cf14r"],
+		  ["cf4r","cf14rr"],
+		  ["cf4r","cf14l"],
+		  ["cf4l","cf14r"],
+		  ["cf4l","cf14ll"],
+		  //["cf4ll","cf14l"],
+		  
+		  //["cf5rr","cf15r"],
+		  ["cf5r","cf15rr"],
+		  ["cf5r","cf15l"],
+		  ["cf5l","cf15r"],
+		  ["cf5l","cf15ll"],
+		  //["cf5ll","cf15l"],
+		  
+		  //rigids
+		  /*
+		  ["cf2rr","cf2"],
+		  ["cf2r","cf2"],
+		  ["cf2l","cf2"],
+		  ["cf2ll","cf2"],
+		  
+		  ["cf3rr","cf3"],
+		  ["cf3r","cf3"],
+		  ["cf3l","cf3"],
+		  ["cf3ll","cf3"],
+		  
+		  ["cf4rr","cf4"],
+		  ["cf4r","cf4"],
+		  ["cf4l","cf4"],
+		  ["cf4ll","cf4"],
+		  
+		  ["cf5rr","cf5"],
+		  ["cf5r","cf5"],
+		  ["cf5l","cf5"],
+		  ["cf5ll","cf5"],
+		  */
+		  
+		  //attach
+		  {"beamSpring":3601000,"beamDamp":300},
+		  {"beamDeform":24000,"beamStrength":45000},
+		  ["cf15ll","fr11l"],
+		  ["cf5l","fr11l"],
+		  ["cf5l","fr11"],
+		  ["cf5r","fr11"],
+		  ["cf5r","fr11r"],
+		  ["cf15rr","fr11r"],
+		  
+		  ["cf15ll","fr12l"],
+		  ["cf5l","fr12l"],
+		  ["cf5l","fr12"],
+		  ["cf5r","fr12"],
+		  ["cf5r","fr12r"],
+		  ["cf15rr","fr12r"],
+		  
+		  ["cf14ll","fr12l"],
+		  ["cf4l","fr12l"],
+		  ["cf4l","fr12"],
+		  ["cf4r","fr12"],
+		  ["cf4r","fr12r"],
+		  ["cf14rr","fr12r"],
+		  
+		  ["cf14ll","fr16l"],
+		  ["cf4l","fr16l"],
+		  ["cf4l","fr16"],
+		  ["cf4r","fr16"],
+		  ["cf4r","fr16r"],
+		  ["cf14rr","fr16r"],
+		  
+		  ["cf13ll","fr16l"],
+		  ["cf3l","fr16l"],
+		  ["cf3l","fr16"],
+		  ["cf3r","fr16"],
+		  ["cf3r","fr16r"],
+		  ["cf13rr","fr16r"],
+		  
+		  ["cf13ll","fr17l"],
+		  ["cf3l","fr17l"],
+		  ["cf3l","fr17"],
+		  ["cf3r","fr17"],
+		  ["cf3r","fr17r"],
+		  ["cf13rr","fr17r"],
+		  
+		  ["cf12ll","fr18l"],
+		  ["cf2l","fr18l"],
+		  ["cf2l","fr18"],
+		  ["cf2r","fr18"],
+		  ["cf2r","fr18r"],
+		  ["cf12rr","fr18r"],
+		  
+		  ["cf12ll","fr20l"],
+		  ["cf2l","fr20l"],
+		  ["cf2l","fr20"],
+		  ["cf2r","fr20"],
+		  ["cf2r","fr20r"],
+		  ["cf12rr","fr20r"],
+		  
+		  ["cf1l","fr20l"],
+		  ["cf1l","fr20"],
+		  ["cf1","fr20"],
+		  ["cf1","fr20"],
+		  ["cf1r","fr20"],
+		  ["cf1r","fr20r"],
+		  
+		  //step thing
+		  ["cf6r","fr20r"],
+		  ["cf6r","fr20"],
+		  ["cf6","fr20r"],
+		  ["cf6","fr20"],
+		  ["cf6","fr20l"],
+		  ["cf6l","fr20"],
+		  ["cf6l","fr20l"],
+		  
+		  ["cf6r","fr19r"],
+		  ["cf6r","fr19"],
+		  ["cf6","fr19r"],
+		  ["cf6","fr19"],
+		  ["cf6","fr19l"],
+		  ["cf6l","fr19"],
+		  ["cf6l","fr19l"],
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//roof
+			{"group":"van_cargobox_roof"},
+			["cr1rr","cr2rr","cr2r"],
+			["cr1rr","cr2r","cr1r"],
+			["cr1r","cr2r","cr1"],
+			["cr1","cr2r","cr2l"],
+			["cr1","cr2l","cr1l"],
+			["cr1ll","cr2l","cr2ll"],
+			["cr1ll","cr1l","cr2l"],
+			
+			["cr2rr","cr3rr","cr3r"],
+			["cr2rr","cr3r","cr2r"],
+			["cr2r","cr3r","cr3l"],
+			["cr2r","cr3l","cr2l"],
+			["cr3ll","cr2ll","cr3l"],
+			["cr2ll","cr2l","cr3l"],
+			
+			["cr3rr","cr4rr","cr4r"],
+			["cr3rr","cr4r","cr3r"],
+			["cr3r","cr4r","cr4l"],
+			["cr3r","cr4l","cr3l"],
+			["cr4ll","cr3ll","cr4l"],
+			["cr3ll","cr3l","cr4l"],
+			
+			["cr4rr","cr5rr","cr5r"],
+			["cr4rr","cr5r","cr4r"],
+			["cr4r","cr5r","cr5l"],
+			["cr4r","cr5l","cr4l"],
+			["cr5ll","cr4ll","cr5l"],
+			["cr4ll","cr4l","cr5l"],
+			
+			
+			//roof corner
+			{"group":"van_cargobox_roofcorner"},
+			["crc1rr","crc2rr","crc2r"],
+			["crc1rr","crc2r","crc1r"],
+			["crc1r","crc2r","crc2l"],
+			["crc1r","crc2l","crc1l"],
+			["crc2ll","crc1ll","crc2l"],
+			["crc1ll","crc1l","crc2l"],
+			
+			["crc3rrr","crc3rr","crc2rr"],
+			["crc2rr","crc3rr","crc3r"],
+			["crc2rr","crc3r","crc2r"],
+			["crc2r","crc3r","crc3l"],
+			["crc2r","crc3l","crc2l"],
+			["crc3ll","crc2ll","crc3l"],
+			["crc2ll","crc2l","crc3l"],
+			["crc3ll","crc3lll","crc2ll"],
+			
+			//["crc1rr","crc3rrr","crc2rr"],
+			//["crc2ll","crc3lll","crc1ll"],
+			
+			//front
+			{"group":"van_cargobox_front"},
+			["cff4rrr","cff3rrr","cff3rr"],
+			["cff4rrr","cff3rr","cff4rr"],
+			["cff4rr","cff3rr","cff3r"],
+			["cff4rr","cff3r","cff4r"],
+			["cff4r","cff3r","cff3l"],
+			["cff4r","cff3l","cff4l"],
+			["cff4ll","cff4l","cff3l"],
+			["cff3ll","cff4ll","cff3l"],
+			["cff4lll","cff4ll","cff3ll"],
+			["cff3lll","cff4lll","cff3ll"],
+			
+			["cff3rrr","cff2rrr","cff2rr"],
+			["cff3rrr","cff2rr","cff3rr"],
+			["cff3rr","cff2rr","cff2r"],
+			["cff3rr","cff2r","cff3r"],
+			["cff3r","cff2r","cff2l"],
+			["cff3r","cff2l","cff3l"],
+			["cff3ll","cff3l","cff2l"],
+			["cff2ll","cff3ll","cff2l"],
+			["cff3lll","cff3ll","cff2ll"],
+			["cff2lll","cff3lll","cff2ll"],
+			
+			["cff2rrr","cff1rrr","cff1rr"],
+			["cff2rrr","cff1rr","cff2rr"],
+			["cff2rr","cff1rr","cff1r"],
+			["cff2rr","cff1r","cff2r"],
+			["cff2r","cff1r","cff1l"],
+			["cff2r","cff1l","cff2l"],
+			["cff2ll","cff2l","cff1l"],
+			["cff1ll","cff2ll","cff1l"],
+			["cff2lll","cff2ll","cff1ll"],
+			["cff1lll","cff2lll","cff1ll"],
+			//wall
+			{"group":"van_cargobox_wall_L"},
+			["cw20l","cw15l","cw14l"],
+			["cw20l","cw14l","cw19l"],
+			["cw19l","cw14l","cw13l"],
+			["cw19l","cw13l","cw18l"],
+			["cw18l","cw13l","cw12l"],
+			["cw18l","cw12l","cw17l"],
+			["cw17l","cw12l","cw11l"],
+			["cw17l","cw11l","cw16l"],
+			
+			["cw15l","cw10l","cw9l"],
+			["cw15l","cw9l","cw14l"],
+			["cw14l","cw9l","cw8l"],
+			["cw14l","cw8l","cw13l"],
+			["cw13l","cw8l","cw7l"],
+			["cw13l","cw7l","cw12l"],
+			["cw12l","cw7l","cw6l"],
+			["cw12l","cw6l","cw11l"],
+			
+			["cw10l","cw5l","cw4l"],
+			["cw10l","cw4l","cw9l"],
+			["cw9l","cw4l","cw3l"],
+			["cw9l","cw3l","cw8l"],
+			["cw8l","cw3l","cw2l"],
+			["cw8l","cw2l","cw7l"],
+			["cw7l","cw2l","cw1l"],
+			["cw7l","cw1l","cw6l"],
+			
+			{"group":"van_cargobox_wall_R"},
+			["cw20r","cw14r","cw15r"],
+			["cw19r","cw14r","cw20r"],
+			["cw19r","cw13r","cw14r"],
+			["cw19r","cw18r","cw13r"],
+			["cw18r","cw12r","cw13r"],
+			["cw18r","cw17r","cw12r"],
+			["cw17r","cw11r","cw12r"],
+			["cw17r","cw16r","cw11r"],
+			
+			["cw15r","cw9r","cw10r"],
+			["cw15r","cw14r","cw9r"],
+			["cw14r","cw8r","cw9r"],
+			["cw14r","cw13r","cw8r"],
+			["cw13r","cw7r","cw8r"],
+			["cw13r","cw12r","cw7r"],
+			["cw12r","cw6r","cw7r"],
+			["cw12r","cw11r","cw6r"],
+			
+			["cw10r","cw4r","cw5r"],
+			["cw10r","cw9r","cw4r"],
+			["cw9r","cw3r","cw4r"],
+			["cw9r","cw8r","cw3r"],
+			["cw8r","cw2r","cw3r"],
+			["cw8r","cw7r","cw2r"],
+			["cw7r","cw1r","cw2r"],
+			["cw7r","cw6r","cw1r"],
+			
+			//floor
+			{"group":"van_cargobox_floorframe"},
+			["cf15l","cf15ll","cf14ll"],
+			["cf15l","cf14ll","cf14l"],
+			["cf14l","cf14ll","cf13ll"],
+			["cf14l","cf13ll","cf13l"],
+			["cf13l","cf13ll","cf12ll"],
+			["cf13l","cf12ll","cf12l"],
+			["cf12l","cf12ll","cf11ll"],
+			["cf12l","cf11ll","cf11l"],
+			
+			["cf15r","cf15l","cf14l"],
+			["cf15r","cf14l","cf14r"],
+			["cf14r","cf14l","cf13l"],
+			["cf14r","cf13l","cf13r"],
+			["cf13r","cf13l","cf12l"],
+			["cf13r","cf12l","cf12r"],
+			["cf12l","cf11l","cf11"],
+			["cf12r","cf12l","cf11"],
+			["cf12r","cf11","cf11r"],
+			
+			["cf15rr","cf15r","cf14rr"],
+			["cf15r","cf14r","cf14rr"],
+			["cf14rr","cf14r","cf13rr"],
+			["cf14r","cf13r","cf13rr"],
+			["cf13rr","cf13r","cf12rr"],
+			["cf13r","cf12r","cf12rr"],
+			["cf12rr","cf12r","cf11rr"],
+			["cf12r","cf11r","cf11rr"],
+			
+			//rear step
+			["cf6l","cf6ll","cf7ll"],
+			["cf6l","cf7ll","cf7l"],
+			["cf6","cf6l","cf7l"],
+			["cf6","cf7l","cf7"],
+			["cf6","cf7r","cf6r"],
+			["cf7","cf7r","cf6"],
+			["cf6r","cf7rr","cf6rr"],
+			["cf7r","cf7rr","cf6r"],
+			
+			["cf11ll","cf1ll","cf1l"],
+			["cf11l","cf11ll","cf1l"],
+			["cf11l","cf1l","cf1"],
+			["cf11","cf11l","cf1"],
+			["cf1r","cf11r","cf1"],
+			["cf11r","cf11","cf1"],
+			["cf1rr","cf11rr","cf1r"],
+			["cf11rr","cf11r","cf1r"],
+			
+			["cf1ll","cf6ll","cf6l"],
+			["cf1l","cf1ll","cf6l"],
+			["cf1l","cf6l","cf6"],
+			["cf1","cf1l","cf6"],
+			["cf6r","cf1r","cf6"],
+			["cf1r","cf1","cf6"],
+			["cf6rr","cf1rr","cf6r"],
+			["cf1rr","cf1r","cf6r"],
+			{"group":""},
+			
+	],
+}
+}

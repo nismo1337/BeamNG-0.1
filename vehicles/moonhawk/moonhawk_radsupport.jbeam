@@ -1,0 +1,299 @@
+{
+"moonhawk_radsupport": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Radiator Support",
+	}
+    "slotType" : "moonhawk_radsupport",
+	"slots": [
+		["type", "default"]
+		//["moonhawk_radiator","moonhawk_radiator"],
+	],
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_radsupport", ["moonhawk_radsupport"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_radsupport"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":2.5},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //radiator support
+		 ["s1rr",-0.79,-2.10, 0.84],
+		 ["s1r",-0.43,-2.10, 0.85],
+		 ["s1", 0.0,-2.10, 0.85],
+		 ["s1l", 0.43,-2.10, 0.85],
+		 ["s1ll", 0.79,-2.10, 0.84],
+		 
+		 /*
+		 ["s2rr",-0.81,-2.01, 0.85],
+		 ["s2r",-0.43,-2.01, 0.86],
+		 ["s2", 0.0,-2.01, 0.86],
+		 ["s2l", 0.43,-2.01, 0.86],
+		 ["s2ll", 0.81,-2.01, 0.85],
+		 */
+		 
+		 ["s3rr",-0.79,-2.09, 0.54],
+		 ["s3r",-0.44,-2.10, 0.53],
+		 ["s3l", 0.44,-2.10, 0.53],
+		 ["s3ll", 0.79,-2.09, 0.54],
+		 
+		 ["s4rr",-0.79,-2.0, 0.54],
+		 ["s4r",-0.44,-2.0, 0.53],
+		 ["s4l", 0.44,-2.0, 0.53],
+		 ["s4ll", 0.79,-2.0, 0.54],
+		 
+		 ["s5r",-0.47,-2.08, 0.35],
+		 ["s5", 0.0,-2.08, 0.35],
+		 ["s5l", 0.47,-2.08, 0.35],
+		 
+		 ["s6r",-0.47,-1.90, 0.335],
+		 ["s6", 0.0,-1.90, 0.335],
+		 ["s6l", 0.47,-1.90, 0.335],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":2301000,"beamDamp":160},
+		  //radiator support main shape widthwise
+		  ["s1rr","s1r"],
+		  ["s1r","s1"],
+		  ["s1","s1l"],
+		  ["s1l","s1ll"],
+		  
+		  /*
+		  ["s2rr","s2r"],
+		  ["s2r","s2"],
+		  ["s2","s2l"],
+		  ["s2l","s2ll"],
+		  */
+		  
+		  ["s3rr","s3r"],
+		  ["s3l","s3ll"],
+		  
+		  ["s4rr","s4r"],
+		  ["s4l","s4ll"],
+		  
+		  ["s5r","s5"],
+		  ["s5l","s5"],
+		  ["s6r","s6"],
+		  ["s6l","s6"],
+		  
+		  //vertical
+		  ["s3rr","s1rr"],
+		  ["s3r","s1r"],
+		  ["s3l","s1l"],
+		  ["s3ll","s1ll"],
+		  
+		  //["s4rr","s2rr"],
+		  //["s4r","s2r"],
+		  //["s4l","s2l"],
+		  //["s4ll","s2ll"],
+		  
+		  ["s5r","s3r"],
+		  ["s5l","s3l"],
+		  
+		  ["s6r","s4r"],
+		  ["s6l","s4l"],
+		  
+		  //lengthwise
+		  //["s1rr","s2rr"],
+		  //["s1r","s2r"],
+		  //["s1","s2"],
+		  //["s1l","s2l"],
+		  //["s1ll","s2ll"],
+		  
+		  ["s3rr","s4rr"],
+		  ["s3r","s4r"],
+		  ["s3l","s4l"],
+		  ["s3ll","s4ll"],
+		  
+		  ["s5r","s6r"],
+		  ["s5","s6"],
+		  ["s5l","s6l"],
+		  
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  //cross
+		  ["s1","s3r"],
+		  //["s2","s3r"],
+		  ["s1","s3l"],
+		  //["s2","s3l"],
+		  
+		  ["s1","s4r"],
+		  //["s2","s4r"],
+		  ["s1","s4l"],
+		  //["s2","s4l"],
+		  
+		  ["s1rr","s3r"],
+		  ["s1ll","s3l"],
+		  ["s1r","s3rr"],
+		  ["s1l","s3ll"],
+		  
+		  //["s2rr","s4r"],
+		  //["s2ll","s4l"],
+		  //["s2r","s4rr"],
+		  //["s2l","s4ll"],
+		  
+		  ["s1rr","s4rr"],
+		  //["s2rr","s3rr"],
+		  ["s1r","s4r"],
+		  //["s2r","s3r"],
+		  ["s1l","s4l"],
+		  //["s2l","s3l"],
+		  ["s1ll","s4ll"],
+		  //["s2ll","s3ll"],
+		  
+		  ["s5r","s4r"],
+		  ["s5l","s4l"],
+		  
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  //
+		  ["s3r","s5"],
+		  ["s3l","s5"],
+		  ["s4r","s6"],
+		  ["s4l","s6"],
+		  
+		  ["s3r","s6"],
+		  ["s3l","s6"],
+		  ["s4r","s5"],
+		  ["s4l","s5"],
+		  
+		  ["s3rr","s5r"],
+		  ["s4rr","s6r"],
+		  ["s3ll","s5l"],
+		  ["s4ll","s6l"],
+		  ["s3rr","s6r"],
+		  ["s4rr","s5r"],
+		  ["s3ll","s6l"],
+		  ["s4ll","s5l"],
+		  
+		  //top
+		  //["s1r","s2rr"],
+		  //["s2r","s1rr"],
+		  //["s1","s2r"],
+		  //["s2","s1r"],
+		  //["s1l","s2"],
+		  //["s2l","s1"],
+		  //["s1ll","s2l"],
+		  //["s2ll","s1l"],
+		  //
+		  ["s3r","s4rr"],
+		  ["s3rr","s4r"],
+		  ["s3l","s4ll"],
+		  ["s3ll","s4l"],
+		  
+		  //
+		  ["s6r","s3r"],
+		  ["s6l","s3l"],
+		  //bottom
+		  ["s5","s6r"],
+		  ["s5","s6l"],
+		  ["s6","s5r"],
+		  ["s6","s5l"],
+		  
+		  //rigids
+		  {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+		  ["s1rr","s1"],
+		  ["s1r","s1l"],
+		  ["s1","s1ll"],
+		  //["s2rr","s2"],
+		  //["s2r","s2l"],
+		  //["s2","s2ll"],
+		  
+		  ["s5r","s5l"],
+		  ["s6r","s6l"],
+		  
+		  {"beamDeform":20000,"beamStrength":150000},
+		  //upbend enticement
+		  //["f1r","s1r"],
+		  //["f1l","s1l"],
+		  //["f2rr","s1rr"],
+		  //["f2ll","s1ll"],
+		  
+		  //attach
+		  {"beamDeform":35000,"beamStrength":75000},
+		  //r
+		  ["s3r","f22r"],
+		  ["s3r","f25r"],
+		  ["s4r","f22r"],
+		  ["s4r","f25r"],
+		  ["s5r","f22r"],
+		  ["s5r","f25r"],
+		  ["s6r","f22r"],
+		  ["s6r","f25r"],
+		  
+		  ["s3rr","f22rr"],
+		  ["s3rr","f25rr"],
+		  ["s4rr","f22rr"],
+		  ["s4rr","f25rr"],
+		  
+		  //l
+		  ["s3l","f22l"],
+		  ["s3l","f25l"],
+		  ["s4l","f22l"],
+		  ["s4l","f25l"],
+		  ["s5l","f22l"],
+		  ["s5l","f25l"],
+		  ["s6l","f22l"],
+		  ["s6l","f25l"],
+		  
+		  ["s3ll","f22ll"],
+		  ["s3ll","f25ll"],
+		  ["s4ll","f22ll"],
+		  ["s4ll","f25ll"],
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_radsupport"},
+			["s1rr","s3rr","s3r"],
+			["s1rr","s3r","s1r"],
+			["s1r","s3r","s1"],
+			["s1","s3r","s5"],
+			["s1","s5","s3l"],
+			["s1","s3l","s1l"],
+			["s3ll","s1ll","s3l"],
+			["s1ll","s1l","s3l"],
+			
+			["s3r","s5r","s5"],
+			["s3l","s5","s5l"],
+			
+			["s3rr","s3r","s4rr"],
+			["s3r","s4r","s4rr"],
+			["s3r","s5r","s4r"],
+			["s4r","s5r","s6r"],
+			
+			/*
+			["s2rr","s1rr","s1r"],
+			["s2rr","s1r","s2r"],
+			["s2r","s1r","s1"],
+			["s2r","s1","s2"],
+			["s2l","s2","s1"],
+			["s1l","s2l","s1"],
+			["s2ll","s2l","s1l"],
+			["s1ll","s2ll","s1l"],
+			*/
+			["s5r","s6r","s6"],
+			["s5r","s6","s5"],
+			["s5l","s6","s6l"],
+			["s5","s6","s5l"],
+			
+			["s3l","s3ll","s4ll"],
+			["s3l","s4ll","s4l"],
+			["s5l","s3l","s4l"],
+			["s5l","s4l","s6l"],
+			
+	],
+}
+}

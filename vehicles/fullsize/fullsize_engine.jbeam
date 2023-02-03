@@ -1,0 +1,201 @@
+{
+"fullsize_engine": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal 4.5L V8 Engine",
+	}
+    "slotType" : "fullsize_engine",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"slots": [
+		["type", "default"]
+		["fullsize_exhaust","fullsize_exhaust"],
+		["fullsize_transmission","fullsize_transmission_A"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_engine", ["fullsize_engine"]],
+	],
+	"enginetorque":[
+		["rpm", "torque"]
+		[0, 0],
+		[500, 150],
+		[1000, 230],
+		[2000, 360],
+		[3000, 420],
+		[4000, 390],
+		[5000, 330],
+		[6000, 220],
+	],
+	"engine":{
+		"idleRPM":1000,
+		"shiftDownRPM":2800,
+		"shiftUpRPM":5000,
+		"maxRPM":6000,
+		"inertia":0.16,
+		"friction":10
+		"burnEfficiency":0.45
+		"throttleSensitivity":2.5
+	},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //4.5L V8 Engine
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"group":"fullsize_engine"},
+		 {"nodeWeight":24},
+		 ["e1r", -0.13, -1.15, 0.32],
+		 ["e1l", 0.13, -1.15, 0.32],
+		 ["e2r", -0.13, -1.69, 0.32],
+		 ["e2l", 0.13, -1.69, 0.32],
+		 ["e3r", -0.32, -1.15, 0.70],
+		 ["e3l", 0.32, -1.15, 0.70],
+		 ["e4r", -0.32, -1.69, 0.70],
+		 ["e4l", 0.32, -1.69, 0.70],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":14001000,"beamDamp":250},
+		  {"beamDeform":2200000,"beamStrength":"FLT_MAX"},
+		  //engine
+		  ["e1r","e1l"],
+		  ["e2r","e2l"],
+		  ["e3r","e3l"],
+		  ["e4r","e4l"],
+		  
+		  ["e1r","e2r"],
+		  ["e1l","e2l"],
+		  ["e3r","e4r"],
+		  ["e3l","e4l"],
+		  
+		  ["e1r","e3r"],
+		  ["e1l","e3l"],
+		  ["e2r","e4r"],
+		  ["e2l","e4l"],
+		  
+		  ["e2r","e3r"],
+		  ["e2l","e3l"],
+		  ["e2r","e3l"],
+		  ["e2l","e3r"],
+		  
+		  ["e1r","e4r"],
+		  ["e1l","e4l"],
+		  ["e1r","e4l"],
+		  ["e1l","e4r"],
+		  
+		  ["e1r","e2l"],
+		  ["e1l","e2r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  
+		  ["e1r","e3l"],
+		  ["e1l","e3r"],
+		  ["e2r","e4l"],
+		  ["e2l","e4r"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			
+	],
+}
+"fullsize_exhaust": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Exhaust",
+	}
+    "slotType" : "fullsize_exhaust",
+	 "scalenodeWeight":0.95,
+	 "scalebeamSpring":0.75,
+	 "scalebeamDamp":0.73,
+	 "scalebeamDeform":0.36,
+	 "scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_exhaust", ["fullsize_body","fullsize_lowermounts_R"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			
+	],
+}
+"fullsize_transmission_A": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal 4-Speed Automatic Transmission",
+	}
+	"engine":{
+		"transmissionType":"automatic",
+		"lowShiftDownRPM":1300,
+		"lowShiftUpRPM":2800,
+		"highShiftDownRPM":2200,
+		"highShiftUpRPM":4800,
+		// -1, 0 (neutral), 1, etc
+		"gears":[-3.4, 0, 3.32, 2.12, 1.24, 0.7]
+		"clutchDuration":0.15
+		"viscousCoupling":6
+		"lockingTorqueLimit":500
+		"enableLocking":true
+	},
+    "slotType" : "fullsize_transmission",
+	 "scalenodeWeight":0.95,
+	 "scalebeamSpring":0.75,
+	 "scalebeamDamp":0.73,
+	 "scalebeamDeform":0.36,
+	 "scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_transmission", ["fullsize_engine","fullsize_transmission"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--4 Speed Auto--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"group":"fullsize_transmission"},
+		 {"nodeWeight":32},
+		 ["tra1", 0.0, -0.60, 0.43],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--TRANSMISSION CONE--
+		  {"beamSpring":14001000,"beamDamp":250},
+		  {"beamDeform":2200000,"beamStrength":"FLT_MAX"},
+		  ["tra1","e1r"],
+		  ["tra1","e3r"],
+		  ["tra1","e1l"],
+		  ["tra1","e3l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			
+	],
+}
+}

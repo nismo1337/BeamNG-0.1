@@ -1,0 +1,198 @@
+{
+"hatch_wheel_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Covet Front Wheels",
+	}
+    "slotType" : "hatch_wheel_F",
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //stock wheels
+		 ["steelwheel_01a_14x5_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["steelwheel_01a"]],
+		 ["steelwheel_01a_14x5_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["steelwheel_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true},
+		 {"selfCollision":false}
+		 //front wheels
+		 {"nodeWeight":4.1},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"group":"wheelhub_a_FR"},
+		 ["fw1r", -0.60, -1.25, 0.288],
+		 {"group":"wheelhub_b_FR"},
+		 ["fw1rr", -0.80, -1.25, 0.288],
+		 {"group":"wheelhub_a_FL"},
+		 ["fw1l", 0.60, -1.25, 0.288],
+		 {"group":"wheelhub_b_FL"},
+		 ["fw1ll", 0.80, -1.25, 0.288],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"breakGroup":""},
+		  {"beamDeform":250000,"beamStrength":800000},
+	      {"beamSpring":7001000,"beamDamp":100},
+		  //front wheel
+		  ["fw1r","fw1rr"],
+		  ["fw1l","fw1ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}, 
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.293},
+			{"hubRadius":0.18},
+			{"wheelOffset":-0.04},
+			{"hubWidth":0.165},
+			{"tireWidth":0.155},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":20}
+			{"beamSpring":1601000, "beamDamp":20},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.67},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":240000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":35000,"wheelSideBeamStrength":49000},
+			{"wheelReinforcementBeamSpring":64000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":35000,"wheelReinforcementBeamStrength":49000},
+			{"wheelTreadBeamSpring":601000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":35000,"wheelTreadBeamStrength":49000},
+			{"wheelPeripheryBeamSpring":601000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":35000,"wheelPeripheryBeamStrength":49000},
+			{"springExpansion":1601000, "dampExpansion":20},
+			{"nodeWeight":0.67},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.05},
+			
+			//front
+			{"selfCollision":false}
+			{"collision":true}
+			{"hubcapBreakGroup":"hubcap_FR"},
+			{"hubcapGroup":"hubcap_FR"},
+			{"axleBeams":["axle_FR"]},
+            ["FR", "wheel_FR", "fw1rr", "fw1r", 9999,  "fh3r", 1],
+			{"hubcapBreakGroup":"hubcap_FL"},
+			{"hubcapGroup":"hubcap_FL"},
+			{"axleBeams":["axle_FL"]},
+            ["FL", "wheel_FL", "fw1ll", "fw1l", 9999,  "fh3l", -1],
+			{"selfCollision":true}
+			{"axleBeams":[]},
+			{"hubcapBreakGroup":""},
+			{"hubcapGroup":""},
+			{"enableHubcaps":false},
+			{"propulsed":0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+"hatch_wheel_F_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Covet Sport Front Wheels",
+	}
+    "slotType" : "hatch_wheel_F",
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheel_01_17x9
+		 ["wheel_01a_17x9_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["wheel_01a"]],
+		 ["wheel_01a_17x9_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["wheel_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 {"collision":true},
+		 {"selfCollision":false}
+		 //front wheels
+		 {"nodeWeight":4.1},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 //wheel_03_16x9_F
+		 {"selfCollision":false}
+		 {"group":"wheelhub_a_FR"},
+		 ["fw1r", -0.60, -1.25, 0.288],
+		 {"group":"wheelhub_b_FR"},
+		 ["fw1rr", -0.80, -1.25, 0.288],
+		 {"group":"wheelhub_a_FL"},
+		 ["fw1l", 0.60, -1.25, 0.288],
+		 {"group":"wheelhub_b_FL"},
+		 ["fw1ll", 0.80, -1.25, 0.288],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"breakGroup":""},
+		  {"beamDeform":250000,"beamStrength":800000},
+	      {"beamSpring":7001000,"beamDamp":200},
+		  //front wheel
+		  ["fw1r","fw1rr"],
+		  ["fw1l","fw1ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}, 
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.293},
+			{"hubRadius":0.22},
+			{"wheelOffset":-0.03},
+			{"hubWidth":0.225},
+			{"tireWidth":0.215},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":20}
+			{"beamSpring":1601000, "beamDamp":20},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.67},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":380000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":35000,"wheelSideBeamStrength":49000},
+			{"wheelReinforcementBeamSpring":112000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":35000,"wheelReinforcementBeamStrength":49000},
+			{"wheelTreadBeamSpring":601000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":35000,"wheelTreadBeamStrength":49000},
+			{"wheelPeripheryBeamSpring":601000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":35000,"wheelPeripheryBeamStrength":49000},
+			{"springExpansion":1601000, "dampExpansion":20},
+			{"nodeWeight":0.67},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.1},
+			
+			//front
+			{"selfCollision":false}
+			{"collision":true}
+			{"axleBeams":["axle_FR"]},
+            ["FR", "wheel_FR", "fw1rr", "fw1r", 9999,  "fh3r", 1],
+			{"axleBeams":["axle_FL"]},
+            ["FL", "wheel_FL",  "fw1ll", "fw1l", 9999,  "fh3l", -1],
+			{"selfCollision":true}
+			{"axleBeams":[]},
+	],
+
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

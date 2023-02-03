@@ -1,0 +1,486 @@
+{
+"fullsize_suspension_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Independent Front Suspension",
+	}
+    "slotType" : "fullsize_suspension_F",
+	"slots": [
+		["type", "default"]
+		["fullsize_brake_F","fullsize_brake_F"],
+		["fullsize_wheel_F","fullsize_wheel_F"],
+		["fullsize_coilover_F","fullsize_coilover_F"],
+		["fullsize_swaybar_F","fullsize_swaybar_F"],
+		["fullsize_steering","fullsize_steering"],
+	],
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_upperarm_F", ["fullsize_uppermounts_a_F","fullsize_uppermounts_b_F","fullsize_upperarm"]],
+		 ["fullsize_lowerarm_F", ["fullsize_lowermounts_a_F","fullsize_lowermounts_b_F","fullsize_lowerarm_FR","fullsize_lowerarm_FL"]],
+		 
+		 ["fullsize_hub_FR", ["fullsize_hub_FR","fullsize_lowerarm_FR","fullsize_upperarm","fullsize_tierod_F"]],
+		 ["fullsize_hub_FL", ["fullsize_hub_FL","fullsize_lowerarm_FL","fullsize_upperarm","fullsize_tierod_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front independent suspension
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"nodeWeight":4.9},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"fullsize_hub_FR"},
+		 ["fw2r", -0.735, -1.26, 0.34],
+		 {"group":"fullsize_hub_FL"},
+		 ["fw2l", 0.735, -1.26, 0.34],
+		 //front hub
+		 //this is the steering axis
+		 {"nodeWeight":4.9},
+		 {"group":"fullsize_lowerarm_FR"},
+		 ["fh1r", -0.71, -1.47, 0.235],
+		 {"group":"fullsize_lowerarm_FL"},
+		 ["fh1l", 0.71, -1.47, 0.235],
+		 {"group":"fullsize_upperarm"},
+		 ["fh2r", -0.68, -1.44, 0.515],
+		 ["fh2l", 0.68, -1.44, 0.515],
+		 {"group":"fullsize_tierod_F"},
+		 {"selfCollision":false}
+		 //tie rod goes here
+		 ["fh3r", -0.735, -1.573, 0.28],
+		 ["fh3l", 0.735, -1.573, 0.28],
+		 {"nodeWeight":4.5},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"fullsize_shockbottom_F"},
+		 //bottom of shock
+		 ["fh4r", -0.48, -1.45, 0.17],
+		 ["fh4l", 0.48, -1.45, 0.17],
+		 //extra hub rigidification node
+		 {"nodeWeight":4.9},
+		 {"group":"fullsize_hub_FR"},
+		 ["fh5r", -0.735, -1.65, 0.34],
+		 {"group":"fullsize_hub_FL"},
+		 ["fh5l", 0.735, -1.65, 0.34],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //double wishbone suspension
+		  //front limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":220000,"beamStrength":600000},
+		  {"beamLimitSpring":501000,"beamLimitDamp":800},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.36},
+		  //firewall
+		  {"breakGroupType":1},
+		  {"optional":true},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw1rr","f1rr"],
+		  ["fw1r","f1rr"],
+		  ["fw1r","f5r"],
+		  {"breakGroup":"wheel_FL"},
+		  ["fw1ll","f1ll"],
+		  ["fw1l","f1ll"],
+		  ["fw1l","f5l"],
+		  
+		  {"optional":false},
+		  {"breakGroup":""},
+		  
+		  
+		  ["fh1r","f5r"],
+		  ["fh1l","f5l"],
+		  ["fh1r","f6r"],
+		  ["fh1l","f6l"],
+		  ["fh1r","f6rr"],
+		  ["fh1l","f6ll"],
+		  
+		  
+		  
+		  ["fh2r","f5r"],
+		  ["fh2l","f5l"],
+		  ["fh2r","f1r"],
+		  ["fh2l","f1l"],
+		  
+		  ["fh4r","f1rr"],
+		  ["fh4l","f1ll"],
+		  ["fh1r","f5rr"],
+		  ["fh1l","f5ll"],
+		  
+		  ["fh1r","f6rr"],
+		  ["fh1l","f6ll"],
+		  
+		  
+		  ["fh3r","f5r"],
+		  ["fh3l","f5l"],
+		  
+		  ["fh3r","f1r"],
+		  ["fh3l","f1l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.25},
+		  //front end collide
+		  
+		  ["fw2r","f13rr"],
+		  ["fw2r","f11rr"],
+		  
+		  ["fw2l","f13ll"],
+		  ["fw2l","f11ll"],
+		  
+		  ["fh1r","f13rr"],
+		  ["fh1r","f11rr"],
+		  
+		  ["fh1l","f13ll"],
+		  ["fh1l","f11ll"],
+		  
+		  {"optional":true},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw1rr","f11rr"],
+		  
+		  {"breakGroup":"wheel_FL"},
+		  ["fw1ll","f13ll"],
+		  
+		  {"optional":false},
+		  {"breakGroup":""},
+		  
+		  
+		  {"beamLimitSpring":5001000,"beamLimitDamp":800},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":0.5},
+		  //extension limit
+		  ["fh4r","fx3r"],
+		  ["fh4l","fx3l"],
+		  ["fh4r","fx4r"],
+		  ["fh4l","fx4l"],
+		  
+		  //steering anti invert
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.08, "beamShortBound":0.07},
+		  
+		  ["fh3r","fx1l"]
+		  ["fh3l","fx1r"]
+		  
+		  ["fh3r","fx3l"]
+		  ["fh3l","fx3r"]
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.32, "beamShortBound":0.25},
+		  {"optional":true},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw1rr","f1rr"],
+		  ["fw1rr","f1r"],
+		  {"breakGroup":"wheel_FL"},
+		  ["fw1ll","f1ll"],
+		  ["fw1ll","f1l"],
+		  
+		  {"optional":false},
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":0.05},
+		  ["fh2r","fx3l"],
+		  ["fh2l","fx3r"],
+		  ["fh2r","fx4l"],
+		  ["fh2l","fx4r"],
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.13, "beamShortBound":0.13},
+		  ["fh2r","f1r"],
+		  ["fh2l","f1l"],
+		  ["fh2r","f1rr"],
+		  ["fh2l","f1ll"],
+		  /*
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.025, "beamShortBound":0.5},
+		  ["fh2r","f1r"],
+		  ["fh2l","f1l"],
+		  */
+		  
+		  {"breakGroupType":0},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":320000,"beamStrength":440000},
+	      {"beamSpring":12001000,"beamDamp":200},
+		  //front hub
+		  ["fh1r","fh2r"],
+		  ["fh1l","fh2l"],
+		  ["fh1r","fh3r"],
+		  ["fh1l","fh3l"],
+		  ["fh1r","fh4r"],
+		  ["fh1l","fh4l"],
+		  ["fh2r","fh3r"],
+		  ["fh2l","fh3l"],
+		  
+		  ["fh1r","fh5r"],
+		  ["fh1l","fh5l"],
+		  ["fh2r","fh5r"],
+		  ["fh2l","fh5l"],
+		  ["fh3r","fh5r"],
+		  ["fh3l","fh5l"],
+		  
+		  ["fw2r","fh5r"],
+		  ["fw2l","fh5l"],
+		  
+		  ["fh1r","fw2r"],
+		  ["fh2r","fw2r"],
+		  ["fh3r","fw2r"],
+		  
+		  ["fh1l","fw2l"],
+		  ["fh2l","fw2l"],
+		  ["fh3l","fw2l"],
+		  //detach
+		  {"optional":true},
+		  {"beamDeform":245000,"beamStrength":320000},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw1r","fh5r"],
+		  ["fw1rr","fh5r"],
+		  {"breakGroup":"wheel_FL"},
+		  ["fw1l","fh5l"],
+		  ["fw1ll","fh5l"],
+		  
+		  {"breakGroup":""},
+		  {"beamDeform":245000,"beamStrength":320000},
+		  //attach to wheel
+		  {"breakGroup":"wheel_FR"},
+		  ["fh1r","fw1r"],
+		  ["fh2r","fw1r"],
+		  ["fh3r","fw1r"],
+		  
+		  ["fh1r","fw1rr"],
+		  ["fh2r","fw1rr"],
+		  ["fh3r","fw1rr"],
+		  
+		  {"breakGroup":"wheel_FL"},
+		  ["fh1l","fw1l"],
+		  ["fh2l","fw1l"],
+		  ["fh3l","fw1l"],
+		  
+		  ["fh1l","fw1ll"],
+		  ["fh2l","fw1ll"],
+		  ["fh3l","fw1ll"],
+		  
+		  {"breakGroup":""},
+	      {"beamSpring":12001000,"beamDamp":200},
+		  {"beamDeform":320000,"beamStrength":440000},
+		  {"breakGroup":"wheel_FR"},
+		  ["fw2r","fw1r"],
+		  ["fw2r","fw1rr"],
+		  {"breakGroup":"wheel_FL"},
+		  ["fw2l","fw1l"],
+		  ["fw2l","fw1ll"],
+		  
+		  {"breakGroup":""},
+		  {"optional":false},
+		  {"beamDeform":70000,"beamStrength":280000},
+		  //lower arm
+	      {"beamSpring":9001000,"beamDamp":180},
+		  ["fx2r","fh1r"],
+		  ["fx2l","fh1l"],
+		  ["fx2r","fh4r"],
+		  ["fx2l","fh4l"],
+		  
+		  {"beamDeform":150000,"beamStrength":280000},
+		  ["fx1r","fh1r"],
+		  ["fx1l","fh1l"],
+		  
+		  ["fx1r","fh4r"],
+		  ["fx1l","fh4l"],
+	      {"beamSpring":6501000,"beamDamp":150},
+		  //upper arm
+		  {"beamDeform":85000,"beamStrength":180000},
+		  ["fh2r","fx3r"],
+		  ["fh2l","fx3l"],
+		  ["fh2r","fx4r"],
+		  ["fh2l","fx4l"],
+		  /*
+	      {"beamSpring":0,"beamDamp":400},
+		  //front end damping
+		  ["f6rr","f15rr"],
+		  ["f6r","f15r"],
+		  ["f6r","f15"],
+		  ["f6l","f15"],
+		  ["f6l","f15l"],
+		  ["f6ll","f15ll"],
+		  
+		  */
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"propulsed":0}
+	],
+}
+"fullsize_brake_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Front Brakes",
+	}
+    "slotType" : "fullsize_brake_F",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["fullsize_brakedisc_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["fullsize"]],
+		 ["fullsize_brakedisc_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["fullsize"]],
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//brakes
+			{"enableABS":true}
+			{"ABSthreshold":5}
+			{"brakeTorque":1900},
+			{"parkingTorque":0},
+	],
+	"engine": {
+		"ABSrate":15
+	},
+}
+"fullsize_coilover_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Front Coilovers",
+	}
+    "slotType" : "fullsize_coilover_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_coilover_F", ["fullsize_shockbottom_F","fullsize_shocktop_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //front shocks		 
+		  {"beamPrecompression":1.26, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.18}, 
+		  {"beamSpring":156000,"beamDeform":142000,"beamStrength":228000},
+		  {"beamDamp":6200},
+		  {"beamLimitSpring":211000,"beamLimitDamp":5000},
+		  ["fh4r","fs1r",{"beamDampRebound":7200}],
+		  ["fh4l","fs1l",{"beamDampRebound":7200}],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"fullsize_coilover_F_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Sport Front Coilovers",
+	}
+    "slotType" : "fullsize_coilover_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_coilover_F", ["fullsize_shockbottom_F","fullsize_shocktop_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //front shocks		 
+		  {"beamPrecompression":1.19, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.18}, 
+		  {"beamSpring":195000,"beamDeform":142000,"beamStrength":228000},
+		  {"beamDamp":6600},
+		  {"beamLimitSpring":211000,"beamLimitDamp":5000},
+		  ["fh4r","fs1r",{"beamDampRebound":8900}],
+		  ["fh4l","fs1l",{"beamDampRebound":8900}],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"fullsize_swaybar_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Front Sway Bar",
+	}
+    "slotType" : "fullsize_swaybar_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_swaybar_F", ["fullsize_lowerarm_FR","fullsize_lowerarm_FL","fullsize_swaymounts_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front anti-roll
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"collision":false}
+		 {"selfCollision":false},
+		 {"group":""},
+		 {"nodeWeight":2.6},
+		 ["arbf", 0.0, -1.35, 0.44],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //--FRONT ANTI-ROLL--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+	      {"beamSpring":6501000,"beamDamp":200},
+		  {"beamDeform":300000,"beamStrength":1100000},
+		  //rigid beams
+		  ["arbf","fh1r"],
+		  ["arbf","fh1l"],
+	      {"beamSpring":1951000,"beamDamp":300},
+		  //front anti-roll
+		  ["arbf","fx2r"],
+		  ["arbf","fx2l"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+			
+			
+	],
+}
+"fullsize_steering": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Steering",
+	}
+    "slotType" : "fullsize_steering",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_tierod", ["fullsize_tierod_F","fullsize_lowerarm_FR","fullsize_lowerarm_FL","fullsize_upperarm","fullsize_steeringbox"]],
+	],
+	"hydros": [
+			["id1:","id2:","factor"],
+			{"beamSpring":21001000,"beamDamp":100,"beamDeform":142000,"beamStrength":179000},
+		    ["fh3r","fx5r", 0.13],
+		    ["fh3l","fx5l", -0.13],
+	]
+}
+}

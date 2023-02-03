@@ -1,0 +1,184 @@
+{
+"pigeon_bumper_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Rear Bumper",
+	}
+    "slotType" : "pigeon_bumper_R",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_bumper_R", ["pigeon_bumper_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--bumper_R--
+		 {"frictionCoef":1},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"nodeWeight":1},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"group":"pigeon_bumper_R"},
+		 ["rb1rr",-0.63, 1.73, 0.47],
+		 ["rb1", 0.0, 1.73, 0.47],
+		 ["rb1ll", 0.63, 1.73, 0.47],
+		 ["rb2rr",-0.62, 1.73, 0.33],
+		 ["rb2", 0.0, 1.73, 0.33],
+		 ["rb2ll", 0.62, 1.73, 0.33],
+		 
+		 ["rb3rr",-0.58, 1.80, 0.46],
+		 ["rb3", 0.0, 1.80, 0.46],
+		 ["rb3ll", 0.58, 1.80, 0.46],
+		 ["rb4rr",-0.57, 1.80, 0.35],
+		 ["rb4", 0.0, 1.80, 0.35],
+		 ["rb4ll", 0.57, 1.80, 0.35],
+		 
+		 {"group":""},
+		 {"collision":false}
+		 {"selfCollision":false}
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"optional":true},
+		  {"beamType":"|SUPPORT", "beamLongBound":4},
+		  {"beamSpring":361000,"beamDamp":40},
+		  {"beamLimitSpring":361000,"beamLimitDamp":40},
+		  {"beamDeform":15000,"beamStrength":120000},
+		  //rear bumper support beams
+		  {"optional":false},
+		  {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //rear bumper main shape
+	      {"beamSpring":661000,"beamDamp":30},
+		  {"beamDeform":75000,"beamStrength":150000},
+		  ["rb1rr","rb1"],
+		  ["rb1ll","rb1"],
+		  ["rb2rr","rb2"],
+		  ["rb2ll","rb2"],
+		  ["rb3rr","rb3"],
+		  ["rb3ll","rb3"],
+		  ["rb4rr","rb4"],
+		  ["rb4ll","rb4"],
+		  
+		  ["rb1rr","rb2rr"],
+		  //["rb1","rb2"],
+		  ["rb1ll","rb2ll"],
+		  ["rb3rr","rb4rr"],
+		  ["rb3","rb4"],
+		  ["rb3ll","rb4ll"],
+		  
+		  ["rb1rr","rb3rr"],
+		  ["rb1","rb3"],
+		  ["rb1ll","rb3ll"],
+		  ["rb2rr","rb4rr"],
+		  ["rb2","rb4"],
+		  ["rb2ll","rb4ll"],
+		  
+		  {"beamDeform":9500,"beamStrength":150000},
+		  //surficial crossing
+		  ["rb1rr","rb3"],
+		  ["rb1ll","rb3"],
+		  ["rb3rr","rb1"],
+		  ["rb3ll","rb1"],
+		  ["rb2rr","rb4"],
+		  ["rb2ll","rb4"],
+		  ["rb4rr","rb2"],
+		  ["rb4ll","rb2"],
+		  
+		  ["rb3rr","rb4"],
+		  ["rb3ll","rb4"],
+		  ["rb4rr","rb3"],
+		  ["rb4ll","rb3"],
+		  
+		  ["rb1rr","rb4rr"],
+		  ["rb2rr","rb3rr"],
+		  ["rb1","rb4"],
+		  ["rb2","rb3"],
+		  ["rb1ll","rb4ll"],
+		  ["rb2ll","rb3ll"],
+		  
+		  //corner
+		  ["rb1","rb2rr"],
+		  ["rb1","rb2ll"],
+		  ["rb2","rb1rr"],
+		  ["rb2","rb1ll"],
+		  {"beamDeform":5000,"beamStrength":76000},
+		  //rigids
+		  ["rb1rr","rb1ll"],
+		  ["rb2rr","rb2ll"],
+		  ["rb3rr","rb3ll"],
+		  ["rb4rr","rb4ll"],
+		  
+		  
+		  ["rb1rr","rb3ll"],
+		  ["rb1ll","rb3rr"],
+		  ["rb2rr","rb4ll"],
+		  ["rb2ll","rb4rr"],
+		  
+		  ["rb1rr","rb2ll"],
+		  ["rb1ll","rb2rr"],
+		  ["rb3rr","rb4ll"],
+		  ["rb3ll","rb4rr"],
+		  
+	      {"beamSpring":261000,"beamDamp":50},
+		  {"beamDeform":5000,"beamStrength":9000},
+		  //attach
+		  {"breakGroup":"pigeon_bumper_RR"},
+		  ["rb1rr","f14rr"],
+		  ["rb3rr","f14rr"],
+		  ["rb3rr","f11rr"],
+		  ["rb1rr","f11rr"],
+		  ["rb2rr","f14rr"],
+		  ["rb2rr","f11rr"],
+		  ["rb4rr","f11rr"],
+		  ["rb4rr","f14rr"],
+		  ["rb1","f11rr"],
+		  ["rb2","f14rr"],
+		  {"breakGroup":"pigeon_bumper_RL"},
+		  ["rb1ll","f14ll"],
+		  ["rb3ll","f14ll"],
+		  ["rb3ll","f11ll"],
+		  ["rb1ll","f11ll"],
+		  ["rb2ll","f14ll"],
+		  ["rb2ll","f11ll"],
+		  ["rb4ll","f11ll"],
+		  ["rb4ll","f14ll"],
+		  ["rb1","f11ll"],
+		  ["rb2","f14ll"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"pigeon_bumper_R"},
+			["rb3ll","rb4ll","rb4"],
+			["rb3ll","rb4","rb3"],
+			["rb1ll","rb3ll","rb3"],
+			["rb1ll","rb3","rb1"],
+			["rb4ll","rb2ll","rb2"],
+			["rb4ll","rb2","rb4"],
+			["rb3ll","rb1ll","rb2ll"],
+			["rb3ll","rb2ll","rb4ll"],
+			
+			["rb4rr","rb3rr","rb4"],
+			["rb3rr","rb3","rb4"],
+			["rb3rr","rb1rr","rb3"],
+			["rb1rr","rb1","rb3"],
+			["rb2rr","rb4rr","rb2"],
+			["rb4rr","rb4","rb2"],
+			["rb3rr","rb2rr","rb1rr"],
+			["rb3rr","rb4rr","rb2rr"],
+			
+			//rear face
+			["rb2ll","rb1ll","rb1"],
+			["rb2ll","rb1","rb2"],
+			["rb1rr","rb2rr","rb1"],
+			["rb2rr","rb2","rb1"],
+			{"group":""},
+	],
+}
+}

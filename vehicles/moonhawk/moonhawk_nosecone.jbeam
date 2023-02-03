@@ -1,0 +1,262 @@
+{
+"moonhawk_nosecone": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Nosecone",
+	}
+    "slotType" : "moonhawk_nosecone",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_nosecone", ["moonhawk_nosecone"]],
+		 ["moonhawk_grille", ["moonhawk_nosecone"]],
+		 ["moonhawk_grillefill", ["moonhawk_nosecone"]],
+		 ["moonhawk_headlight_R", ["moonhawk_nosecone"]],
+		 ["moonhawk_headlight_L", ["moonhawk_nosecone"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 //nose cone
+		 ["n1rr",-0.89, -2.14, 0.83],
+		 ["n1r",-0.45, -2.19, 0.87],
+		 ["n1", 0.0, -2.23, 0.88],
+		 ["n1l", 0.45, -2.19, 0.87],
+		 ["n1ll", 0.89, -2.14, 0.83],
+		 
+		 {"nodeMaterial":"|NM_METAL"},
+		 ["n2rr",-0.89, -2.19, 0.80],
+		 ["n2r",-0.45, -2.21, 0.80],
+		 ["n2", 0.0, -2.32, 0.80],
+		 ["n2l", 0.45, -2.21, 0.80],
+		 ["n2ll", 0.89, -2.19, 0.80],
+		 
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 ["n3rr",-0.89, -2.19, 0.52],
+		 ["n3r",-0.45, -2.21, 0.52],
+		 ["n3", 0.0, -2.32, 0.52],
+		 ["n3l", 0.45, -2.21, 0.52],
+		 ["n3ll", 0.89, -2.19, 0.52],
+		 
+		 ["n4rr",-0.86, -2.12, 0.33],
+		 ["n4ll", 0.86, -2.12, 0.33],
+		 
+		 {"selfCollision":false}
+		 ["n5r",-0.64, -2.14, 0.66],
+		 ["n5l", 0.64, -2.14, 0.66],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":180},
+		  //nose cone main shape widthwise
+		  ["n1rr","n1r"],
+		  ["n1r","n1"],
+		  ["n1","n1l"],
+		  ["n1l","n1ll"],
+		  ["n2rr","n2r"],
+		  ["n2r","n2"],
+		  ["n2","n2l"],
+		  ["n2l","n2ll"],
+		  ["n3rr","n3r"],
+		  ["n3r","n3"],
+		  ["n3","n3l"],
+		  ["n3l","n3ll"],
+		  
+		  //vertical
+		  ["n1rr","n2rr"],
+		  ["n1r","n2r"],
+		  ["n1","n2"],
+		  ["n1l","n2l"],
+		  ["n1ll","n2ll"],
+		  
+		  ["n2rr","n3rr"],
+		  ["n2r","n3r"],
+		  ["n2","n3"],
+		  ["n2l","n3l"],
+		  ["n2ll","n3ll"],
+		  
+		  ["n3rr","n4rr"],
+		  ["n3ll","n4ll"],
+		  
+		  //crossing
+		  {"beamDeform":45000,"beamStrength":250000},
+		  ["n1rr","n2r"],
+		  ["n1r","n2rr"],
+		  ["n1r","n2"],
+		  ["n1","n2r"],
+		  ["n1","n2l"],
+		  ["n1l","n2"],
+		  ["n1l","n2ll"],
+		  ["n1ll","n2l"],
+		  
+		  ["n2rr","n3r"],
+		  ["n2r","n3rr"],
+		  ["n2r","n3"],
+		  ["n2","n3r"],
+		  ["n2","n3l"],
+		  ["n2l","n3"],
+		  ["n2l","n3ll"],
+		  ["n2ll","n3l"],
+		  
+		  ["n3r","n4rr"],
+		  ["n3l","n4ll"],
+		  
+		  //rigids
+		  {"beamDeform":20000,"beamStrength":140000},
+		  ["n1rr","n1"],
+		  ["n1r","n1l"],
+		  ["n1","n1ll"],
+		  ["n2rr","n2"],
+		  ["n2r","n2l"],
+		  ["n2","n2ll"],
+		  ["n3rr","n3"],
+		  ["n3r","n3l"],
+		  ["n3","n3ll"],
+		  
+		  //vertical
+		  ["n1rr","n3rr"],
+		  ["n1r","n3r"],
+		  ["n1","n3"],
+		  ["n1l","n3l"],
+		  ["n1ll","n3ll"],
+		  
+		  ["n2rr","n4rr"],
+		  ["n2ll","n4ll"],
+		  
+		  ["n1rr","n4rr"],
+		  ["n1ll","n4ll"],
+		  
+		  //rigidifiers
+		  {"beamDeform":8000,"beamStrength":140000},
+		  ["n5r","n1rr"],
+		  ["n5r","n2rr"],
+		  ["n5r","n3rr"],
+		  ["n5r","n4rr"],
+		  ["n5r","n1r"],
+		  ["n5r","n2r"],
+		  ["n5r","n3r"],
+		  ["n5r","n1"],
+		  ["n5r","n2"],
+		  ["n5r","n3"],
+		  
+		  ["n5l","n1ll"],
+		  ["n5l","n2ll"],
+		  ["n5l","n3ll"],
+		  ["n5l","n4ll"],
+		  ["n5l","n1l"],
+		  ["n5l","n2l"],
+		  ["n5l","n3l"],
+		  ["n5l","n1"],
+		  ["n5l","n2"],
+		  ["n5l","n3"],
+		  
+		  {"optional":true},
+		  //attach
+		  {"beamDeform":20000,"beamStrength":28000},
+		  //fender
+		  {"breakGroup":"moonhawk_nosecone_a_R"},
+		  ["n1rr","fe5r"],
+		  ["n1rr","fe19r"],
+		  
+		  ["n3rr","fe14r"],
+		  ["n4rr","fe14r"],
+		  {"breakGroup":"moonhawk_nosecone_a_L"},
+		  ["n1ll","fe5l"],
+		  ["n1ll","fe19l"],
+		  
+		  ["n3ll","fe14l"],
+		  ["n4ll","fe14l"],
+		  
+		  {"breakGroup":"moonhawk_nosecone_b_R"},
+		  ["n3r","s3r"],
+		  
+		  {"breakGroup":"moonhawk_nosecone_b_L"},
+		  ["n3l","s3l"],
+		  
+		  {"breakGroup":"moonhawk_nosecone_M"},
+		  ["n1","s1"],
+		  ["n1r","s1"],
+		  ["n1l","s1"],
+		  ["n2","s1"],
+		  
+		  {"breakGroup":""},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //nosecone support beams
+		  {"beamType":"|SUPPORT", "beamLongBound":8},
+		  {"beamSpring":1501000,"beamDamp":180},
+		  {"beamLimitSpring":1501000,"beamLimitDamp":180},
+		  {"beamDeform":45000,"beamStrength":900000},
+		  ["n2rr","fe6r"],
+		  ["n2ll","fe6l"],
+		  
+		  ["n4rr","fe13r"],
+		  ["n4ll","fe13l"],
+		  
+		  //hood
+		  ["n2rr","h5rr"],
+		  ["n2r","h5r"],
+		  ["n2","h5"],
+		  ["n2l","h5l"],
+		  ["n2ll","h5ll"],
+		  
+		  ["n3rr","h5rr"],
+		  ["n3r","h5r"],
+		  ["n3","h5"],
+		  ["n3l","h5l"],
+		  ["n3ll","h5ll"],
+		  {"optional":false},
+		  
+		  //anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":1000000,"beamStrength":10000000},
+		  {"beamLimitSpring":1401000,"beamLimitDamp":120},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":1.0},
+		  ["n1rr","n1ll"],
+		  ["n2rr","n2ll"],
+		  ["n3rr","n3ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_nosecone"},
+			["n1rr","n2rr","n2r"],
+			["n1rr","n2r","n1r"],
+			["n1r","n2r","n2"],
+			["n1r","n2","n1"],
+			["n1l","n1","n2"],
+			["n2l","n1l","n2"],
+			["n1ll","n1l","n2l"],
+			["n2ll","n1ll","n2l"],
+			
+			["n2rr","n3rr","n3r"],
+			["n2rr","n3r","n2r"],
+			["n2r","n3r","n3"],
+			["n2r","n3","n2"],
+			["n2l","n2","n3"],
+			["n3l","n2l","n3"],
+			["n2ll","n2l","n3l"],
+			["n3ll","n2ll","n3l"],
+			
+			["n1rr","n3rr","n4rr"],
+			["n1rr","n2rr","n3rr"],
+			["n1ll","n4ll","n3ll"],
+			["n1ll","n3ll","n2ll"],
+			
+	],
+}
+}

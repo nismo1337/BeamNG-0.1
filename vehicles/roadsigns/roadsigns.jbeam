@@ -1,0 +1,571 @@
+{
+"roadsign_pole": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Sign Pole",
+	}
+    "slotType" : "main",
+	"slots": [
+		["type", "default"]
+		//yield
+		["roadsign","roadsign_speedlimit_25"],
+	],
+	"refNodes":[
+		["ref:", "back:", "left:", "up:"]
+		["1a", "1c", "1b", "2a"]
+		],
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"], 
+		 {"collision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":1000},
+		 {"frictionCoef":4},
+		 {"selfCollision":false}
+		 {"group":"roadsign_base"},
+		 //base
+		 ["b1", 0.90, 0.64, 0.0],
+		 ["b2", -0.90, 0.64, 0.0],
+		 ["b3", 0, -0.72, 0.0],
+		 
+		 //pole
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"roadsign_pole"}
+		 {"collision":false}
+		 {"selfCollision":false}
+		 ["1a", 0.08, 0.05, -0.15],
+		 ["1b", -0.08, 0.05, -0.15],
+		 ["1c", 0.05, -0.05, -0.15],
+		 ["1d", -0.05, -0.05, -0.15],
+		 {"collision":true}
+		 {"nodeWeight":0.8},
+		 ["2a", 0.08, 0.05, 0.43],
+		 ["2b", -0.08, 0.05, 0.43],
+		 ["2c", 0.05, -0.05, 0.43],
+		 ["2d", -0.05, -0.05, 0.43],
+		 ["3a", 0.08, 0.05, 0.87],
+		 ["3b", -0.08, 0.05, 0.87],
+		 ["3c", 0.05, -0.05, 0.87],
+		 ["3d", -0.05, -0.05, 0.87],
+		 {"nodeWeight":1.8},
+		 ["4a", 0.08, 0.05, 2.46],
+		 ["4b", -0.08, 0.05, 2.46],
+		 ["4c", 0.05, -0.05, 2.46],
+		 ["4d", -0.05, -0.05, 2.46],
+		 {"group":""}
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":330000,"beamDamp":110},
+		  {"beamDeform":960000,"beamStrength":"FLT_MAX"},
+		  //main shape
+		  ["1a","1b"],
+		  ["1c","1d"],
+		  ["1a","1c"],
+		  ["1b","1d"],
+		  ["1b","1c"],
+		  ["1a","1d"],
+		  
+		  ["2a","2b"],
+		  ["2c","2d"],
+		  ["2a","2c"],
+		  ["2b","2d"],
+		  ["2b","2c"],
+		  ["2a","2d"],
+		  
+		  ["3a","3b"],
+		  ["3c","3d"],
+		  ["3a","3c"],
+		  ["3b","3d"],
+		  ["3b","3c"],
+		  ["3a","3d"],
+		  
+		  ["4a","4b"],
+		  ["4c","4d"],
+		  ["4a","4c"],
+		  ["4b","4d"],
+		  ["4b","4c"],
+		  ["4a","4d"],
+		  
+		  {"beamDeform":86000,"beamStrength":"FLT_MAX"},
+		  //vertical
+		  ["1a","2a"],
+		  ["1b","2b"],
+		  ["1c","2c"],
+		  ["1d","2d"],
+		  
+		  ["2a","3a"],
+		  ["2b","3b"],
+		  ["2c","3c"],
+		  ["2d","3d"],
+		  
+		  ["3a","4a"],
+		  ["3b","4b"],
+		  ["3c","4c"],
+		  ["3d","4d"],
+		  {"beamDeform":86000,"beamStrength":"FLT_MAX"},
+		  //cross
+		  ["1a","2b"],
+		  ["1b","2a"],
+		  ["1c","2d"],
+		  ["1d","2c"],
+		  ["1a","2c"],
+		  ["1c","2a"],
+		  ["1b","2d"],
+		  ["1d","2b"],
+		  
+		  ["2a","3b"],
+		  ["2b","3a"],
+		  ["2c","3d"],
+		  ["2d","3c"],
+		  ["2a","3c"],
+		  ["2c","3a"],
+		  ["2b","3d"],
+		  ["2d","3b"],
+		  
+		  ["3a","4b"],
+		  ["3b","4a"],
+		  ["3c","4d"],
+		  ["3d","4c"],
+		  ["3a","4c"],
+		  ["3c","4a"],
+		  ["3b","4d"],
+		  ["3d","4b"],
+		  
+		  ["1b","2c"],
+		  ["1c","2b"],
+		  ["1d","2a"],
+		  ["1a","2d"],
+		  
+		  ["2b","3c"],
+		  ["2c","3b"],
+		  ["2d","3a"],
+		  ["2a","3d"],
+		  
+		  ["3b","4c"],
+		  ["3c","4b"],
+		  ["3d","4a"],
+		  ["3a","4d"],
+		  
+		  {"beamDeform":18000,"beamStrength":"FLT_MAX"},
+		  //super rigids
+		  ["1a","3a"],
+		  ["1b","3b"],
+		  ["1c","3c"],
+		  ["1d","3d"],
+		  
+		  ["2a","4a"],
+		  ["2b","4b"],
+		  ["2c","4c"],
+		  ["2d","4d"],
+		  
+		  //["1a","4a"],
+		  //["1b","4b"],
+		  //["1c","4c"],
+		  //["1d","4d"],
+		  
+		  //base attach
+		  {"beamDeform":8000,"beamStrength":76000},
+		  {"breakGroupType":0},
+		  {"breakGroup":"roadsign_base"},
+		  ["1a","b1"],
+		  ["1b","b1"],
+		  ["1c","b1"],
+		  ["1d","b1"],
+		  ["1a","b2"],
+		  ["1b","b2"],
+		  ["1c","b2"],
+		  ["1d","b2"],
+		  ["1a","b3"],
+		  ["1b","b3"],
+		  ["1c","b3"],
+		  ["1d","b3"],
+		  
+		  ["2a","b1"],
+		  ["2b","b1"],
+		  ["2c","b1"],
+		  ["2d","b1"],
+		  ["2a","b2"],
+		  ["2b","b2"],
+		  ["2c","b2"],
+		  ["2d","b2"],
+		  ["2a","b3"],
+		  ["2b","b3"],
+		  ["2c","b3"],
+		  ["2d","b3"],
+		  /*
+		  ["3a","b1"],
+		  ["3b","b1"],
+		  ["3c","b1"],
+		  ["3d","b1"],
+		  ["3a","b2"],
+		  ["3b","b2"],
+		  ["3c","b2"],
+		  ["3d","b2"],
+		  ["3a","b3"],
+		  ["3b","b3"],
+		  ["3c","b3"],
+		  ["3d","b3"],
+		  
+		  ["4a","b1"],
+		  ["4b","b1"],
+		  ["4c","b1"],
+		  ["4d","b1"],
+		  ["4a","b2"],
+		  ["4b","b2"],
+		  ["4c","b2"],
+		  ["4d","b2"],
+		  ["4a","b3"],
+		  ["4b","b3"],
+		  ["4c","b3"],
+		  ["4d","b3"],
+		  */
+		  
+		  //dampers
+		  {"beamSpring":0,"beamDamp":200},
+		  {"beamDeform":960000,"beamStrength":"FLT_MAX"},
+		  ["4a","b1"],
+		  ["4a","b2"],
+		  ["4a","b3"],
+		  ["4b","b1"],
+		  ["4b","b2"],
+		  ["4b","b3"],
+		  ["4c","b1"],
+		  ["4c","b2"],
+		  ["4c","b3"],
+		  ["4d","b1"],
+		  ["4d","b2"],
+		  ["4d","b3"],
+		  {"breakGroup":""},
+		  
+		  //base
+		  {"beamSpring":330000,"beamDamp":110},
+		  {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+		  ["b1","b2"],
+		  ["b1","b3"],
+		  ["b2","b3"],
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+	"triangles": [
+		["id1:","id2:","id3:"],
+		{"group":"pole"},
+		["2a","1a","1b"],
+		["2a","1b","2b"],
+		["2b","1b","1d"],
+		["2b","1d","2d"],
+		["2d","1d","1c"],
+		["2d","1c","2c"],
+		["2c","1c","1a"],
+		["2c","1a","2a"],
+		
+		["3a","2a","2b"],
+		["3a","2b","3b"],
+		["3b","2b","2d"],
+		["3b","2d","3d"],
+		["3d","2d","2c"],
+		["3d","2c","3c"],
+		["3c","2c","2a"],
+		["3c","2a","3a"],
+		
+		["4a","3a","3b"],
+		["4a","3b","4b"],
+		["4b","3b","3d"],
+		["4b","3d","4d"],
+		["4d","3d","3c"],
+		["4d","3c","4c"],
+		["4c","3c","3a"],
+		["4c","3a","4a"],
+		
+		//["1a","1c","1b"],
+		//["4a","4b","4c"],
+		
+		/*
+		["1b","1a","2b"],
+		["1a","2a","2b"],
+		["1c","1b","2c"],
+		["1b","2b","2c"],
+		["1a","1c","2a"],
+		["1c","2c","2a"],
+		
+		["2b","2a","3b"],
+		["2a","3a","3b"],
+		["2c","2b","3c"],
+		["2b","3b","3c"],
+		["2a","2c","3a"],
+		["2c","3c","3a"],
+		
+		["3b","3a","4b"],
+		["3a","4a","4b"],
+		["3c","3b","4c"],
+		["3b","4b","4c"],
+		["3a","3c","4a"],
+		["3c","4c","4a"],
+		*/
+		
+		//["1a","1b","1c"],
+		//["4a","4c","4b"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:"],
+		 {"rotation":{"x":0, "y":0, "z":0}, "translation":{"x":0, "y":0, "z":0}},
+		 ["roadsign_pole", ["roadsign_pole"]]
+	 ],
+}
+"roadsign_yield": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Yield Sign",
+	}
+    "slotType" : "roadsign",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"], 
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"roadsign_yield"},
+		 ["s1a", 0.41, 0.02, 2.58],
+		 ["s1b", -0.41, 0.02, 2.58],
+		 ["s1c", 0, 0.02, 1.84],
+		 {"group":""}
+	],
+	"beams": [
+		  ["id1:", "id2:"], 
+		  {"breakGroupType":0},
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":330000,"beamDamp":110},
+		  //sign
+		  {"beamDeform":1250000,"beamStrength":"FLT_MAX"},
+		  ["s1a","s1b"],
+		  ["s1a","s1c"],
+		  ["s1b","s1c"],
+		  
+		  //attach to pole
+		  {"beamDeform":14000,"beamStrength":14000},
+		  {"breakGroup":"roadsign_yield_01"},
+		  ["s1a","4a"],
+		  ["s1a","4b"],
+		  ["s1a","4c"],
+		  ["s1b","4a"],
+		  ["s1b","4b"],
+		  ["s1b","4c"],
+		  
+		  {"breakGroupType":1},
+		  {"breakGroup":"roadsign_yield_01"},
+		  ["s1a","3a"],
+		  ["s1a","3b"],
+		  ["s1a","3c"],
+		  ["s1b","3a"],
+		  ["s1b","3b"],
+		  ["s1b","3c"],
+		  ["s1c","4a"],
+		  ["s1c","4b"],
+		  ["s1c","4c"],
+		  
+		  //{"breakGroup":"roadsign_yield_03"},
+		  ["s1c","3a"],
+		  ["s1c","3b"],
+		  ["s1c","3c"],
+		  
+		  {"breakGroup":""},
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+	"triangles": [
+		["id1:","id2:","id3:"],
+		{"group":"sign"},
+		["s1a","s1b","s1c"],
+		["s1a","s1c","s1b"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:"],
+		 {"rotation":{"x":0, "y":0, "z":0}, "translation":{"x":0, "y":0, "z":0}},
+		 ["roadsign_yield", ["roadsign_yield"]]
+	 ],
+}
+"roadsign_stop": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Stop Sign",
+	}
+    "slotType" : "roadsign",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"], 
+		 //pole
+		 {"nodeWeight":1.4},
+		 {"frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"roadsign_stop"},
+		 ["s1a", 0.375, 0.02, 2.58],
+		 ["s1b", -0.375, 0.02, 2.58],
+		 ["s1c", 0.375, 0.02, 1.83],
+		 ["s1d", -0.375, 0.02, 1.83],
+		 {"group":""}
+	],
+	"beams": [
+		  ["id1:", "id2:"], 
+		  {"breakGroupType":0},
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":330000,"beamDamp":110},
+		  //sign
+		  {"beamDeform":1250000,"beamStrength":"FLT_MAX"},
+		  ["s1a","s1b"],
+		  ["s1a","s1c"],
+		  ["s1a","s1d"],
+		  ["s1b","s1c"],
+		  ["s1b","s1d"],
+		  ["s1c","s1d"],
+		  
+		  //attach to pole
+		  {"beamDeform":14000,"beamStrength":14000},
+		  {"breakGroup":"roadsign_stop_01"},
+		  ["s1a","4a"],
+		  ["s1a","4b"],
+		  ["s1a","4c"],
+		  ["s1b","4a"],
+		  ["s1b","4b"],
+		  ["s1b","4c"],
+		  
+		  {"breakGroupType":1},
+		  {"breakGroup":"roadsign_stop_01"},
+		  ["s1a","3a"],
+		  ["s1a","3b"],
+		  ["s1a","3c"],
+		  ["s1b","3a"],
+		  ["s1b","3b"],
+		  ["s1b","3c"],
+		  ["s1c","4a"],
+		  ["s1c","4b"],
+		  ["s1c","4c"],
+		  ["s1d","4a"],
+		  ["s1d","4b"],
+		  ["s1d","4c"],
+		  
+		  //{"breakGroup":"roadsign_stop_03"},
+		  ["s1c","3a"],
+		  ["s1c","3b"],
+		  ["s1c","3c"],
+		  ["s1d","3a"],
+		  ["s1d","3b"],
+		  ["s1d","3c"],
+		  
+		  {"breakGroup":""},
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+	"triangles": [
+		["id1:","id2:","id3:"],
+		{"group":"sign"},
+		["s1a","s1b","s1c"],
+		["s1b","s1c","s1d"],
+		["s1b","s1a","s1c"],
+		["s1c","s1b","s1d"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:"],
+		 {"rotation":{"x":0, "y":0, "z":0}, "translation":{"x":0, "y":0, "z":0}},
+		 ["roadsign_stop", ["roadsign_stop"]]
+	 ],
+}
+"roadsign_speedlimit_25": {	
+	"information":{
+		"authors":"gabester",
+		"name":"25 MPH Speed Limit Sign",
+	}
+    "slotType" : "roadsign",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"], 
+		 //pole
+		 {"nodeWeight":1.3},
+		 {"frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"roadsign_speedlimit"},
+		 ["s1a", 0.305, 0.02, 2.59],
+		 ["s1b", -0.305, 0.02, 2.59],
+		 ["s1c", 0.305, 0.02, 1.81],
+		 ["s1d", -0.305, 0.02, 1.81],
+		 {"group":""}
+	],
+	"beams": [
+		  ["id1:", "id2:"], 
+		  {"breakGroupType":0},
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":330000,"beamDamp":110},
+		  //sign
+		  {"beamDeform":1250000,"beamStrength":"FLT_MAX"},
+		  ["s1a","s1b"],
+		  ["s1a","s1c"],
+		  ["s1a","s1d"],
+		  ["s1b","s1c"],
+		  ["s1b","s1d"],
+		  ["s1c","s1d"],
+		  
+		  //attach to pole
+		  {"beamDeform":14000,"beamStrength":14000},
+		  {"breakGroup":"roadsign_speedlimit_01"},
+		  ["s1a","4a"],
+		  ["s1a","4b"],
+		  ["s1a","4c"],
+		  ["s1b","4a"],
+		  ["s1b","4b"],
+		  ["s1b","4c"],
+		  
+		  {"breakGroupType":1},
+		  {"breakGroup":"roadsign_speedlimit_01"},
+		  ["s1a","3a"],
+		  ["s1a","3b"],
+		  ["s1a","3c"],
+		  ["s1b","3a"],
+		  ["s1b","3b"],
+		  ["s1b","3c"],
+		  ["s1c","4a"],
+		  ["s1c","4b"],
+		  ["s1c","4c"],
+		  ["s1d","4a"],
+		  ["s1d","4b"],
+		  ["s1d","4c"],
+		  
+		  //{"breakGroup":"roadsign_speedlimit_03"},
+		  ["s1c","3a"],
+		  ["s1c","3b"],
+		  ["s1c","3c"],
+		  ["s1d","3a"],
+		  ["s1d","3b"],
+		  ["s1d","3c"],
+		  
+		  {"breakGroup":""},
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+	"triangles": [
+		["id1:","id2:","id3:"],
+		{"group":"sign"},
+		["s1a","s1b","s1c"],
+		["s1b","s1c","s1d"],
+		["s1b","s1a","s1c"],
+		["s1c","s1b","s1d"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:"],
+		 {"rotation":{"x":0, "y":0, "z":0}, "translation":{"x":0, "y":0, "z":0}},
+		 ["roadsign_speedlimit_25", ["roadsign_speedlimit"]]
+	 ],
+}
+}

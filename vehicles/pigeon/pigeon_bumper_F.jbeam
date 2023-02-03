@@ -1,0 +1,199 @@
+{
+"pigeon_bumper_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Front Bumper",
+	}
+    "slotType" : "pigeon_bumper_F",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_bumper_F", ["pigeon_bumper_F"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--bumper_F--
+		 {"frictionCoef":1},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"nodeWeight":1},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"group":"pigeon_bumper_F"},
+		 ["fb1rr",-0.48, -1.41, 0.55],
+		 ["fb1", 0.0, -1.41, 0.55],
+		 ["fb1ll", 0.48, -1.41, 0.55],
+		 ["fb2rr",-0.47, -1.41, 0.40],
+		 ["fb2", 0.0, -1.41, 0.40],
+		 ["fb2ll", 0.47, -1.41, 0.40],
+		 
+		 ["fb3rr",-0.44, -1.48, 0.54],
+		 ["fb3", 0.0, -1.48, 0.54],
+		 ["fb3ll", 0.44, -1.48, 0.54],
+		 ["fb4rr",-0.43, -1.48, 0.42],
+		 ["fb4", 0.0, -1.48, 0.42],
+		 ["fb4ll", 0.43, -1.48, 0.42],
+		 
+		 {"group":""},
+		 {"collision":false}
+		 {"selfCollision":false}
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"optional":true},
+		  {"beamType":"|SUPPORT", "beamLongBound":4},
+		  {"beamSpring":361000,"beamDamp":40},
+		  {"beamLimitSpring":361000,"beamLimitDamp":40},
+		  {"beamDeform":15000,"beamStrength":120000},
+		  //front bumper support beams
+		  /*
+		  ["fb3rr","b12rr"],
+		  ["fb3ll","b12ll"],
+		  
+		  ["fb4rr","b6rr"],
+		  ["fb4ll","b6ll"],
+		  
+		  ["fb3","b12"],
+		  */
+		  
+		  ["fb3rr","f8rr"],
+		  ["fb4rr","f6rr"],
+		  ["fb3ll","f8ll"],
+		  ["fb4ll","f6ll"],
+		  {"optional":false},
+		  {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //front bumper main shape
+	      {"beamSpring":661000,"beamDamp":30},
+		  {"beamDeform":75000,"beamStrength":150000},
+		  ["fb1rr","fb1"],
+		  ["fb1ll","fb1"],
+		  ["fb2rr","fb2"],
+		  ["fb2ll","fb2"],
+		  ["fb3rr","fb3"],
+		  ["fb3ll","fb3"],
+		  ["fb4rr","fb4"],
+		  ["fb4ll","fb4"],
+		  
+		  ["fb1rr","fb2rr"],
+		  //["fb1","fb2"],
+		  ["fb1ll","fb2ll"],
+		  ["fb3rr","fb4rr"],
+		  ["fb3","fb4"],
+		  ["fb3ll","fb4ll"],
+		  
+		  ["fb1rr","fb3rr"],
+		  ["fb1","fb3"],
+		  ["fb1ll","fb3ll"],
+		  ["fb2rr","fb4rr"],
+		  ["fb2","fb4"],
+		  ["fb2ll","fb4ll"],
+		  
+		  {"beamDeform":9500,"beamStrength":150000},
+		  //surficial crossing
+		  ["fb1rr","fb3"],
+		  ["fb1ll","fb3"],
+		  ["fb3rr","fb1"],
+		  ["fb3ll","fb1"],
+		  ["fb2rr","fb4"],
+		  ["fb2ll","fb4"],
+		  ["fb4rr","fb2"],
+		  ["fb4ll","fb2"],
+		  
+		  ["fb3rr","fb4"],
+		  ["fb3ll","fb4"],
+		  ["fb4rr","fb3"],
+		  ["fb4ll","fb3"],
+		  
+		  ["fb1rr","fb4rr"],
+		  ["fb2rr","fb3rr"],
+		  ["fb1","fb4"],
+		  ["fb2","fb3"],
+		  ["fb1ll","fb4ll"],
+		  ["fb2ll","fb3ll"],
+		  
+		  //corner
+		  ["fb1","fb2rr"],
+		  ["fb1","fb2ll"],
+		  ["fb2","fb1rr"],
+		  ["fb2","fb1ll"],
+		  {"beamDeform":5000,"beamStrength":76000},
+		  //rigids
+		  ["fb1rr","fb1ll"],
+		  ["fb2rr","fb2ll"],
+		  ["fb3rr","fb3ll"],
+		  ["fb4rr","fb4ll"],
+		  
+		  
+		  ["fb1rr","fb3ll"],
+		  ["fb1ll","fb3rr"],
+		  ["fb2rr","fb4ll"],
+		  ["fb2ll","fb4rr"],
+		  
+		  ["fb1rr","fb2ll"],
+		  ["fb1ll","fb2rr"],
+		  ["fb3rr","fb4ll"],
+		  ["fb3ll","fb4rr"],
+		  
+	      {"beamSpring":261000,"beamDamp":50},
+		  {"beamDeform":5000,"beamStrength":9000},
+		  //attach
+		  {"breakGroup":"pigeon_bumper_FR"},
+		  ["fb1rr","f8rr"],
+		  ["fb3rr","f8rr"],
+		  ["fb3rr","f6rr"],
+		  ["fb1rr","f6rr"],
+		  ["fb2rr","f8rr"],
+		  ["fb2rr","f6rr"],
+		  ["fb4rr","f6rr"],
+		  ["fb4rr","f8rr"],
+		  ["fb1","f6rr"],
+		  ["fb2","f8rr"],
+		  
+		  {"breakGroup":"pigeon_bumper_FL"},
+		  ["fb1ll","f8ll"],
+		  ["fb3ll","f8ll"],
+		  ["fb3ll","f6ll"],
+		  ["fb1ll","f6ll"],
+		  ["fb2ll","f8ll"],
+		  ["fb2ll","f6ll"],
+		  ["fb4ll","f6ll"],
+		  ["fb4ll","f8ll"],
+		  ["fb1","f6ll"],
+		  ["fb2","f8ll"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"pigeon_bumper_F"},
+			["fb3rr","fb4rr","fb4"],
+			["fb3rr","fb4","fb3"],
+			["fb1rr","fb3rr","fb3"],
+			["fb1rr","fb3","fb1"],
+			["fb4rr","fb2rr","fb2"],
+			["fb4rr","fb2","fb4"],
+			["fb3rr","fb1rr","fb2rr"],
+			["fb3rr","fb2rr","fb4rr"],
+			
+			["fb4ll","fb3ll","fb4"],
+			["fb3ll","fb3","fb4"],
+			["fb3ll","fb1ll","fb3"],
+			["fb1ll","fb1","fb3"],
+			["fb2ll","fb4ll","fb2"],
+			["fb4ll","fb4","fb2"],
+			["fb3ll","fb2ll","fb1ll"],
+			["fb3ll","fb4ll","fb2ll"],
+			
+			//rear face
+			["fb2rr","fb1rr","fb1"],
+			["fb2rr","fb1","fb2"],
+			["fb1ll","fb2ll","fb1"],
+			["fb2ll","fb2","fb1"],
+			{"group":""},
+	],
+}
+}

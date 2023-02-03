@@ -1,0 +1,91 @@
+{
+"super_wheel_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Front Wheels",
+	}
+    "slotType" : "super_wheel_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["super_wheel_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["super_wheel","super"]],
+		 ["super_wheel_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["super_wheel","super"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front wheel
+		 {"nodeWeight":3.6},
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"wheelhub_a_FR"},
+		 ["fw1r",-0.62,-1.28,0.34],
+		 {"group":"wheelhub_b_FR"},
+		 ["fw1rr",-0.87,-1.28,0.34],
+		 {"group":"wheelhub_a_FL"},
+		 ["fw1l",0.62,-1.28,0.34],
+		 {"group":"wheelhub_b_FL"},
+		 ["fw1ll",0.87,-1.28,0.34],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":9501000,"beamDamp":180,"beamDeform":100000,"beamStrength":"FLT_MAX"},
+		  //front wheel
+		  ["fw1r","fw1rr"],
+		  ["fw1l","fw1ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.32},
+			{"hubRadius":0.20},
+			{"wheelOffset":-0.05},
+			{"hubWidth":0.225},
+			{"tireWidth":0.225},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":25},
+			{"beamSpring":1601000, "beamDamp":25},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.55},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":240000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":45000,"wheelSideBeamStrength":55000},
+			{"wheelReinforcementBeamSpring":102000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":45000,"wheelReinforcementBeamStrength":55000},
+			{"wheelTreadBeamSpring":501000,"wheelTreadBeamDamp":140,"wheelTreadBeamDeform":45000,"wheelTreadBeamStrength":55000},
+			{"wheelPeripheryBeamSpring":501000,"wheelPeripheryBeamDamp":140,"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":55000},
+			{"springExpansion":1601000, "dampExpansion":25},
+			{"nodeWeight":0.55},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.25},
+			
+			//front
+			{"selfCollision":false}
+			{"collision":true}
+            ["FR", "wheel_FR", "fw1rr", "fw1r", 9999,  "fa4r", 1],
+            ["FL", "wheel_FL", "fw1ll", "fw1l", 9999,  "fa4l", -1],
+			{"propulsed":0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

@@ -1,0 +1,1855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Gabe</author>
+      <authoring_tool>OpenCOLLADA for 3ds Max;  Version: 1.3.1;  Revision: 847M;  Platform: x64;  Configuration: Release_Max2010_static</authoring_tool>
+      <source_data>file:///D:/Gabe/My%20Documents/3dsmax%20models/BeamNG/objects/roadsigns.max</source_data>
+    </contributor>
+    <created>2013-04-15T05:10:37</created>
+    <modified>2013-04-15T05:10:37</modified>
+    <unit name="centimeter" meter="0.01"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="roadsigns_01">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="roadsign_pole">
+      <profile_COMMON>
+        <newparam sid="roadsign_pole_d_psd-surface">
+          <surface type="2D">
+            <init_from>roadsign_pole_d_psd</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="roadsign_pole_d_psd-sampler">
+          <sampler2D>
+            <source>roadsign_pole_d_psd-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="roadsign_pole_ddn_psd-surface">
+          <surface type="2D">
+            <init_from>roadsign_pole_ddn_psd</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="roadsign_pole_ddn_psd-sampler">
+          <sampler2D>
+            <source>roadsign_pole_ddn_psd-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="roadsign_pole_d_psd-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="OpenCOLLADA3dsMax">
+              <bump bumptype="HEIGHTFIELD">
+                <texture texture="roadsign_pole_ddn_psd-sampler" texcoord="CHANNEL1"/>
+              </bump>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__68">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__69">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__70">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__71">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__72">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__73">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__74">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__75">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.588 0.588 0.588 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="roadsigns_01-material" name="roadsigns_01">
+      <instance_effect url="#roadsigns_01"/>
+    </material>
+    <material id="roadsign_pole-material" name="roadsign_pole">
+      <instance_effect url="#roadsign_pole"/>
+    </material>
+    <material id="Material__68-material" name="Material__68">
+      <instance_effect url="#Material__68"/>
+    </material>
+    <material id="Material__69-material" name="Material__69">
+      <instance_effect url="#Material__69"/>
+    </material>
+    <material id="Material__70-material" name="Material__70">
+      <instance_effect url="#Material__70"/>
+    </material>
+    <material id="Material__71-material" name="Material__71">
+      <instance_effect url="#Material__71"/>
+    </material>
+    <material id="Material__72-material" name="Material__72">
+      <instance_effect url="#Material__72"/>
+    </material>
+    <material id="Material__73-material" name="Material__73">
+      <instance_effect url="#Material__73"/>
+    </material>
+    <material id="Material__74-material" name="Material__74">
+      <instance_effect url="#Material__74"/>
+    </material>
+    <material id="Material__75-material" name="Material__75">
+      <instance_effect url="#Material__75"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="geom-roadsign_square-04" name="roadsign_square-04">
+      <mesh>
+        <source id="geom-roadsign_square-04-positions">
+          <float_array id="geom-roadsign_square-04-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.517332 195.0501 27.77272 1.517325 195.0501 29.99886 1.517325 196.3992 -29.99803 1.517332 196.3992 -27.7719 2.082808 195.0501 27.77272 2.082801 195.0501 -30.51388 1.517333 198.532 -30.51388 2.082809 198.532 -29.99803 2.082809 196.3992 29.99886 2.082801 196.3992 30.51469 2.082801 198.532 30.51469 1.517325 198.532</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-04-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-04-normals">
+          <float_array id="geom-roadsign_square-04-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.11843 0.9929624 0 0.11843 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184298 -0.9929624 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.74447e-8 1 -6.69872e-8 -2.00677e-8 1 -1.18721e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.64443e-7 -1.88063e-8 -1 1.8699e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.31088e-7 -1 1.15749e-7 -1.30918e-7 -1 4.90584e-8 -1.31135e-7 -1 3.97457e-8 -1.30938e-7 -1 1.193e-7 -0.2690734 0 -0.9631197 -0.2690738 0 -0.9631195 0.2690756 0 -0.963119 0.2690759 0 -0.9631189 -0.8070698 0 -0.5904561 -0.8070696 0 -0.5904562 -0.9929685 0 -0.1183786 -0.9929685 0 -0.1183786 0.8070729 0 -0.5904519 0.8070728 0 -0.5904518 0.9929689 0 -0.1183758 0.9929689 0 -0.1183758 1.24559e-7 1 -5.45791e-8 8.02236e-8 1 -4.70756e-8 1.27367e-7 1 -2.68635e-7 1.32754e-7 1 -2.5306e-7 -1.30991e-7 -1 8.06871e-8 -8.66755e-8 -1 1.31534e-7 1.35015e-7 1 -3.03119e-7 1.24479e-7 1 1.48038e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-04-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-04-map1">
+          <float_array id="geom-roadsign_square-04-map1-array" count="108">0.8367641 0.1983535 0 0.9659617 0.1983535 0 0.9712101 0.1951922 0 0.8314669 0.1952452 0 0.8352459 0.2006532 0 0.9679347 0.2006532 0 0.830386 0.1902536 0 0.8286955 0.1923352 0 0.8297816 0.197358 0 0.9735254 0.1975122 0 0.9744847 0.1923352 0 0.9723389 0.1902536 0 0.8039932 0.7446482 0 0.9847632 0.7446482 0 0.9832346 0.7509667 0 0.8055218 0.7509667 0 0.9766416 0.7549629 0 0.8121147 0.7549629 0 0.9659617 0.04822399 0 0.8367641 0.04822399 0 0.8315138 0.05140405 0 0.9712656 0.05132908 0 0.9679347 0.04565831 0 0.8352459 0.04565831 0 0.9723389 0.05632395 0 0.9744847 0.05397637 0 0.9733984 0.04894017 0 0.8296921 0.04883305 0 0.8286955 0.05397637 0 0.830386 0.05632395 0 0.9847632 0.5734054 0 0.8039932 0.5734054 0 0.805521 0.5670899 0 0.9832355 0.5670872 0 0.8121147 0.5630932 0 0.9766416 0.5630932 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-04-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_square-04-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_square-04-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_square-04-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_square-04-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_square-04-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_square-03" name="roadsign_square-03">
+      <mesh>
+        <source id="geom-roadsign_square-03-positions">
+          <float_array id="geom-roadsign_square-03-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.517332 195.0501 27.77272 1.517325 195.0501 29.99886 1.517325 196.3992 -29.99803 1.517332 196.3992 -27.7719 2.082808 195.0501 27.77272 2.082801 195.0501 -30.51388 1.517333 198.532 -30.51388 2.082809 198.532 -29.99803 2.082809 196.3992 29.99886 2.082801 196.3992 30.51469 2.082801 198.532 30.51469 1.517325 198.532</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-03-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-03-normals">
+          <float_array id="geom-roadsign_square-03-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.11843 0.9929624 0 0.11843 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184298 -0.9929624 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.74447e-8 1 -6.69872e-8 -2.00677e-8 1 -1.18721e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.64443e-7 -1.88063e-8 -1 1.8699e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.31088e-7 -1 1.15749e-7 -1.30918e-7 -1 4.90584e-8 -1.31135e-7 -1 3.97457e-8 -1.30938e-7 -1 1.193e-7 -0.2690734 0 -0.9631197 -0.2690738 0 -0.9631195 0.2690756 0 -0.963119 0.2690759 0 -0.9631189 -0.8070698 0 -0.5904561 -0.8070696 0 -0.5904562 -0.9929685 0 -0.1183786 -0.9929685 0 -0.1183786 0.8070729 0 -0.5904519 0.8070728 0 -0.5904518 0.9929689 0 -0.1183758 0.9929689 0 -0.1183758 1.24559e-7 1 -5.45791e-8 8.02236e-8 1 -4.70756e-8 1.27367e-7 1 -2.68635e-7 1.32754e-7 1 -2.5306e-7 -1.30991e-7 -1 8.06871e-8 -8.66755e-8 -1 1.31534e-7 1.35015e-7 1 -3.03119e-7 1.24479e-7 1 1.48038e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-03-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-03-map1">
+          <float_array id="geom-roadsign_square-03-map1-array" count="108">0.8367641 0.1983535 0 0.9659617 0.1983535 0 0.9712101 0.1951922 0 0.8314669 0.1952452 0 0.8352459 0.2006532 0 0.9679347 0.2006532 0 0.830386 0.1902536 0 0.8286955 0.1923352 0 0.8297816 0.197358 0 0.9735254 0.1975122 0 0.9744847 0.1923352 0 0.9723389 0.1902536 0 0.2075087 0.7446482 0 0.3882788 0.7446482 0 0.3867502 0.7509667 0 0.2090374 0.7509667 0 0.3801571 0.7549629 0 0.2156303 0.7549629 0 0.9659617 0.04822399 0 0.8367641 0.04822399 0 0.8315138 0.05140405 0 0.9712656 0.05132908 0 0.9679347 0.04565831 0 0.8352459 0.04565831 0 0.9723389 0.05632395 0 0.9744847 0.05397637 0 0.9733984 0.04894017 0 0.8296921 0.04883305 0 0.8286955 0.05397637 0 0.830386 0.05632395 0 0.3882788 0.5734054 0 0.2075087 0.5734054 0 0.2090365 0.5670899 0 0.386751 0.5670872 0 0.2156303 0.5630932 0 0.3801571 0.5630932 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-03-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_square-03-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_square-03-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_square-03-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_square-03-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_square-03-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_square-02" name="roadsign_square-02">
+      <mesh>
+        <source id="geom-roadsign_square-02-positions">
+          <float_array id="geom-roadsign_square-02-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.517332 195.0501 27.77272 1.517325 195.0501 29.99886 1.517325 196.3992 -29.99803 1.517332 196.3992 -27.7719 2.082808 195.0501 27.77272 2.082801 195.0501 -30.51388 1.517333 198.532 -30.51388 2.082809 198.532 -29.99803 2.082809 196.3992 29.99886 2.082801 196.3992 30.51469 2.082801 198.532 30.51469 1.517325 198.532</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-02-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-02-normals">
+          <float_array id="geom-roadsign_square-02-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.11843 0.9929624 0 0.11843 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184298 -0.9929624 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.74447e-8 1 -6.69872e-8 -2.00677e-8 1 -1.18721e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.64443e-7 -1.88063e-8 -1 1.8699e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.31088e-7 -1 1.15749e-7 -1.30918e-7 -1 4.90584e-8 -1.31135e-7 -1 3.97457e-8 -1.30938e-7 -1 1.193e-7 -0.2690734 0 -0.9631197 -0.2690738 0 -0.9631195 0.2690756 0 -0.963119 0.2690759 0 -0.9631189 -0.8070698 0 -0.5904561 -0.8070696 0 -0.5904562 -0.9929685 0 -0.1183786 -0.9929685 0 -0.1183786 0.8070729 0 -0.5904519 0.8070728 0 -0.5904518 0.9929689 0 -0.1183758 0.9929689 0 -0.1183758 1.24559e-7 1 -5.45791e-8 8.02236e-8 1 -4.70756e-8 1.27367e-7 1 -2.68635e-7 1.32754e-7 1 -2.5306e-7 -1.30991e-7 -1 8.06871e-8 -8.66755e-8 -1 1.31534e-7 1.35015e-7 1 -3.03119e-7 1.24479e-7 1 1.48038e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-02-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-02-map1">
+          <float_array id="geom-roadsign_square-02-map1-array" count="108">0.8367641 0.1983535 0 0.9659617 0.1983535 0 0.9712101 0.1951922 0 0.8314669 0.1952452 0 0.8352459 0.2006532 0 0.9679347 0.2006532 0 0.830386 0.1902536 0 0.8286955 0.1923352 0 0.8297816 0.197358 0 0.9735254 0.1975122 0 0.9744847 0.1923352 0 0.9723389 0.1902536 0 0.4086979 0.7446482 0 0.5894678 0.7446482 0 0.587939 0.7509667 0 0.4102265 0.7509667 0 0.5813461 0.7549629 0 0.4168194 0.7549629 0 0.9659617 0.04822399 0 0.8367641 0.04822399 0 0.8315138 0.05140405 0 0.9712656 0.05132908 0 0.9679347 0.04565831 0 0.8352459 0.04565831 0 0.9723389 0.05632395 0 0.9744847 0.05397637 0 0.9733984 0.04894017 0 0.8296921 0.04883305 0 0.8286955 0.05397637 0 0.830386 0.05632395 0 0.5894678 0.5734054 0 0.4086979 0.5734054 0 0.4102257 0.5670899 0 0.5879399 0.5670872 0 0.4168194 0.5630932 0 0.5813461 0.5630932 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-02-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_square-02-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_square-02-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_square-02-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_square-02-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_square-02-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_square-01" name="roadsign_square-01">
+      <mesh>
+        <source id="geom-roadsign_square-01-positions">
+          <float_array id="geom-roadsign_square-01-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.517332 195.0501 27.77272 1.517325 195.0501 29.99886 1.517325 196.3992 -29.99803 1.517332 196.3992 -27.7719 2.082808 195.0501 27.77272 2.082801 195.0501 -30.51388 1.517333 198.532 -30.51388 2.082809 198.532 -29.99803 2.082809 196.3992 29.99886 2.082801 196.3992 30.51469 2.082801 198.532 30.51469 1.517325 198.532</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-01-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-01-normals">
+          <float_array id="geom-roadsign_square-01-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.11843 0.9929624 0 0.11843 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184298 -0.9929624 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.74447e-8 1 -6.69872e-8 -2.00677e-8 1 -1.18721e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.64443e-7 -1.88063e-8 -1 1.8699e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.31088e-7 -1 1.15749e-7 -1.30918e-7 -1 4.90584e-8 -1.31135e-7 -1 3.97457e-8 -1.30938e-7 -1 1.193e-7 -0.2690734 0 -0.9631197 -0.2690738 0 -0.9631195 0.2690756 0 -0.963119 0.2690759 0 -0.9631189 -0.8070698 0 -0.5904561 -0.8070696 0 -0.5904562 -0.9929685 0 -0.1183786 -0.9929685 0 -0.1183786 0.8070729 0 -0.5904519 0.8070728 0 -0.5904518 0.9929689 0 -0.1183758 0.9929689 0 -0.1183758 1.24559e-7 1 -5.45791e-8 8.02236e-8 1 -4.70756e-8 1.27367e-7 1 -2.68635e-7 1.32754e-7 1 -2.5306e-7 -1.30991e-7 -1 8.06871e-8 -8.66755e-8 -1 1.31534e-7 1.35015e-7 1 -3.03119e-7 1.24479e-7 1 1.48038e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-01-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-01-map1">
+          <float_array id="geom-roadsign_square-01-map1-array" count="108">0.8367641 0.1983535 0 0.9659617 0.1983535 0 0.9712101 0.1951922 0 0.8314669 0.1952452 0 0.8352459 0.2006532 0 0.9679347 0.2006532 0 0.830386 0.1902536 0 0.8286955 0.1923352 0 0.8297816 0.197358 0 0.9735254 0.1975122 0 0.9744847 0.1923352 0 0.9723389 0.1902536 0 0.6066995 0.7446482 0 0.7874694 0.7446482 0 0.7859408 0.7509667 0 0.6082281 0.7509667 0 0.7793478 0.7549629 0 0.614821 0.7549629 0 0.9659617 0.04822399 0 0.8367641 0.04822399 0 0.8315138 0.05140405 0 0.9712656 0.05132908 0 0.9679347 0.04565831 0 0.8352459 0.04565831 0 0.9723389 0.05632395 0 0.9744847 0.05397637 0 0.9733984 0.04894017 0 0.8296921 0.04883305 0 0.8286955 0.05397637 0 0.830386 0.05632395 0 0.7874694 0.5734054 0 0.6066995 0.5734054 0 0.6082273 0.5670899 0 0.7859417 0.5670872 0 0.614821 0.5630932 0 0.7793478 0.5630932 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-01-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_square-01-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_square-01-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_square-01-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_square-01-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_square-01-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_speedlimit_35" name="roadsign_speedlimit_35">
+      <mesh>
+        <source id="geom-roadsign_speedlimit_35-positions">
+          <float_array id="geom-roadsign_speedlimit_35-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.51733 181.3723 27.77273 1.517323 181.3723 29.99887 1.517323 182.7215 -29.99803 1.517331 182.7215 -27.7719 2.082807 181.3723 27.77273 2.082799 181.3723 -30.51388 1.517331 184.8542 -30.51388 2.082807 184.8542 -29.99803 2.082807 182.7215 29.99887 2.082799 182.7215 30.51469 2.0828 184.8542 30.51469 1.517323 184.8542</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_35-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_35-normals">
+          <float_array id="geom-roadsign_speedlimit_35-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.1184299 0.9929624 0 0.1184301 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184295 -0.9929625 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.20874e-8 1 -6.26602e-8 -2.00677e-8 1 -1.27565e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.56093e-7 -1.30147e-8 -1 1.92878e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.29066e-7 -1 1.1687e-7 -1.28771e-7 -1 5.26002e-8 -1.29147e-7 -1 3.65291e-8 -1.30449e-7 -1 7.64328e-8 -0.2690739 0 -0.9631196 -0.2690743 0 -0.9631194 0.269075 0 -0.9631192 0.2690754 0 -0.9631191 -0.8070693 0 -0.5904567 -0.8070693 0 -0.5904567 -0.9929684 0 -0.1183797 -0.9929684 0 -0.1183799 0.807073 0 -0.5904517 0.807073 0 -0.5904516 0.992969 0 -0.1183747 0.992969 0 -0.1183749 1.24559e-7 1 -1.36581e-8 8.55806e-8 1 -5.27773e-8 1.27367e-7 1 -2.61167e-7 1.33706e-7 1 -2.52877e-7 -1.30103e-7 -1 8.95079e-8 -9.24669e-8 -1 1.00916e-7 1.35054e-7 1 -1.28057e-7 1.28771e-7 1 1.40955e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_35-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_35-map1">
+          <float_array id="geom-roadsign_speedlimit_35-map1-array" count="108">0.8366974 0.1983535 0 0.9658951 0.1983535 0 0.9711437 0.1951922 0 0.8314003 0.1952452 0 0.8351793 0.2006532 0 0.967868 0.2006532 0 0.8303196 0.1902536 0 0.8286291 0.1923352 0 0.829715 0.197358 0 0.9734589 0.1975122 0 0.9744183 0.1923352 0 0.9722725 0.1902536 0 0.803914 0.9856237 0 0.9846841 0.9856237 0 0.9831555 0.9919422 0 0.8054427 0.9919422 0 0.9765623 0.9959382 0 0.8120356 0.9959382 0 0.9658951 0.01826688 0 0.8366974 0.01826688 0 0.8314473 0.02144696 0 0.9711993 0.02137198 0 0.967868 0.01570123 0 0.8351793 0.01570123 0 0.9722725 0.02636686 0 0.9744183 0.02401928 0 0.973332 0.01898304 0 0.8296255 0.01887593 0 0.8286291 0.02401928 0 0.8303196 0.02636686 0 0.9846841 0.7769213 0 0.803914 0.7769213 0 0.8054419 0.7706057 0 0.9831563 0.770603 0 0.8120356 0.766609 0 0.9765623 0.766609 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_35-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_speedlimit_35-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_speedlimit_35-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_speedlimit_35-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_speedlimit_35-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_speedlimit_35-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_speedlimit_55" name="roadsign_speedlimit_55">
+      <mesh>
+        <source id="geom-roadsign_speedlimit_55-positions">
+          <float_array id="geom-roadsign_speedlimit_55-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.51733 181.3723 27.77273 1.517323 181.3723 29.99887 1.517323 182.7215 -29.99803 1.517331 182.7215 -27.7719 2.082807 181.3723 27.77273 2.082799 181.3723 -30.51388 1.517331 184.8542 -30.51388 2.082807 184.8542 -29.99803 2.082807 182.7215 29.99887 2.082799 182.7215 30.51469 2.0828 184.8542 30.51469 1.517323 184.8542</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_55-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_55-normals">
+          <float_array id="geom-roadsign_speedlimit_55-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.1184299 0.9929624 0 0.1184301 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184295 -0.9929625 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.20874e-8 1 -6.26602e-8 -2.00677e-8 1 -1.27565e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.56093e-7 -1.30147e-8 -1 1.92878e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.29066e-7 -1 1.1687e-7 -1.28771e-7 -1 5.26002e-8 -1.29147e-7 -1 3.65291e-8 -1.30449e-7 -1 7.64328e-8 -0.2690739 0 -0.9631196 -0.2690743 0 -0.9631194 0.269075 0 -0.9631192 0.2690754 0 -0.9631191 -0.8070693 0 -0.5904567 -0.8070693 0 -0.5904567 -0.9929684 0 -0.1183797 -0.9929684 0 -0.1183799 0.807073 0 -0.5904517 0.807073 0 -0.5904516 0.992969 0 -0.1183747 0.992969 0 -0.1183749 1.24559e-7 1 -1.36581e-8 8.55806e-8 1 -5.27773e-8 1.27367e-7 1 -2.61167e-7 1.33706e-7 1 -2.52877e-7 -1.30103e-7 -1 8.95079e-8 -9.24669e-8 -1 1.00916e-7 1.35054e-7 1 -1.28057e-7 1.28771e-7 1 1.40955e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_55-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_55-map1">
+          <float_array id="geom-roadsign_speedlimit_55-map1-array" count="108">0.8366974 0.1983535 0 0.9658951 0.1983535 0 0.9711437 0.1951922 0 0.8314003 0.1952452 0 0.8351793 0.2006532 0 0.967868 0.2006532 0 0.8303196 0.1902536 0 0.8286291 0.1923352 0 0.829715 0.197358 0 0.9734589 0.1975122 0 0.9744183 0.1923352 0 0.9722725 0.1902536 0 0.4083943 0.9856237 0 0.5891644 0.9856237 0 0.5876358 0.9919422 0 0.409923 0.9919422 0 0.5810425 0.9959382 0 0.4165159 0.9959382 0 0.9658951 0.01826688 0 0.8366974 0.01826688 0 0.8314473 0.02144696 0 0.9711993 0.02137198 0 0.967868 0.01570123 0 0.8351793 0.01570123 0 0.9722725 0.02636686 0 0.9744183 0.02401928 0 0.973332 0.01898304 0 0.8296255 0.01887593 0 0.8286291 0.02401928 0 0.8303196 0.02636686 0 0.5891644 0.7769213 0 0.4083943 0.7769213 0 0.4099222 0.7706057 0 0.5876366 0.770603 0 0.4165159 0.766609 0 0.5810425 0.766609 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_55-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_speedlimit_55-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_speedlimit_55-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_speedlimit_55-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_speedlimit_55-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_speedlimit_55-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_speedlimit_65" name="roadsign_speedlimit_65">
+      <mesh>
+        <source id="geom-roadsign_speedlimit_65-positions">
+          <float_array id="geom-roadsign_speedlimit_65-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.51733 181.3723 27.77273 1.517323 181.3723 29.99887 1.517323 182.7215 -29.99803 1.517331 182.7215 -27.7719 2.082807 181.3723 27.77273 2.082799 181.3723 -30.51388 1.517331 184.8542 -30.51388 2.082807 184.8542 -29.99803 2.082807 182.7215 29.99887 2.082799 182.7215 30.51469 2.0828 184.8542 30.51469 1.517323 184.8542</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_65-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_65-normals">
+          <float_array id="geom-roadsign_speedlimit_65-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.1184299 0.9929624 0 0.1184301 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184295 -0.9929625 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.20874e-8 1 -6.26602e-8 -2.00677e-8 1 -1.27565e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.56093e-7 -1.30147e-8 -1 1.92878e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.29066e-7 -1 1.1687e-7 -1.28771e-7 -1 5.26002e-8 -1.29147e-7 -1 3.65291e-8 -1.30449e-7 -1 7.64328e-8 -0.2690739 0 -0.9631196 -0.2690743 0 -0.9631194 0.269075 0 -0.9631192 0.2690754 0 -0.9631191 -0.8070693 0 -0.5904567 -0.8070693 0 -0.5904567 -0.9929684 0 -0.1183797 -0.9929684 0 -0.1183799 0.807073 0 -0.5904517 0.807073 0 -0.5904516 0.992969 0 -0.1183747 0.992969 0 -0.1183749 1.24559e-7 1 -1.36581e-8 8.55806e-8 1 -5.27773e-8 1.27367e-7 1 -2.61167e-7 1.33706e-7 1 -2.52877e-7 -1.30103e-7 -1 8.95079e-8 -9.24669e-8 -1 1.00916e-7 1.35054e-7 1 -1.28057e-7 1.28771e-7 1 1.40955e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_65-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_65-map1">
+          <float_array id="geom-roadsign_speedlimit_65-map1-array" count="108">0.8366974 0.1983535 0 0.9658951 0.1983535 0 0.9711437 0.1951922 0 0.8314003 0.1952452 0 0.8351793 0.2006532 0 0.967868 0.2006532 0 0.8303196 0.1902536 0 0.8286291 0.1923352 0 0.829715 0.197358 0 0.9734589 0.1975122 0 0.9744183 0.1923352 0 0.9722725 0.1902536 0 0.2074416 0.9856237 0 0.3882117 0.9856237 0 0.3866831 0.9919422 0 0.2089705 0.9919422 0 0.3800902 0.9959382 0 0.2155632 0.9959382 0 0.9658951 0.01826688 0 0.8366974 0.01826688 0 0.8314473 0.02144696 0 0.9711993 0.02137198 0 0.967868 0.01570123 0 0.8351793 0.01570123 0 0.9722725 0.02636686 0 0.9744183 0.02401928 0 0.973332 0.01898304 0 0.8296255 0.01887593 0 0.8286291 0.02401928 0 0.8303196 0.02636686 0 0.3882117 0.7769213 0 0.2074416 0.7769213 0 0.2089696 0.7706057 0 0.3866839 0.770603 0 0.2155632 0.766609 0 0.3800902 0.766609 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_65-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_speedlimit_65-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_speedlimit_65-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_speedlimit_65-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_speedlimit_65-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_speedlimit_65-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_speedlimit_25" name="roadsign_speedlimit_25">
+      <mesh>
+        <source id="geom-roadsign_speedlimit_25-positions">
+          <float_array id="geom-roadsign_speedlimit_25-positions-array" count="72">30.5147 1.517336 255.3129 -30.51388 1.517335 255.3129 27.77273 2.082813 258.7947 -30.51388 2.082811 255.3129 27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 30.5147 2.082812 255.3129 -27.7719 2.082812 258.7947 29.99858 1.517336 257.4457 -29.99776 1.517335 257.4457 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -27.7719 1.51733 181.3723 -29.99803 1.517331 182.7215 29.99887 1.517323 182.7215 27.77273 1.517323 181.3723 27.77273 2.082799 181.3723 -27.7719 2.082807 181.3723 -30.51388 1.517331 184.8542 -29.99803 2.082807 182.7215 -30.51388 2.082807 184.8542 29.99887 2.082799 182.7215 30.51469 1.517323 184.8542 30.51469 2.0828 184.8542</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_25-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_25-normals">
+          <float_array id="geom-roadsign_speedlimit_25-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.1184299 0.9929624 0 0.1184301 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184295 -0.9929625 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.20874e-8 1 -6.26602e-8 -2.00677e-8 1 -1.27565e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.56093e-7 -1.30147e-8 -1 1.92878e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.29066e-7 -1 1.1687e-7 -1.28771e-7 -1 5.26002e-8 -1.29147e-7 -1 3.65291e-8 -1.30449e-7 -1 7.64328e-8 -0.2690739 0 -0.9631196 -0.2690743 0 -0.9631194 0.269075 0 -0.9631192 0.2690754 0 -0.9631191 -0.8070693 0 -0.5904567 -0.8070693 0 -0.5904567 -0.9929684 0 -0.1183797 -0.9929684 0 -0.1183799 0.807073 0 -0.5904517 0.807073 0 -0.5904516 0.992969 0 -0.1183747 0.992969 0 -0.1183749 1.24559e-7 1 -1.36581e-8 8.55806e-8 1 -5.27773e-8 1.27367e-7 1 -2.61167e-7 1.33706e-7 1 -2.52877e-7 -1.30103e-7 -1 8.95079e-8 -9.24669e-8 -1 1.00916e-7 1.35054e-7 1 -1.28057e-7 1.28771e-7 1 1.40955e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_25-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_25-map1">
+          <float_array id="geom-roadsign_speedlimit_25-map1-array" count="108">0.8366974 0.1983535 0 0.8314003 0.1952452 0 0.9711437 0.1951922 0 0.9658951 0.1983535 0 0.967868 0.2006532 0 0.8351793 0.2006532 0 0.8303196 0.1902536 0 0.829715 0.197358 0 0.8286291 0.1923352 0 0.9734589 0.1975122 0 0.9722725 0.1902536 0 0.9744183 0.1923352 0 0.9658951 0.01826688 0 0.9711993 0.02137198 0 0.8314473 0.02144696 0 0.8366974 0.01826688 0 0.8351793 0.01570123 0 0.967868 0.01570123 0 0.9722725 0.02636686 0 0.973332 0.01898304 0 0.9744183 0.02401928 0 0.8296255 0.01887593 0 0.8303196 0.02636686 0 0.8286291 0.02401928 0 0.7793013 0.9959382 0 0.6147746 0.9959382 0 0.6081817 0.9919422 0 0.606653 0.9856237 0 0.7858945 0.9919422 0 0.7874231 0.9856237 0 0.6147746 0.766609 0 0.7793013 0.766609 0 0.7858953 0.770603 0 0.7874231 0.7769213 0 0.6081808 0.7706057 0 0.606653 0.7769213 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_25-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_speedlimit_25-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_speedlimit_25-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_speedlimit_25-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_speedlimit_25-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_speedlimit_25-map1" offset="2" set="0"/>
+          <p>8 0 1 4 1 0 5 2 3 5 2 3 9 3 2 8 0 1 4 4 0 2 5 5 7 6 4 7 6 4 5 7 3 4 4 0 10 8 7 8 9 1 0 10 6 0 10 6 6 11 8 10 8 7 11 12 9 9 13 2 5 7 3 5 7 3 7 6 4 11 12 9 2 5 5 4 4 0 8 9 1 8 9 1 10 8 7 2 5 5 3 14 11 1 15 10 9 13 2 9 13 2 11 12 9 3 14 11 10 16 26 6 17 27 3 18 29 3 18 29 11 19 28 10 16 26 0 20 6 8 0 1 9 3 2 9 3 2 1 21 10 0 20 6 2 22 25 10 16 26 11 19 28 11 19 28 7 23 24 2 22 25 13 24 13 12 25 12 15 26 15 15 26 15 14 27 14 13 24 13 12 28 12 17 29 17 16 30 16 16 30 16 15 31 15 12 28 12 19 32 19 13 33 13 18 34 18 18 34 18 20 35 20 19 32 19 21 36 21 14 37 14 15 31 15 15 31 15 16 30 16 21 36 21 17 29 17 12 28 12 13 33 13 13 33 13 19 32 19 17 29 17 23 38 23 22 39 22 14 37 14 14 37 14 21 36 21 23 38 23 19 40 32 20 41 33 23 42 35 23 42 35 21 43 34 19 40 32 18 44 18 13 24 13 14 27 14 14 27 14 22 45 22 18 44 18 17 46 31 19 40 32 21 43 34 21 43 34 16 47 30 17 46 31 0 10 6 22 39 22 23 38 23 23 38 23 6 11 8 0 10 6 6 17 27 23 42 35 20 41 33 20 41 33 3 18 29 6 17 27 3 14 11 20 35 20 18 34 18 18 34 18 1 15 10 3 14 11 1 21 10 18 44 18 22 45 22 22 45 22 0 20 6 1 21 10</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_speedlimit_45" name="roadsign_speedlimit_45">
+      <mesh>
+        <source id="geom-roadsign_speedlimit_45-positions">
+          <float_array id="geom-roadsign_speedlimit_45-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.51733 181.3723 27.77273 1.517323 181.3723 29.99887 1.517323 182.7215 -29.99803 1.517331 182.7215 -27.7719 2.082807 181.3723 27.77273 2.082799 181.3723 -30.51388 1.517331 184.8542 -30.51388 2.082807 184.8542 -29.99803 2.082807 182.7215 29.99887 2.082799 182.7215 30.51469 2.0828 184.8542 30.51469 1.517323 184.8542</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_45-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_45-normals">
+          <float_array id="geom-roadsign_speedlimit_45-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.1184299 0.9929624 0 0.1184301 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184295 -0.9929625 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.20874e-8 1 -6.26602e-8 -2.00677e-8 1 -1.27565e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.56093e-7 -1.30147e-8 -1 1.92878e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.29066e-7 -1 1.1687e-7 -1.28771e-7 -1 5.26002e-8 -1.29147e-7 -1 3.65291e-8 -1.30449e-7 -1 7.64328e-8 -0.2690739 0 -0.9631196 -0.2690743 0 -0.9631194 0.269075 0 -0.9631192 0.2690754 0 -0.9631191 -0.8070693 0 -0.5904567 -0.8070693 0 -0.5904567 -0.9929684 0 -0.1183797 -0.9929684 0 -0.1183799 0.807073 0 -0.5904517 0.807073 0 -0.5904516 0.992969 0 -0.1183747 0.992969 0 -0.1183749 1.24559e-7 1 -1.36581e-8 8.55806e-8 1 -5.27773e-8 1.27367e-7 1 -2.61167e-7 1.33706e-7 1 -2.52877e-7 -1.30103e-7 -1 8.95079e-8 -9.24669e-8 -1 1.00916e-7 1.35054e-7 1 -1.28057e-7 1.28771e-7 1 1.40955e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_45-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_speedlimit_45-map1">
+          <float_array id="geom-roadsign_speedlimit_45-map1-array" count="108">0.8366974 0.1983535 0 0.9658951 0.1983535 0 0.9711437 0.1951922 0 0.8314003 0.1952452 0 0.8351793 0.2006532 0 0.967868 0.2006532 0 0.8303196 0.1902536 0 0.8286291 0.1923352 0 0.829715 0.197358 0 0.9734589 0.1975122 0 0.9744183 0.1923352 0 0.9722725 0.1902536 0 0.006308558 0.9856237 0 0.1870787 0.9856237 0 0.1855501 0.9919422 0 0.007837267 0.9919422 0 0.1789569 0.9959382 0 0.01443016 0.9959382 0 0.9658951 0.01826688 0 0.8366974 0.01826688 0 0.8314473 0.02144696 0 0.9711993 0.02137198 0 0.967868 0.01570123 0 0.8351793 0.01570123 0 0.9722725 0.02636686 0 0.9744183 0.02401928 0 0.973332 0.01898304 0 0.8296255 0.01887593 0 0.8286291 0.02401928 0 0.8303196 0.02636686 0 0.1870787 0.7769213 0 0.006308558 0.7769213 0 0.007836413 0.7706057 0 0.1855509 0.770603 0 0.01443016 0.766609 0 0.1789569 0.766609 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_speedlimit_45-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_speedlimit_45-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_speedlimit_45-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_speedlimit_45-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_speedlimit_45-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_speedlimit_45-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_circle-02" name="roadsign_circle-02">
+      <mesh>
+        <source id="geom-roadsign_circle-02-positions">
+          <float_array id="geom-roadsign_circle-02-positions-array" count="144">-36.46013 2.080446 220.5841 -35.21777 2.080446 230.0208 -31.57534 2.080448 238.8143 -25.78108 2.080449 246.3656 -18.22986 2.08045 252.1598 -9.436272 2.080451 255.8022 4.09722e-4 2.080453 257.0446 9.43709 2.080454 255.8022 18.23067 2.080454 252.1598 25.7819 2.080455 246.3656 31.57616 2.080455 238.8143 35.21858 2.080455 230.0208 36.46095 2.080454 220.5841 35.21859 2.080453 211.1474 31.57618 2.080452 202.3538 25.78192 2.080451 194.8026 18.23069 2.08045 189.0083 9.437107 2.080448 185.3659 4.29392e-4 2.080447 184.1235 -9.436253 2.080446 185.3659 -18.22984 2.080445 189.0083 -25.78107 2.080445 194.8026 -31.57533 2.080445 202.3538 -35.21775 2.080445 211.1474 -36.46013 1.520446 220.5841 -35.21777 1.520447 230.0208 -31.57534 1.520448 238.8143 -25.78108 1.520449 246.3656 -18.22986 1.52045 252.1598 -9.436272 1.520451 255.8022 4.09842e-4 1.520453 257.0446 9.43709 1.520454 255.8022 18.23067 1.520454 252.1598 25.7819 1.520455 246.3656 31.57616 1.520455 238.8143 35.21858 1.520455 230.0208 36.46095 1.520454 220.5841 35.21859 1.520453 211.1474 31.57618 1.520452 202.3538 25.78192 1.520451 194.8026 18.23069 1.520449 189.0083 9.437107 1.520448 185.3659 4.29511e-4 1.520447 184.1235 -9.436253 1.520446 185.3659 -18.22984 1.520445 189.0083 -25.78107 1.520445 194.8026 -31.57533 1.520445 202.3538 -35.21775 1.520445 211.1474</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_circle-02-positions-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_circle-02-normals">
+          <float_array id="geom-roadsign_circle-02-normals-array" count="288">-1 0 -5.40605e-7 -1 0 -5.54957e-7 -0.9659258 0 0.2588193 -0.9659258 0 0.2588193 -0.8660253 0 0.5000003 -0.8660253 0 0.5000002 -0.7071074 0 0.7071062 -0.7071074 0 0.7071061 -0.4999996 0 0.8660256 -0.4999997 0 0.8660256 -0.258819 0 0.9659259 -0.2588189 -5.24271e-10 0.9659259 -3.34888e-8 5.24265e-10 1 6.57816e-8 -5.24257e-10 1 0.2588189 5.24271e-10 0.9659259 0.258819 0 0.9659259 0.4999992 0 0.8660259 0.4999991 0 0.8660259 0.7071069 0 0.7071066 0.7071069 0 0.7071066 0.8660254 0 0.5 0.8660254 0 0.5000001 0.9659258 0 0.2588192 0.9659258 0 0.2588192 1 0 7.51106e-7 1 0 6.92052e-7 0.9659259 0 -0.2588187 0.9659259 0 -0.2588187 0.8660254 0 -0.4999999 0.8660255 0 -0.4999999 0.7071069 0 -0.7071066 0.707107 0 -0.7071065 0.5000004 0 -0.8660252 0.5000003 0 -0.8660252 0.2588196 0 -0.9659257 0.2588197 5.24238e-10 -0.9659257 -4.30571e-8 -5.24247e-10 -1 -4.50006e-8 5.24255e-10 -1 -0.2588188 -5.24265e-10 -0.9659259 -0.2588189 0 -0.9659259 -0.4999991 0 -0.866026 -0.499999 0 -0.8660259 -0.7071064 0 -0.7071072 -0.7071064 0 -0.7071072 -0.8660251 0 -0.5000004 -0.8660251 0 -0.5000004 -0.9659257 0 -0.2588196 -0.9659257 0 -0.2588196 -1.30016e-7 1 -7.8561e-8 -2.11525e-7 1 -4.79474e-8 -1.05603e-7 1 -7.67216e-8 -8.93249e-8 1 -8.93261e-8 -1.14528e-7 1 -7.52531e-8 -1.09388e-7 1 -1.28652e-7 -1.16987e-7 1 -9.77631e-8 -1.1025e-7 1 -6.97987e-8 -1.15265e-7 1 -7.86296e-8 -1.53565e-7 1 -1.17834e-7 -1.32573e-7 1 -8.89434e-8 -3.5766e-7 1 -1.48148e-7 -1.13145e-7 1 -7.91743e-8 6.97966e-8 1 -1.10249e-7 -1.28564e-7 1 -6.0858e-8 -3.04081e-8 1 -1.66108e-7 -1.1173e-7 1 -8.33889e-8 -1.09388e-7 1 -1.28649e-7 -1.16987e-7 1 -9.77629e-8 -1.10249e-7 1 -6.97979e-8 -1.19228e-7 1 -8.54938e-8 -1.53564e-7 1 -1.17834e-7 -1.32573e-7 1 -8.89433e-8 -3.57658e-7 1 -1.48147e-7 1.11411e-7 -1 7.66752e-8 7.67821e-8 -1 5.8917e-8 1.21277e-7 -1 8.61087e-8 1.50654e-7 -1 1.34615e-7 1.14849e-7 -1 7.89279e-8 1.13693e-7 -1 9.59533e-8 1.12656e-7 -1 7.14114e-8 9.08828e-8 -1 1.0787e-7 1.14243e-7 -1 7.65529e-8 1.46261e-7 -1 6.14245e-8 1.21346e-7 -1 7.51421e-8 9.59531e-8 -1 7.57953e-8 1.13325e-7 -1 7.7188e-8 7.67818e-8 -1 5.89168e-8 1.21277e-7 -1 8.61085e-8 1.50653e-7 -1 1.34614e-7 1.15362e-7 -1 8.08418e-8 1.13693e-7 -1 9.59518e-8 1.12656e-7 -1 7.14115e-8 9.08839e-8 -1 1.07868e-7 1.12842e-7 -1 7.79539e-8 1.46261e-7 -1 6.14242e-8 1.21346e-7 -1 7.5142e-8 9.59537e-8 -1 7.57952e-8</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_circle-02-normals-array" count="96" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_circle-02-map1">
+          <float_array id="geom-roadsign_circle-02-map1-array" count="216">0.9857512 0.1086232 0 0.9828891 0.1303643 0 0.9802169 0.1295165 0 0.9829908 0.1084467 0 0.9744973 0.150623 0 0.9720837 0.1491518 0 0.9611481 0.1680198 0 0.9591461 0.1660122 0 0.943751 0.1813689 0 0.9422855 0.1789493 0 0.9234923 0.189761 0 0.9226515 0.187082 0 0.901751 0.192623 0 0.9015805 0.1898568 0 0.8800106 0.189761 0 0.8805099 0.187082 0 0.859751 0.1813689 0 0.8608752 0.1789493 0 0.8423546 0.1680198 0 0.8440148 0.1660122 0 0.8290051 0.150623 0 0.8310767 0.1491518 0 0.8206137 0.1303643 0 0.822944 0.1295165 0 0.817751 0.1086232 0 0.8201703 0.1084467 0 0.8206137 0.08688211 0 0.822944 0.08737475 0 0.8290051 0.06662293 0 0.8310767 0.06774152 0 0.8423546 0.04922661 0 0.8440143 0.05087901 0 0.859751 0.03587737 0 0.8608752 0.03794154 0 0.8800106 0.02748509 0 0.8805099 0.02980878 0 0.901751 0.02462301 0 0.9015805 0.0270339 0 0.9234923 0.02748509 0 0.9226511 0.02980878 0 0.943751 0.03587737 0 0.9422855 0.03794154 0 0.9611478 0.04922661 0 0.9591461 0.05087901 0 0.9744973 0.06662293 0 0.9720837 0.06774152 0 0.9828891 0.08688211 0 0.9802169 0.08737475 0 0.4819458 0.1141851 0 0.4784133 0.1410179 0 0.4680565 0.166022 0 0.4515809 0.1874925 0 0.4301096 0.2039684 0 0.405106 0.2143254 0 0.378274 0.2178566 0 0.3514416 0.2143254 0 0.3264378 0.2039684 0 0.3049668 0.1874925 0 0.2884916 0.166022 0 0.2781342 0.1410179 0 0.274602 0.1141851 0 0.2781342 0.08735459 0 0.2884916 0.06235047 0 0.3049668 0.04087795 0 0.3264378 0.02440394 0 0.3514416 0.01404705 0 0.378274 0.01051373 0 0.405106 0.01404705 0 0.4301096 0.02440394 0 0.4515809 0.04087795 0 0.4680565 0.06235047 0 0.4784133 0.08735237 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_circle-02-map1-array" count="72" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_circle-02-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_circle-02-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="92">
+          <input semantic="VERTEX" source="#geom-roadsign_circle-02-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_circle-02-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_circle-02-map1" offset="2" set="0"/>
+          <p>0 0 0 24 1 3 25 2 2 25 2 2 1 3 1 0 0 0 1 3 1 25 2 2 26 4 5 26 4 5 2 5 4 1 3 1 2 5 4 26 4 5 27 6 7 27 6 7 3 7 6 2 5 4 3 7 6 27 6 7 28 8 9 28 8 9 4 9 8 3 7 6 4 9 8 28 8 9 29 10 11 29 10 11 5 11 10 4 9 8 5 11 10 29 10 11 30 12 13 30 12 13 6 13 12 5 11 10 6 13 12 30 12 13 31 14 15 31 14 15 7 15 14 6 13 12 7 15 14 31 14 15 32 16 17 32 16 17 8 17 16 7 15 14 8 17 16 32 16 17 33 18 19 33 18 19 9 19 18 8 17 16 9 19 18 33 18 19 34 20 21 34 20 21 10 21 20 9 19 18 10 21 20 34 20 21 35 22 23 35 22 23 11 23 22 10 21 20 11 23 22 35 22 23 36 24 25 36 24 25 12 25 24 11 23 22 12 25 24 36 24 25 37 26 27 37 26 27 13 27 26 12 25 24 13 27 26 37 26 27 38 28 29 38 28 29 14 29 28 13 27 26 14 29 28 38 28 29 39 30 31 39 30 31 15 31 30 14 29 28 15 31 30 39 30 31 40 32 33 40 32 33 16 33 32 15 31 30 16 33 32 40 32 33 41 34 35 41 34 35 17 35 34 16 33 32 17 35 34 41 34 35 42 36 37 42 36 37 18 37 36 17 35 34 18 37 36 42 36 37 43 38 39 43 38 39 19 39 38 18 37 36 19 39 38 43 38 39 44 40 41 44 40 41 20 41 40 19 39 38 20 41 40 44 40 41 45 42 43 45 42 43 21 43 42 20 41 40 21 43 42 45 42 43 46 44 45 46 44 45 22 45 44 21 43 42 22 45 44 46 44 45 47 46 47 47 46 47 23 47 46 22 45 44 23 47 46 47 46 47 24 1 3 24 1 3 0 0 0 23 47 46 0 48 48 1 49 49 2 50 50 2 50 50 3 51 51 4 52 52 0 48 48 2 50 50 4 52 52 4 52 52 5 53 53 6 54 54 6 54 54 7 55 55 8 56 56 4 52 52 6 54 54 8 56 56 0 48 48 4 52 52 8 56 56 8 56 56 9 57 57 10 58 58 10 58 58 11 59 59 12 60 60 8 56 56 10 58 58 12 60 60 12 60 60 13 61 61 14 62 62 14 62 62 15 63 63 16 64 64 12 60 60 14 62 62 16 64 64 8 56 56 12 60 60 16 64 64 0 48 48 8 56 56 16 64 64 16 64 64 17 65 65 18 66 66 18 66 66 19 67 67 20 68 68 16 64 64 18 66 66 20 68 68 0 48 48 16 64 64 20 68 68 20 68 68 21 69 69 22 70 70 0 48 48 20 68 68 22 70 70 23 71 71 0 48 48 22 70 70 47 72 47 46 73 45 45 74 43 45 74 43 44 75 41 43 76 39 47 72 47 45 74 43 43 76 39 43 76 39 42 77 37 41 78 35 41 78 35 40 79 33 39 80 31 43 76 39 41 78 35 39 80 31 47 72 47 43 76 39 39 80 31 39 80 31 38 81 29 37 82 27 37 82 27 36 83 25 35 84 23 39 80 31 37 82 27 35 84 23 35 84 23 34 85 21 33 86 19 33 86 19 32 87 17 31 88 15 35 84 23 33 86 19 31 88 15 39 80 31 35 84 23 31 88 15 47 72 47 39 80 31 31 88 15 31 88 15 30 89 13 29 90 11 29 90 11 28 91 9 27 92 7 31 88 15 29 90 11 27 92 7 47 72 47 31 88 15 27 92 7 27 92 7 26 93 5 25 94 2 47 72 47 27 92 7 25 94 2 24 95 3 47 72 47 25 94 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_circle-01" name="roadsign_circle-01">
+      <mesh>
+        <source id="geom-roadsign_circle-01-positions">
+          <float_array id="geom-roadsign_circle-01-positions-array" count="144">-36.46013 2.080446 220.5841 -36.46013 1.520446 220.5841 -35.21777 1.520447 230.0208 -35.21777 2.080446 230.0208 -31.57534 1.520448 238.8143 -31.57534 2.080448 238.8143 -25.78108 1.520449 246.3656 -25.78108 2.080449 246.3656 -18.22986 1.52045 252.1598 -18.22986 2.08045 252.1598 -9.436272 1.520451 255.8022 -9.436272 2.080451 255.8022 4.09842e-4 1.520453 257.0446 4.09722e-4 2.080453 257.0446 9.43709 1.520454 255.8022 9.43709 2.080454 255.8022 18.23067 1.520454 252.1598 18.23067 2.080454 252.1598 25.7819 1.520455 246.3656 25.7819 2.080455 246.3656 31.57616 1.520455 238.8143 31.57616 2.080455 238.8143 35.21858 1.520455 230.0208 35.21858 2.080455 230.0208 36.46095 1.520454 220.5841 36.46095 2.080454 220.5841 35.21859 1.520453 211.1474 35.21859 2.080453 211.1474 31.57618 1.520452 202.3538 31.57618 2.080452 202.3538 25.78192 1.520451 194.8026 25.78192 2.080451 194.8026 18.23069 1.520449 189.0083 18.23069 2.08045 189.0083 9.437107 1.520448 185.3659 9.437107 2.080448 185.3659 4.29511e-4 1.520447 184.1235 4.29392e-4 2.080447 184.1235 -9.436253 1.520446 185.3659 -9.436253 2.080446 185.3659 -18.22984 1.520445 189.0083 -18.22984 2.080445 189.0083 -25.78107 1.520445 194.8026 -25.78107 2.080445 194.8026 -31.57533 1.520445 202.3538 -31.57533 2.080445 202.3538 -35.21775 1.520445 211.1474 -35.21775 2.080445 211.1474</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_circle-01-positions-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_circle-01-normals">
+          <float_array id="geom-roadsign_circle-01-normals-array" count="288">-1 0 -5.40605e-7 -1 0 -5.54957e-7 -0.9659258 0 0.2588193 -0.9659258 0 0.2588193 -0.8660253 0 0.5000003 -0.8660253 0 0.5000002 -0.7071074 0 0.7071062 -0.7071074 0 0.7071061 -0.4999996 0 0.8660256 -0.4999997 0 0.8660256 -0.258819 0 0.9659259 -0.2588189 -5.24271e-10 0.9659259 -3.34888e-8 5.24265e-10 1 6.57816e-8 -5.24257e-10 1 0.2588189 5.24271e-10 0.9659259 0.258819 0 0.9659259 0.4999992 0 0.8660259 0.4999991 0 0.8660259 0.7071069 0 0.7071066 0.7071069 0 0.7071066 0.8660254 0 0.5 0.8660254 0 0.5000001 0.9659258 0 0.2588192 0.9659258 0 0.2588192 1 0 7.51106e-7 1 0 6.92052e-7 0.9659259 0 -0.2588187 0.9659259 0 -0.2588187 0.8660254 0 -0.4999999 0.8660255 0 -0.4999999 0.7071069 0 -0.7071066 0.707107 0 -0.7071065 0.5000004 0 -0.8660252 0.5000003 0 -0.8660252 0.2588196 0 -0.9659257 0.2588197 5.24238e-10 -0.9659257 -4.30571e-8 -5.24247e-10 -1 -4.50006e-8 5.24255e-10 -1 -0.2588188 -5.24265e-10 -0.9659259 -0.2588189 0 -0.9659259 -0.4999991 0 -0.866026 -0.499999 0 -0.8660259 -0.7071064 0 -0.7071072 -0.7071064 0 -0.7071072 -0.8660251 0 -0.5000004 -0.8660251 0 -0.5000004 -0.9659257 0 -0.2588196 -0.9659257 0 -0.2588196 -1.30016e-7 1 -7.8561e-8 -2.11525e-7 1 -4.79474e-8 -1.05603e-7 1 -7.67216e-8 -8.93249e-8 1 -8.93261e-8 -1.14528e-7 1 -7.52531e-8 -1.09388e-7 1 -1.28652e-7 -1.16987e-7 1 -9.77631e-8 -1.1025e-7 1 -6.97987e-8 -1.15265e-7 1 -7.86296e-8 -1.53565e-7 1 -1.17834e-7 -1.32573e-7 1 -8.89434e-8 -3.5766e-7 1 -1.48148e-7 -1.13145e-7 1 -7.91743e-8 6.97966e-8 1 -1.10249e-7 -1.28564e-7 1 -6.0858e-8 -3.04081e-8 1 -1.66108e-7 -1.1173e-7 1 -8.33889e-8 -1.09388e-7 1 -1.28649e-7 -1.16987e-7 1 -9.77629e-8 -1.10249e-7 1 -6.97979e-8 -1.19228e-7 1 -8.54938e-8 -1.53564e-7 1 -1.17834e-7 -1.32573e-7 1 -8.89433e-8 -3.57658e-7 1 -1.48147e-7 1.11411e-7 -1 7.66752e-8 7.67821e-8 -1 5.8917e-8 1.21277e-7 -1 8.61087e-8 1.50654e-7 -1 1.34615e-7 1.14849e-7 -1 7.89279e-8 1.13693e-7 -1 9.59533e-8 1.12656e-7 -1 7.14114e-8 9.08828e-8 -1 1.0787e-7 1.14243e-7 -1 7.65529e-8 1.46261e-7 -1 6.14245e-8 1.21346e-7 -1 7.51421e-8 9.59531e-8 -1 7.57953e-8 1.13325e-7 -1 7.7188e-8 7.67818e-8 -1 5.89168e-8 1.21277e-7 -1 8.61085e-8 1.50653e-7 -1 1.34614e-7 1.15362e-7 -1 8.08418e-8 1.13693e-7 -1 9.59518e-8 1.12656e-7 -1 7.14115e-8 9.08839e-8 -1 1.07868e-7 1.12842e-7 -1 7.79539e-8 1.46261e-7 -1 6.14242e-8 1.21346e-7 -1 7.5142e-8 9.59537e-8 -1 7.57952e-8</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_circle-01-normals-array" count="96" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_circle-01-map1">
+          <float_array id="geom-roadsign_circle-01-map1-array" count="216">0.9857512 0.1086232 0 0.9829908 0.1084467 0 0.9802169 0.1295165 0 0.9828891 0.1303643 0 0.9720837 0.1491518 0 0.9744973 0.150623 0 0.9591461 0.1660122 0 0.9611481 0.1680198 0 0.9422855 0.1789493 0 0.943751 0.1813689 0 0.9226515 0.187082 0 0.9234923 0.189761 0 0.9015805 0.1898568 0 0.901751 0.192623 0 0.8805099 0.187082 0 0.8800106 0.189761 0 0.8608752 0.1789493 0 0.859751 0.1813689 0 0.8440148 0.1660122 0 0.8423546 0.1680198 0 0.8310767 0.1491518 0 0.8290051 0.150623 0 0.822944 0.1295165 0 0.8206137 0.1303643 0 0.8201703 0.1084467 0 0.817751 0.1086232 0 0.822944 0.08737475 0 0.8206137 0.08688211 0 0.8310767 0.06774152 0 0.8290051 0.06662293 0 0.8440143 0.05087901 0 0.8423546 0.04922661 0 0.8608752 0.03794154 0 0.859751 0.03587737 0 0.8805099 0.02980878 0 0.8800106 0.02748509 0 0.9015805 0.0270339 0 0.901751 0.02462301 0 0.9226511 0.02980878 0 0.9234923 0.02748509 0 0.9422855 0.03794154 0 0.943751 0.03587737 0 0.9591461 0.05087901 0 0.9611478 0.04922661 0 0.9720837 0.06774152 0 0.9744973 0.06662293 0 0.9802169 0.08737475 0 0.9828891 0.08688211 0 0.7290663 0.08735237 0 0.7325988 0.1141851 0 0.7290663 0.1410179 0 0.7187095 0.166022 0 0.7022339 0.1874925 0 0.6807626 0.2039684 0 0.655759 0.2143254 0 0.628927 0.2178566 0 0.6020946 0.2143254 0 0.5770909 0.2039684 0 0.5556198 0.1874925 0 0.5391446 0.166022 0 0.5287872 0.1410179 0 0.525255 0.1141851 0 0.5287872 0.08735459 0 0.5391446 0.06235047 0 0.5556198 0.04087795 0 0.5770909 0.02440394 0 0.6020946 0.01404705 0 0.628927 0.01051373 0 0.655759 0.01404705 0 0.6807626 0.02440394 0 0.7022339 0.04087795 0 0.7187095 0.06235047 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_circle-01-map1-array" count="72" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_circle-01-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_circle-01-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="92">
+          <input semantic="VERTEX" source="#geom-roadsign_circle-01-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_circle-01-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_circle-01-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 2 2 2 2 2 2 3 3 3 0 0 0 3 3 3 2 2 2 4 4 4 4 4 4 5 5 5 3 3 3 5 5 5 4 4 4 6 6 6 6 6 6 7 7 7 5 5 5 7 7 7 6 6 6 8 8 8 8 8 8 9 9 9 7 7 7 9 9 9 8 8 8 10 10 10 10 10 10 11 11 11 9 9 9 11 11 11 10 10 10 12 12 12 12 12 12 13 13 13 11 11 11 13 13 13 12 12 12 14 14 14 14 14 14 15 15 15 13 13 13 15 15 15 14 14 14 16 16 16 16 16 16 17 17 17 15 15 15 17 17 17 16 16 16 18 18 18 18 18 18 19 19 19 17 17 17 19 19 19 18 18 18 20 20 20 20 20 20 21 21 21 19 19 19 21 21 21 20 20 20 22 22 22 22 22 22 23 23 23 21 21 21 23 23 23 22 22 22 24 24 24 24 24 24 25 25 25 23 23 23 25 25 25 24 24 24 26 26 26 26 26 26 27 27 27 25 25 25 27 27 27 26 26 26 28 28 28 28 28 28 29 29 29 27 27 27 29 29 29 28 28 28 30 30 30 30 30 30 31 31 31 29 29 29 31 31 31 30 30 30 32 32 32 32 32 32 33 33 33 31 31 31 33 33 33 32 32 32 34 34 34 34 34 34 35 35 35 33 33 33 35 35 35 34 34 34 36 36 36 36 36 36 37 37 37 35 35 35 37 37 37 36 36 36 38 38 38 38 38 38 39 39 39 37 37 37 39 39 39 38 38 38 40 40 40 40 40 40 41 41 41 39 39 39 41 41 41 40 40 40 42 42 42 42 42 42 43 43 43 41 41 41 43 43 43 42 42 42 44 44 44 44 44 44 45 45 45 43 43 43 45 45 45 44 44 44 46 46 46 46 46 46 47 47 47 45 45 45 47 47 47 46 46 46 1 1 1 1 1 1 0 0 0 47 47 47 0 48 49 3 49 50 5 50 51 5 50 51 7 51 52 9 52 53 0 48 49 5 50 51 9 52 53 9 52 53 11 53 54 13 54 55 13 54 55 15 55 56 17 56 57 9 52 53 13 54 55 17 56 57 0 48 49 9 52 53 17 56 57 17 56 57 19 57 58 21 58 59 21 58 59 23 59 60 25 60 61 17 56 57 21 58 59 25 60 61 25 60 61 27 61 62 29 62 63 29 62 63 31 63 64 33 64 65 25 60 61 29 62 63 33 64 65 17 56 57 25 60 61 33 64 65 0 48 49 17 56 57 33 64 65 33 64 65 35 65 66 37 66 67 37 66 67 39 67 68 41 68 69 33 64 65 37 66 67 41 68 69 0 48 49 33 64 65 41 68 69 41 68 69 43 69 70 45 70 71 0 48 49 41 68 69 45 70 71 47 71 48 0 48 49 45 70 71 46 72 46 44 73 44 42 74 42 42 74 42 40 75 40 38 76 38 46 72 46 42 74 42 38 76 38 38 76 38 36 77 36 34 78 34 34 78 34 32 79 32 30 80 30 38 76 38 34 78 34 30 80 30 46 72 46 38 76 38 30 80 30 30 80 30 28 81 28 26 82 26 26 82 26 24 83 24 22 84 22 30 80 30 26 82 26 22 84 22 22 84 22 20 85 20 18 86 18 18 86 18 16 87 16 14 88 14 22 84 22 18 86 18 14 88 14 30 80 30 22 84 22 14 88 14 46 72 46 30 80 30 14 88 14 14 88 14 12 89 12 10 90 10 10 90 10 8 91 8 6 92 6 14 88 14 10 90 10 6 92 6 46 72 46 14 88 14 6 92 6 6 92 6 4 93 4 2 94 2 46 72 46 6 92 6 2 94 2 1 95 1 46 72 46 2 94 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_uturn_L" name="roadsign_uturn_L">
+      <mesh>
+        <source id="geom-roadsign_uturn_L-positions">
+          <float_array id="geom-roadsign_uturn_L-positions-array" count="72">-2.082821 2.080445 176.7569 -39.92673 2.080453 214.4924 -40.77089 2.080454 216.5843 -39.9277 2.080453 218.6766 -2.110604 2.080455 256.4203 -0.01365221 2.080455 257.2624 2.083645 2.080454 256.4213 39.92756 2.080446 218.6857 40.77172 2.080446 216.5938 39.92852 2.080446 214.5015 2.111428 2.080445 176.7579 0.01447725 2.080445 175.9158 2.111428 1.52044 176.7579 39.92852 1.520442 214.5015 39.92756 1.520442 218.6857 2.083645 1.52045 256.4213 -2.110603 1.52045 256.4203 -39.9277 1.520449 218.6766 -39.92673 1.520449 214.4924 -2.08282 1.520441 176.7569 0.01447725 1.52044 175.9158 40.77172 1.520442 216.5938 -0.01365209 1.52045 257.2624 -40.77089 1.520449 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_uturn_L-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_uturn_L-normals">
+          <float_array id="geom-roadsign_uturn_L-normals-array" count="144">8.46312e-8 1 -1.06074e-7 -2.42983e-7 1 2.11872e-7 4.68587e-8 1 -1.66338e-7 1.15942e-7 1 -1.37885e-7 5.55991e-8 1 -1.64928e-7 4.30612e-7 1 2.23349e-7 4.47481e-8 1 -7.36745e-8 3.33041e-8 1 -6.82313e-8 3.38319e-7 1 -3.64245e-7 7.9845e-8 1 -1.3202e-7 9.04698e-8 1 -1.22643e-7 2.40449e-7 1 3.2641e-8 0.5506604 4.66832e-7 -0.8347294 0.5506601 4.43838e-7 -0.8347296 0.8338602 2.04881e-9 -0.5519758 0.8338602 0 -0.5519757 0.8336038 2.04676e-9 0.5523629 0.8336037 0 0.5523629 0.550271 4.66503e-7 0.8349862 0.5502712 4.49789e-7 0.834986 -0.5506603 -4.66832e-7 0.8347294 -0.5506603 -4.50099e-7 0.8347294 -0.8338615 -2.04882e-9 0.5519738 -0.8338616 0 0.5519736 -0.8336042 -2.04676e-9 -0.5523622 -0.8336043 0 -0.5523621 -0.5502762 -4.66507e-7 -0.8349828 -0.550276 -4.43539e-7 -0.8349828 2.29092e-4 -2.64098e-8 -1 2.29163e-4 2.64395e-8 -1 1 0 2.3391e-4 1 0 2.33747e-4 -2.35388e-4 1.97566e-8 1 -2.35235e-4 -1.98796e-8 1 -1 0 -2.35076e-4 -1 0 -2.35107e-4 -1.35259e-7 -1 1.16469e-7 -2.52804e-7 -1 -4.50317e-8 -8.68068e-8 -1 1.30559e-7 -8.53173e-8 -1 2.12444e-7 -8.56321e-8 -1 1.295e-7 -1.42792e-7 -1 1.71495e-7 -9.33127e-8 -1 1.32374e-7 -6.26318e-8 -1 1.45687e-7 -8.51615e-8 -1 1.16433e-7 -8.52827e-8 -1 7.08017e-8 -8.66846e-8 -1 1.14807e-7 -2.32646e-7 -1 2.64683e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_uturn_L-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_uturn_L-map1">
+          <float_array id="geom-roadsign_uturn_L-map1-array" count="108">0.2566571 0.178553 0 0.3641437 0.2857317 0 0.3665413 0.2916731 0 0.3641465 0.2976159 0 0.2567361 0.4048176 0 0.2507802 0.4072095 0 0.2448234 0.4048206 0 0.1373368 0.2976417 0 0.1349392 0.2917002 0 0.137334 0.2857576 0 0.2447445 0.1785557 0 0.2507003 0.176164 0 0.896757 0.01213237 0 0.8963893 0.008253101 0 0.8087094 0.09576262 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8087118 0.1054637 0 0.8964537 0.1929544 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9061781 0.1929519 0 0.9938578 0.1054426 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9938555 0.09574153 0 0.9061136 0.008250902 0 0.9061028 0.01213026 0 0.9012511 0.006300764 0 0.9014298 0.01025603 0 0.8067545 0.1006135 0 0.8106119 0.1008971 0 0.9013162 0.1949045 0 0.9014923 0.1915171 0 0.9958127 0.1005915 0 0.99231 0.1008759 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_uturn_L-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_uturn_L-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_uturn_L-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_uturn_L-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_uturn_L-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_uturn_L-map1" offset="2" set="0"/>
+          <p>2 0 2 3 1 3 4 2 4 1 3 1 2 0 2 4 2 4 5 4 5 6 5 6 7 6 7 4 2 4 5 4 5 7 6 7 8 7 8 9 8 9 10 9 10 7 6 7 8 7 8 10 9 10 4 2 4 7 6 7 10 9 10 1 3 1 4 2 4 10 9 10 1 3 1 10 9 10 11 10 11 0 11 0 1 3 1 11 10 11 12 12 12 10 13 13 9 14 14 9 14 14 13 15 15 12 12 12 14 16 16 7 17 17 6 18 18 6 18 18 15 19 19 14 16 16 16 20 20 4 21 21 3 22 22 3 22 22 17 23 23 16 20 20 18 24 24 1 25 25 0 26 26 0 26 26 19 27 27 18 24 24 11 28 28 20 29 29 19 27 27 19 27 27 0 26 26 11 28 28 8 30 30 21 31 31 13 15 15 13 15 15 9 14 14 8 30 30 5 32 32 22 33 33 15 19 19 15 19 19 6 18 18 5 32 32 2 34 34 23 35 35 17 23 23 17 23 23 3 22 22 2 34 34 10 13 13 12 12 12 20 29 29 20 29 29 11 28 28 10 13 13 7 17 17 14 16 16 21 31 31 21 31 31 8 30 30 7 17 17 4 21 21 16 20 20 22 33 33 22 33 33 5 32 32 4 21 21 1 25 25 18 24 24 23 35 35 23 35 35 2 34 34 1 25 25 21 36 31 14 37 16 15 38 19 15 38 19 22 39 33 16 40 20 16 40 20 17 41 23 23 42 35 15 38 19 16 40 20 23 42 35 23 42 35 18 43 24 19 44 27 19 44 27 20 45 29 12 46 12 23 42 35 19 44 27 12 46 12 15 38 19 23 42 35 12 46 12 21 36 31 15 38 19 12 46 12 13 47 15 21 36 31 12 46 12</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_diamond-05" name="roadsign_diamond-05">
+      <mesh>
+        <source id="geom-roadsign_diamond-05-positions">
+          <float_array id="geom-roadsign_diamond-05-positions-array" count="72">-2.082821 2.080445 176.7569 -39.92673 2.080453 214.4924 -40.77089 2.080454 216.5843 -39.9277 2.080453 218.6766 -2.110604 2.080455 256.4203 -0.01365221 2.080455 257.2624 2.083645 2.080454 256.4213 39.92756 2.080446 218.6857 40.77172 2.080446 216.5938 39.92852 2.080446 214.5015 2.111428 2.080445 176.7579 0.01447725 2.080445 175.9158 2.111428 1.52044 176.7579 39.92852 1.520442 214.5015 39.92756 1.520442 218.6857 2.083645 1.52045 256.4213 -2.110603 1.52045 256.4203 -39.9277 1.520449 218.6766 -39.92673 1.520449 214.4924 -2.08282 1.520441 176.7569 0.01447725 1.52044 175.9158 40.77172 1.520442 216.5938 -0.01365209 1.52045 257.2624 -40.77089 1.520449 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_diamond-05-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_diamond-05-normals">
+          <float_array id="geom-roadsign_diamond-05-normals-array" count="144">8.46312e-8 1 -1.06074e-7 -2.42983e-7 1 2.11872e-7 4.68587e-8 1 -1.66338e-7 1.15942e-7 1 -1.37885e-7 5.55991e-8 1 -1.64928e-7 4.30612e-7 1 2.23349e-7 4.47481e-8 1 -7.36745e-8 3.33041e-8 1 -6.82313e-8 3.38319e-7 1 -3.64245e-7 7.9845e-8 1 -1.3202e-7 9.04698e-8 1 -1.22643e-7 2.40449e-7 1 3.2641e-8 0.5506604 4.66832e-7 -0.8347294 0.5506601 4.43838e-7 -0.8347296 0.8338602 2.04881e-9 -0.5519758 0.8338602 0 -0.5519757 0.8336038 2.04676e-9 0.5523629 0.8336037 0 0.5523629 0.550271 4.66503e-7 0.8349862 0.5502712 4.49789e-7 0.834986 -0.5506603 -4.66832e-7 0.8347294 -0.5506603 -4.50099e-7 0.8347294 -0.8338615 -2.04882e-9 0.5519738 -0.8338616 0 0.5519736 -0.8336042 -2.04676e-9 -0.5523622 -0.8336043 0 -0.5523621 -0.5502762 -4.66507e-7 -0.8349828 -0.550276 -4.43539e-7 -0.8349828 2.29092e-4 -2.64098e-8 -1 2.29163e-4 2.64395e-8 -1 1 0 2.3391e-4 1 0 2.33747e-4 -2.35388e-4 1.97566e-8 1 -2.35235e-4 -1.98796e-8 1 -1 0 -2.35076e-4 -1 0 -2.35107e-4 -1.35259e-7 -1 1.16469e-7 -2.52804e-7 -1 -4.50317e-8 -8.68068e-8 -1 1.30559e-7 -8.53173e-8 -1 2.12444e-7 -8.56321e-8 -1 1.295e-7 -1.42792e-7 -1 1.71495e-7 -9.33127e-8 -1 1.32374e-7 -6.26318e-8 -1 1.45687e-7 -8.51615e-8 -1 1.16433e-7 -8.52827e-8 -1 7.08017e-8 -8.66846e-8 -1 1.14807e-7 -2.32646e-7 -1 2.64683e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_diamond-05-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_diamond-05-map1">
+          <float_array id="geom-roadsign_diamond-05-map1-array" count="108">0.5108131 0.179721 0 0.6182996 0.2868998 0 0.6206972 0.2928411 0 0.6183024 0.2987838 0 0.5108922 0.4059856 0 0.5049363 0.4083776 0 0.4989795 0.4059885 0 0.3914929 0.2988097 0 0.3890953 0.2928681 0 0.3914901 0.2869256 0 0.4989007 0.1797237 0 0.5048564 0.177332 0 0.896757 0.01213237 0 0.8963893 0.008253101 0 0.8087094 0.09576262 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8087118 0.1054637 0 0.8964537 0.1929544 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9061781 0.1929519 0 0.9938578 0.1054426 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9938555 0.09574153 0 0.9061136 0.008250902 0 0.9061028 0.01213026 0 0.9012511 0.006300764 0 0.9014298 0.01025603 0 0.8067545 0.1006135 0 0.8106119 0.1008971 0 0.9013162 0.1949045 0 0.9014923 0.1915171 0 0.9958127 0.1005915 0 0.99231 0.1008759 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_diamond-05-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_diamond-05-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_diamond-05-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_diamond-05-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_diamond-05-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_diamond-05-map1" offset="2" set="0"/>
+          <p>2 0 2 3 1 3 4 2 4 1 3 1 2 0 2 4 2 4 5 4 5 6 5 6 7 6 7 4 2 4 5 4 5 7 6 7 8 7 8 9 8 9 10 9 10 7 6 7 8 7 8 10 9 10 4 2 4 7 6 7 10 9 10 1 3 1 4 2 4 10 9 10 1 3 1 10 9 10 11 10 11 0 11 0 1 3 1 11 10 11 12 12 12 10 13 13 9 14 14 9 14 14 13 15 15 12 12 12 14 16 16 7 17 17 6 18 18 6 18 18 15 19 19 14 16 16 16 20 20 4 21 21 3 22 22 3 22 22 17 23 23 16 20 20 18 24 24 1 25 25 0 26 26 0 26 26 19 27 27 18 24 24 11 28 28 20 29 29 19 27 27 19 27 27 0 26 26 11 28 28 8 30 30 21 31 31 13 15 15 13 15 15 9 14 14 8 30 30 5 32 32 22 33 33 15 19 19 15 19 19 6 18 18 5 32 32 2 34 34 23 35 35 17 23 23 17 23 23 3 22 22 2 34 34 10 13 13 12 12 12 20 29 29 20 29 29 11 28 28 10 13 13 7 17 17 14 16 16 21 31 31 21 31 31 8 30 30 7 17 17 4 21 21 16 20 20 22 33 33 22 33 33 5 32 32 4 21 21 1 25 25 18 24 24 23 35 35 23 35 35 2 34 34 1 25 25 21 36 31 14 37 16 15 38 19 15 38 19 22 39 33 16 40 20 16 40 20 17 41 23 23 42 35 15 38 19 16 40 20 23 42 35 23 42 35 18 43 24 19 44 27 19 44 27 20 45 29 12 46 12 23 42 35 19 44 27 12 46 12 15 38 19 23 42 35 12 46 12 21 36 31 15 38 19 12 46 12 13 47 15 21 36 31 12 46 12</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_diamond-04" name="roadsign_diamond-04">
+      <mesh>
+        <source id="geom-roadsign_diamond-04-positions">
+          <float_array id="geom-roadsign_diamond-04-positions-array" count="72">-2.082821 2.080445 176.7569 -39.92673 2.080453 214.4924 -40.77089 2.080454 216.5843 -39.9277 2.080453 218.6766 -2.110604 2.080455 256.4203 -0.01365221 2.080455 257.2624 2.083645 2.080454 256.4213 39.92756 2.080446 218.6857 40.77172 2.080446 216.5938 39.92852 2.080446 214.5015 2.111428 2.080445 176.7579 0.01447725 2.080445 175.9158 2.111428 1.52044 176.7579 39.92852 1.520442 214.5015 39.92756 1.520442 218.6857 2.083645 1.52045 256.4213 -2.110603 1.52045 256.4203 -39.9277 1.520449 218.6766 -39.92673 1.520449 214.4924 -2.08282 1.520441 176.7569 0.01447725 1.52044 175.9158 40.77172 1.520442 216.5938 -0.01365209 1.52045 257.2624 -40.77089 1.520449 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_diamond-04-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_diamond-04-normals">
+          <float_array id="geom-roadsign_diamond-04-normals-array" count="144">8.46312e-8 1 -1.06074e-7 -2.42983e-7 1 2.11872e-7 4.68587e-8 1 -1.66338e-7 1.15942e-7 1 -1.37885e-7 5.55991e-8 1 -1.64928e-7 4.30612e-7 1 2.23349e-7 4.47481e-8 1 -7.36745e-8 3.33041e-8 1 -6.82313e-8 3.38319e-7 1 -3.64245e-7 7.9845e-8 1 -1.3202e-7 9.04698e-8 1 -1.22643e-7 2.40449e-7 1 3.2641e-8 0.5506604 4.66832e-7 -0.8347294 0.5506601 4.43838e-7 -0.8347296 0.8338602 2.04881e-9 -0.5519758 0.8338602 0 -0.5519757 0.8336038 2.04676e-9 0.5523629 0.8336037 0 0.5523629 0.550271 4.66503e-7 0.8349862 0.5502712 4.49789e-7 0.834986 -0.5506603 -4.66832e-7 0.8347294 -0.5506603 -4.50099e-7 0.8347294 -0.8338615 -2.04882e-9 0.5519738 -0.8338616 0 0.5519736 -0.8336042 -2.04676e-9 -0.5523622 -0.8336043 0 -0.5523621 -0.5502762 -4.66507e-7 -0.8349828 -0.550276 -4.43539e-7 -0.8349828 2.29092e-4 -2.64098e-8 -1 2.29163e-4 2.64395e-8 -1 1 0 2.3391e-4 1 0 2.33747e-4 -2.35388e-4 1.97566e-8 1 -2.35235e-4 -1.98796e-8 1 -1 0 -2.35076e-4 -1 0 -2.35107e-4 -1.35259e-7 -1 1.16469e-7 -2.52804e-7 -1 -4.50317e-8 -8.68068e-8 -1 1.30559e-7 -8.53173e-8 -1 2.12444e-7 -8.56321e-8 -1 1.295e-7 -1.42792e-7 -1 1.71495e-7 -9.33127e-8 -1 1.32374e-7 -6.26318e-8 -1 1.45687e-7 -8.51615e-8 -1 1.16433e-7 -8.52827e-8 -1 7.08017e-8 -8.66846e-8 -1 1.14807e-7 -2.32646e-7 -1 2.64683e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_diamond-04-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_diamond-04-map1">
+          <float_array id="geom-roadsign_diamond-04-map1-array" count="108">0.761455 0.1798904 0 0.8689415 0.2870692 0 0.8713392 0.2930105 0 0.8689445 0.2989533 0 0.7615341 0.406155 0 0.7555782 0.4085469 0 0.7496213 0.406158 0 0.6421347 0.2989791 0 0.6397371 0.2930376 0 0.642132 0.287095 0 0.7495425 0.1798931 0 0.7554983 0.1775014 0 0.896757 0.01213237 0 0.8963893 0.008253101 0 0.8087094 0.09576262 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8087118 0.1054637 0 0.8964537 0.1929544 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9061781 0.1929519 0 0.9938578 0.1054426 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9938555 0.09574153 0 0.9061136 0.008250902 0 0.9061028 0.01213026 0 0.9012511 0.006300764 0 0.9014298 0.01025603 0 0.8067545 0.1006135 0 0.8106119 0.1008971 0 0.9013162 0.1949045 0 0.9014923 0.1915171 0 0.9958127 0.1005915 0 0.99231 0.1008759 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_diamond-04-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_diamond-04-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_diamond-04-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_diamond-04-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_diamond-04-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_diamond-04-map1" offset="2" set="0"/>
+          <p>2 0 2 3 1 3 4 2 4 1 3 1 2 0 2 4 2 4 5 4 5 6 5 6 7 6 7 4 2 4 5 4 5 7 6 7 8 7 8 9 8 9 10 9 10 7 6 7 8 7 8 10 9 10 4 2 4 7 6 7 10 9 10 1 3 1 4 2 4 10 9 10 1 3 1 10 9 10 11 10 11 0 11 0 1 3 1 11 10 11 12 12 12 10 13 13 9 14 14 9 14 14 13 15 15 12 12 12 14 16 16 7 17 17 6 18 18 6 18 18 15 19 19 14 16 16 16 20 20 4 21 21 3 22 22 3 22 22 17 23 23 16 20 20 18 24 24 1 25 25 0 26 26 0 26 26 19 27 27 18 24 24 11 28 28 20 29 29 19 27 27 19 27 27 0 26 26 11 28 28 8 30 30 21 31 31 13 15 15 13 15 15 9 14 14 8 30 30 5 32 32 22 33 33 15 19 19 15 19 19 6 18 18 5 32 32 2 34 34 23 35 35 17 23 23 17 23 23 3 22 22 2 34 34 10 13 13 12 12 12 20 29 29 20 29 29 11 28 28 10 13 13 7 17 17 14 16 16 21 31 31 21 31 31 8 30 30 7 17 17 4 21 21 16 20 20 22 33 33 22 33 33 5 32 32 4 21 21 1 25 25 18 24 24 23 35 35 23 35 35 2 34 34 1 25 25 21 36 31 14 37 16 15 38 19 15 38 19 22 39 33 16 40 20 16 40 20 17 41 23 23 42 35 15 38 19 16 40 20 23 42 35 23 42 35 18 43 24 19 44 27 19 44 27 20 45 29 12 46 12 23 42 35 19 44 27 12 46 12 15 38 19 23 42 35 12 46 12 21 36 31 15 38 19 12 46 12 13 47 15 21 36 31 12 46 12</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_turn_L" name="roadsign_turn_L">
+      <mesh>
+        <source id="geom-roadsign_turn_L-positions">
+          <float_array id="geom-roadsign_turn_L-positions-array" count="72">-2.082821 2.080445 176.7569 -39.92673 2.080453 214.4924 -40.77089 2.080454 216.5843 -39.9277 2.080453 218.6766 -2.110604 2.080455 256.4203 -0.01365221 2.080455 257.2624 2.083645 2.080454 256.4213 39.92756 2.080446 218.6857 40.77172 2.080446 216.5938 39.92852 2.080446 214.5015 2.111428 2.080445 176.7579 0.01447725 2.080445 175.9158 2.111428 1.52044 176.7579 39.92852 1.520442 214.5015 39.92756 1.520442 218.6857 2.083645 1.52045 256.4213 -2.110603 1.52045 256.4203 -39.9277 1.520449 218.6766 -39.92673 1.520449 214.4924 -2.08282 1.520441 176.7569 0.01447725 1.52044 175.9158 40.77172 1.520442 216.5938 -0.01365209 1.52045 257.2624 -40.77089 1.520449 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_turn_L-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_turn_L-normals">
+          <float_array id="geom-roadsign_turn_L-normals-array" count="144">8.46312e-8 1 -1.06074e-7 -2.42983e-7 1 2.11872e-7 4.68587e-8 1 -1.66338e-7 1.15942e-7 1 -1.37885e-7 5.55991e-8 1 -1.64928e-7 4.30612e-7 1 2.23349e-7 4.47481e-8 1 -7.36745e-8 3.33041e-8 1 -6.82313e-8 3.38319e-7 1 -3.64245e-7 7.9845e-8 1 -1.3202e-7 9.04698e-8 1 -1.22643e-7 2.40449e-7 1 3.2641e-8 0.5506604 4.66832e-7 -0.8347294 0.5506601 4.43838e-7 -0.8347296 0.8338602 2.04881e-9 -0.5519758 0.8338602 0 -0.5519757 0.8336038 2.04676e-9 0.5523629 0.8336037 0 0.5523629 0.550271 4.66503e-7 0.8349862 0.5502712 4.49789e-7 0.834986 -0.5506603 -4.66832e-7 0.8347294 -0.5506603 -4.50099e-7 0.8347294 -0.8338615 -2.04882e-9 0.5519738 -0.8338616 0 0.5519736 -0.8336042 -2.04676e-9 -0.5523622 -0.8336043 0 -0.5523621 -0.5502762 -4.66507e-7 -0.8349828 -0.550276 -4.43539e-7 -0.8349828 2.29092e-4 -2.64098e-8 -1 2.29163e-4 2.64395e-8 -1 1 0 2.3391e-4 1 0 2.33747e-4 -2.35388e-4 1.97566e-8 1 -2.35235e-4 -1.98796e-8 1 -1 0 -2.35076e-4 -1 0 -2.35107e-4 -1.35259e-7 -1 1.16469e-7 -2.52804e-7 -1 -4.50317e-8 -8.68068e-8 -1 1.30559e-7 -8.53173e-8 -1 2.12444e-7 -8.56321e-8 -1 1.295e-7 -1.42792e-7 -1 1.71495e-7 -9.33127e-8 -1 1.32374e-7 -6.26318e-8 -1 1.45687e-7 -8.51615e-8 -1 1.16433e-7 -8.52827e-8 -1 7.08017e-8 -8.66846e-8 -1 1.14807e-7 -2.32646e-7 -1 2.64683e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_turn_L-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_turn_L-map1">
+          <float_array id="geom-roadsign_turn_L-map1-array" count="108">0.3829873 0.3222544 0 0.4904738 0.4294332 0 0.4928714 0.4353745 0 0.4904766 0.4413173 0 0.3830662 0.5485192 0 0.3771104 0.5509112 0 0.3711536 0.5485221 0 0.263667 0.4413432 0 0.2612694 0.4354016 0 0.2636642 0.429459 0 0.3710747 0.3222571 0 0.3770305 0.3198654 0 0.896757 0.01213237 0 0.8963893 0.008253101 0 0.8087094 0.09576262 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8087118 0.1054637 0 0.8964537 0.1929544 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9061781 0.1929519 0 0.9938578 0.1054426 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9938555 0.09574153 0 0.9061136 0.008250902 0 0.9061028 0.01213026 0 0.9012511 0.006300764 0 0.9014298 0.01025603 0 0.8067545 0.1006135 0 0.8106119 0.1008971 0 0.9013162 0.1949045 0 0.9014923 0.1915171 0 0.9958127 0.1005915 0 0.99231 0.1008759 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_turn_L-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_turn_L-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_turn_L-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_turn_L-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_turn_L-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_turn_L-map1" offset="2" set="0"/>
+          <p>2 0 2 3 1 3 4 2 4 1 3 1 2 0 2 4 2 4 5 4 5 6 5 6 7 6 7 4 2 4 5 4 5 7 6 7 8 7 8 9 8 9 10 9 10 7 6 7 8 7 8 10 9 10 4 2 4 7 6 7 10 9 10 1 3 1 4 2 4 10 9 10 1 3 1 10 9 10 11 10 11 0 11 0 1 3 1 11 10 11 12 12 12 10 13 13 9 14 14 9 14 14 13 15 15 12 12 12 14 16 16 7 17 17 6 18 18 6 18 18 15 19 19 14 16 16 16 20 20 4 21 21 3 22 22 3 22 22 17 23 23 16 20 20 18 24 24 1 25 25 0 26 26 0 26 26 19 27 27 18 24 24 11 28 28 20 29 29 19 27 27 19 27 27 0 26 26 11 28 28 8 30 30 21 31 31 13 15 15 13 15 15 9 14 14 8 30 30 5 32 32 22 33 33 15 19 19 15 19 19 6 18 18 5 32 32 2 34 34 23 35 35 17 23 23 17 23 23 3 22 22 2 34 34 10 13 13 12 12 12 20 29 29 20 29 29 11 28 28 10 13 13 7 17 17 14 16 16 21 31 31 21 31 31 8 30 30 7 17 17 4 21 21 16 20 20 22 33 33 22 33 33 5 32 32 4 21 21 1 25 25 18 24 24 23 35 35 23 35 35 2 34 34 1 25 25 21 36 31 14 37 16 15 38 19 15 38 19 22 39 33 16 40 20 16 40 20 17 41 23 23 42 35 15 38 19 16 40 20 23 42 35 23 42 35 18 43 24 19 44 27 19 44 27 20 45 29 12 46 12 23 42 35 19 44 27 12 46 12 15 38 19 23 42 35 12 46 12 21 36 31 15 38 19 12 46 12 13 47 15 21 36 31 12 46 12</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_squiggle" name="roadsign_squiggle">
+      <mesh>
+        <source id="geom-roadsign_squiggle-positions">
+          <float_array id="geom-roadsign_squiggle-positions-array" count="72">-2.082821 2.080445 176.7569 -39.92673 2.080453 214.4924 -40.77089 2.080454 216.5843 -39.9277 2.080453 218.6766 -2.110604 2.080455 256.4203 -0.01365221 2.080455 257.2624 2.083645 2.080454 256.4213 39.92756 2.080446 218.6857 40.77172 2.080446 216.5938 39.92852 2.080446 214.5015 2.111428 2.080445 176.7579 0.01447725 2.080445 175.9158 2.111428 1.52044 176.7579 39.92852 1.520442 214.5015 39.92756 1.520442 218.6857 2.083645 1.52045 256.4213 -2.110603 1.52045 256.4203 -39.9277 1.520449 218.6766 -39.92673 1.520449 214.4924 -2.08282 1.520441 176.7569 0.01447725 1.52044 175.9158 40.77172 1.520442 216.5938 -0.01365209 1.52045 257.2624 -40.77089 1.520449 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_squiggle-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_squiggle-normals">
+          <float_array id="geom-roadsign_squiggle-normals-array" count="144">8.46312e-8 1 -1.06074e-7 -2.42983e-7 1 2.11872e-7 4.68587e-8 1 -1.66338e-7 1.15942e-7 1 -1.37885e-7 5.55991e-8 1 -1.64928e-7 4.30612e-7 1 2.23349e-7 4.47481e-8 1 -7.36745e-8 3.33041e-8 1 -6.82313e-8 3.38319e-7 1 -3.64245e-7 7.9845e-8 1 -1.3202e-7 9.04698e-8 1 -1.22643e-7 2.40449e-7 1 3.2641e-8 0.5506604 4.66832e-7 -0.8347294 0.5506601 4.43838e-7 -0.8347296 0.8338602 2.04881e-9 -0.5519758 0.8338602 0 -0.5519757 0.8336038 2.04676e-9 0.5523629 0.8336037 0 0.5523629 0.550271 4.66503e-7 0.8349862 0.5502712 4.49789e-7 0.834986 -0.5506603 -4.66832e-7 0.8347294 -0.5506603 -4.50099e-7 0.8347294 -0.8338615 -2.04882e-9 0.5519738 -0.8338616 0 0.5519736 -0.8336042 -2.04676e-9 -0.5523622 -0.8336043 0 -0.5523621 -0.5502762 -4.66507e-7 -0.8349828 -0.550276 -4.43539e-7 -0.8349828 2.29092e-4 -2.64098e-8 -1 2.29163e-4 2.64395e-8 -1 1 0 2.3391e-4 1 0 2.33747e-4 -2.35388e-4 1.97566e-8 1 -2.35235e-4 -1.98796e-8 1 -1 0 -2.35076e-4 -1 0 -2.35107e-4 -1.35259e-7 -1 1.16469e-7 -2.52804e-7 -1 -4.50317e-8 -8.68068e-8 -1 1.30559e-7 -8.53173e-8 -1 2.12444e-7 -8.56321e-8 -1 1.295e-7 -1.42792e-7 -1 1.71495e-7 -9.33127e-8 -1 1.32374e-7 -6.26318e-8 -1 1.45687e-7 -8.51615e-8 -1 1.16433e-7 -8.52827e-8 -1 7.08017e-8 -8.66846e-8 -1 1.14807e-7 -2.32646e-7 -1 2.64683e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_squiggle-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_squiggle-map1">
+          <float_array id="geom-roadsign_squiggle-map1-array" count="108">0.6336123 0.3222125 0 0.741099 0.4293912 0 0.7434966 0.4353327 0 0.7411018 0.4412754 0 0.6336914 0.5484772 0 0.6277356 0.5508692 0 0.6217787 0.5484802 0 0.5142922 0.4413012 0 0.5118946 0.4353597 0 0.5142895 0.4294171 0 0.6216999 0.3222152 0 0.6276557 0.3198235 0 0.896757 0.01213237 0 0.8963893 0.008253101 0 0.8087094 0.09576262 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8087118 0.1054637 0 0.8964537 0.1929544 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9061781 0.1929519 0 0.9938578 0.1054426 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9938555 0.09574153 0 0.9061136 0.008250902 0 0.9061028 0.01213026 0 0.9012511 0.006300764 0 0.9014298 0.01025603 0 0.8067545 0.1006135 0 0.8106119 0.1008971 0 0.9013162 0.1949045 0 0.9014923 0.1915171 0 0.9958127 0.1005915 0 0.99231 0.1008759 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_squiggle-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_squiggle-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_squiggle-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_squiggle-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_squiggle-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_squiggle-map1" offset="2" set="0"/>
+          <p>2 0 2 3 1 3 4 2 4 1 3 1 2 0 2 4 2 4 5 4 5 6 5 6 7 6 7 4 2 4 5 4 5 7 6 7 8 7 8 9 8 9 10 9 10 7 6 7 8 7 8 10 9 10 4 2 4 7 6 7 10 9 10 1 3 1 4 2 4 10 9 10 1 3 1 10 9 10 11 10 11 0 11 0 1 3 1 11 10 11 12 12 12 10 13 13 9 14 14 9 14 14 13 15 15 12 12 12 14 16 16 7 17 17 6 18 18 6 18 18 15 19 19 14 16 16 16 20 20 4 21 21 3 22 22 3 22 22 17 23 23 16 20 20 18 24 24 1 25 25 0 26 26 0 26 26 19 27 27 18 24 24 11 28 28 20 29 29 19 27 27 19 27 27 0 26 26 11 28 28 8 30 30 21 31 31 13 15 15 13 15 15 9 14 14 8 30 30 5 32 32 22 33 33 15 19 19 15 19 19 6 18 18 5 32 32 2 34 34 23 35 35 17 23 23 17 23 23 3 22 22 2 34 34 10 13 13 12 12 12 20 29 29 20 29 29 11 28 28 10 13 13 7 17 17 14 16 16 21 31 31 21 31 31 8 30 30 7 17 17 4 21 21 16 20 20 22 33 33 22 33 33 5 32 32 4 21 21 1 25 25 18 24 24 23 35 35 23 35 35 2 34 34 1 25 25 21 36 31 14 37 16 15 38 19 15 38 19 22 39 33 16 40 20 16 40 20 17 41 23 23 42 35 15 38 19 16 40 20 23 42 35 23 42 35 18 43 24 19 44 27 19 44 27 20 45 29 12 46 12 23 42 35 19 44 27 12 46 12 15 38 19 23 42 35 12 46 12 21 36 31 15 38 19 12 46 12 13 47 15 21 36 31 12 46 12</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_slow" name="roadsign_slow">
+      <mesh>
+        <source id="geom-roadsign_slow-positions">
+          <float_array id="geom-roadsign_slow-positions-array" count="72">2.111428 1.52044 176.7579 39.92756 1.520442 218.6857 -2.110603 1.52045 256.4203 -39.92673 1.520449 214.4924 2.111428 2.080445 176.7579 39.92756 2.080446 218.6857 -2.110604 2.080455 256.4203 -39.92673 2.080453 214.4924 -2.08282 1.520441 176.7569 39.92852 1.520442 214.5015 2.083645 1.52045 256.4213 -39.9277 1.520449 218.6766 -2.082821 2.080445 176.7569 39.92852 2.080446 214.5015 2.083645 2.080454 256.4213 -39.9277 2.080453 218.6766 0.01447725 1.52044 175.9158 40.77172 1.520442 216.5938 -0.01365209 1.52045 257.2624 -40.77089 1.520449 216.5843 0.01447725 2.080445 175.9158 40.77172 2.080446 216.5938 -0.01365221 2.080455 257.2624 -40.77089 2.080454 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_slow-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_slow-normals">
+          <float_array id="geom-roadsign_slow-normals-array" count="144">8.46312e-8 1 -1.06074e-7 -2.42983e-7 1 2.11872e-7 4.68587e-8 1 -1.66338e-7 1.15942e-7 1 -1.37885e-7 5.55991e-8 1 -1.64928e-7 4.30612e-7 1 2.23349e-7 4.47481e-8 1 -7.36745e-8 3.33041e-8 1 -6.82313e-8 3.38319e-7 1 -3.64245e-7 7.9845e-8 1 -1.3202e-7 9.04698e-8 1 -1.22643e-7 2.40449e-7 1 3.2641e-8 0.5506604 4.66832e-7 -0.8347294 0.5506601 4.43838e-7 -0.8347296 0.8338602 2.04881e-9 -0.5519758 0.8338602 0 -0.5519757 0.8336038 2.04676e-9 0.5523629 0.8336037 0 0.5523629 0.550271 4.66503e-7 0.8349862 0.5502712 4.49789e-7 0.834986 -0.5506603 -4.66832e-7 0.8347294 -0.5506603 -4.50099e-7 0.8347294 -0.8338615 -2.04882e-9 0.5519738 -0.8338616 0 0.5519736 -0.8336042 -2.04676e-9 -0.5523622 -0.8336043 0 -0.5523621 -0.5502762 -4.66507e-7 -0.8349828 -0.550276 -4.43539e-7 -0.8349828 2.29092e-4 -2.64098e-8 -1 2.29163e-4 2.64395e-8 -1 1 0 2.3391e-4 1 0 2.33747e-4 -2.35388e-4 1.97566e-8 1 -2.35235e-4 -1.98796e-8 1 -1 0 -2.35076e-4 -1 0 -2.35107e-4 -1.35259e-7 -1 1.16469e-7 -2.52804e-7 -1 -4.50317e-8 -8.68068e-8 -1 1.30559e-7 -8.53173e-8 -1 2.12444e-7 -8.56321e-8 -1 1.295e-7 -1.42792e-7 -1 1.71495e-7 -9.33127e-8 -1 1.32374e-7 -6.26318e-8 -1 1.45687e-7 -8.51615e-8 -1 1.16433e-7 -8.52827e-8 -1 7.08017e-8 -8.66846e-8 -1 1.14807e-7 -2.32646e-7 -1 2.64683e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_slow-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_slow-map1">
+          <float_array id="geom-roadsign_slow-map1-array" count="108">0.1304084 0.3222544 0 0.237895 0.4294332 0 0.2402926 0.4353745 0 0.2378977 0.4413173 0 0.1304874 0.5485192 0 0.1245315 0.5509112 0 0.1185747 0.5485221 0 0.0110881 0.4413432 0 0.008690493 0.4354016 0 0.01108536 0.429459 0 0.1184958 0.3222571 0 0.1244516 0.3198654 0 0.896757 0.01213237 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9061028 0.01213026 0 0.9014298 0.01025603 0 0.8106119 0.1008971 0 0.9014923 0.1915171 0 0.99231 0.1008759 0 0.9061136 0.008250902 0 0.9938555 0.09574153 0 0.9958127 0.1005915 0 0.9938578 0.1054426 0 0.9061781 0.1929519 0 0.9013162 0.1949045 0 0.8964537 0.1929544 0 0.8087118 0.1054637 0 0.8067545 0.1006135 0 0.8087094 0.09576262 0 0.8963893 0.008253101 0 0.9012511 0.006300764 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_slow-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_slow-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_slow-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_slow-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_slow-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_slow-map1" offset="2" set="0"/>
+          <p>23 0 2 15 1 3 6 2 4 7 3 1 23 0 2 6 2 4 22 4 5 14 5 6 5 6 7 6 2 4 22 4 5 5 6 7 21 7 8 13 8 9 4 9 10 5 6 7 21 7 8 4 9 10 6 2 4 5 6 7 4 9 10 7 3 1 6 2 4 4 9 10 7 3 1 4 9 10 20 10 11 12 11 0 7 3 1 20 10 11 0 12 12 4 13 34 13 14 33 13 14 33 9 15 13 0 12 12 1 16 14 5 17 31 14 18 30 14 18 30 10 19 15 1 16 14 2 20 16 6 21 28 15 22 27 15 22 27 11 23 17 2 20 16 3 24 18 7 25 25 12 26 24 12 26 24 8 27 19 3 24 18 20 28 35 16 29 20 8 27 19 8 27 19 12 26 24 20 28 35 21 30 32 17 31 21 9 15 13 9 15 13 13 14 33 21 30 32 22 32 29 18 33 22 10 19 15 10 19 15 14 18 30 22 32 29 23 34 26 19 35 23 11 23 17 11 23 17 15 22 27 23 34 26 4 13 34 0 12 12 16 29 20 16 29 20 20 28 35 4 13 34 5 17 31 1 16 14 17 31 21 17 31 21 21 30 32 5 17 31 6 21 28 2 20 16 18 33 22 18 33 22 22 32 29 6 21 28 7 25 25 3 24 18 19 35 23 19 35 23 23 34 26 7 25 25 17 36 21 1 37 14 10 38 15 10 38 15 18 39 22 2 40 16 2 40 16 11 41 17 19 42 23 10 38 15 2 40 16 19 42 23 19 42 23 3 43 18 8 44 19 8 44 19 16 45 20 0 46 12 19 42 23 8 44 19 0 46 12 10 38 15 19 42 23 0 46 12 17 36 21 10 38 15 0 46 12 9 47 13 17 36 21 0 46 12</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_stop" name="roadsign_stop">
+      <mesh>
+        <source id="geom-roadsign_stop-positions">
+          <float_array id="geom-roadsign_stop-positions-array" count="48">-37.50684 1.520456 205.0487 -37.50684 1.52046 236.1207 -15.5356 1.520459 258.0919 15.53642 1.520453 258.0919 37.50766 1.520445 236.1207 37.50766 1.52044 205.0487 15.53643 1.520441 183.0774 -15.53559 1.520448 183.0774 -37.50684 2.080456 205.0487 -37.50684 2.080461 236.1207 -15.5356 2.080459 258.0919 15.53642 2.080453 258.0919 37.50766 2.080445 236.1207 37.50766 2.08044 205.0487 15.53643 2.080441 183.0774 -15.53559 2.080447 183.0774</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_stop-positions-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_stop-normals">
+          <float_array id="geom-roadsign_stop-normals-array" count="144">-1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.7071068 0 0.7071067 -0.7071068 0 0.7071068 -0.7071068 0 0.7071067 -0.7071068 0 0.7071068 0 0 1 0 0 1 0 0 1 0 0 1 0.7071068 0 0.7071068 0.7071068 0 0.7071068 0.7071068 0 0.7071068 0.7071068 0 0.7071068 1 0 0 1 0 0 1 0 0 1 0 0 0.7071071 0 -0.7071065 0.7071071 0 -0.7071064 0.7071071 0 -0.7071064 0.7071071 0 -0.7071065 4.91078e-7 0 -1 4.91078e-7 0 -1 4.91078e-7 0 -1 4.91078e-7 0 -1 -0.7071072 0 -0.7071064 -0.7071071 0 -0.7071064 -0.7071071 0 -0.7071065 -0.7071072 0 -0.7071064 -2.0608e-7 -1 1.54206e-7 -2.07719e-7 -1 1.53462e-7 -2.07094e-7 -1 1.54471e-7 -2.07174e-7 -1 1.56348e-7 -2.06564e-7 -1 1.55375e-7 -2.02293e-7 -1 1.53462e-7 -2.0555e-7 -1 1.5511e-7 -2.03337e-7 -1 1.60184e-7 2.08001e-7 1 -1.56026e-7 1.995e-7 1 -1.34392e-7 2.08001e-7 1 -1.56026e-7 2.07812e-7 1 -1.61135e-7 2.08001e-7 1 -1.56026e-7 1.99501e-7 1 -1.34392e-7 2.08001e-7 1 -1.56026e-7 2.07812e-7 1 -1.61135e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_stop-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_stop-map1">
+          <float_array id="geom-roadsign_stop-map1-array" count="72">0.9802576 0.07323483 0 0.9802576 0.138143 0 0.2142844 0.1643908 0 0.2142844 0.07943375 0 0.9343604 0.1840402 0 0.1542107 0.2244647 0 0.8694522 0.1840402 0 0.06925327 0.2244647 0 0.823555 0.138143 0 0.009179468 0.1643908 0 0.823555 0.07323483 0 0.009179468 0.07943375 0 0.8694522 0.02733759 0 0.06925327 0.01935976 0 0.9343604 0.02733759 0 0.1542107 0.01935976 0 0.9827688 0.139399 0 0.9827688 0.07228341 0 0.9353109 0.1868568 0 0.8681953 0.1868568 0 0.8207373 0.139399 0 0.8207373 0.07228341 0 0.8681953 0.0248253 0 0.9353109 0.0248253 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_stop-map1-array" count="24" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_stop-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_stop-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="28">
+          <input semantic="VERTEX" source="#geom-roadsign_stop-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_stop-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_stop-map1" offset="2" set="0"/>
+          <p>0 0 0 1 1 1 9 2 16 9 2 16 8 3 17 0 0 0 1 4 1 2 5 4 10 6 18 10 6 18 9 7 16 1 4 1 2 8 4 3 9 6 11 10 19 11 10 19 10 11 18 2 8 4 3 12 6 4 13 8 12 14 20 12 14 20 11 15 19 3 12 6 4 16 8 5 17 10 13 18 21 13 18 21 12 19 20 4 16 8 5 20 10 6 21 12 14 22 22 14 22 22 13 23 21 5 20 10 6 24 12 7 25 14 15 26 23 15 26 23 14 27 22 6 24 12 7 28 14 0 29 0 8 30 17 8 30 17 15 31 23 7 28 14 6 32 12 5 33 10 4 34 8 4 34 8 3 35 6 2 36 4 2 36 4 1 37 1 0 38 0 4 34 8 2 36 4 0 38 0 6 32 12 4 34 8 0 38 0 7 39 14 6 32 12 0 38 0 9 40 2 10 41 5 11 42 7 11 42 7 12 43 9 13 44 11 13 44 11 14 45 13 15 46 15 11 42 7 13 44 11 15 46 15 9 40 2 11 42 7 15 46 15 8 47 3 9 40 2 15 46 15</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_square-05" name="roadsign_square-05">
+      <mesh>
+        <source id="geom-roadsign_square-05-positions">
+          <float_array id="geom-roadsign_square-05-positions-array" count="72">27.77273 1.517337 258.7947 -27.7719 1.517336 258.7947 -29.99776 1.517335 257.4457 29.99858 1.517336 257.4457 27.77273 2.082813 258.7947 -27.7719 2.082812 258.7947 30.5147 1.517336 255.3129 30.5147 2.082812 255.3129 29.99858 2.082812 257.4457 -29.99776 2.082811 257.4457 -30.51388 2.082811 255.3129 -30.51388 1.517335 255.3129 -27.7719 1.517332 195.0501 27.77272 1.517325 195.0501 29.99886 1.517325 196.3992 -29.99803 1.517332 196.3992 -27.7719 2.082808 195.0501 27.77272 2.082801 195.0501 -30.51388 1.517333 198.532 -30.51388 2.082809 198.532 -29.99803 2.082809 196.3992 29.99886 2.082801 196.3992 30.51469 2.082801 198.532 30.51469 1.517325 198.532</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-05-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-05-normals">
+          <float_array id="geom-roadsign_square-05-normals-array" count="144">1.97467e-8 -1 1.1767e-7 1.93157e-8 -1 1.2024e-7 1.98644e-8 -1 1.4374e-7 2.40316e-8 -1 2.41011e-7 0.2690734 0 0.9631197 0.2690736 0 0.9631196 -0.2690734 0 0.9631197 -0.2690737 0 0.9631196 0.8070391 0 0.590498 0.8070391 0 0.590498 0.9929624 0 0.11843 0.9929624 0 0.11843 -0.8070394 0 0.5904976 -0.8070394 0 0.5904976 -0.9929624 0 0.1184298 -0.9929624 0 0.1184297 -2.15801e-8 1 -9.54849e-8 1.74447e-8 1 -6.69872e-8 -2.00677e-8 1 -1.18721e-7 -1.71292e-8 1 -2.03931e-7 2.29242e-8 -1 1.64443e-7 -1.88063e-8 -1 1.8699e-7 -1.59456e-8 1 -3.77559e-7 -2.14619e-8 1 -1.41325e-7 -1.31088e-7 -1 1.15749e-7 -1.30918e-7 -1 4.90584e-8 -1.31135e-7 -1 3.97457e-8 -1.30938e-7 -1 1.193e-7 -0.2690734 0 -0.9631197 -0.2690738 0 -0.9631195 0.2690756 0 -0.963119 0.2690759 0 -0.9631189 -0.8070698 0 -0.5904561 -0.8070696 0 -0.5904562 -0.9929685 0 -0.1183786 -0.9929685 0 -0.1183786 0.8070729 0 -0.5904519 0.8070728 0 -0.5904518 0.9929689 0 -0.1183758 0.9929689 0 -0.1183758 1.24559e-7 1 -5.45791e-8 8.02236e-8 1 -4.70756e-8 1.27367e-7 1 -2.68635e-7 1.32754e-7 1 -2.5306e-7 -1.30991e-7 -1 8.06871e-8 -8.66755e-8 -1 1.31534e-7 1.35015e-7 1 -3.03119e-7 1.24479e-7 1 1.48038e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-05-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_square-05-map1">
+          <float_array id="geom-roadsign_square-05-map1-array" count="108">0.8367641 0.1983535 0 0.9659617 0.1983535 0 0.9712101 0.1951922 0 0.8314669 0.1952452 0 0.8352459 0.2006532 0 0.9679347 0.2006532 0 0.830386 0.1902536 0 0.8286955 0.1923352 0 0.8297816 0.197358 0 0.9735254 0.1975122 0 0.9744847 0.1923352 0 0.9723389 0.1902536 0 0.006401271 0.7446482 0 0.1871714 0.7446482 0 0.1856426 0.7509667 0 0.007929867 0.7509667 0 0.1790496 0.7549629 0 0.01452275 0.7549629 0 0.9659617 0.04822399 0 0.8367641 0.04822399 0 0.8315138 0.05140405 0 0.9712656 0.05132908 0 0.9679347 0.04565831 0 0.8352459 0.04565831 0 0.9723389 0.05632395 0 0.9744847 0.05397637 0 0.9733984 0.04894017 0 0.8296921 0.04883305 0 0.8286955 0.05397637 0 0.830386 0.05632395 0 0.1871714 0.5734054 0 0.006401271 0.5734054 0 0.00792903 0.5670899 0 0.1856434 0.5670872 0 0.01452275 0.5630932 0 0.1790496 0.5630932 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_square-05-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_square-05-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_square-05-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_square-05-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_square-05-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_square-05-map1" offset="2" set="0"/>
+          <p>3 0 3 0 1 0 1 2 1 1 2 1 2 3 2 3 0 3 0 4 0 4 5 4 5 6 5 5 6 5 1 7 1 0 4 0 8 8 8 3 9 3 6 10 6 6 10 6 7 11 7 8 8 8 9 12 9 2 13 2 1 7 1 1 7 1 5 6 5 9 12 9 4 5 4 0 4 0 3 9 3 3 9 3 8 8 8 4 5 4 10 14 10 11 15 11 2 13 2 2 13 2 9 12 9 10 14 10 8 16 15 7 17 12 10 18 13 10 18 13 9 19 14 8 16 15 6 20 6 3 0 3 2 3 2 2 3 2 11 21 11 6 20 6 4 22 17 8 16 15 9 19 14 9 19 14 5 23 16 4 22 17 15 24 21 12 25 18 13 26 19 13 26 19 14 27 20 15 24 21 12 28 18 16 29 22 17 30 23 17 30 23 13 31 19 12 28 18 20 32 26 15 33 21 18 34 24 18 34 24 19 35 25 20 32 26 21 36 27 14 37 20 13 31 19 13 31 19 17 30 23 21 36 27 16 29 22 12 28 18 15 33 21 15 33 21 20 32 26 16 29 22 22 38 28 23 39 29 14 37 20 14 37 20 21 36 27 22 38 28 20 40 33 19 41 30 22 42 31 22 42 31 21 43 32 20 40 33 18 44 24 15 24 21 14 27 20 14 27 20 23 45 29 18 44 24 16 46 35 20 40 33 21 43 32 21 43 32 17 47 34 16 46 35 6 10 6 23 39 29 22 38 28 22 38 28 7 11 7 6 10 6 7 17 12 22 42 31 19 41 30 19 41 30 10 18 13 7 17 12 10 14 10 19 35 25 18 34 24 18 34 24 11 15 11 10 14 10 11 21 11 18 44 24 23 45 29 23 45 29 6 20 6 11 21 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_yield" name="roadsign_yield">
+      <mesh>
+        <source id="geom-roadsign_yield-positions">
+          <float_array id="geom-roadsign_yield-positions-array" count="54">3.32256 1.517327 188.1134 39.59297 1.517336 251.959 -39.59214 1.517335 251.959 3.32256 2.082803 188.1134 36.75767 2.082813 256.8608 -39.59214 2.082811 251.959 -3.321736 1.517327 188.1134 36.75767 1.517337 256.8608 -36.75684 1.517336 256.8608 -3.321735 2.082803 188.1134 39.59297 2.082812 251.959 -36.75684 2.082812 256.8608 4.12583e-4 1.517327 186.4851 39.28109 1.517336 255.2729 -39.28026 1.517335 255.2729 4.12583e-4 2.082803 186.4851 39.28109 2.082813 255.2729 -39.28026 2.082812 255.2729</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_yield-positions-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_yield-normals">
+          <float_array id="geom-roadsign_yield-normals-array" count="108">1.46393e-8 -1 1.06889e-7 1.29726e-8 -1 9.56905e-8 1.51562e-8 -1 2.00257e-7 1.50869e-8 -1 1.30422e-7 0.6852501 0 -0.7283078 0.6852497 0 -0.728308 0.9777384 0 -0.2098273 0.9777386 0 -0.209827 0.2771501 0 0.9608266 0.2771499 0 0.9608267 -0.2771501 0 0.9608266 -0.2771499 0 0.9608266 -0.9777384 3.77071e-9 -0.2098273 -0.9777386 0 -0.2098269 -0.6852499 1.15191e-6 -0.728308 -0.68525 1.11817e-6 -0.7283079 -1.34607e-8 1 -1.3882e-7 -1.20436e-8 1 -1.813e-7 -5.24918e-9 1 -1.30916e-7 0 1 -1.27387e-7 1.26775e-7 3.9907e-8 -1 1.47904e-7 0 -1 0.8517454 0 0.5239558 0.8517454 0 0.5239558 -0.8517454 0 0.5239559 -0.8517455 0 0.5239558 -3.56031e-9 -1 1.23661e-7 1.51223e-8 -1 1.20851e-7 1.40746e-8 -1 1.1858e-7 -1.79416e-8 -1 1.13994e-7 -1.28924e-8 1 -2.04789e-7 -1.54271e-8 1 -1.38367e-7 -1.51825e-8 1 -1.7386e-7 -1.62157e-8 1 -1.2438e-7 0 1 -1.46421e-7 -1.79416e-8 -1 1.09816e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_yield-normals-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_yield-map1">
+          <float_array id="geom-roadsign_yield-map1-array" count="81">0.8178526 0.2003114 0 0.8121765 0.1967387 0 0.9888963 0.1967387 0 0.9832201 0.2003114 0 0.8930634 0.04566681 0 0.8114743 0.1892839 0 0.8090449 0.1891683 0 0.8920008 0.04351329 0 0.9852341 0.2020702 0 0.8160334 0.2020702 0 0.9895982 0.1892839 0 0.9080091 0.04566681 0 0.9084668 0.04351329 0 0.9922215 0.1891683 0 0.9005355 0.04200259 0 0.9002336 0.03949804 0 0.8098136 0.1978896 0 0.9914531 0.1978896 0 0.7612402 0.5215811 0 0.8651392 0.3386905 0 0.9799488 0.5356215 0 0.769362 0.5356215 0 0.8841717 0.3386905 0 0.9880706 0.5215811 0 0.8746555 0.334028 0 0.7621336 0.5310732 0 0.987177 0.5310732 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_yield-map1-array" count="27" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_yield-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_yield-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="32">
+          <input semantic="VERTEX" source="#geom-roadsign_yield-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_yield-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_yield-map1" offset="2" set="0"/>
+          <p>13 0 1 7 1 0 8 2 3 8 2 3 14 3 2 13 0 1 0 4 4 3 5 7 10 6 6 10 6 6 1 7 5 0 4 4 7 8 0 4 9 9 11 10 8 11 10 8 8 11 3 7 8 0 2 12 10 5 13 13 9 14 12 9 14 12 6 15 11 2 12 10 5 16 23 10 17 18 3 18 19 3 18 19 9 19 22 5 16 23 15 20 15 12 21 14 6 15 11 6 15 11 9 14 12 15 20 15 16 22 16 13 23 1 1 7 5 1 7 5 10 6 6 16 22 16 17 24 17 14 25 2 8 11 3 8 11 3 11 10 8 17 24 17 3 5 7 0 4 4 12 21 14 12 21 14 15 20 15 3 5 7 4 9 9 7 8 0 13 23 1 13 23 1 16 22 16 4 9 9 5 13 13 2 12 10 14 25 2 14 25 2 17 24 17 5 13 13 0 26 4 1 27 5 2 28 10 2 28 10 6 29 11 0 26 4 16 30 25 10 17 18 5 16 23 5 16 23 17 31 26 16 30 25 1 27 5 13 0 1 14 3 2 14 3 2 2 28 10 1 27 5 4 32 21 16 30 25 17 31 26 17 31 26 11 33 20 4 32 21 9 19 22 3 18 19 15 34 24 0 26 4 6 29 11 12 35 14</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_pole" name="roadsign_pole">
+      <mesh>
+        <source id="geom-roadsign_pole-positions">
+          <float_array id="geom-roadsign_pole-positions-array" count="324">3.778111 1.520416 -14.96003 -3.777284 1.520419 -14.96003 3.778109 1.520458 245.716 -3.777286 1.520461 245.716 -1.556315 1.52046 245.716 1.557137 1.520459 245.716 1.55714 1.520417 -14.96003 -1.556312 1.520418 -14.96003 -1.556316 -1.274248 245.716 1.557137 -1.274249 245.716 1.55714 -1.274292 -14.96003 -1.556312 -1.274291 -14.96003 3.778111 0.7119046 -14.96003 -3.777284 0.7119067 -14.96003 3.778109 0.7119469 245.716 -3.777286 0.7119491 245.716 -2.191015 0.7119488 245.716 2.191836 0.7119473 245.716 2.191839 0.711905 -14.96003 -2.191012 0.7119063 -14.96003 -2.191014 -2.082759 245.716 2.191837 -2.082761 245.716 2.191839 -2.082803 -14.96003 -2.191011 -2.082802 -14.96003 -3.777284 1.520429 50.20898 -3.777285 1.52044 115.378 -3.777286 1.52045 180.547 -1.556313 1.520428 50.20898 -1.556314 1.520439 115.378 -1.556315 1.52045 180.547 -1.556313 -1.27428 50.20898 -1.556314 -1.274269 115.378 -1.556315 -1.274258 180.547 -3.777284 0.7119173 50.20898 -3.777285 0.7119279 115.378 -3.777286 0.7119385 180.547 3.77811 1.520448 180.547 3.77811 1.520437 115.378 3.778111 1.520427 50.20899 1.557138 1.520448 180.547 1.557139 1.520438 115.378 1.557139 1.520427 50.20899 1.557138 -1.274259 180.547 1.557139 -1.27427 115.378 1.557139 -1.274281 50.20899 3.77811 0.7119364 180.547 3.77811 0.7119257 115.378 3.778111 0.7119151 50.20899 2.191837 0.7119367 180.547 2.191838 0.7119262 115.378 2.191838 0.7119156 50.20899 2.191838 -2.082771 180.547 2.191838 -2.082782 115.378 2.191839 -2.082793 50.20899 -2.191013 -2.08277 180.547 -2.191013 -2.082781 115.378 -2.191012 -2.082792 50.20899 -2.191014 0.7119381 180.547 -2.191013 0.7119275 115.378 -2.191013 0.7119169 50.20899 -3.777284 1.520424 17.62448 -1.556313 1.520423 17.62448 -1.556313 -1.274285 17.62448 -3.777284 0.711912 17.62448 3.77811 1.520453 213.1315 1.557138 1.520454 213.1315 1.557138 -1.274254 213.1315 3.77811 0.7119416 213.1315 2.191837 0.711942 213.1315 2.191838 -2.082766 213.1315 -2.191014 -2.082765 213.1315 -2.191015 0.7119434 213.1315 -3.777285 1.520434 82.79349 -3.777285 1.520445 147.9625 -3.777286 1.520455 213.1315 -1.556314 1.520434 82.79349 -1.556314 1.520444 147.9625 -1.556315 1.520455 213.1315 -1.556314 -1.274274 82.79349 -1.556314 -1.274264 147.9625 -1.556315 -1.274253 213.1315 -3.777285 0.7119226 82.79349 -3.777285 0.7119332 147.9625 -3.777286 0.7119437 213.1315 3.77811 1.520442 147.9625 3.77811 1.520432 82.79349 3.778111 1.520421 17.62448 1.557138 1.520443 147.9625 1.557139 1.520433 82.79349 1.55714 1.520422 17.62448 1.557138 -1.274265 147.9625 1.557139 -1.274275 82.79349 1.55714 -1.274286 17.62448 3.77811 0.711931 147.9625 3.77811 0.7119204 82.79349 3.778111 0.7119099 17.62448 2.191837 0.7119315 147.9625 2.191838 0.7119209 82.79349 2.191839 0.7119103 17.62448 2.191838 -2.082777 147.9625 2.191839 -2.082787 82.79349 2.191839 -2.082798 17.62448 -2.191013 -2.082775 147.9625 -2.191012 -2.082786 82.79349 -2.191012 -2.082797 17.62448 -2.191014 0.7119328 147.9625 -2.191013 0.7119222 82.79349 -2.191012 0.7119116 17.62448</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_pole-positions-array" count="108" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_pole-normals">
+          <float_array id="geom-roadsign_pole-normals-array" count="450">-0.7071067 0.7071068 -1.24172e-7 0.7071069 0.7071066 -1.08651e-7 0.7071069 0.7071066 -1.0858e-7 -0.7071067 0.7071068 -1.22879e-7 0.7071068 0.7071066 -1.07357e-7 -0.7071066 0.707107 -1.22823e-7 -0.7071066 0.707107 -1.21586e-7 0.7071068 0.7071066 -1.06064e-7 0.7071068 0.7071068 -1.11294e-7 -0.7071067 0.7071069 -1.21586e-7 -0.7071067 0.7071069 -1.2153e-7 0.7071067 0.7071068 -1.1e-7 1 0 3.65846e-9 1 0 7.31693e-9 0 0 1 0 0 1 0 0 1 0 0 1 -1 0 -1.09754e-8 -0.7071066 0.707107 -1.21586e-7 -0.7071066 0.707107 -1.21586e-7 -1 0 -1.09754e-8 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0.7071067 -0.7071068 1.20413e-7 -2.63027e-7 -1 1.62802e-7 -2.26034e-7 -1 1.61001e-7 0.7071067 -0.7071068 1.19019e-7 0.7071068 -0.7071068 1.21365e-7 0.7071068 -0.7071068 1.21365e-7 -0.7071068 -0.7071068 1.09012e-7 -0.7071068 -0.7071068 1.06205e-7 -0.7071067 -0.7071069 1.07217e-7 -0.7071066 -0.7071069 1.04771e-7 -2.25452e-7 -1 1.62802e-7 -2.2487e-7 -1 1.62773e-7 -0.7071067 0.7071068 -1.22879e-7 0.7071069 0.7071066 -1.0858e-7 0.7071069 0.7071065 -1.06134e-7 -0.7071067 0.7071069 -1.24172e-7 -0.7071067 0.7071068 -1.22879e-7 0.7071069 0.7071066 -1.08651e-7 0.7071069 0.7071066 -1.08651e-7 -0.7071067 0.7071069 -1.22879e-7 0.7071069 0.7071065 -1.06134e-7 -0.7071067 0.7071068 -1.22879e-7 0.7071069 0.7071066 -1.06064e-7 -0.7071066 0.707107 -1.19055e-7 0.7071069 0.7071065 -1.03547e-7 0.7071069 0.7071066 -1.0605e-7 -0.7071066 0.707107 -1.20236e-7 0.7071069 0.7071066 -1.07413e-7 -0.7071066 0.707107 -1.20292e-7 0.7071069 0.7071066 -1.04785e-7 0.7071068 0.7071068 -1.09944e-7 -0.7071067 0.7071069 -1.21586e-7 -0.7071067 0.7071069 -1.24172e-7 0.7071068 0.7071067 -1.11238e-7 0.7071068 0.7071068 -1.09944e-7 -0.7071067 0.7071069 -1.21586e-7 -0.7071067 0.7071069 -1.20292e-7 0.7071068 0.7071067 -1.11238e-7 -0.7071067 0.7071068 -1.22823e-7 0.7071067 0.7071068 -1.11182e-7 1 0 7.31693e-9 1 0 7.31693e-9 1 0 7.31693e-9 1 0 3.65847e-9 1 0 7.31693e-9 -1 0 -7.31693e-9 -1 0 -1.09754e-8 -1 0 -1.09754e-8 -1 0 -7.31693e-9 -1 0 -7.31693e-9 0.7071066 -0.7071068 1.22252e-7 -2.63027e-7 -1 1.61887e-7 -3.00021e-7 -1 1.62773e-7 0.7071067 -0.7071069 1.20413e-7 0.7071067 -0.7071068 1.19645e-7 -2.63609e-7 -1 1.61915e-7 -2.63027e-7 -1 1.62802e-7 0.7071066 -0.7071069 1.25325e-7 -2.62445e-7 -1 1.62773e-7 0.7071067 -0.7071068 1.22879e-7 0.7071068 -0.7071068 1.24032e-7 0.7071068 -0.7071068 1.24172e-7 0.7071068 -0.7071068 1.21726e-7 0.7071068 -0.7071068 1.24032e-7 0.7071068 -0.7071068 1.24032e-7 -0.7071068 -0.7071068 1.08651e-7 -0.7071068 -0.7071068 1.13825e-7 -0.7071068 -0.7071068 1.08651e-7 -0.7071068 -0.7071068 1.06284e-7 -0.7071068 -0.7071068 1.08651e-7 -0.7071068 -0.7071069 1.07357e-7 -0.7071066 -0.7071069 1.09318e-7 -0.7071067 -0.7071069 1.07357e-7 -0.7071066 -0.7071069 1.07217e-7 -0.7071066 -0.7071069 1.06731e-7 -2.62446e-7 -1 1.62773e-7 -2.25453e-7 -1 1.61887e-7 -2.25452e-7 -1 1.62802e-7 -2.25452e-7 -1 1.62802e-7 -1.87877e-7 -1 1.61887e-7 -0.7071067 0.7071069 -1.21586e-7 0.7071069 0.7071066 -1.08651e-7 0.7071069 0.7071065 -1.08651e-7 -0.7071068 0.7071068 -1.24172e-7 0.7071069 0.7071066 -1.08539e-7 -0.7071066 0.707107 -1.21586e-7 -0.7071066 0.707107 -1.19111e-7 0.7071069 0.7071066 -1.05923e-7 0.7071069 0.7071067 -1.08651e-7 -0.7071068 0.7071068 -1.18999e-7 -0.7071066 0.707107 -1.21698e-7 0.7071067 0.7071069 -1.08651e-7 1 0 7.31693e-9 1 0 7.31693e-9 -1 0 -7.31693e-9 -1 0 -7.31693e-9 0.7071065 -0.707107 1.20292e-7 -2.63027e-7 -1 1.62802e-7 -2.63027e-7 -1 1.62802e-7 0.7071068 -0.7071067 1.20574e-7 0.7071068 -0.7071068 1.18999e-7 0.7071068 -0.7071068 1.24172e-7 -0.7071067 -0.7071068 1.03477e-7 -0.7071069 -0.7071067 1.13825e-7 -0.7071069 -0.7071066 1.0477e-7 -0.7071064 -0.7071072 1.09944e-7 -2.63027e-7 -1 1.62802e-7 -1.87877e-7 -1 1.62802e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_pole-normals-array" count="150" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_pole-map-1">
+          <float_array id="geom-roadsign_pole-map-1-array" count="396">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_pole-map-1-array" count="132" stride="3">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_pole-map0">
+          <float_array id="geom-roadsign_pole-map0-array" count="396">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_pole-map0-array" count="132" stride="3">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_pole-map1">
+          <float_array id="geom-roadsign_pole-map1-array" count="450">0.3076126 0.9940001 0 0.2115129 0.9940001 0 0.2115129 0.03905819 0 0.3076126 0.03905819 0 0.4524887 0.9940001 0 0.3839301 0.9940001 0 0.3839301 0.03905819 0 0.4524887 0.03905819 0 0.1332356 0.9940001 0 0.06468341 0.9940001 0 0.06468341 0.03905819 0 0.1332356 0.03905819 0 0.04205913 0.9940001 0 0.04205913 0.03905819 0 0.47373 0.03905819 0 0.47373 0.9940001 0 0.9064848 0.9940001 0 0.9064848 0.03905819 0 0.8311514 0.9940001 0 0.8311514 0.03905819 0 0.6958649 0.9940001 0 0.6958649 0.03905819 0 0.6147872 0.9940001 0 0.6147872 0.03905819 0 0.6282617 0.02584126 0 0.6282617 0.02211696 0 0.6840715 0.02211696 0 0.7064173 0.02584126 0 0.3941739 0.02584126 0 0.3941739 0.0221158 0 0.3383483 0.0221158 0 0.3160181 0.02584126 0 0.815981 0.02584127 0 0.8383112 0.02211698 0 0.8941364 0.02211698 0 0.8941364 0.02584127 0 0.2064393 0.02584126 0 0.1841091 0.0221158 0 0.1282834 0.0221158 0 0.1282834 0.02584126 0 0.7064173 0.01296521 0 0.6840715 0.00923975 0 0.8383112 0.009239766 0 0.815981 0.01296522 0 0.3160181 0.01296521 0 0.3383484 0.00923975 0 0.1841091 0.00923975 0 0.2064393 0.01296521 0 0.9554505 0.9940001 0 0.9554505 0.03905819 0 0.5658212 0.03905819 0 0.5658212 0.9940001 0 0.4524887 0.2777937 0 0.4524887 0.5165291 0 0.4524887 0.7552646 0 0.3839301 0.2777937 0 0.3839301 0.5165291 0 0.3839301 0.7552646 0 0.3076126 0.2777937 0 0.3076126 0.5165291 0 0.3076126 0.7552646 0 0.47373 0.2777937 0 0.47373 0.5165291 0 0.47373 0.7552646 0 0.5658212 0.2777937 0 0.5658212 0.5165291 0 0.5658212 0.7552646 0 0.06468341 0.7552646 0 0.06468341 0.5165292 0 0.06468341 0.2777937 0 0.1332356 0.7552646 0 0.1332356 0.5165292 0 0.1332356 0.2777937 0 0.2115129 0.7552646 0 0.2115129 0.5165292 0 0.2115129 0.2777937 0 0.04205913 0.7552646 0 0.04205913 0.5165292 0 0.04205913 0.2777937 0 0.9554505 0.7552646 0 0.9554505 0.5165292 0 0.9554505 0.2777937 0 0.9064848 0.7552646 0 0.9064848 0.5165292 0 0.9064848 0.2777937 0 0.8311514 0.7552646 0 0.8311514 0.5165292 0 0.8311514 0.2777937 0 0.6958649 0.7552646 0 0.6958649 0.5165292 0 0.6958649 0.2777937 0 0.6147872 0.7552646 0 0.6147872 0.5165292 0 0.6147872 0.2777937 0 0.4524887 0.1584259 0 0.3839301 0.1584259 0 0.3076126 0.1584259 0 0.47373 0.1584259 0 0.5658212 0.1584259 0 0.06468341 0.8746324 0 0.1332356 0.8746324 0 0.2115129 0.8746324 0 0.04205913 0.8746324 0 0.9554505 0.8746324 0 0.9064848 0.8746324 0 0.8311514 0.8746324 0 0.6958649 0.8746324 0 0.6147872 0.8746324 0 0.4524887 0.3971614 0 0.4524887 0.6358969 0 0.4524887 0.8746324 0 0.3839301 0.3971614 0 0.3839301 0.6358969 0 0.3839301 0.8746324 0 0.3076126 0.3971614 0 0.3076126 0.6358969 0 0.3076126 0.8746324 0 0.47373 0.3971614 0 0.5658212 0.3971614 0 0.47373 0.6358969 0 0.5658212 0.6358969 0 0.47373 0.8746324 0 0.5658212 0.8746324 0 0.06468341 0.6358969 0 0.06468341 0.3971615 0 0.06468341 0.158426 0 0.1332356 0.6358969 0 0.1332356 0.3971615 0 0.1332356 0.158426 0 0.2115129 0.6358969 0 0.2115129 0.3971615 0 0.2115129 0.158426 0 0.04205913 0.6358969 0 0.9554505 0.6358969 0 0.04205913 0.3971615 0 0.9554505 0.3971615 0 0.04205913 0.158426 0 0.9554505 0.158426 0 0.9064848 0.6358969 0 0.9064848 0.3971615 0 0.9064848 0.158426 0 0.8311514 0.6358969 0 0.8311514 0.3971615 0 0.8311514 0.158426 0 0.6958649 0.6358969 0 0.6958649 0.3971615 0 0.6958649 0.158426 0 0.6147872 0.6358969 0 0.6147872 0.3971615 0 0.6147872 0.158426 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_pole-map1-array" count="150" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_pole-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_pole-positions"/>
+        </vertices>
+        <triangles material="roadsign_pole" count="212">
+          <input semantic="VERTEX" source="#geom-roadsign_pole-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_pole-normals" offset="1"/>
+          <input semantic="COLOR" source="#geom-roadsign_pole-map-1" offset="2"/>
+          <input semantic="COLOR" source="#geom-roadsign_pole-map0" offset="3" set="0"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_pole-map1" offset="4" set="0"/>
+          <p>90 0 114 114 129 79 1 103 103 115 32 2 32 32 60 32 2 32 32 60 42 3 42 42 73 90 0 114 114 129 76 4 100 100 112 73 5 97 97 109 26 6 26 26 54 26 6 26 26 54 29 7 29 29 57 76 4 100 100 112 84 8 108 108 123 87 9 111 111 126 39 10 39 39 70 39 10 39 39 70 36 11 36 36 67 84 8 108 108 123 87 9 111 111 126 90 0 114 114 129 42 3 42 42 73 42 3 42 42 73 39 10 39 39 70 87 9 111 111 126 79 1 103 103 115 76 4 100 100 112 29 7 29 29 57 29 7 29 29 57 32 2 32 32 60 79 1 103 103 115 93 12 117 117 132 84 8 108 108 123 36 11 36 36 67 36 11 36 36 67 45 13 45 45 76 93 12 117 117 132 3 14 3 3 24 15 15 15 15 25 16 16 16 16 26 16 16 16 16 26 4 17 4 4 27 3 14 3 3 24 81 18 105 105 117 72 19 96 96 108 24 20 24 24 52 24 20 24 24 52 33 21 33 33 61 81 18 105 105 117 0 22 0 0 28 12 23 12 12 29 18 24 18 18 30 18 24 18 18 30 6 25 6 6 31 0 22 0 0 28 5 26 5 5 32 17 27 17 17 33 14 28 14 14 34 14 28 14 14 34 2 29 2 2 35 5 26 5 5 32 7 30 7 7 36 19 31 19 19 37 13 32 13 13 38 13 32 13 13 38 1 33 1 1 39 7 30 7 7 36 8 34 8 8 40 20 35 20 20 41 21 36 21 21 42 21 36 21 21 42 9 37 9 9 43 8 34 8 8 40 10 38 10 10 44 22 39 22 22 45 23 40 23 23 46 23 40 23 23 46 11 41 11 11 47 10 38 10 10 44 4 17 4 4 27 16 16 16 16 26 20 35 20 20 41 20 35 20 20 41 8 34 8 8 40 4 17 4 4 27 9 37 9 9 43 21 36 21 21 42 17 27 17 17 33 17 27 17 17 33 5 26 5 5 32 9 37 9 9 43 6 25 6 6 31 18 24 18 18 30 22 39 22 22 45 22 39 22 22 45 10 38 10 10 44 6 25 6 6 31 11 41 11 11 47 23 40 23 23 46 19 31 19 19 37 19 31 19 19 37 7 30 7 7 36 11 41 11 11 47 96 42 120 120 138 93 43 117 117 133 45 44 45 45 79 45 44 45 45 79 48 45 48 48 82 96 42 120 120 138 99 46 123 123 141 96 42 120 120 138 48 45 48 48 82 48 45 48 48 82 51 47 51 51 85 99 46 123 123 141 102 48 126 126 144 99 46 123 123 141 51 47 51 51 85 51 47 51 51 85 54 49 54 54 88 102 48 126 126 144 105 50 129 129 147 102 48 126 126 144 54 49 54 54 88 54 49 54 54 88 57 51 57 57 91 105 50 129 129 147 82 52 106 106 120 105 50 129 129 147 57 51 57 57 91 57 51 57 57 91 35 53 35 35 66 82 52 106 106 120 92 54 116 116 131 62 55 86 86 96 30 56 74 74 58 30 56 74 74 58 44 57 78 78 75 92 54 116 116 131 91 58 115 115 130 78 59 102 102 114 31 60 31 31 59 31 60 31 31 59 43 61 43 43 74 91 58 115 115 130 80 62 104 104 116 66 63 90 90 101 42 3 42 42 73 42 3 42 42 73 32 2 32 32 60 80 62 104 104 116 61 64 85 85 95 60 65 84 84 94 24 20 72 72 52 24 20 72 72 52 27 66 73 73 55 61 64 85 85 95 75 67 99 99 111 72 19 96 96 108 25 68 25 25 53 25 68 25 25 53 28 69 28 28 56 75 67 99 99 111 74 70 98 98 110 77 71 101 101 113 29 7 29 29 57 29 7 29 29 57 26 6 26 26 54 74 70 98 98 110 86 72 110 110 125 89 73 113 113 128 41 74 77 77 72 41 74 77 77 72 38 75 76 76 69 86 72 110 110 125 85 76 109 109 124 88 77 112 112 127 40 78 40 40 71 40 78 40 40 71 37 79 37 37 68 85 76 109 109 124 65 80 89 89 100 64 81 88 88 99 36 11 36 36 67 36 11 36 36 67 39 10 39 39 70 65 80 89 89 100 89 73 113 113 128 92 54 116 116 131 44 57 78 78 75 44 57 78 78 75 41 74 77 77 72 89 73 113 113 128 88 77 112 112 127 91 58 115 115 130 43 61 43 43 74 43 61 43 43 74 40 78 40 40 71 88 77 112 112 127 66 63 90 90 101 65 80 89 89 100 39 10 39 39 70 39 10 39 39 70 42 3 42 42 73 66 63 90 90 101 62 55 86 86 96 61 64 85 85 95 27 66 73 73 55 27 66 73 73 55 30 56 74 74 58 62 55 86 86 96 78 59 102 102 114 75 67 99 99 111 28 69 28 28 56 28 69 28 28 56 31 60 31 31 59 78 59 102 102 114 77 71 101 101 113 80 62 104 104 116 32 2 32 32 60 32 2 32 32 60 29 7 29 29 57 77 71 101 101 113 95 82 119 119 136 86 72 110 110 125 38 75 76 76 69 38 75 76 76 69 47 83 79 79 78 95 82 119 119 136 94 84 118 118 134 85 76 109 109 124 37 79 37 37 68 37 79 37 37 68 46 85 46 46 77 94 84 118 118 134 64 81 88 88 99 67 86 91 91 102 45 13 45 45 76 45 13 45 45 76 36 11 36 36 67 64 81 88 88 99 83 87 107 107 121 74 70 98 98 110 26 6 26 26 54 26 6 26 26 54 35 88 35 35 63 83 87 107 107 121 82 89 106 106 119 73 5 97 97 109 25 68 25 25 53 25 68 25 25 53 34 90 34 34 62 82 89 106 106 119 60 65 84 84 94 63 91 87 87 97 33 21 75 75 61 33 21 75 75 61 24 20 72 72 52 60 65 84 84 94 98 92 122 122 140 95 93 119 119 137 47 94 79 79 81 47 94 79 79 81 50 95 80 80 84 98 92 122 122 140 97 96 121 121 139 94 97 118 118 135 46 98 46 46 80 46 98 46 46 80 49 99 49 49 83 97 96 121 121 139 67 100 91 91 103 68 101 92 92 104 48 45 48 48 82 48 45 48 48 82 45 44 45 45 79 67 100 91 91 103 101 102 125 125 143 98 92 122 122 140 50 95 80 80 84 50 95 80 80 84 53 103 81 81 87 101 102 125 125 143 100 104 124 124 142 97 96 121 121 139 49 99 49 49 83 49 99 49 49 83 52 105 52 52 86 100 104 124 124 142 68 101 92 92 104 69 106 93 93 105 51 47 51 51 85 51 47 51 51 85 48 45 48 48 82 68 101 92 92 104 104 107 128 128 146 101 102 125 125 143 53 103 81 81 87 53 103 81 81 87 56 108 82 82 90 104 107 128 128 146 103 109 127 127 145 100 104 124 124 142 52 105 52 52 86 52 105 52 52 86 55 110 55 55 89 103 109 127 127 145 69 106 93 93 105 70 111 94 94 106 54 49 54 54 88 54 49 54 54 88 51 47 51 51 85 69 106 93 93 105 107 112 131 131 149 104 107 128 128 146 56 108 82 82 90 56 108 82 82 90 59 113 83 83 93 107 112 131 131 149 106 114 130 130 148 103 109 127 127 145 55 110 55 55 89 55 110 55 55 89 58 115 58 58 92 106 114 130 130 148 70 111 94 94 106 71 116 95 95 107 57 51 57 57 91 57 51 57 57 91 54 49 54 54 88 70 111 94 94 106 63 117 87 87 98 107 112 131 131 149 59 113 83 83 93 59 113 83 83 93 33 118 75 75 64 63 117 87 87 98 81 119 105 105 118 106 114 130 130 148 58 115 58 58 92 58 115 58 58 92 34 120 34 34 65 81 119 105 105 118 71 116 95 95 107 83 121 107 107 122 35 53 35 35 66 35 53 35 35 66 57 51 57 57 91 71 116 95 95 107 43 61 43 43 74 31 60 31 31 59 79 1 103 103 115 79 1 103 103 115 90 0 114 114 129 43 61 43 43 74 28 69 28 28 56 25 68 25 25 53 73 5 97 97 109 73 5 97 97 109 76 4 100 100 112 28 69 28 28 56 37 79 37 37 68 40 78 40 40 71 87 9 111 111 126 87 9 111 111 126 84 8 108 108 123 37 79 37 37 68 40 78 40 40 71 43 61 43 43 74 90 0 114 114 129 90 0 114 114 129 87 9 111 111 126 40 78 40 40 71 31 60 31 31 59 28 69 28 28 56 76 4 100 100 112 76 4 100 100 112 79 1 103 103 115 31 60 31 31 59 46 85 46 46 77 37 79 37 37 68 84 8 108 108 123 84 8 108 108 123 93 12 117 117 132 46 85 46 46 77 34 90 34 34 62 25 68 25 25 53 72 19 96 96 108 72 19 96 96 108 81 18 105 105 117 34 90 34 34 62 49 99 49 49 83 46 98 46 46 80 93 43 117 117 133 93 43 117 117 133 96 42 120 120 138 49 99 49 49 83 52 105 52 52 86 49 99 49 49 83 96 42 120 120 138 96 42 120 120 138 99 46 123 123 141 52 105 52 52 86 55 110 55 55 89 52 105 52 52 86 99 46 123 123 141 99 46 123 123 141 102 48 126 126 144 55 110 55 55 89 58 115 58 58 92 55 110 55 55 89 102 48 126 126 144 102 48 126 126 144 105 50 129 129 147 58 115 58 58 92 34 120 34 34 65 58 115 58 58 92 105 50 129 129 147 105 50 129 129 147 82 52 106 106 120 34 120 34 34 65 10 122 64 64 2 11 123 65 65 3 62 55 86 86 96 62 55 86 86 96 92 54 116 116 131 10 122 64 64 2 44 57 44 44 75 30 56 30 30 58 78 59 102 102 114 78 59 102 102 114 91 58 115 115 130 44 57 44 44 75 8 124 8 8 0 9 125 9 9 1 66 63 90 90 101 66 63 90 90 101 80 62 104 104 116 8 124 8 8 0 7 126 63 63 6 1 127 61 61 7 60 65 84 84 94 60 65 84 84 94 61 64 85 85 95 7 126 63 63 6 27 66 27 27 55 24 20 24 24 52 72 19 96 96 108 72 19 96 96 108 75 67 99 99 111 27 66 27 27 55 3 128 3 3 4 4 129 4 4 5 77 71 101 101 113 77 71 101 101 113 74 70 98 98 110 3 128 3 3 4 0 130 60 60 10 6 131 62 62 11 89 73 113 113 128 89 73 113 113 128 86 72 110 110 125 0 130 60 60 10 38 75 38 38 69 41 74 41 41 72 88 77 112 112 127 88 77 112 112 127 85 76 109 109 124 38 75 38 38 69 5 132 5 5 8 2 133 2 2 9 64 81 88 88 99 64 81 88 88 99 65 80 89 89 100 5 132 5 5 8 6 131 62 62 11 10 122 64 64 2 92 54 116 116 131 92 54 116 116 131 89 73 113 113 128 6 131 62 62 11 41 74 41 41 72 44 57 44 44 75 91 58 115 115 130 91 58 115 115 130 88 77 112 112 127 41 74 41 41 72 9 125 9 9 1 5 132 5 5 8 65 80 89 89 100 65 80 89 89 100 66 63 90 90 101 9 125 9 9 1 11 123 65 65 3 7 126 63 63 6 61 64 85 85 95 61 64 85 85 95 62 55 86 86 96 11 123 65 65 3 30 56 30 30 58 27 66 27 27 55 75 67 99 99 111 75 67 99 99 111 78 59 102 102 114 30 56 30 30 58 4 129 4 4 5 8 124 8 8 0 80 62 104 104 116 80 62 104 104 116 77 71 101 101 113 4 129 4 4 5 12 134 66 66 13 0 130 60 60 10 86 72 110 110 125 86 72 110 110 125 95 82 119 119 136 12 134 66 66 13 47 83 47 47 78 38 75 38 38 69 85 76 109 109 124 85 76 109 109 124 94 84 118 118 134 47 83 47 47 78 2 133 2 2 9 14 135 14 14 12 67 86 91 91 102 67 86 91 91 102 64 81 88 88 99 2 133 2 2 9 15 136 15 15 15 3 128 3 3 4 74 70 98 98 110 74 70 98 98 110 83 87 107 107 121 15 136 15 15 15 35 88 35 35 63 26 6 26 26 54 73 5 97 97 109 73 5 97 97 109 82 89 106 106 119 35 88 35 35 63 1 127 61 61 7 13 137 67 67 14 63 91 87 87 97 63 91 87 87 97 60 65 84 84 94 1 127 61 61 7 18 138 68 68 17 12 139 66 66 49 95 93 119 119 137 95 93 119 119 137 98 92 122 122 140 18 138 68 68 17 50 95 50 50 84 47 94 47 47 81 94 97 118 118 135 94 97 118 118 135 97 96 121 121 139 50 95 50 50 84 14 140 14 14 48 17 141 17 17 16 68 101 92 92 104 68 101 92 92 104 67 100 91 91 103 14 140 14 14 48 22 142 70 70 19 18 138 68 68 17 98 92 122 122 140 98 92 122 122 140 101 102 125 125 143 22 142 70 70 19 53 103 53 53 87 50 95 50 50 84 97 96 121 121 139 97 96 121 121 139 100 104 124 124 142 53 103 53 53 87 17 141 17 17 16 21 143 21 21 18 69 106 93 93 105 69 106 93 93 105 68 101 92 92 104 17 141 17 17 16 23 144 71 71 21 22 142 70 70 19 101 102 125 125 143 101 102 125 125 143 104 107 128 128 146 23 144 71 71 21 56 108 56 56 90 53 103 53 53 87 100 104 124 124 142 100 104 124 124 142 103 109 127 127 145 56 108 56 56 90 21 143 21 21 18 20 145 20 20 20 70 111 94 94 106 70 111 94 94 106 69 106 93 93 105 21 143 21 21 18 19 146 69 69 23 23 144 71 71 21 104 107 128 128 146 104 107 128 128 146 107 112 131 131 149 19 146 69 69 23 59 113 59 59 93 56 108 56 56 90 103 109 127 127 145 103 109 127 127 145 106 114 130 130 148 59 113 59 59 93 20 145 20 20 20 16 147 16 16 22 71 116 95 95 107 71 116 95 95 107 70 111 94 94 106 20 145 20 20 20 13 148 67 67 50 19 146 69 69 23 107 112 131 131 149 107 112 131 131 149 63 117 87 87 98 13 148 67 67 50 33 118 33 33 64 59 113 59 59 93 106 114 130 130 148 106 114 130 130 148 81 119 105 105 118 33 118 33 33 64 16 147 16 16 22 15 149 15 15 51 83 121 107 107 122 83 121 107 107 122 71 116 95 95 107 16 147 16 16 22</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_turn_R" name="roadsign_turn_R">
+      <mesh>
+        <source id="geom-roadsign_turn_R-positions">
+          <float_array id="geom-roadsign_turn_R-positions-array" count="72">2.082821 2.080461 176.7569 39.92673 2.080472 214.4924 40.77089 2.080472 216.5843 39.9277 2.080472 218.6766 2.110604 2.080477 256.4203 0.01365221 2.080477 257.2624 -2.083645 2.080477 256.4213 -39.92756 2.080465 218.6857 -40.77172 2.080465 216.5938 -39.92852 2.080465 214.5015 -2.111428 2.08046 176.7579 -0.01447725 2.08046 175.9158 -2.111428 1.520456 176.7579 -39.92852 1.52046 214.5015 -39.92756 1.520461 218.6857 -2.083645 1.520472 256.4213 2.110603 1.520473 256.4203 39.9277 1.520468 218.6766 39.92673 1.520467 214.4924 2.08282 1.520456 176.7569 -0.01447725 1.520456 175.9158 -40.77172 1.520461 216.5938 0.01365209 1.520473 257.2624 40.77089 1.520468 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_turn_R-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_turn_R-normals">
+          <float_array id="geom-roadsign_turn_R-normals-array" count="144">-9.01551e-8 1 -2.07719e-7 -1.90667e-7 1 -3.0474e-7 -2.7608e-8 1 -1.46493e-7 -5.4592e-8 1 -1.67908e-7 -3.71269e-7 1 7.53827e-8 -6.65062e-8 1 -2.4016e-7 -5.7112e-8 1 -2.42097e-7 2.00383e-7 1 8.0754e-8 -3.68979e-8 1 -1.49524e-7 -9.01595e-8 1 -1.99985e-7 -1.01377e-7 1 -1.97876e-7 -1.81103e-7 1 -1.1533e-7 -0.5506604 4.66832e-7 -0.8347294 -0.8338603 0 -0.5519756 -0.8338602 2.04881e-9 -0.5519757 -0.5506601 4.43838e-7 -0.8347296 -0.8336038 2.04676e-9 0.5523628 -0.5502712 4.49789e-7 0.834986 -0.550271 4.66503e-7 0.8349862 -0.8336038 0 0.5523629 0.5506603 -4.66832e-7 0.8347294 0.8338616 0 0.5519736 0.8338615 -2.04882e-9 0.5519738 0.5506603 -4.50099e-7 0.8347295 0.8336043 -2.04676e-9 -0.5523622 0.5502759 -4.43539e-7 -0.8349829 0.5502762 -4.66507e-7 -0.8349828 0.8336043 0 -0.5523621 -2.29092e-4 -2.64098e-8 -1 -2.29181e-4 2.64395e-8 -1 -1 0 2.3391e-4 -1 0 2.33716e-4 2.35368e-4 1.97567e-8 1 2.35191e-4 -1.98796e-8 1 1 0 -2.35117e-4 1 0 -2.35112e-4 8.69794e-8 -1 2.09509e-7 8.53157e-8 -1 2.1244e-7 8.4905e-8 -1 2.11129e-7 1.47788e-8 -1 2.78972e-7 7.69495e-8 -1 2.18433e-7 9.02669e-8 -1 2.07303e-7 8.53488e-8 -1 2.23647e-7 8.53513e-8 -1 3.54085e-7 8.71288e-8 -1 2.247e-7 3.05309e-7 -1 -9.23278e-9 1.51636e-7 -1 2.0252e-7 2.8052e-7 -1 3.97926e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_turn_R-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_turn_R-map1">
+          <float_array id="geom-roadsign_turn_R-map1-array" count="108">0.3829873 0.3222544 0 0.4904738 0.4294332 0 0.4928714 0.4353745 0 0.4904766 0.4413173 0 0.3830662 0.5485192 0 0.3771104 0.5509112 0 0.3711536 0.5485221 0 0.263667 0.4413432 0 0.2612694 0.4354016 0 0.2636642 0.429459 0 0.3710747 0.3222571 0 0.3770305 0.3198654 0 0.896757 0.01213237 0 0.8963893 0.008253101 0 0.8087094 0.09576262 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8087118 0.1054637 0 0.8964537 0.1929544 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9061781 0.1929519 0 0.9938578 0.1054426 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9938555 0.09574153 0 0.9061136 0.008250902 0 0.9061028 0.01213026 0 0.9012511 0.006300764 0 0.9014298 0.01025603 0 0.8067545 0.1006135 0 0.8106119 0.1008971 0 0.9013162 0.1949045 0 0.9014923 0.1915171 0 0.9958127 0.1005915 0 0.99231 0.1008759 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_turn_R-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_turn_R-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_turn_R-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_turn_R-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_turn_R-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_turn_R-map1" offset="2" set="0"/>
+          <p>10 0 10 9 1 9 8 2 8 10 0 10 8 2 8 7 3 7 7 3 7 6 4 6 5 5 5 7 3 7 5 5 5 4 6 4 10 0 10 7 3 7 4 6 4 4 6 4 3 7 3 2 8 2 4 6 4 2 8 2 1 9 1 10 0 10 4 6 4 1 9 1 11 10 11 10 0 10 1 9 1 0 11 0 11 10 11 1 9 1 12 12 12 13 13 15 9 14 14 9 14 14 10 15 13 12 12 12 14 16 16 15 17 19 6 18 18 6 18 18 7 19 17 14 16 16 16 20 20 17 21 23 3 22 22 3 22 22 4 23 21 16 20 20 18 24 24 19 25 27 0 26 26 0 26 26 1 27 25 18 24 24 11 28 28 0 26 26 19 25 27 19 25 27 20 29 29 11 28 28 8 30 30 9 14 14 13 13 15 13 13 15 21 31 31 8 30 30 5 32 32 6 18 18 15 17 19 15 17 19 22 33 33 5 32 32 2 34 34 3 22 22 17 21 23 17 21 23 23 35 35 2 34 34 10 15 13 11 28 28 20 29 29 20 29 29 12 12 12 10 15 13 7 19 17 8 30 30 21 31 31 21 31 31 14 16 16 7 19 17 4 23 21 5 32 32 22 33 33 22 33 33 16 20 20 4 23 21 1 27 25 2 34 34 23 35 35 23 35 35 18 24 24 1 27 25 12 36 12 20 37 29 19 38 27 19 38 27 18 39 24 23 40 35 12 36 12 19 38 27 23 40 35 23 40 35 17 41 23 16 42 20 16 42 20 22 43 33 15 44 19 23 40 35 16 42 20 15 44 19 12 36 12 23 40 35 15 44 19 15 44 19 14 45 16 21 46 31 12 36 12 15 44 19 21 46 31 13 47 15 12 36 12 21 46 31</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="geom-roadsign_uturn_R" name="roadsign_uturn_R">
+      <mesh>
+        <source id="geom-roadsign_uturn_R-positions">
+          <float_array id="geom-roadsign_uturn_R-positions-array" count="72">2.082821 2.080461 176.7569 39.92673 2.080472 214.4924 40.77089 2.080472 216.5843 39.9277 2.080472 218.6766 2.110604 2.080477 256.4203 0.01365221 2.080477 257.2624 -2.083645 2.080477 256.4213 -39.92756 2.080465 218.6857 -40.77172 2.080465 216.5938 -39.92852 2.080465 214.5015 -2.111428 2.08046 176.7579 -0.01447725 2.08046 175.9158 -2.111428 1.520456 176.7579 -39.92852 1.52046 214.5015 -39.92756 1.520461 218.6857 -2.083645 1.520472 256.4213 2.110603 1.520473 256.4203 39.9277 1.520468 218.6766 39.92673 1.520467 214.4924 2.08282 1.520456 176.7569 -0.01447725 1.520456 175.9158 -40.77172 1.520461 216.5938 0.01365209 1.520473 257.2624 40.77089 1.520468 216.5843</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_uturn_R-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_uturn_R-normals">
+          <float_array id="geom-roadsign_uturn_R-normals-array" count="144">-9.01551e-8 1 -2.07719e-7 -1.90667e-7 1 -3.0474e-7 -2.7608e-8 1 -1.46493e-7 -5.4592e-8 1 -1.67908e-7 -3.71269e-7 1 7.53827e-8 -6.65062e-8 1 -2.4016e-7 -5.7112e-8 1 -2.42097e-7 2.00383e-7 1 8.0754e-8 -3.68979e-8 1 -1.49524e-7 -9.01595e-8 1 -1.99985e-7 -1.01377e-7 1 -1.97876e-7 -1.81103e-7 1 -1.1533e-7 -0.5506604 4.66832e-7 -0.8347294 -0.8338603 0 -0.5519756 -0.8338602 2.04881e-9 -0.5519757 -0.5506601 4.43838e-7 -0.8347296 -0.8336038 2.04676e-9 0.5523628 -0.5502712 4.49789e-7 0.834986 -0.550271 4.66503e-7 0.8349862 -0.8336038 0 0.5523629 0.5506603 -4.66832e-7 0.8347294 0.8338616 0 0.5519736 0.8338615 -2.04882e-9 0.5519738 0.5506603 -4.50099e-7 0.8347295 0.8336043 -2.04676e-9 -0.5523622 0.5502759 -4.43539e-7 -0.8349829 0.5502762 -4.66507e-7 -0.8349828 0.8336043 0 -0.5523621 -2.29092e-4 -2.64098e-8 -1 -2.29181e-4 2.64395e-8 -1 -1 0 2.3391e-4 -1 0 2.33716e-4 2.35368e-4 1.97567e-8 1 2.35191e-4 -1.98796e-8 1 1 0 -2.35117e-4 1 0 -2.35112e-4 8.69794e-8 -1 2.09509e-7 8.53157e-8 -1 2.1244e-7 8.4905e-8 -1 2.11129e-7 1.47788e-8 -1 2.78972e-7 7.69495e-8 -1 2.18433e-7 9.02669e-8 -1 2.07303e-7 8.53488e-8 -1 2.23647e-7 8.53513e-8 -1 3.54085e-7 8.71288e-8 -1 2.247e-7 3.05309e-7 -1 -9.23278e-9 1.51636e-7 -1 2.0252e-7 2.8052e-7 -1 3.97926e-7</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_uturn_R-normals-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-roadsign_uturn_R-map1">
+          <float_array id="geom-roadsign_uturn_R-map1-array" count="108">0.2566571 0.178553 0 0.3641437 0.2857317 0 0.3665413 0.2916731 0 0.3641465 0.2976159 0 0.2567361 0.4048176 0 0.2507802 0.4072095 0 0.2448234 0.4048206 0 0.1373368 0.2976417 0 0.1349392 0.2917002 0 0.137334 0.2857576 0 0.2447445 0.1785557 0 0.2507003 0.176164 0 0.896757 0.01213237 0 0.8963893 0.008253101 0 0.8087094 0.09576262 0 0.8124909 0.09623501 0 0.812493 0.1055585 0 0.8087118 0.1054637 0 0.8964537 0.1929544 0 0.8968191 0.189643 0 0.9061649 0.1896406 0 0.9061781 0.1929519 0 0.9938578 0.1054426 0 0.9904312 0.1055381 0 0.990429 0.09621476 0 0.9938555 0.09574153 0 0.9061136 0.008250902 0 0.9061028 0.01213026 0 0.9012511 0.006300764 0 0.9014298 0.01025603 0 0.8067545 0.1006135 0 0.8106119 0.1008971 0 0.9013162 0.1949045 0 0.9014923 0.1915171 0 0.9958127 0.1005915 0 0.99231 0.1008759 0</float_array>
+          <technique_common>
+            <accessor source="#geom-roadsign_uturn_R-map1-array" count="36" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-roadsign_uturn_R-vertices">
+          <input semantic="POSITION" source="#geom-roadsign_uturn_R-positions"/>
+        </vertices>
+        <triangles material="roadsigns_01" count="44">
+          <input semantic="VERTEX" source="#geom-roadsign_uturn_R-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-roadsign_uturn_R-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-roadsign_uturn_R-map1" offset="2" set="0"/>
+          <p>10 0 10 9 1 9 8 2 8 10 0 10 8 2 8 7 3 7 7 3 7 6 4 6 5 5 5 7 3 7 5 5 5 4 6 4 10 0 10 7 3 7 4 6 4 4 6 4 3 7 3 2 8 2 4 6 4 2 8 2 1 9 1 10 0 10 4 6 4 1 9 1 11 10 11 10 0 10 1 9 1 0 11 0 11 10 11 1 9 1 12 12 12 13 13 15 9 14 14 9 14 14 10 15 13 12 12 12 14 16 16 15 17 19 6 18 18 6 18 18 7 19 17 14 16 16 16 20 20 17 21 23 3 22 22 3 22 22 4 23 21 16 20 20 18 24 24 19 25 27 0 26 26 0 26 26 1 27 25 18 24 24 11 28 28 0 26 26 19 25 27 19 25 27 20 29 29 11 28 28 8 30 30 9 14 14 13 13 15 13 13 15 21 31 31 8 30 30 5 32 32 6 18 18 15 17 19 15 17 19 22 33 33 5 32 32 2 34 34 3 22 22 17 21 23 17 21 23 23 35 35 2 34 34 10 15 13 11 28 28 20 29 29 20 29 29 12 12 12 10 15 13 7 19 17 8 30 30 21 31 31 21 31 31 14 16 16 7 19 17 4 23 21 5 32 32 22 33 33 22 33 33 16 20 20 4 23 21 1 27 25 2 34 34 23 35 35 23 35 35 18 24 24 1 27 25 12 36 12 20 37 29 19 38 27 19 38 27 18 39 24 23 40 35 12 36 12 19 38 27 23 40 35 23 40 35 17 41 23 16 42 20 16 42 20 22 43 33 15 44 19 23 40 35 16 42 20 15 44 19 12 36 12 23 40 35 15 44 19 15 44 19 14 45 16 21 46 31 12 36 12 15 44 19 21 46 31 13 47 15 12 36 12 21 46 31</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_lights>
+    <light id="EnvironmentAmbientLight" name="EnvironmentAmbientLight">
+      <technique_common>
+        <ambient>
+          <color>0 0 0</color>
+        </ambient>
+      </technique_common>
+    </light>
+  </library_lights>
+  <library_images>
+    <image id="roadsign_pole_d_psd">
+      <init_from>../../../../../../../../../D:/Gabe/My%20Documents/3dsmax%20models/BeamNG/objects/roadsign_pole_d.psd</init_from>
+    </image>
+    <image id="roadsign_pole_ddn_psd">
+      <init_from>../../../../../../../../../D:/Gabe/My%20Documents/3dsmax%20models/BeamNG/objects/roadsign_pole_ddn.psd</init_from>
+    </image>
+  </library_images>
+  <library_visual_scenes>
+    <visual_scene id="MaxScene">
+      <node name="EnvironmentAmbientLight">
+        <instance_light url="#EnvironmentAmbientLight"/>
+      </node>
+      <node id="node-roadsign_square-04" name="roadsign_square-04">
+        <instance_geometry url="#geom-roadsign_square-04">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_square-03" name="roadsign_square-03">
+        <instance_geometry url="#geom-roadsign_square-03">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_square-02" name="roadsign_square-02">
+        <instance_geometry url="#geom-roadsign_square-02">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_square-01" name="roadsign_square-01">
+        <instance_geometry url="#geom-roadsign_square-01">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_speedlimit_35" name="roadsign_speedlimit_35">
+        <instance_geometry url="#geom-roadsign_speedlimit_35">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_speedlimit_55" name="roadsign_speedlimit_55">
+        <instance_geometry url="#geom-roadsign_speedlimit_55">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_speedlimit_65" name="roadsign_speedlimit_65">
+        <instance_geometry url="#geom-roadsign_speedlimit_65">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_speedlimit_25" name="roadsign_speedlimit_25">
+        <instance_geometry url="#geom-roadsign_speedlimit_25">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_speedlimit_45" name="roadsign_speedlimit_45">
+        <instance_geometry url="#geom-roadsign_speedlimit_45">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_circle-02" name="roadsign_circle-02">
+        <instance_geometry url="#geom-roadsign_circle-02">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_circle-01" name="roadsign_circle-01">
+        <instance_geometry url="#geom-roadsign_circle-01">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_uturn_L" name="roadsign_uturn_L">
+        <instance_geometry url="#geom-roadsign_uturn_L">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_diamond-05" name="roadsign_diamond-05">
+        <instance_geometry url="#geom-roadsign_diamond-05">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_diamond-04" name="roadsign_diamond-04">
+        <instance_geometry url="#geom-roadsign_diamond-04">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_turn_L" name="roadsign_turn_L">
+        <instance_geometry url="#geom-roadsign_turn_L">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_squiggle" name="roadsign_squiggle">
+        <instance_geometry url="#geom-roadsign_squiggle">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_slow" name="roadsign_slow">
+        <instance_geometry url="#geom-roadsign_slow">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_stop" name="roadsign_stop">
+        <instance_geometry url="#geom-roadsign_stop">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_square-05" name="roadsign_square-05">
+        <instance_geometry url="#geom-roadsign_square-05">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_yield" name="roadsign_yield">
+        <instance_geometry url="#geom-roadsign_yield">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_pole" name="roadsign_pole">
+        <instance_geometry url="#geom-roadsign_pole">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsign_pole" target="#roadsign_pole-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_turn_R" name="roadsign_turn_R">
+        <instance_geometry url="#geom-roadsign_turn_R">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-roadsign_uturn_R" name="roadsign_uturn_R">
+        <instance_geometry url="#geom-roadsign_uturn_R">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roadsigns_01" target="#roadsigns_01-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#MaxScene"/>
+  </scene>
+</COLLADA>

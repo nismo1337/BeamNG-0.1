@@ -1,0 +1,234 @@
+{
+"super_mirror_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Right Mirror",
+	}
+    "slotType" : "super_mirror_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_mirror_R", ["super_mirror_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--RIGHT MIRROR--
+		 {"selfCollision":true}
+		 {"collision":true},
+		 {"nodeWeight":1},
+		 {"frictionCoef":1},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"super_mirror_R"},
+		 ["mi1r",-0.865, -0.41, 0.91],
+		 ["mi2r",-1.025, -0.38, 0.91],
+		 ["mi3r",-0.875, -0.41, 0.81],
+		 ["mi4r",-1.025, -0.38, 0.81],
+		 ["mi5r",-0.955, -0.51, 0.86],
+		 
+		 {"selfCollision":false}
+		 ["mi6r",-0.87, -0.445, 0.75],
+		 {"selfCollision":true},
+		 {"collision":true}
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--MIRRORS--
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":1451000,"beamDamp":150},
+		  {"beamDeform":18000,"beamStrength":88500},
+		  //mirror
+		  //r
+		  ["mi1r","mi2r"],
+		  ["mi1r","mi3r"],
+		  ["mi1r","mi4r"],
+		  ["mi1r","mi5r"],
+		  ["mi1r","mi6r"],
+		  ["mi2r","mi3r"],
+		  ["mi2r","mi4r"],
+		  ["mi2r","mi5r"],
+		  ["mi2r","mi6r"],
+		  ["mi3r","mi4r"],
+		  ["mi3r","mi5r"],
+		  ["mi3r","mi6r"],
+		  ["mi4r","mi5r"],
+		  ["mi4r","mi6r"],
+		  ["mi5r","mi6r"],
+		  
+		  //attach
+		  {"beamSpring":1151000,"beamDamp":200},
+		  {"beamDeform":13600,"beamStrength":32000},
+		  {"breakGroup":"super_mirror_R"},
+		  ["mi6r","d7r"],
+		  ["mi6r","d8r"],
+		  ["mi6r","d10r"],
+		  ["mi5r","d10r"],
+		  ["mi5r","d7r"],
+		  
+		  ["mi4r","d4r"],
+		  ["mi5r","d4r"],
+		  ["mi6r","d4r"],
+		  
+		  {"beamSpring":751000,"beamDamp":200},
+		  {"breakGroupType":1},
+		  {"breakGroup":"super_mirror_R"},
+		  ["mi1r","d7r"],
+		  ["mi1r","d10r"],
+		  ["mi2r","d7r"],
+		  ["mi3r","d7r"],
+		  ["mi3r","d8r"],
+		  
+		  
+		  {"breakGroup":""},
+		  {"breakGroupType":0},
+		  //--MIRROR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":651000,"beamDamp":0},
+		  {"beamLimitSpring":651000,"beamLimitDamp":100},
+		  {"beamDeform":2500,"beamStrength":200000},
+		  
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//right mirror
+			{"group":"super_mirror_R"},
+			["mi2r","mi1r","mi3r"],
+			["mi2r","mi3r","mi4r"],
+			
+			["mi1r","mi2r","mi5r"],
+			["mi2r","mi4r","mi5r"],
+			["mi4r","mi3r","mi5r"],
+			["mi3r","mi1r","mi5r"],
+			
+			{"group":""},
+			
+			
+	],
+}
+"super_mirror_L": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Left Mirror",
+	}
+    "slotType" : "super_mirror_L",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_mirror_L", ["super_mirror_L"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--LEFT MIRROR--
+		 {"selfCollision":true}
+		 {"collision":true},
+		 {"nodeWeight":1},
+		 {"frictionCoef":1},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"super_mirror_L"},
+		 ["mi1l", 0.865, -0.41, 0.91],
+		 ["mi2l", 1.025, -0.38, 0.91],
+		 ["mi3l", 0.875, -0.41, 0.81],
+		 ["mi4l", 1.025, -0.38, 0.81],
+		 ["mi5l", 0.955, -0.51, 0.86],
+		 
+		 {"selfCollision":false}
+		 ["mi6l", 0.87, -0.445, 0.75],
+		 
+		 {"selfCollision":true},
+		 {"collision":true}
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--MIRRORS--
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":1451000,"beamDamp":150},
+		  {"beamDeform":18000,"beamStrength":88500},
+		  //mirror
+		  
+		  //l
+		  ["mi1l","mi2l"],
+		  ["mi1l","mi3l"],
+		  ["mi1l","mi4l"],
+		  ["mi1l","mi5l"],
+		  ["mi1l","mi6l"],
+		  ["mi2l","mi3l"],
+		  ["mi2l","mi4l"],
+		  ["mi2l","mi5l"],
+		  ["mi2l","mi6l"],
+		  ["mi3l","mi4l"],
+		  ["mi3l","mi5l"],
+		  ["mi3l","mi6l"],
+		  ["mi4l","mi5l"],
+		  ["mi4l","mi6l"],
+		  ["mi5l","mi6l"],
+		  //attach
+		  {"beamSpring":1151000,"beamDamp":200},
+		  {"beamDeform":13600,"beamStrength":32000},
+		  {"breakGroup":"super_mirror_L"},
+		  ["mi6l","d7l"],
+		  ["mi6l","d8l"],
+		  ["mi6l","d10l"],
+		  ["mi5l","d10l"],
+		  ["mi5l","d7l"],
+		  
+		  ["mi4l","d4l"],
+		  ["mi5l","d4l"],
+		  ["mi6l","d4l"],
+		  {"beamSpring":751000,"beamDamp":200},
+		  {"breakGroupType":1},
+		  {"breakGroup":"super_mirror_L"},
+		  ["mi1l","d7l"],
+		  ["mi1l","d10l"],
+		  ["mi2l","d7l"],
+		  ["mi3l","d7l"],
+		  ["mi3l","d8l"],
+		  
+		  {"breakGroup":""},
+		  {"breakGroupType":0},
+		  //--MIRROR SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":651000,"beamDamp":0},
+		  {"beamLimitSpring":651000,"beamLimitDamp":100},
+		  {"beamDeform":2500,"beamStrength":200000},
+		  
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//left mirror
+			{"group":"super_mirror_L"},
+			["mi1l","mi2l","mi3l"],
+			["mi3l","mi2l","mi4l"],
+			
+			["mi2l","mi1l","mi5l"],
+			["mi4l","mi2l","mi5l"],
+			["mi3l","mi4l","mi5l"],
+			["mi1l","mi3l","mi5l"],
+			{"group":""},
+			
+			
+	],
+}
+}

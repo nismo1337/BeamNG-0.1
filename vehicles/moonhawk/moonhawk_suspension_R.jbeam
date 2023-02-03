@@ -1,0 +1,373 @@
+{
+"moonhawk_suspension_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Live Axle Rear Suspension",
+	}
+    "slotType" : "moonhawk_suspension_R",
+	"slots": [
+		["type", "default"]
+		["moonhawk_hubcap_R","moonhawk_hubcap_R"],
+		["moonhawk_brake_R","moonhawk_brake_R"],
+		["moonhawk_wheel_R","moonhawk_wheel_R"],
+		["moonhawk_spring_R","moonhawk_spring_R"],
+		["moonhawk_shock_R","moonhawk_shock_R"],
+		["moonhawk_differential_R","moonhawk_differential_R"],
+	],
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //running gear		 
+		 ["moonhawk_lowerarm_R", ["moonhawk_lowermounts_RR","moonhawk_lowermounts_RL","moonhawk_axle","moonhawk_shockbottom_R"]],
+		 ["moonhawk_upperarm_RL", ["moonhawk_uppermounts_RL","moonhawk_axle"]],
+		 ["moonhawk_upperarm_RR", ["moonhawk_uppermounts_RR","moonhawk_axle"]],
+		 
+		 ["moonhawk_axle", ["moonhawk_axle","moonhawk_shockbottom_R","moonhawk_springbottom_R"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //live axle rear suspension
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"nodeWeight":5.9},
+		 //{"group":"wheelhub_RR"},
+		 //["ax1r", -0.695, 1.43, 0.32],
+		 //{"group":"wheelhub_RL"},
+		 //["ax1l", 0.695, 1.43, 0.32],
+		 {"group":"moonhawk_axle"},
+		 ["ax2r", -0.695, 1.43, 0.47],
+		 ["ax2l", 0.695, 1.43, 0.47],
+		 ["ax3r", -0.695, 1.33, 0.32],
+		 ["ax3l", 0.695, 1.33, 0.32],
+		 {"collision":true}
+		 ["ax1", 0.0, 1.52, 0.21],
+		 ["ax2", 0.0, 1.52, 0.47],
+		 ["ax3", 0.0, 1.17, 0.32],
+		 //wheel nodes
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //{"group":"wheelhub_RR"},
+		 //["axwr", -0.93, 1.43, 0.32],
+		 //{"group":"wheelhub_RL"},
+		 //["axwl", 0.93, 1.43, 0.32],
+		 {"group":"moonhawk_shockbottom_R"},
+		 //shock mounting nodes
+		 {"nodeWeight":5.5},
+		 ["axshr", -0.57, 1.48, 0.21],
+		 ["axshl", 0.57, 1.48, 0.21],
+		 {"group":"moonhawk_springbottom_R"},
+		 //spring mounting nodes
+		 {"nodeWeight":5.5},
+		 ["axsr", -0.46, 1.41, 0.37],
+		 ["axsl", 0.46, 1.41, 0.37],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //live axle suspension		  
+		  {"beamSpring":7001000,"beamDamp":50},
+		  {"beamDeform":95000,"beamStrength":330000},
+		  ["ax2r","ax2"],
+		  ["ax2","ax2l"],
+		  ["ax3r","ax3"],
+		  ["ax3","ax3l"],
+		  //
+		  ["ax2l","ax3l"],
+		  ["ax1","ax2"],
+		  ["ax1","ax3"],
+		  ["ax2","ax3"],
+		  ["ax2r","ax3r"],
+		  
+		  //crossing
+		  ["ax2r","ax1"],
+		  ["ax2l","ax1"],
+		  ["ax3r","ax1"],
+		  ["ax3l","ax1"],
+		  
+		  ["ax3r","ax2"],
+		  ["ax3l","ax2"],
+		  
+		  ["ax2r","ax3"],
+		  ["ax2l","ax3"],
+		  
+		  
+		  {"optional":true},
+		  {"beamSpring":7001000,"beamDamp":50},
+		  {"beamDeform":95000,"beamStrength":320000},
+		  {"breakGroup":"wheel_RR"},
+		  //["ax1r","axwr"],
+		  ["ax2r","axwr"],
+		  ["ax3r","axwr"],
+		  
+		  ["ax1r","ax3"],
+		  ["ax1r","ax2"],
+		  ["ax1r","ax1", {"name":"axle_RR"}],
+		  ["ax1r","ax2r"],
+		  ["ax1r","ax3r"],//right rear brake arm
+		  
+		  {"breakGroup":"wheel_RL"},
+		  //["ax1l","axwl"],
+		  ["ax2l","axwl"],
+		  ["ax3l","axwl"],
+		  
+		  ["ax1l","ax3"],
+		  ["ax1l","ax2"],
+		  ["ax1l","ax1", {"name":"axle_RL"}],
+		  ["ax1l","ax2l"],
+		  ["ax1l","ax3l"],//left rear brake arm
+		  {"beamSpring":7001000,"beamDamp":50},
+		  {"beamDeform":95000,"beamStrength":320000},
+		  //to wheels
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","ax1"],
+		  ["axwr","ax2"],
+		  ["axwr","ax3"],
+		  ["axshr","axwr"],
+		  ["axsr","axwr"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","ax1"],
+		  ["axwl","ax2"],
+		  ["axwl","ax3"],
+		  ["axshl","axwl"],
+		  ["axsl","axwl"],
+		  
+		  //shock mounts
+		  {"breakGroup":"wheel_RR"},
+		  ["axshr","ax1r"],
+		  ["axsr","ax1r"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axshl","ax1l"],
+		  ["axsl","ax1l"],
+		  {"optional":false},
+		  {"breakGroup":""},
+		  {"beamSpring":6601000,"beamDamp":50},
+		  {"beamDeform":95000,"beamStrength":320000},
+		  ["axshr","ax2r"],
+		  ["axshr","ax3r"],
+		  ["axshr","ax1"],
+		  ["axshr","ax2"],
+		  ["axshr","ax3"],
+		  
+		  ["axsr","ax2r"],
+		  ["axsr","ax3r"],
+		  ["axsr","ax1"],
+		  ["axsr","ax2"],
+		  ["axsr","ax3"],
+		  
+		  ["axshl","ax2l"],
+		  ["axshl","ax3l"],
+		  ["axshl","ax1"],
+		  ["axshl","ax2"],
+		  ["axshl","ax3"],
+		  
+		  ["axsl","ax2l"],
+		  ["axsl","ax3l"],
+		  ["axsl","ax1"],
+		  ["axsl","ax2"],
+		  ["axsl","ax3"],
+		  
+		  
+		  {"beamSpring":7001000,"beamDamp":140},
+		  {"beamDeform":42000,"beamStrength":210000},
+		  //locator arms
+		  ["axshr","rx1r"],
+		  ["axshl","rx1l"],
+		  
+		  {"optional":true},
+		  {"breakGroupType":1},
+		  {"beamSpring":1001000,"beamDamp":100},
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","rx1r"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","rx1l"],
+		  {"optional":false},
+		  {"breakGroupType":0},
+		  {"breakGroup":""},
+		  {"beamSpring":3001000,"beamDamp":120},
+		  ["ax2","rx2r"],
+		  ["ax2","rx2l"],
+		  
+		  //rear limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":90000,"beamStrength":330000},
+		  {"beamLimitSpring":451000,"beamLimitDamp":200},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.36},
+		  
+		  ["ax2r","rs1r"],
+		  ["ax2l","rs1l"],
+		  ["ax3r","rs1r"],
+		  ["ax3l","rs1l"],
+		  
+		  {"optional":true},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.2, "beamShortBound":0.1},
+		  {"breakGroupType":1},
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","q13r"],
+		  ["axwr","q10r"],
+		  
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","q13l"],
+		  ["axwl","q10l"],
+		  
+		  {"breakGroup":""},
+		  {"breakGroupType":0},
+		  
+		  ["ax2r","q13r"],
+		  ["ax2l","q13l"],
+		  ["ax2r","q10r"],
+		  ["ax2l","q10l"],
+		  
+		  {"optional":false},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"propulsed":1}
+	],
+}
+"moonhawk_brake_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Rear Drum Brakes",
+	}
+    "slotType" : "moonhawk_brake_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["moonhawk_brakedrum_RR", ["wheel_RR","wheelhub_RR"], ["moonhawk"]],
+		 ["moonhawk_brakedrum_RL", ["wheel_RL","wheelhub_RL"], ["moonhawk"]],
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//brakes
+			{"enableABS":false}
+			{"brakeTorque":1000},
+			{"parkingTorque":3600},
+	],
+}
+"moonhawk_spring_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Rear Coil Springs",
+	}
+    "slotType" : "moonhawk_spring_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_spring_R", ["moonhawk_shocktop_R","moonhawk_springbottom_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //rear springs
+		  {"beamPrecompression":1.61, "beamType":"|BOUNDED", "beamLongBound":0.08, "beamShortBound":0.45}, 
+		  {"beamSpring":26000,"beamDeform":174000,"beamStrength":251000},
+		  {"beamDamp":0},
+		  {"beamLimitSpring":211000,"beamLimitDamp":1200},
+		  ["axsr","rs1r",{"beamDampRebound":0}],
+		  ["axsl","rs1l",{"beamDampRebound":0}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"moonhawk_shock_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Rear Shocks",
+	}
+    "slotType" : "moonhawk_shock_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_shock_R", ["moonhawk_shocktop_R","moonhawk_shockbottom_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //rear shocks
+		  {"beamPrecompression":1.61, "beamType":"|BOUNDED", "beamLongBound":0.08, "beamShortBound":0.45}, 
+		  {"beamSpring":0,"beamDeform":174000,"beamStrength":251000},
+		  {"beamDamp":2000},
+		  {"beamLimitSpring":211000,"beamLimitDamp":1200},
+		  ["axshr","rs1r",{"beamDampRebound":2400}],
+		  ["axshl","rs1l",{"beamDampRebound":2400}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"moonhawk_driveshaft": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Driveshaft",
+	}
+    "slotType" : "moonhawk_driveshaft",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_driveshaft", ["moonhawk_axle","moonhawk_shockbottom_R","moonhawk_springbottom_R","moonhawk_transmission","moonhawk_engine"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  
+		  //driveshaft
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":2000,"beamStrength":4000},
+		  {"beamLimitSpring":3501000,"beamLimitDamp":200},
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.005, "beamShortBound":0.005},
+		  ["ax3","tra1", {"name":"driveshaft"}],
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.36},
+	],
+}
+"moonhawk_differential_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Rear Differential",
+	}
+	"engine":{
+		"differential":3.27,
+		},
+    "slotType" : "moonhawk_differential_R",
+}
+}

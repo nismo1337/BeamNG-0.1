@@ -1,0 +1,109 @@
+{
+"moonhawk_hubcap_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Hubcaps",
+	}
+    "slotType" : "moonhawk_hubcap_F",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //hubcaps
+		 ["bruckell_hubcap_01a_15_FR", ["hubcap_FR"], ["bruckell_hubcap_01a"]],
+		 ["bruckell_hubcap_01a_15_FL", ["hubcap_FL"], ["bruckell_hubcap_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true},
+		 {"selfCollision":false}
+		 {"nodeWeight":0.75},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":1},
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}, 
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			//hubcap options
+			{"enableHubcaps":true},
+			{"hubcapSelfCollision":true}
+			{"hubcapCollision":true}
+			{"hubcapOffset":0.01},
+			{"hubcapWidth":0.05},
+			{"hubcapBeamSpring":551000, "hubcapBeamDamp":20}
+			{"hubcapBeamDeform":116000, "hubcapBeamStrength":130000},
+			{"hubcapAttachBeamSpring":251000, "hubcapAttachBeamDamp":30},
+			{"hubcapAttachBeamDeform":2400, "hubcapAttachBeamStrength":2600},
+			{"hubcapNodeWeight":0.25},
+			{"hubcapCenterNodeWeight":0.25},
+			{"hubcapNodeMaterial":"|NM_METAL"},
+			{"hubcapFrictionCoef":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}"moonhawk_hubcap_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Rear Hubcaps",
+	}
+    "slotType" : "moonhawk_hubcap_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //hubcaps
+		 ["bruckell_hubcap_01a_15_RR", ["hubcap_RR"], ["bruckell_hubcap_01a"]],
+		 ["bruckell_hubcap_01a_15_RL", ["hubcap_RL"], ["bruckell_hubcap_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true},
+		 {"selfCollision":false}
+		 {"nodeWeight":0.75},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":1},
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}, 
+	],
+		"hubWheelsTSG": [
+            ["radius","hubRadius","wheelOffset","hubWidth","tireWidth","numRays","node1:","node2:","nodeS","nodeArm:","brakeTorque","parkingTorque","propulsed","wheelDir"], 
+			//hubcap options
+			{"enableHubcaps":true},
+			{"hubcapSelfCollision":true}
+			{"hubcapCollision":true}
+			{"hubcapOffset":0.01},
+			{"hubcapWidth":0.05},
+			{"hubcapBeamSpring":551000, "hubcapBeamDamp":20}
+			{"hubcapBeamDeform":116000, "hubcapBeamStrength":130000},
+			{"hubcapAttachBeamSpring":251000, "hubcapAttachBeamDamp":30},
+			{"hubcapAttachBeamDeform":2400, "hubcapAttachBeamStrength":2600},
+			{"hubcapNodeWeight":0.25},
+			{"hubcapCenterNodeWeight":0.25},
+			{"hubcapNodeMaterial":"|NM_METAL"},
+			{"hubcapFrictionCoef":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

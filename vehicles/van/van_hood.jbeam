@@ -1,0 +1,343 @@
+{
+"van_hood": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril H-Series Hood",
+	}
+    "slotType" : "van_hood",
+	"scalenodeWeight":1,
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_hood", ["van_hood"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"frictionCoef":0.7},
+		 //--HOOD--
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_hood"},
+		 {"nodeWeight":2.1},
+		 {"selfCollision":true},
+		 ["h1rr",-0.88, -1.17, 1.38],
+		 ["h1r",-0.46, -1.26, 1.395],
+		 ["h1",0.0, -1.28, 1.40],
+		 ["h1l",0.46, -1.26, 1.395],
+		 ["h1ll",0.88, -1.17, 1.38],
+		 ["h2rr",-0.88, -1.55, 1.32],
+		 ["h2r",-0.46, -1.59, 1.34],
+		 ["h2",0.0, -1.60, 1.345],
+		 ["h2l",0.46, -1.59, 1.34],
+		 ["h2ll",0.88, -1.55, 1.32],
+		 ["h3rr",-0.875, -1.77, 1.26],
+		 ["h3r",-0.45, -1.80, 1.27],
+		 ["h3",0.0, -1.81, 1.275],
+		 ["h3l",0.45, -1.80, 1.27],
+		 ["h3ll",0.875, -1.77, 1.26],
+		 ["h4rr",-0.87, -2.02, 1.135],
+		 ["h4r",-0.45, -2.05, 1.14],
+		 ["h4",0.0, -2.06, 1.145],
+		 ["h4l",0.45, -2.05, 1.14],
+		 ["h4ll",0.87, -2.02, 1.135],
+		 //rigidifier
+		 {"group":""},
+		 {"collision":false}
+		 //{"selfCollision":false}
+		 ["h5",0.0, -1.54, 1.16],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--HOOD--
+		  {"beamSpring":2051000,"beamDamp":100},
+		  {"beamDeform":96500,"beamStrength":"FLT_MAX"},
+		  //hood main shape
+		  ["h1rr","h2rr"],
+		  ["h1r","h2r"],
+		  ["h1","h2"],
+		  ["h1l","h2l"],
+		  ["h1ll","h2ll"],
+		  ["h2rr","h3rr"],
+		  ["h2r","h3r"],
+		  ["h2","h3"],
+		  ["h2l","h3l"],
+		  ["h2ll","h3ll"],
+		  ["h3rr","h4rr"],
+		  ["h3r","h4r"],
+		  ["h3","h4"],
+		  ["h3l","h4l"],
+		  ["h3ll","h4ll"],
+		  //widthwise
+		  ["h1rr","h1r"],
+		  ["h1r","h1"],
+		  ["h1","h1l"],
+		  ["h1l","h1ll"],
+		  ["h2rr","h2r"],
+		  ["h2r","h2"],
+		  ["h2","h2l"],
+		  ["h2l","h2ll"],
+		  ["h3rr","h3r"],
+		  ["h3r","h3"],
+		  ["h3","h3l"],
+		  ["h3l","h3ll"],
+		  ["h4rr","h4r"],
+		  ["h4r","h4"],
+		  ["h4","h4l"],
+		  ["h4l","h4ll"],
+		  //surficial crossing
+		  {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+		  ["h1rr","h2r"],
+		  ["h1r","h2rr"],
+		  ["h1r","h2"],
+		  ["h1","h2r"],
+		  ["h1","h2l"],
+		  ["h1l","h2"],
+		  ["h1l","h2ll"],
+		  ["h1ll","h2l"],
+		  
+		  ["h2rr","h3r"],
+		  ["h2r","h3rr"],
+		  ["h2r","h3"],
+		  ["h2","h3r"],
+		  ["h2","h3l"],
+		  ["h2l","h3"],
+		  ["h2l","h3ll"],
+		  ["h2ll","h3l"],
+		  
+		  ["h3rr","h4r"],
+		  ["h3r","h4rr"],
+		  ["h3r","h4"],
+		  ["h3","h4r"],
+		  ["h3","h4l"],
+		  ["h3l","h4"],
+		  ["h3l","h4ll"],
+		  ["h3ll","h4l"],
+		  
+		  //extra
+		  ["h1rr","h2"],
+		  ["h1ll","h2"],
+		  //rigids
+		  {"beamDeform":6500,"beamStrength":"FLT_MAX"},
+		  //lengthwise
+		  /*
+		  ["h1rr","h3rr"],
+		  ["h1r","h3r"],
+		  ["h1","h3"],
+		  ["h1l","h3l"],
+		  ["h1ll","h3ll"],
+		  */
+		  
+		  ["h2rr","h4rr"],
+		  ["h2r","h4r"],
+		  ["h2","h4"],
+		  ["h2l","h4l"],
+		  ["h2ll","h4ll"],
+		  //widthwise
+		  /*
+		  ["h1rr","h1"],
+		  ["h1r","h1l"],
+		  ["h1","h1ll"],
+		  ["h2rr","h2"],
+		  ["h2r","h2l"],
+		  ["h2","h2ll"],
+		  ["h3rr","h3"],
+		  ["h3r","h3l"],
+		  ["h3","h3ll"],
+		  ["h4rr","h4"],
+		  ["h4r","h4l"],
+		  ["h4","h4ll"],
+		  */
+		  //rigidifier
+		  {"beamDeform":5500,"beamStrength":"FLT_MAX"},
+		  ["h5","h1rr"],
+		  ["h5","h2rr"],
+		  ["h5","h3rr"],
+		  ["h5","h4rr"],
+		  ["h5","h1r"],
+		  ["h5","h2r"],
+		  ["h5","h3r"],
+		  ["h5","h4r"],
+		  ["h5","h1"],
+		  ["h5","h2"],
+		  ["h5","h3"],
+		  ["h5","h4"],
+		  ["h5","h1l"],
+		  ["h5","h2l"],
+		  ["h5","h3l"],
+		  ["h5","h4l"],
+		  ["h5","h1ll"],
+		  ["h5","h2ll"],
+		  ["h5","h3ll"],
+		  ["h5","h4ll"],
+		  //hood hinge
+		  {"beamDeform":19000,"beamStrength":25000},
+		  {"breakGroup":"van_hoodhinge_R"},
+		  //r
+		  ["h1r","f3r"],
+		  ["h1rr","f3r"],
+		  ["h2r","f3r"],
+		  ["h2rr","f3r"],
+		  ["h1","f3r"],
+		  ["h2","f3r"],
+		  
+		  {"breakGroup":"van_hoodhinge_L"},
+		  ["h1","f3l"],
+		  ["h2","f3l"],
+		  ["h1l","f3l"],
+		  ["h1ll","f3l"],
+		  ["h2l","f3l"],
+		  ["h2ll","f3l"],
+		  
+		  {"breakGroup":"van_hoodlatch"},
+		  //hood latch
+		  {"beamDeform":7500,"beamStrength":12500},
+		  ["h4rr","f1r"],
+		  ["h4r","f1r"],
+		  ["h4r","f1"],
+		  ["h4","f1r"],
+		  ["h4","f1"],
+		  ["h4","f1l"],
+		  ["h4l","f1"],
+		  ["h4l","f1l"],
+		  ["h4ll","f1l"],
+		  
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":150000},
+		  {"beamSpring":0,"beamDamp":50},
+		  {"breakGroup":"van_hoodhinge_R"},
+		  ["h4rr","f7rr"],
+		  {"breakGroup":"van_hoodhinge_L"},
+		  ["h4ll","f7ll"],
+		  {"breakGroup":""},
+		  //anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":5000000,"beamStrength":50000000},
+		  {"beamLimitSpring":2051000,"beamLimitDamp":100},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":1.0},
+		  ["h1rr","h4rr"],
+		  ["h1r","h4r"],
+		  ["h1","h4"],
+		  ["h1l","h4l"],
+		  ["h1ll","h4ll"],
+		  
+		  ["h1rr","h1ll"],
+		  ["h2rr","h2ll"],
+		  ["h3rr","h3ll"],
+		  ["h4rr","h4ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--HOOD SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT", "beamLongBound":4},
+		  {"beamSpring":2051000,"beamDamp":100},
+		  {"beamLimitSpring":2051000,"beamLimitDamp":100},
+		  {"beamDeform":45000,"beamStrength":850000},
+		  /*
+		  ["h2rr","f3rr"],
+		  ["h2r","f3r"],
+		  ["h2","f3"],
+		  ["h2l","f3l"],
+		  ["h2ll","f3ll"],
+		  
+		  ["h3rr","f4rr"],
+		  ["h3r","f4r"],
+		  ["h3","f4"],
+		  ["h3l","f4l"],
+		  ["h3ll","f4ll"],
+		  
+		  */
+		  ["h2rr","f5rr"],
+		  
+		  ["h2r","fr3r"],
+		  ["h2","fr3"],
+		  ["h2l","fr3l"],
+		  
+		  ["h2ll","f5ll"],
+		  
+		  ["h5","fr2"],
+		  ["h5","fr3"],
+		  ["h5","fr4"],
+		  
+		  ["h1rr","r1rr"],
+		  ["h1ll","r1ll"],
+		  
+		  ["h4rr","f7rr"],
+		  ["h4r","fr5r"],
+		  ["h4","fr5"],
+		  ["h4l","fr5l"],
+		  ["h4ll","f7ll"],
+		  
+		  /*
+		  {"optional":true},
+		  //to fenders
+		  ["h1r","fe7r"],
+		  ["h1l","fe7l"],
+		  ["h2r","fe8r"],
+		  ["h2l","fe8l"],
+		  ["h3r","fe9r"],
+		  ["h3l","fe9l"],
+		  ["h4r","fe10r"],
+		  ["h4l","fe10l"],
+		  
+		  ["h4rr","fe6r"],
+		  ["h4ll","fe6l"],
+		  ["h3rr","fe5r"],
+		  ["h3ll","fe5l"],
+		  ["h2rr","fe4r"],
+		  ["h2ll","fe4l"],
+		  ["h1rr","fe3r"],
+		  ["h1ll","fe3l"],
+		  
+		  
+		  
+		  //to fascia
+		  ["h4rr","fa2rr"],
+		  ["h4r","fa2r"],
+		  ["h4","fa2"],
+		  ["h4l","fa2l"],
+		  ["h4ll","fa2ll"],
+		  {"optional":false},
+		  */
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//hood
+			{"group":"van_hood"},
+			["h1rr","h2rr","h2r"],
+			["h1rr","h2r","h1r"],
+			["h1r","h2r","h2"],
+			["h1r","h2","h1"],
+			["h2l","h1l","h2"],
+			["h1l","h1","h2"],
+			["h2ll","h1ll","h2l"],
+			["h1ll","h1l","h2l"],
+			
+			["h2rr","h3rr","h3r"],
+			["h2rr","h3r","h2r"],
+			["h2r","h3r","h3"],
+			["h2r","h3","h2"],
+			["h3l","h2l","h3"],
+			["h2l","h2","h3"],
+			["h3ll","h2ll","h3l"],
+			["h2ll","h2l","h3l"],
+			
+			["h3rr","h4rr","h4r"],
+			["h3rr","h4r","h3r"],
+			["h3r","h4r","h4"],
+			["h3r","h4","h3"],
+			["h4l","h3l","h4"],
+			["h3l","h3","h4"],
+			["h4ll","h3ll","h4l"],
+			["h3ll","h3l","h4l"],
+			
+			{"group":""},
+			
+	],
+}
+}

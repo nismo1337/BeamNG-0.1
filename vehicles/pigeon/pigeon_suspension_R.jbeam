@@ -1,0 +1,249 @@
+{
+"pigeon_axle_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Live Rear Axle Suspension",
+	}
+    "slotType" : "pigeon_suspension_R",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"slots": [
+		["type", "default"]
+		["pigeon_spring_R","pigeon_spring_R"],
+		["pigeon_brake_R","pigeon_brake_R"],
+		["pigeon_wheel_R","pigeon_wheel_R"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //rear axle
+		 ["pigeon_axle", ["pigeon_axle","pigeon_leaf","pigeon_frame"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--REAR LIVE AXLE SUSPENSION--
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.8},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"group":"pigeon_axle"},
+		 ["ax2r", -0.5, 1.01, 0.125],
+		 ["ax2l", 0.5, 1.01, 0.125],
+		 {"group":"pigeon_leaf"},
+		 ["ax3r", -0.5, 0.91, 0.23],
+		 ["ax3l", 0.5, 0.91, 0.23],
+		 {"group":"pigeon_axle"},
+		 {"collision":true}
+		 ["ax1", 0.0, 1.07, 0.23],
+		 ["ax2", 0.0, 1.01, 0.125],
+		 ["ax3", 0.0, 0.87, 0.23],
+		 //{"group":"pigeon_rearshockmounts"},
+		 //shock mounting nodes
+		 //["axshr", -0.43, 1.58, 0.29],
+		 //["axshl", 0.43, 1.58, 0.29],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--REAR LIVE AXLE SUSPENSION--
+		  {"beamSpring":3601000,"beamDamp":40},
+		  {"beamDeform":75000,"beamStrength":360000},
+		  ["ax2r","ax2"],
+		  ["ax2","ax2l"],
+		  ["ax3r","ax3"],
+		  ["ax3","ax3l"],
+		  //
+		  ["ax2l","ax3l"],
+		  ["ax1","ax2"],
+		  ["ax1","ax3"],
+		  ["ax2","ax3"],
+		  ["ax2r","ax3r"],
+		  
+		  //crossing
+		  ["ax2r","ax1"],
+		  ["ax2l","ax1"],
+		  ["ax3r","ax1"],
+		  ["ax3l","ax1"],
+		  
+		  ["ax3r","ax2"],
+		  ["ax3l","ax2"],
+		  
+		  ["ax2r","ax3"],
+		  ["ax2l","ax3"],
+		  
+		  /*
+		  {"beamSpring":3501000,"beamDamp":40},
+		  {"beamDeform":95000,"beamStrength":360000},
+		  //shock mounts
+		  ["axshr","ax2r"],
+		  ["axshr","ax3r"],
+		  ["axshr","ax1"],
+		  ["axshr","ax2"],
+		  ["axshr","ax3"],
+		  
+		  ["axshl","ax2l"],
+		  ["axshl","ax3l"],
+		  ["axshl","ax1"],
+		  ["axshl","ax2"],
+		  ["axshl","ax3"],
+		  */
+		  {"beamSpring":3601000,"beamDamp":40},
+		  {"beamDeform":40000,"beamStrength":280000},
+		  //locator arms
+		  ["ax3r","rx1r"],
+		  ["ax3l","rx1l"],
+		  ["ax2r","rx1r"],
+		  ["ax2l","rx1l"],
+		  
+		  ["ax3","rx1r"],
+		  ["ax3","rx1l"],
+		  {"optional":true},
+		  //driveshaft faker
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":55000,"beamStrength":60000},
+		  {"beamLimitSpring":1401000,"beamLimitDamp":100},
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":0.05},
+		  ["ax3","tra1"],
+		                               
+		  
+		  //--REAR WHEELS--
+		  {"optional":true},
+		  {"beamSpring":3601000,"beamDamp":40},
+		  {"beamDeform":75000,"beamStrength":360000},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax2r","axwr"],
+		  ["ax3r","axwr"],
+		  
+		  ["ax1r","ax3"],
+		  ["ax1r","ax2"],
+		  ["ax1r","ax1",{"name":"axle_RR"}],
+		  ["ax1r","ax2r"],
+		  ["ax1r","ax3r"],
+		  
+		  {"breakGroup":"wheel_RL"},
+		  ["ax2l","axwl"],
+		  ["ax3l","axwl"],
+		  
+		  ["ax1l","ax3"],
+		  ["ax1l","ax2"],
+		  ["ax1","ax1l",{"name":"axle_RL"}],
+		  ["ax1l","ax2l"],
+		  ["ax1l","ax3l"],
+		  {"beamSpring":3601000,"beamDamp":40},
+		  {"beamDeform":85000,"beamStrength":360000},
+		  //to wheels
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","ax1"],
+		  ["axwr","ax2"],
+		  ["axwr","ax3"],
+		  //["axshr","axwr"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","ax1"],
+		  ["axwl","ax2"],
+		  ["axwl","ax3"],
+		  //["axshl","axwl"],
+		  
+		  //shock mounts
+		  //{"breakGroup":"wheel_RR"},
+		  //["axshr","ax1r"],
+		  //{"breakGroup":"wheel_RL"},
+		  //["axshl","ax1l"],
+		  {"breakGroup":""},
+		  
+		  {"beamSpring":3601000,"beamDamp":40},
+		  {"beamDeform":48000,"beamStrength":280000},
+		  {"beamLimitSpring":2401000,"beamLimitDamp":500},
+		  //rear limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":500000,"beamStrength":1000000},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.45, "beamShortBound":0.45},
+		  {"beamLongBound":0.14, "beamShortBound":0.14},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax1r","f9"],
+		  ["ax1r","f10"],
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","f9"],
+		  ["ax1l","f10"],
+		  {"breakGroup":""},
+		  {"beamLongBound":0.4, "beamShortBound":0.2},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax1r","f9ll"],
+		  ["ax1r","f10ll"],
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","f9rr"],
+		  ["ax1l","f10rr"],
+		  {"breakGroup":""},
+		  ["ax2r","f9ll"],
+		  ["ax2l","f9rr"],
+		  ["ax2r","f10ll"],
+		  ["ax2l","f10rr"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"propulsed":1},
+	],
+}
+"pigeon_brake_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Rear Brakes",
+	}
+    "slotType" : "pigeon_brake_R",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 //["pigeon_disc_RR", ["wheel_RR","wheelhub_RR"], ["pigeon"]],
+		 //["pigeon_disc_RL", ["wheel_RL","wheelhub_RL"], ["pigeon"]],
+	],
+	"hubWheelsTSG": [
+			["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"brakeTorque":600},
+			{"parkingTorque":1200},
+	],
+}
+"pigeon_spring_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Rear Springs",
+	}
+    "slotType" : "pigeon_spring_R",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_leaf", ["pigeon_leaf","pigeon_leafmounts","wheelhub_RL","wheelhub_RR"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  //--REAR SHOCKS--
+		  {"beamSpring":25000,"beamDeform":200000,"beamStrength":300000},
+		  {"beamDamp":350,"beamDampRebound":550},
+		  {"beamLimitSpring":4001000},
+		  {"beamPrecompression":1.05, "beamType":"|BOUNDED", "beamLongBound":0.4, "beamShortBound":0.15},
+		  ["ax2r","f12rr",{"beamDampRebound":500}],
+		  ["ax2l","f12ll",{"beamDampRebound":500}],
+		  ["ax2r","f13rr",{"beamDampRebound":500}],
+		  ["ax2l","f13ll",{"beamDampRebound":500}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  ],
+}
+}

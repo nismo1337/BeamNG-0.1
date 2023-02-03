@@ -1,0 +1,40 @@
+{
+"hatch_glass": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Covet Glass",
+	}
+    "slotType" : "hatch_glass",
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //glass
+		 {"deformGroup":"hatch_windshield_break", "deformMaterialBase":"hatch_glass", "deformMaterialDamaged":"hatch_glass_dmg"}
+		 ["hatch_windshield", ["hatch_body"]],
+		 {"deformGroup":"hatch_sideglass_R_break", "deformMaterialBase":"hatch_glass", "deformMaterialDamaged":"hatch_glass_dmg"}
+		 ["hatch_sideglass_R", ["hatch_body"]],
+		 {"deformGroup":"hatch_sideglass_L_break", "deformMaterialBase":"hatch_glass", "deformMaterialDamaged":"hatch_glass_dmg"}
+		 ["hatch_sideglass_L", ["hatch_body"]],
+		 
+		 {"deformGroup":""}
+		 ["hatch_wipers", ["hatch_body"]],
+		 
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

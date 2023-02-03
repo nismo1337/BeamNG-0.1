@@ -1,0 +1,381 @@
+{
+"super_tailcone": {
+	"information":{
+		"authors":"gabester",
+		"name":"Civetta Bolide Tailcone",
+	}
+    "slotType" : "super_tailcone",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":0.8,
+	"scalebeamDamp":0.86,
+	"scalebeamDeform":0.56,
+	"scalebeamStrength":0.89,
+	"scalenodeWeight":1.1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["super_tailcone", ["super_tailcone"]],
+		 
+		 ["super_taillight_L", ["super_tailcone"]],
+		 ["super_taillight_R", ["super_tailcone"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TAILCONE--
+		 {"selfCollision":true},
+		 {"collision":true}
+		 {"frictionCoef":1},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"super_tailcone"},
+		 {"nodeWeight":0.7},
+		 ["t1rr",-0.85, 1.82, 0.79],
+		 ["t1r",-0.57, 1.83, 0.85],
+		 ["t1", 0.0, 1.82, 0.88],
+		 ["t1l", 0.57, 1.83, 0.85],
+		 ["t1ll", 0.85, 1.82, 0.79],
+		 
+		 {"nodeWeight":0.9},
+		 ["t2rr",-0.81, 2.00, 0.80],
+		 ["t2r",-0.54, 2.01, 0.84],
+		 ["t2", 0.0, 2.02, 0.85],
+		 ["t2l", 0.54, 2.01, 0.84],
+		 ["t2ll", 0.81, 2.00, 0.80],
+		 
+		 ["t3rr",-0.83, 2.03, 0.56],
+		 ["t3r",-0.47, 2.05, 0.56],
+		 ["t3", 0.0, 2.06, 0.56],
+		 ["t3l", 0.47, 2.05, 0.56],
+		 ["t3ll", 0.83, 2.03, 0.56],
+		 
+		 {"nodeWeight":0.7},
+		 ["t4rr",-0.79, 1.97, 0.34],
+		 ["t4r",-0.41, 2.00, 0.34],
+		 ["t4", 0.0, 2.01, 0.34],
+		 ["t4l", 0.41, 2.00, 0.34],
+		 ["t4ll", 0.79, 1.97, 0.34],
+		 
+		 ["t5rr",-0.84, 1.63, 0.21],
+		 ["t5r",-0.41, 1.64, 0.21],
+		 ["t5", 0.0, 1.65, 0.21],
+		 ["t5l", 0.41, 1.64, 0.21],
+		 ["t5ll", 0.84, 1.63, 0.21],
+		 
+		 ["t6rr",-0.89, 1.83, 0.54],
+		 ["t6ll", 0.89, 1.83, 0.54],
+		 
+		 
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},//--bumper_F--
+		  //--TAILCONE--TO BE DETACHED TO SEPARATE PART LATER
+		  {"beamSpring":701000,"beamDamp":160},
+		  {"beamDeform":96500,"beamStrength":"FLT_MAX"},
+		  //tailcone main shape
+		  ["t1rr","t1r"],
+		  ["t1r","t1"],
+		  ["t1l","t1"],
+		  ["t1ll","t1l"],
+		  
+		  ["t2rr","t2r"],
+		  ["t2r","t2"],
+		  ["t2l","t2"],
+		  ["t2ll","t2l"],
+		  
+		  ["t3rr","t3r"],
+		  ["t3r","t3"],
+		  ["t3l","t3"],
+		  ["t3ll","t3l"],
+		  
+		  ["t4rr","t4r"],
+		  ["t4r","t4"],
+		  ["t4l","t4"],
+		  ["t4ll","t4l"],
+		  
+		  ["t5rr","t5r"],
+		  ["t5r","t5"],
+		  ["t5l","t5"],
+		  ["t5ll","t5l"],
+		  
+		  
+		  //length/vertical
+		  ["t1rr","t2rr"],
+		  ["t1r","t2r"],
+		  ["t1","t2"],
+		  ["t1l","t2l"],
+		  ["t1ll","t2ll"],
+		  
+		  ["t2rr","t3rr"],
+		  ["t2r","t3r"],
+		  ["t2","t3"],
+		  ["t2l","t3l"],
+		  ["t2ll","t3ll"],
+		  
+		  ["t3rr","t4rr"],
+		  ["t3r","t4r"],
+		  ["t3","t4"],
+		  ["t3l","t4l"],
+		  ["t3ll","t4ll"],
+		  
+		  ["t4rr","t5rr"],
+		  ["t4r","t5r"],
+		  ["t4","t5"],
+		  ["t4l","t5l"],
+		  ["t4ll","t5ll"],
+		  
+		  ["t1rr","t6rr"],
+		  ["t1ll","t6ll"],
+		  ["t5rr","t6rr"],
+		  ["t5ll","t6ll"],
+		  
+		  ["t6rr","t3rr"],
+		  ["t6ll","t3ll"],
+		  
+		  
+		  //cross
+		  {"beamDeform":16500,"beamStrength":"FLT_MAX"},
+		  ["t1rr","t2r"],
+		  ["t1r","t2rr"],
+		  ["t1r","t2"],
+		  ["t1","t2r"],
+		  ["t1","t2l"],
+		  ["t1l","t2"],
+		  ["t1l","t2ll"],
+		  ["t1ll","t2l"],
+		  
+		  ["t2rr","t3r"],
+		  ["t2r","t3rr"],
+		  ["t2r","t3"],
+		  ["t2","t3r"],
+		  ["t2","t3l"],
+		  ["t2l","t3"],
+		  ["t2l","t3ll"],
+		  ["t2ll","t3l"],
+		  
+		  ["t3rr","t4r"],
+		  ["t3r","t4rr"],
+		  ["t3r","t4"],
+		  ["t3","t4r"],
+		  ["t3","t4l"],
+		  ["t3l","t4"],
+		  ["t3l","t4ll"],
+		  ["t3ll","t4l"],
+		  
+		  ["t4rr","t5r"],
+		  ["t4r","t5rr"],
+		  ["t4r","t5"],
+		  ["t4","t5r"],
+		  ["t4","t5l"],
+		  ["t4l","t5"],
+		  ["t4l","t5ll"],
+		  ["t4ll","t5l"],
+		  
+		  ["t4rr","t6rr"],
+		  ["t4ll","t6ll"],
+		  ["t3rr","t5rr"],
+		  ["t3ll","t5ll"],
+		  ["t2rr","t6rr"],
+		  ["t2ll","t6ll"],
+		  
+		  ["t1rr","t3rr"],
+		  ["t1ll","t3ll"],
+		  
+		  {"beamDeform":10500,"beamStrength":126999},
+		  //rigids widthwise
+		  ["t1rr","t1"],
+		  ["t1r","t1l"],
+		  ["t1ll","t1"],
+		  
+		  ["t2rr","t2"],
+		  ["t2r","t2l"],
+		  ["t2ll","t2"],
+		  
+		  ["t3rr","t3"],
+		  ["t3r","t3l"],
+		  ["t3ll","t3"],
+		  
+		  ["t4rr","t4"],
+		  ["t4r","t4l"],
+		  ["t4ll","t4"],
+		  
+		  ["t5rr","t5"],
+		  ["t5r","t5l"],
+		  ["t5ll","t5"],
+		  
+		  //vert/length
+		  ["t1r","t3r"],
+		  ["t1","t3"],
+		  ["t1l","t3l"],
+		  
+		  ["t1rr","t5rr"],
+		  ["t1ll","t5ll"],
+		  ["t1rr","t4rr"],
+		  ["t1r","t4r"],
+		  ["t1","t4"],
+		  ["t1l","t4l"],
+		  ["t1ll","t4ll"],
+		  
+		  ["t2rr","t4rr"],
+		  ["t2r","t4r"],
+		  ["t2","t4"],
+		  ["t2l","t4l"],
+		  ["t2ll","t4ll"],
+		  
+		  //corner
+		  ["t5r","t6rr"],
+		  ["t5l","t6ll"],
+		  
+		  ["t6rr","t1r"],
+		  ["t6ll","t1l"],
+		  
+		  {"beamSpring":351000,"beamDamp":140},
+		  //weak rigidy things
+		  ["t1r","t5r"],
+		  ["t1","t5"],
+		  ["t1l","t5l"],
+		  
+		  //attach
+		  {"beamSpring":451000,"beamDamp":180},
+		  {"beamDeform":18500,"beamStrength":28000},
+		  {"breakGroup":"super_tailcone_R"},
+		  ["t6rr","q10r"],
+		  ["t1rr","q5r"],
+		  ["t5rr","q12r"],
+		  ["t5rr","q13r"],
+		  
+		  {"breakGroup":"super_tailcone_L"},
+		  ["t6ll","q10l"],
+		  ["t1ll","q5l"],
+		  ["t5ll","q12l"],
+		  ["t5ll","q13l"],
+		  
+		  {"breakGroup":"super_tailcone_T"},
+		  ["t1r","p8r"],
+		  ["t1l","p8l"],
+		  
+		  ["t1","r1"],
+		  ["t1r","rf7r"],
+		  ["t1l","rf7l"],
+		  
+		  {"breakGroup":"super_tailcone_B"},
+		  ["t5r","q13r"],
+		  ["t5l","q13l"],
+		  ["t5r","r3r"],
+		  ["t5","r3"],
+		  ["t5l","r3l"],
+		  
+		  {"breakGroup":""},
+		  
+		  //tailcone support beams
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":801000,"beamDamp":150},
+		  {"beamLimitSpring":801000,"beamLimitDamp":150},
+		  {"beamDeform":18000,"beamStrength":200000},
+		  
+		  
+		  ["t1r","p7r"],
+		  ["t1l","p7l"],
+		  ["t1r","rf6r"],
+		  ["t1l","rf6l"],
+		  
+		  ["t1","c12"],
+		  
+		  
+		  ["t5r","c6r"],
+		  ["t5","c6"],
+		  ["t5l","c6l"],
+		  
+		  ["t2rr","q10r"],
+		  ["t2ll","q10l"],
+		  
+		  ["t3rr","q10r"],
+		  ["t3ll","q10l"],
+		  
+		  ["t4rr","q13r"],
+		  ["t4ll","q13l"],
+		  
+		  ["t2r","p8r"],
+		  ["t2l","p8l"],
+		  
+		  //strong
+		  {"beamDeform":34000,"beamStrength":200000},
+		  ["t6rr","q9r"],
+		  ["t6ll","q9l"],
+		  ["t5rr","q12r"],
+		  ["t5ll","q12l"],
+		  ["t1rr","q4r"],
+		  ["t1ll","q4l"],
+		  ["t2rr","q5r"],
+		  ["t2ll","q5l"],
+		  
+		  //tailcone anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":200000,"beamStrength":30000000},
+		  {"beamLimitSpring":601000,"beamLimitDamp":150},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":1.0},
+		  ["t1rr","t1ll"],
+		  ["t2rr","t2ll"],
+		  ["t3rr","t3ll"],
+		  ["t4rr","t4ll"],
+		  ["t5rr","t5ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//tailcone
+			{"group":"tailcone"},
+			["t2rr","t1rr","t2r"],
+			["t1rr","t1r","t2r"],
+			["t2r","t1r","t2"],
+			["t1r","t1","t2"],
+			["t2l","t2","t1l"],
+			["t1l","t2","t1"],
+			["t2ll","t2l","t1ll"],
+			["t1ll","t2l","t1l"],
+			
+			["t3rr","t2rr","t3r"],
+			["t2rr","t2r","t3r"],
+			["t3r","t2r","t3"],
+			["t2r","t2","t3"],
+			["t3l","t3","t2l"],
+			["t2l","t3","t2"],
+			["t3ll","t3l","t2ll"],
+			["t2ll","t3l","t2l"],
+			
+			["t4rr","t3rr","t4r"],
+			["t3rr","t3r","t4r"],
+			["t4r","t3r","t4"],
+			["t3r","t3","t4"],
+			["t4l","t4","t3l"],
+			["t3l","t4","t3"],
+			["t4ll","t4l","t3ll"],
+			["t3ll","t4l","t3l"],
+			
+			["t5rr","t4rr","t5r"],
+			["t4rr","t4r","t5r"],
+			["t5r","t4r","t5"],
+			["t4r","t4","t5"],
+			["t5l","t5","t4l"],
+			["t4l","t5","t4"],
+			["t5ll","t5l","t4ll"],
+			["t4ll","t5l","t4l"],
+			
+			["t1ll","t3ll","t2ll"],
+			["t1ll","t6ll","t3ll"],
+			["t6ll","t4ll","t3ll"],
+			["t6ll","t5ll","t4ll"],
+			
+			["t2rr","t3rr","t1rr"],
+			["t3rr","t6rr","t1rr"],
+			["t3rr","t4rr","t6rr"],
+			["t4rr","t5rr","t6rr"],
+			
+			{"group":""},
+			
+			
+	],
+}
+}

@@ -1,0 +1,234 @@
+{
+"fullsize_headlight_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Right Headlight",
+	}
+    "slotType" : "fullsize_headlight_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_headlight_R", ["fullsize_headlight_R"]],
+		 {"deformGroup":"fullsize_headlightglass_R_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_headlightglass_R", ["fullsize_headlight_R"]],
+		 {"deformGroup":"fullsize_headlightglass_R_break", "deformMaterialBase":"fullsize_lights", "deformMaterialDamaged":"fullsize_lights_dmg"}
+		 ["fullsize_signal_R", ["fullsize_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--HEADLIGHT--
+		 //right
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeMaterial":"|NM_GLASS"},
+		 {"frictionCoef":0.7},
+		 {"nodeWeight":2},
+		 {"group":"fullsize_headlight_R"},
+		 ["he1r", -0.46, -2.29, 0.74],
+		 ["he3r", -0.49, -2.30, 0.62],
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 ["he2r", -0.82, -2.18, 0.74],
+		 ["he4r", -0.84, -2.18, 0.62],
+		 ["he5r", -0.62, -2.06, 0.67],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--HEADLIGHT--
+		  {"beamSpring":1201000,"beamDamp":170},
+		  {"beamDeform":44500,"beamStrength":125500},
+		  //headlight main shape
+		  {"deformGroup":"fullsize_headlightglass_R_break", "triggerStrength":1000}
+		  //r
+		  ["he1r","he2r"],
+		  ["he3r","he4r"],
+		  ["he1r","he3r"],
+		  ["he2r","he4r"],
+		  
+		  ["he1r","he4r"],
+		  ["he2r","he3r"],
+		  
+		  ["he1r","he5r"],
+		  ["he2r","he5r"],
+		  ["he3r","he5r"],
+		  ["he4r","he5r"],
+		  {"deformGroup":""}
+		  //attach
+		  {"beamSpring":1201000,"beamDamp":170},
+		  {"beamDeform":36500,"beamStrength":94500},
+		  //r
+		  {"breakGroup":"fullsize_headlight_a_R"},
+		  ["he5r","f15rr"],
+		  ["he5r","f15r"],
+		  ["he2r","f15rr"],
+		  ["he4r","f15rr"],
+		  
+		  
+		  {"breakGroup":"fullsize_headlight_b_R"},
+		  ["he1r","f15r"],
+		  ["he3r","f15r"],
+		  ["he3r","f13rr"],
+		  
+		  {"breakGroup":""},
+		  
+		  //headlight support beams
+		  {"beamType":"|SUPPORT", "beamLongBound":4},
+		  {"beamSpring":1001000,"beamDamp":150},
+		  {"beamLimitSpring":1001000,"beamLimitDamp":150},
+		  {"beamDeform":44000,"beamStrength":660000},
+		  {"optional":true},
+		  ["he2r","h4"],
+		  ["he4r","h5"],
+		  ["he3r","h4r"],
+		  {"optional":false},
+		  
+		  ["he1r","f10rr"],
+		  ["he3r","f6r"],
+		  
+		  ["he2r","f6r"],
+		  ["he4r","f10rr"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//right headlight
+			{"group":"fullsize_headlight_R"},
+			["he3r","he1r","he4r"],
+			["he4r","he1r","he2r"],
+			["he4r","he2r","he5r"],
+			["he1r","he5r","he2r"],
+			["he3r","he5r","he1r"],
+			["he4r","he5r","he3r"],
+			{"group":""},
+			
+			
+	],
+}
+"fullsize_headlight_L": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Left Headlight",
+	}
+    "slotType" : "fullsize_headlight_L",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_headlight_L", ["fullsize_headlight_L"]],
+		 {"deformGroup":"fullsize_headlightglass_L_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_headlightglass_L", ["fullsize_headlight_L"]],
+		 {"deformGroup":"fullsize_headlightglass_L_break", "deformMaterialBase":"fullsize_lights", "deformMaterialDamaged":"fullsize_lights_dmg"}
+		 ["fullsize_signal_L", ["fullsize_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--HEADLIGHT--
+		 //left
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeMaterial":"|NM_GLASS"},
+		 {"frictionCoef":0.7},
+		 {"nodeWeight":2},
+		 {"group":"fullsize_headlight_L"},
+		 ["he1l", 0.46, -2.29, 0.74],
+		 ["he3l", 0.49, -2.30, 0.62],
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 ["he2l", 0.82, -2.18, 0.74],
+		 ["he4l", 0.84, -2.18, 0.62],
+		 ["he5l", 0.62, -2.06, 0.67],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--HEADLIGHT--
+		  {"beamSpring":1201000,"beamDamp":170},
+		  {"beamDeform":44500,"beamStrength":125500},
+		  //headlight main shape
+		  //l
+		  {"deformGroup":"fullsize_headlightglass_L_break", "triggerStrength":1000}
+		  ["he1l","he2l"],
+		  ["he3l","he4l"],
+		  ["he1l","he3l"],
+		  ["he2l","he4l"],
+		  
+		  ["he1l","he4l"],
+		  ["he2l","he3l"],
+		  
+		  ["he1l","he5l"],
+		  ["he2l","he5l"],
+		  ["he3l","he5l"],
+		  ["he4l","he5l"],
+		  {"deformGroup":""}
+		  //attach
+		  {"beamSpring":1201000,"beamDamp":170},
+		  {"beamDeform":36500,"beamStrength":94500},
+		  //l
+		  {"breakGroup":"fullsize_headlight_a_L"},
+		  ["he5l","f15ll"],
+		  ["he5l","f15l"],
+		  ["he2l","f15ll"],
+		  ["he4l","f15ll"],
+		  
+		  
+		  {"breakGroup":"fullsize_headlight_b_L"},
+		  ["he1l","f15l"],
+		  ["he3l","f15l"],
+		  ["he3l","f13ll"],
+		  
+		  
+		  {"breakGroup":""},
+		  
+		  //headlight support beams
+		  {"beamType":"|SUPPORT", "beamLongBound":4},
+		  {"beamSpring":1001000,"beamDamp":150},
+		  {"beamLimitSpring":1001000,"beamLimitDamp":150},
+		  {"beamDeform":44000,"beamStrength":660000},
+		  {"optional":true},
+		  ["he2l","h4"],
+		  ["he4l","h5"],
+		  ["he3l","h4l"],
+		  {"optional":false},
+		  
+		  ["he1l","f10ll"],
+		  ["he3l","f6l"],
+		  
+		  ["he2l","f6l"],
+		  ["he4l","f10ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//left headlight
+			{"group":"fullsize_headlight_L"},
+			["he1l","he3l","he4l"],
+			["he1l","he4l","he2l"],
+			["he2l","he4l","he5l"],
+			["he5l","he1l","he2l"],
+			["he5l","he3l","he1l"],
+			["he5l","he4l","he3l"],
+			{"group":""},
+			
+	],
+}
+}

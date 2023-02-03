@@ -1,0 +1,100 @@
+{
+"moonhawk_wheel_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Front Wheels",
+	}
+    "slotType" : "moonhawk_wheel_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["steelwheel_01a_15x7_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["steelwheel_01a"]],
+		 ["steelwheel_01a_15x7_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["steelwheel_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front wheels
+		 {"nodeWeight":5.6},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false}
+		 {"group":"wheelhub_a_FR"},
+		 ["fw1r", -0.705, -1.43, 0.33],
+		 {"group":"wheelhub_b_FR"},
+		 ["fw1rr", -0.85, -1.43, 0.33],
+		 {"group":"wheelhub_a_FL"},
+		 ["fw1l", 0.705, -1.43, 0.33],
+		 {"group":"wheelhub_b_FL"},
+		 ["fw1ll", 0.85, -1.43, 0.33],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamDeform":130000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":9501000,"beamDamp":35},
+		  //front wheel
+		  ["fw1r","fw1rr"],
+		  ["fw1l","fw1ll"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.345},
+			{"hubRadius":0.20},
+			{"wheelOffset":-0.035},
+			{"hubWidth":0.205},
+			{"tireWidth":0.195},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":35}
+			{"beamSpring":1601000, "beamDamp":35},
+			{"hubBeamDeform":26000, "hubBeamStrength":70000},
+			{"beamDeform":26000,"beamStrength":70000},
+			{"hubNodeWeight":0.65},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":160000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":45000,"wheelSideBeamStrength":50000},
+			{"wheelReinforcementBeamSpring":38000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":45000,"wheelReinforcementBeamStrength":50000},
+			{"wheelTreadBeamSpring":651000,"wheelTreadBeamDamp":160,"wheelTreadBeamDeform":45000,"wheelTreadBeamStrength":50000},
+			{"wheelPeripheryBeamSpring":651000,"wheelPeripheryBeamDamp":160,"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":50000},
+			{"springExpansion":1601000, "dampExpansion":35},
+			{"nodeWeight":0.65},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.05},
+			
+			//front
+			{"selfCollision":false}
+			{"collision":true}
+			{"hubcapBreakGroup":"hubcap_FR"},
+			{"hubcapGroup":"hubcap_FR"},
+            ["FR", "wheel_FR", "fw1rr", "fw1r", 9999,  "fh5r", 1],
+			{"hubcapBreakGroup":"hubcap_FL"},
+			{"hubcapGroup":"hubcap_FL"},
+            ["FL", "wheel_FL", "fw1ll", "fw1l", 9999,  "fh5l", -1],
+			{"selfCollision":true}
+			{"enableABS":false}
+			{"hubcapBreakGroup":""},
+			{"hubcapGroup":""},
+			{"enableHubcaps":false},
+			{"propulsed":0}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+	],
+}
+}

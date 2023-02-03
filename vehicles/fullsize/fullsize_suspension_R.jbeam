@@ -1,0 +1,437 @@
+{
+"fullsize_suspension_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Live Axle Rear Suspension",
+	}
+    "slotType" : "fullsize_suspension_R",
+	"slots": [
+		["type", "default"]
+		["fullsize_brake_R","fullsize_brake_R"],
+		["fullsize_wheel_R","fullsize_wheel_R"],
+		["fullsize_spring_R","fullsize_spring_R"],
+		["fullsize_shock_R","fullsize_shock_R"],
+		["fullsize_swaybar_R","fullsize_swaybar_R"],
+		["fullsize_differential_R","fullsize_differential_R"],
+	],
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //running gear		 
+		 ["fullsize_lowerarm_R", ["fullsize_lowermounts_R","fullsize_axle"]],
+		 ["fullsize_upperarm_R", ["fullsize_uppermounts_R","fullsize_axle"]],
+		 
+		 ["fullsize_axle", ["fullsize_axle","fullsize_engine","fullsize_transmission"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //live axle rear suspension
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 {"nodeWeight":6.0},
+		 //{"group":"wheelhub_RR"},
+		 //["ax1r", -0.695, 1.51, 0.32],
+		 //{"group":"wheelhub_RL"},
+		 //["ax1l", 0.695, 1.51, 0.32],
+		 {"group":"fullsize_axle"},
+		 ["ax2r", -0.695, 1.51, 0.47],
+		 ["ax2l", 0.695, 1.51, 0.47],
+		 ["ax3r", -0.695, 1.41, 0.32],
+		 ["ax3l", 0.695, 1.41, 0.32],
+		 {"collision":true}
+		 ["ax1", 0.0, 1.61, 0.32],
+		 ["ax2", 0.0, 1.51, 0.47],
+		 ["ax3", 0.0, 1.31, 0.32],
+		 //wheel nodes
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //{"group":"wheelhub_RR"},
+		 //["axwr", -0.93, 1.51, 0.32],
+		 //{"group":"wheelhub_RL"},
+		 //["axwl", 0.93, 1.51, 0.32],
+		 {"group":"fullsize_shockbottom_R"},
+		 //shock mounting nodes
+		 {"nodeWeight":6.0},
+		 ["axshr", -0.46, 1.59, 0.23],
+		 ["axshl", 0.46, 1.59, 0.23],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //live axle suspension		  
+		  {"beamSpring":9001000,"beamDamp":100},
+		  {"beamDeform":165000,"beamStrength":460000},
+		  ["ax2r","ax2"],
+		  ["ax2","ax2l"],
+		  ["ax3r","ax3"],
+		  ["ax3","ax3l"],
+		  //
+		  ["ax2l","ax3l"],
+		  ["ax1","ax2"],
+		  ["ax1","ax3"],
+		  ["ax2","ax3"],
+		  ["ax2r","ax3r"],
+		  
+		  //crossing
+		  ["ax2r","ax1"],
+		  ["ax2l","ax1"],
+		  ["ax3r","ax1"],
+		  ["ax3l","ax1"],
+		  
+		  ["ax3r","ax2"],
+		  ["ax3l","ax2"],
+		  
+		  ["ax2r","ax3"],
+		  ["ax2l","ax3"],
+		  
+		  
+		  {"optional":true},
+		  {"beamSpring":9001000,"beamDamp":100},
+		  {"beamDeform":215000,"beamStrength":340000},
+		  {"breakGroup":"wheel_RR"},
+		  //["ax1r","axwr"],
+		  ["ax2r","axwr"],
+		  ["ax3r","axwr"],
+		  
+		  ["ax1r","ax3"],
+		  ["ax1r","ax2"],
+		  ["ax1r","ax1", {"name":"axle_RR"}],
+		  ["ax1r","ax2r"],
+		  ["ax1r","ax3r"],//right rear brake arm
+		  
+		  {"breakGroup":"wheel_RL"},
+		  //["ax1l","axwl"],
+		  ["ax2l","axwl"],
+		  ["ax3l","axwl"],
+		  
+		  ["ax1l","ax3"],
+		  ["ax1l","ax2"],
+		  ["ax1l","ax1", {"name":"axle_RL"}],
+		  ["ax1l","ax2l"],
+		  ["ax1l","ax3l"],//left rear brake arm
+		  {"beamSpring":9001000,"beamDamp":100},
+		  {"beamDeform":215000,"beamStrength":340000},
+		  //to wheels
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","ax1"],
+		  ["axwr","ax2"],
+		  ["axwr","ax3"],
+		  ["axshr","axwr"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","ax1"],
+		  ["axwl","ax2"],
+		  ["axwl","ax3"],
+		  ["axshl","axwl"],
+		  
+		  //shock mounts
+		  {"breakGroup":"wheel_RR"},
+		  ["axshr","ax1r"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axshl","ax1l"],
+		  {"optional":false},
+		  {"breakGroup":""},
+		  {"beamSpring":9001000,"beamDamp":100},
+		  {"beamDeform":215000,"beamStrength":340000},
+		  ["axshr","ax2r"],
+		  ["axshr","ax3r"],
+		  ["axshr","ax1"],
+		  ["axshr","ax2"],
+		  ["axshr","ax3"],
+		  
+		  ["axshl","ax2l"],
+		  ["axshl","ax3l"],
+		  ["axshl","ax1"],
+		  ["axshl","ax2"],
+		  ["axshl","ax3"],
+		  
+		  {"beamSpring":9001000,"beamDamp":400},
+		  {"beamDeform":115000,"beamStrength":280000},
+		  //locator arms
+		  ["axshr","rx1r"],
+		  ["axshl","rx1l"],
+		  
+		  {"optional":true},
+		  {"breakGroupType":1},
+		  {"breakGroup":"wheel_RR"},
+		  ["axwr","rx2r"],
+		  {"breakGroup":"wheel_RL"},
+		  ["axwl","rx2l"],
+		  {"optional":false},
+		  {"breakGroupType":0},
+		  {"breakGroup":""},
+		  {"beamSpring":6401000,"beamDamp":400},
+		  ["ax2","f9r"],
+		  ["ax2","f9l"],
+		  
+		  //driveshaft
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":2500,"beamStrength":3500},
+		  {"beamLimitSpring":5001000,"beamLimitDamp":1000},
+		  {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":0.005},
+		  ["ax3","tra1", {"name":"driveshaft"}],
+		  
+		  //rear limiters
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":150000,"beamStrength":500000},
+		  {"beamLimitSpring":501000,"beamLimitDamp":800},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.36},
+		  
+		  ["ax2r","r2rr"],
+		  ["ax2l","r2ll"],
+		  ["ax3r","r2rr"],
+		  ["ax3l","r2ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"propulsed":1}
+	],
+}
+"fullsize_brake_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Rear Brakes",
+	}
+    "slotType" : "fullsize_brake_R",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //brake discs
+		 ["fullsize_brakedisc_RR", ["wheel_RR","wheelhub_RR"], ["fullsize"]],
+		 ["fullsize_brakedisc_RL", ["wheel_RL","wheelhub_RL"], ["fullsize"]],
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//brakes
+			{"enableABS":true}
+			{"ABSthreshold":4}
+			{"brakeTorque":1000},
+			{"parkingTorque":3600},
+	],
+	"engine": {
+		"ABSrate":15
+	},
+}
+"fullsize_spring_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Rear Coil Springs",
+	}
+    "slotType" : "fullsize_spring_R",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_spring_R", ["fullsize_shocktop_R","fullsize_shockbottom_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //rear springs
+		  {"beamPrecompression":1.40, "beamType":"|BOUNDED", "beamLongBound":0.08, "beamShortBound":0.45}, 
+		  {"beamSpring":32000,"beamDeform":142000,"beamStrength":228000},
+		  {"beamDamp":0},
+		  {"beamLimitSpring":211000,"beamLimitDamp":3500},
+		  ["axshr","r1rr",{"beamDampRebound":0}],
+		  ["axshl","r1ll",{"beamDampRebound":0}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"fullsize_shock_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Rear Shocks",
+	}
+    "slotType" : "fullsize_shock_R",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_shock_R", ["fullsize_shocktop_R","fullsize_shockbottom_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //rear shocks
+		  {"beamPrecompression":1.40, "beamType":"|BOUNDED", "beamLongBound":0.08, "beamShortBound":0.45}, 
+		  {"beamSpring":0,"beamDeform":142000,"beamStrength":228000},
+		  {"beamDamp":3200},
+		  {"beamLimitSpring":211000,"beamLimitDamp":3500},
+		  ["axshr","r1rr",{"beamDampRebound":3700}],
+		  ["axshl","r1ll",{"beamDampRebound":3700}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"fullsize_spring_R_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Sport Rear Coil Springs",
+	}
+    "slotType" : "fullsize_spring_R",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_spring_R", ["fullsize_shocktop_R","fullsize_shockbottom_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //rear springs
+		  {"beamPrecompression":1.20, "beamType":"|BOUNDED", "beamLongBound":0.08, "beamShortBound":0.45}, 
+		  {"beamSpring":45000,"beamDeform":142000,"beamStrength":228000},
+		  {"beamDamp":0},
+		  {"beamLimitSpring":211000,"beamLimitDamp":3500},
+		  ["axshr","r1rr",{"beamDampRebound":0}],
+		  ["axshl","r1ll",{"beamDampRebound":0}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"fullsize_shock_R_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Sport Rear Shocks",
+	}
+    "slotType" : "fullsize_shock_R",
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_shock_R", ["fullsize_shocktop_R","fullsize_shockbottom_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //rear shocks
+		  {"beamPrecompression":1.20, "beamType":"|BOUNDED", "beamLongBound":0.08, "beamShortBound":0.45}, 
+		  {"beamSpring":0,"beamDeform":142000,"beamStrength":228000},
+		  {"beamDamp":3700},
+		  {"beamLimitSpring":211000,"beamLimitDamp":3500},
+		  ["axshr","r1rr",{"beamDampRebound":5300}],
+		  ["axshl","r1ll",{"beamDampRebound":5300}],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+"fullsize_swaybar_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Rear Sway Bar",
+	}
+    "slotType" : "fullsize_swaybar_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_swaybar_R", ["fullsize_uppermounts_R","fullsize_axle"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 //rear anti-roll
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"collision":false}
+		 {"selfCollision":false},
+		 {"group":""},
+		 {"nodeWeight":2.6},
+		 ["arbr", 0.0, 1.51, 0.44],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+		  //--REAR ANTI-ROLL--
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+	      {"beamSpring":5501000,"beamDamp":200},
+		  {"beamDeform":300000,"beamStrength":1100000},
+		  //rigid beams
+		  {"breakGroupType":1},
+		  {"optional":true},
+		  {"breakGroup":"wheel_RR"},
+		  ["arbr","ax1r"],
+		  {"breakGroup":"wheel_RL"},
+		  ["arbr","ax1l"],
+		  {"optional":false},
+		  {"breakGroup":""},
+		  {"breakGroupType":0},
+	      {"beamSpring":451000,"beamDamp":300},
+		  //rear anti-roll
+		  ["arbr","r1rr"],
+		  ["arbr","r1ll"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+			
+			
+	],
+}
+"fullsize_differential_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Rear Differential",
+	}
+	"engine":{
+		"differential":3.27,
+		},
+    "slotType" : "fullsize_differential_R",
+}
+}

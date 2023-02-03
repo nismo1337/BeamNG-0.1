@@ -1,0 +1,152 @@
+{
+"pickup_rollbar": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Roll Bar",
+	}
+    "slotType" : "pickup_rollbar",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_rollbar", ["pickup_rollbar"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":3.0},
+		 {"frictionCoef":0.7},
+		 {"group":"pickup_rollbar"},
+		 {"selfCollision":true}
+		 ["ro1r",-0.69, 0.53, 1.78],
+		 ["ro1", 0.0, 0.53, 1.81],
+		 ["ro1l", 0.69, 0.53, 1.78],
+		 ["ro2r", -0.86, 0.55, 1.34],
+		 ["ro2l", 0.86, 0.55, 1.34],
+		 ["ro3r", -0.76, 0.57, 0.70],
+		 ["ro3l", 0.76, 0.57, 0.70],
+		 
+		 ["ro4r",-0.76, 1.49, 1.20],
+		 ["ro4l", 0.76, 1.49, 1.20],
+		 ["ro5r",-0.76, 1.49, 0.97],
+		 ["ro5l", 0.76, 1.49, 0.97],
+		 
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 {"group":""},
+		 ["ro6", 0.0, 1.12, 0.92],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--ROLLBAR--
+		  {"beamSpring":3201000,"beamDamp":100},
+		  {"beamDeform":120000,"beamStrength":"FLT_MAX"},
+		  //main shape
+		  ["ro1r","ro1"],
+		  ["ro1l","ro1"],
+		  ["ro1r","ro2r"],
+		  ["ro1l","ro2l"],
+		  ["ro2r","ro3r"],
+		  ["ro2l","ro3l"],
+		  
+		  ["ro1r","ro4r"],
+		  ["ro1l","ro4l"],
+		  ["ro5r","ro4r"],
+		  ["ro5l","ro4l"],
+		  
+		  {"beamDeform":40000,"beamStrength":"FLT_MAX"},
+		  //corners
+		  ["ro1r","ro1l"],
+		  ["ro1","ro2r"],
+		  ["ro1","ro2l"],
+		  ["ro4r","ro1"],
+		  ["ro4l","ro1"],
+		  ["ro4r","ro2r"],
+		  ["ro4l","ro2l"],
+		  ["ro5r","ro1r"],
+		  ["ro5l","ro1l"],
+		  ["ro1r","ro3r"],
+		  ["ro1l","ro3l"],
+		  
+		  //rigidifier
+		  {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+		  ["ro1r","ro6"],
+		  ["ro1","ro6"],
+		  ["ro1l","ro6"],
+		  ["ro2r","ro6"],
+		  ["ro2l","ro6"],
+		  ["ro3r","ro6"],
+		  ["ro3l","ro6"],
+		  ["ro4r","ro6"],
+		  ["ro4l","ro6"],
+		  ["ro5r","ro6"],
+		  ["ro5l","ro6"],
+		  //attach
+		  {"beamDeform":20000,"beamStrength":40000},
+		  {"breakGroup":"pickup_rollbar_a_R"},
+		  //r1
+		  ["ro4r","fr17r"],
+		  ["ro5r","fr17r"],
+		  ["ro5r","b7rr"],
+		  ["ro4r","b8rr"],
+		  ["ro5r","b8rr"],
+		  ["ro5r","b9rr"],
+		  
+		  {"breakGroup":"pickup_rollbar_b_R"},
+		  //r2
+		  ["ro2r","fr16r"],
+		  ["ro3r","fr16r"],
+		  ["ro2r","fr12r"],
+		  ["ro3r","fr12r"],
+		  ["ro2r","b6rr"],
+		  ["ro3r","b6rr"],
+		  ["ro3r","b7rr"],
+		  
+		  {"breakGroup":"pickup_rollbar_a_L"},
+		  //l1
+		  ["ro4l","fr17l"],
+		  ["ro5l","fr17l"],
+		  ["ro5l","b7ll"],
+		  ["ro4l","b8ll"],
+		  ["ro5l","b8ll"],
+		  ["ro5l","b9ll"],
+		  
+		  {"breakGroup":"pickup_rollbar_b_L"},
+		  //l2
+		  ["ro2l","fr16l"],
+		  ["ro3l","fr16l"],
+		  ["ro2l","fr12l"],
+		  ["ro3l","fr12l"],
+		  ["ro2l","b6ll"],
+		  ["ro3l","b6ll"],
+		  ["ro3l","b7ll"],
+		  
+		  {"breakGroup":""},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"pickup_rollbar"},
+			["ro1","ro1l","ro4l"],
+			["ro1","ro4r","ro1r"],
+			
+			["ro1l","ro2l","ro4l"],
+			["ro2l","ro3l","ro4l"],
+			["ro4l","ro3l","ro5l"],
+			["ro2r","ro1r","ro4r"],
+			["ro3r","ro2r","ro4r"],
+			["ro3r","ro4r","ro5r"],
+			
+			["ro1r","ro2r","ro1"],
+			["ro2l","ro1l","ro1"],
+			["ro2r","ro2l","ro1"],
+			["ro2r","ro3r","ro3l"],
+			["ro2r","ro3l","ro2l"],
+	],
+}
+}

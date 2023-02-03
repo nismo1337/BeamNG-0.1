@@ -1,0 +1,448 @@
+{
+"pigeon_door_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Right Front Door",
+	}
+    "slotType" : "pigeon_door_R",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_door_R", ["pigeon_door_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 //--DOOR--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":1},
+		 {"collision":true},
+		 {"selfCollision":true},
+		 {"group":"pigeon_door_R"},
+		 {"nodeWeight":1.1},
+		 ["d1r",-0.66,-0.50, 0.335],
+		 ["d2r",-0.66,-0.13, 0.335],
+		 ["d3r",-0.66,0.24, 0.335],
+		 
+		 {"nodeWeight":0.9},
+		 {"selfCollision":false},
+		 ["d4r",-0.67,-0.50, 0.64],
+		 ["d5r",-0.67,-0.13, 0.64],
+		 ["d6r",-0.67,0.24, 0.64],
+		 
+		 {"selfCollision":true},
+		 ["d7r",-0.64,-0.50, 0.96],
+		 {"selfCollision":false},
+		 ["d8r",-0.64,-0.13, 0.96],
+		 {"selfCollision":true},
+		 ["d9r",-0.64,0.24, 0.96],
+		 
+		 {"nodeWeight":0.8},
+		 {"selfCollision":false},
+		 ["d10r",-0.59, -0.36, 1.18],
+		 ["d11r",-0.52, -0.19, 1.40],
+		 ["d12r",-0.52, 0.24, 1.40],
+		 ["d13r",-0.59, 0.24, 1.18],
+		 
+		 //rigidifier
+		 {"selfCollision":false},
+		 {"collision":false}
+		 ["d14r",-0.40, 0.11, 0.64],
+		 {"group":""},
+		 
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--DOOR--
+		  {"beamSpring":901000,"beamDamp":80},
+		  {"beamDeform":36500,"beamStrength":150000},
+		  //door main shape
+		  ["d1r","d2r"],
+		  ["d2r","d3r"],
+		  ["d4r","d5r"],
+		  ["d5r","d6r"],
+		  ["d7r","d8r"],
+		  ["d8r","d9r"],
+		  
+		  ["d7r","d10r"],
+		  ["d13r","d9r"],
+		  
+		  ["d10r","d11r"],
+		  ["d11r","d12r"],
+		  ["d12r","d13r"],
+		  ["d1r","d4r"],
+		  ["d2r","d5r"],
+		  ["d3r","d6r"],
+		  ["d4r","d7r"],
+		  ["d5r","d8r"],
+		  ["d6r","d9r"],
+		  
+		  {"beamDeform":7600,"beamStrength":150000},
+		  //corner rigids
+		  {"deformGroup":"pigeon_doorglass_R_break", "triggerStrength":5500},
+		  ["d11r","d7r"],
+		  ["d12r","d10r"],
+		  ["d13r","d11r"],
+		  ["d12r","d9r"],
+		  {"deformGroup":""},
+		  ["d1r","d7r"],
+		  ["d2r","d8r"],
+		  ["d3r","d9r"],
+		  
+		  ["d8r","d10r"],
+		  ["d8r","d13r"],
+		  
+		  ["d4r","d10r"],
+		  
+		  ["d5r","d10r"],
+		  
+		  ["d5r","d13r"],
+		  
+		  ["d6r","d13r"],
+		  
+		  //lengthwise
+		  ["d1r","d3r"],
+		  ["d4r","d6r"],
+		  ["d7r","d9r"],
+		  
+		  //surficial crossing
+		  ["d1r","d5r"],
+		  ["d2r","d4r"],
+		  ["d2r","d6r"],
+		  ["d3r","d5r"],
+		  ["d4r","d8r"],
+		  ["d5r","d7r"],
+		  ["d5r","d9r"],
+		  ["d6r","d8r"],
+		  
+		  //rigidifier
+		  {"beamSpring":901000,"beamDamp":80},
+		  {"beamDeform":4500,"beamStrength":150000},
+		  ["d1r","d14r"],
+		  ["d2r","d14r"],
+		  ["d3r","d14r"],
+		  ["d4r","d14r"],
+		  ["d5r","d14r"],
+		  ["d6r","d14r"],
+		  ["d7r","d14r"],
+		  ["d8r","d14r"],
+		  ["d9r","d14r"],
+		  {"deformGroup":"pigeon_doorglass_R_break", "triggerStrength":5500},
+		  ["d10r","d14r"],
+		  ["d13r","d14r"],
+		  ["d11r","d14r"],
+		  ["d12r","d14r"],
+		  
+		  {"deformGroup":""},
+		  
+		  {"deformGroup":""},
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":45000,"beamStrength":120000},
+		  //["d13r","f3rr"],
+		  //["d13l","f3ll"],
+		  
+		  //door support beams
+		  {"beamSpring":151000,"beamDamp":15},
+		  {"beamLimitSpring":151000,"beamLimitDamp":15},
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamDeform":5500,"beamStrength":50000},
+		  ["d11r","r2"],
+		  ["d12r","r3"],
+		  
+		  ["d3r","b1"],
+		  ["d6r","b7"],
+		  ["d9r","b13"],
+		  
+		  ["d1r","fx1r"],
+		  ["d7r","b15"],
+		  
+		  ["d11r","r3rr"],
+		  
+		  //door hinge
+		  {"beamSpring":901000,"beamDamp":80},
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":26000,"beamStrength":46000},
+		  {"breakGroup":"pigeon_doorhinge_a_R"},
+		  ["d1r","b15rr"],
+		  ["d7r","b3rr"],
+		  ["d2r","b3rr"],
+		  ["d8r","b15rr"],
+		  
+		  {"breakGroup":"pigeon_doorhinge_b_R"},
+		  ["d1r","b3rr"],
+		  ["d7r","b15rr"],
+		  ["d2r","b15rr"],
+		  ["d8r","b3rr"],
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":150000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"pigeon_doorhinge_a_R"},
+		  {"breakGroup":"pigeon_doorhinge_b_R"},
+		  {"breakGroup":""},
+		  {"beamSpring":901000,"beamDamp":80},
+		  //--TEMPORARY DOOR LATCH--
+		  {"beamDeform":6000,"beamStrength":9000},
+		  {"breakGroup":"pigeon_doorlatch_R"},
+		  ["d14r","b13rr"],
+		  ["d14r","b7rr"],
+		  ["d6r","b7rr"],
+		  ["d9r","b7rr"],
+		  ["d9r","b13rr"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//right door
+			{"group":"pigeon_door_R"},
+			["d4r","d2r","d1r"],
+			["d4r","d5r","d2r"],
+			["d5r","d3r","d2r"],
+			["d5r","d6r","d3r"],
+			["d7r","d5r","d4r"],
+			["d7r","d8r","d5r"],
+			["d8r","d6r","d5r"],
+			["d8r","d9r","d6r"],
+			["d10r","d8r","d7r"],
+			["d10r","d12r","d8r"],
+			["d11r","d12r","d10r"],
+			["d12r","d9r","d8r"],
+			{"group":""},
+			
+			
+			
+	],
+}
+"pigeon_door_L": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon Left Front Door",
+	}
+    "slotType" : "pigeon_door_L",
+	"slots": [
+		["type", "default"]
+	//	["pigeon_mirror_L","pigeon_mirror_L"],
+	],
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pigeon_door_L", ["pigeon_door_L"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--DOOR--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":1},
+		 {"collision":true},
+		 {"selfCollision":true},
+		 {"group":"pigeon_door_L"},
+		 {"nodeWeight":1.1},
+		 ["d1l",0.66,-0.50, 0.335],
+		 ["d2l",0.66,-0.13, 0.335],
+		 ["d3l",0.66,0.24, 0.335],
+		 
+		 {"nodeWeight":0.9},
+		 {"selfCollision":false},
+		 ["d4l",0.67,-0.50, 0.64],
+		 ["d5l",0.67,-0.13, 0.64],
+		 ["d6l",0.67,0.24, 0.64],
+		 
+		 {"selfCollision":true},
+		 ["d7l",0.64,-0.50, 0.96],
+		 {"selfCollision":false},
+		 ["d8l",0.64,-0.13, 0.96],
+		 {"selfCollision":true},
+		 ["d9l",0.64,0.24, 0.96],
+		 
+		 {"nodeWeight":0.8},
+		 {"selfCollision":false},
+		 ["d10l",0.59, -0.36, 1.18],
+		 ["d11l",0.52, -0.19, 1.40],
+		 ["d12l",0.52, 0.24, 1.40],
+		 ["d13l",0.59, 0.24, 1.18],
+		 //rigidifier
+		 {"selfCollision":false},
+		 {"collision":false}
+		 ["d14l",0.40, 0.11, 0.64],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--DOOR--
+		  {"beamSpring":901000,"beamDamp":80},
+		  {"beamDeform":36500,"beamStrength":150000},
+		  //door main shape
+		  ["d1l","d2l"],
+		  ["d2l","d3l"],
+		  ["d4l","d5l"],
+		  ["d5l","d6l"],
+		  ["d7l","d8l"],
+		  ["d8l","d9l"],
+		  
+		  ["d7l","d10l"],
+		  ["d13l","d9l"],
+		  
+		  ["d10l","d11l"],
+		  ["d11l","d12l"],
+		  ["d12l","d13l"],
+		  ["d1l","d4l"],
+		  ["d2l","d5l"],
+		  ["d3l","d6l"],
+		  ["d4l","d7l"],
+		  ["d5l","d8l"],
+		  ["d6l","d9l"],
+		  
+		  {"beamDeform":7600,"beamStrength":150000},
+		  //corner rigids
+		  {"deformGroup":"pigeon_doorglass_L_break", "triggerStrength":5500},
+		  ["d11l","d7l"],
+		  ["d12l","d10l"],
+		  ["d13l","d11l"],
+		  ["d12l","d9l"],
+		  
+		  {"deformGroup":""},
+		  ["d1l","d7l"],
+		  ["d2l","d8l"],
+		  ["d3l","d9l"],
+		  
+		  ["d8l","d10l"],
+		  ["d8l","d13l"],
+		  
+		  ["d4l","d10l"],
+		  
+		  ["d5l","d10l"],
+		  
+		  ["d5l","d13l"],
+		  
+		  ["d6l","d13l"],
+		  
+		  //lengthwise
+		  ["d1l","d3l"],
+		  ["d4l","d6l"],
+		  ["d7l","d9l"],
+		  
+		  //surficial crossing
+		  ["d1l","d5l"],
+		  ["d2l","d4l"],
+		  ["d2l","d6l"],
+		  ["d3l","d5l"],
+		  ["d4l","d8l"],
+		  ["d5l","d7l"],
+		  ["d5l","d9l"],
+		  ["d6l","d8l"],
+		  
+		  //rigidifier
+		  {"beamSpring":901000,"beamDamp":80},
+		  {"beamDeform":4500,"beamStrength":150000},
+		  {"deformGroup":""},
+		  ["d1l","d14l"],
+		  ["d2l","d14l"],
+		  ["d3l","d14l"],
+		  ["d4l","d14l"],
+		  ["d5l","d14l"],
+		  ["d6l","d14l"],
+		  ["d7l","d14l"],
+		  ["d8l","d14l"],
+		  ["d9l","d14l"],
+		  {"deformGroup":"pigeon_doorglass_L_break", "triggerStrength":5500},
+		  ["d10l","d14l"],
+		  ["d13l","d14l"],
+		  ["d11l","d14l"],
+		  ["d12l","d14l"],
+		  
+		  {"deformGroup":""},
+		  //dampers
+		  //{"beamSpring":0,"beamDamp":1200},
+		  //{"beamDeform":45000,"beamStrength":120000},
+		  //["d13l","f3rl"],
+		  //["d13l","f3ll"],
+		  
+		  //door support beams
+		  {"beamSpring":151000,"beamDamp":15},
+		  {"beamLimitSpring":151000,"beamLimitDamp":15},
+		  {"beamType":"|SUPPORT","beamLongBound":6},
+		  {"beamDeform":5500,"beamStrength":50000},
+		  ["d11l","r2"],
+		  ["d12l","r3"],
+		  
+		  ["d3l","b1"],
+		  ["d6l","b7"],
+		  ["d9l","b13"],
+		  
+		  ["d1l","fx1l"],
+		  ["d7l","b15"],
+		  
+		  ["d11l","r3ll"],
+		  //door hinge
+		  {"beamSpring":901000,"beamDamp":80},
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":26000,"beamStrength":46000},
+		  {"breakGroup":"pigeon_doorhinge_a_L"},
+		  ["d1l","b15ll"],
+		  ["d7l","b3ll"],
+		  ["d2l","b3ll"],
+		  ["d8l","b15ll"],
+		  
+		  {"breakGroup":"pigeon_doorhinge_b_L"},
+		  ["d1l","b3ll"],
+		  ["d7l","b15ll"],
+		  ["d2l","b15ll"],
+		  ["d8l","b3ll"],
+		  {"breakGroup":""},
+		  //damping
+		  {"beamDeform":92000,"beamStrength":150000},
+		  {"beamSpring":0,"beamDamp":35},
+		  {"breakGroup":"pigeon_doorhinge_a_L"},
+		  {"breakGroup":"pigeon_doorhinge_b_L"},
+		  {"breakGroup":""},
+		  {"beamSpring":901000,"beamDamp":80},
+		  //--TEMPORARY DOOR LATCH--
+		  {"beamDeform":6000,"beamStrength":9000},
+		  {"breakGroup":"pigeon_doorlatch_L"},
+		  ["d14l","b13ll"],
+		  ["d14l","b7ll"],
+		  ["d6l","b7ll"],
+		  ["d9l","b7ll"],
+		  ["d9l","b13ll"],
+		  {"breakGroup":""},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//left door
+			{"group":"pigeon_door_L"},
+			["d4l","d1l","d2l"],
+			["d4l","d2l","d5l"],
+			["d5l","d2l","d3l"],
+			["d5l","d3l","d6l"],
+			["d7l","d4l","d5l"],
+			["d7l","d5l","d8l"],
+			["d8l","d5l","d6l"],
+			["d8l","d6l","d9l"],
+			["d10l","d7l","d8l"],
+			["d10l","d8l","d12l"],
+			["d11l","d10l","d12l"],
+			["d12l","d8l","d9l"],
+			{"group":""},
+			
+	],
+}
+}

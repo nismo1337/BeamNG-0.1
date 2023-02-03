@@ -1,0 +1,188 @@
+{
+"hatch_wheel_R": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Covet Rear Wheels",
+	}
+    "slotType" : "hatch_wheel_R",
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //stock wheels
+		 ["steelwheel_01a_14x5_RR", ["wheel_RR","wheelhub_RR"], ["steelwheel_01a"]],
+		 ["steelwheel_01a_14x5_RL", ["wheel_RL","wheelhub_RL"], ["steelwheel_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //rear wheels
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"selfCollision":false}
+		 {"collision":true},
+		 {"nodeWeight":4.1},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"group":"wheelhub_RR"},
+		 ["rw1r", -0.60, 1.25, 0.288],
+		 ["rw1rr", -0.80, 1.25, 0.288],
+		 {"group":"wheelhub_RL"},
+		 ["rw1l", 0.60, 1.25, 0.288],
+		 ["rw1ll", 0.80, 1.25, 0.288],
+		 {"group":""},
+		 
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"breakGroup":""},
+	      {"beamSpring":7001000,"beamDamp":100},
+		  //rear wheel
+		  ["rw1r","rw1rr"],
+		  ["rw1l","rw1ll"],
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}, 
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.293},
+			{"hubRadius":0.18},
+			{"wheelOffset":-0.04},
+			{"hubWidth":0.165},
+			{"tireWidth":0.155},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":20}
+			{"beamSpring":1601000, "beamDamp":20},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.67},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":240000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":35000,"wheelSideBeamStrength":49000},
+			{"wheelReinforcementBeamSpring":64000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":35000,"wheelReinforcementBeamStrength":49000},
+			{"wheelTreadBeamSpring":601000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":35000,"wheelTreadBeamStrength":49000},
+			{"wheelPeripheryBeamSpring":601000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":35000,"wheelPeripheryBeamStrength":49000},
+			{"springExpansion":1601000, "dampExpansion":20},
+			{"nodeWeight":0.67},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.05},
+			
+			//rear
+			{"selfCollision":false}
+			{"collision":true}
+			{"propulsed":0},
+			{"hubcapBreakGroup":"hubcap_RR"},
+			{"hubcapGroup":"hubcap_RR"},
+            ["RR", "wheel_RR", "rw1rr", "rw1r", 9999,  "rh1r", 1],
+			{"hubcapBreakGroup":"hubcap_RL"},
+			{"hubcapGroup":"hubcap_RL"},
+            ["RL", "wheel_RL", "rw1ll", "rw1l", 9999,  "rh1l",  -1]
+			{"selfCollision":true}
+			{"hubcapBreakGroup":""},
+			{"hubcapGroup":""},
+			{"enableHubcaps":false},
+			{"propulsed":0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+"hatch_wheel_R_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Covet Sport Rear Wheels",
+	}
+    "slotType" : "hatch_wheel_R",
+	"scalenodeWeight":0.62,
+	"scalebeamSpring":0.46,
+	"scalebeamDamp":0.58,
+	"scalebeamDeform":0.39,
+	"scalebeamStrength":0.51,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheel_01a_17x9
+		 ["wheel_01a_17x9_RR", ["wheel_RR","wheelhub_RR"], ["wheel_01a"]],
+		 ["wheel_01a_17x9_RL", ["wheel_RL","wheelhub_RL"], ["wheel_01a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //rear wheels
+		 //wheel_01_R
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"selfCollision":false}
+		 {"collision":true},
+		 {"nodeWeight":4.1},
+		 {"group":"wheelhub_RR"},
+		 ["rw1r", -0.60, 1.25, 0.288],
+		 ["rw1rr", -0.80, 1.25, 0.288],
+		 {"group":"wheelhub_RL"},
+		 ["rw1l", 0.60, 1.25, 0.288],
+		 ["rw1ll", 0.80, 1.25, 0.288],
+		 {"group":""},
+		 
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"breakGroup":""},
+	      {"beamSpring":7001000,"beamDamp":200},
+		  //rear wheel
+		  ["rw1r","rw1rr"],
+		  ["rw1l","rw1ll"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}, 
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.293},
+			{"hubRadius":0.22},
+			{"wheelOffset":-0.03},
+			{"hubWidth":0.225},
+			{"tireWidth":0.215},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1601000, "hubBeamDamp":20}
+			{"beamSpring":1601000, "beamDamp":20},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.67},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":380000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":35000,"wheelSideBeamStrength":49000},
+			{"wheelReinforcementBeamSpring":112000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":35000,"wheelReinforcementBeamStrength":49000},
+			{"wheelTreadBeamSpring":601000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":35000,"wheelTreadBeamStrength":49000},
+			{"wheelPeripheryBeamSpring":601000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":35000,"wheelPeripheryBeamStrength":49000},
+			{"springExpansion":1601000, "dampExpansion":20},
+			{"nodeWeight":0.67},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.1},
+			
+			//rear
+			{"selfCollision":false}
+			{"collision":true}
+            ["RR", "wheel_RR", "rw1rr", "rw1r", 9999,  "rh1r",  1],
+            ["RL", "wheel_RL", "rw1ll", "rw1l", 9999,  "rh1l", -1]
+			{"selfCollision":true}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

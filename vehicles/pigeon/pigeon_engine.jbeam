@@ -1,0 +1,173 @@
+{
+"pigeon_engine": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon 0.7L I3 Diesel Engine",
+	}
+    "slotType" : "pigeon_engine",
+	"scalenodeWeight":1,
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"slots": [
+		["type", "default"]
+		//["pigeon_exhaust","pigeon_exhaust"],
+		["pigeon_transmission","pigeon_transmission_M"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //["pigeon_engine", ["pigeon_engine"]],
+	],
+	"enginetorque":[
+		["rpm", "torque"]
+		[0, 0],
+		[500, 20],
+		[1000, 25],
+		[2000, 35],
+		[3000, 50],
+		[4000, 48],
+		[5000, 43],
+		[5500, 37],
+		[6000, 28],
+	],
+	"engine":{
+		"idleRPM":1100,
+		"shiftDownRPM":2400,
+		"shiftUpRPM":5500,
+		"maxRPM":6000,
+		"inertia":0.08,
+		"friction":3
+		"burnEfficiency":0.3
+		"throttleSensitivity":2
+		},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--0.7L I3 Diesel Engine--
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"group":"pigeon_engine"},
+		 {"nodeWeight":12},
+		 ["e1r", -0.12, -0.37, 0.25],
+		 ["e1l", 0.12, -0.37, 0.25],
+		 ["e2r", -0.12, -0.69, 0.25],
+		 ["e2l", 0.12, -0.69, 0.25],
+		 {"nodeWeight":3.5},
+		 ["e3r", -0.10, -0.37, 0.68],
+		 ["e3l", 0.10, -0.37, 0.68],
+		 ["e4r", -0.10, -0.69, 0.68],
+		 ["e4l", 0.10, -0.69, 0.68],
+		 
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  		  
+	      {"beamSpring":4001000,"beamDamp":150},
+		  {"beamDeform":1500000,"beamStrength":"FLT_MAX"},
+		  //engine
+		  ["e1r","e1l"],
+		  ["e2r","e2l"],
+		  ["e3r","e3l"],
+		  ["e4r","e4l"],
+		  
+		  ["e1r","e2r"],
+		  ["e1l","e2l"],
+		  ["e3r","e4r"],
+		  ["e3l","e4l"],
+		  
+		  ["e1r","e3r"],
+		  ["e1l","e3l"],
+		  ["e2r","e4r"],
+		  ["e2l","e4l"],
+		  
+		  ["e2r","e3r"],
+		  ["e2l","e3l"],
+		  ["e2r","e3l"],
+		  ["e2l","e3r"],
+		  
+		  ["e1r","e4r"],
+		  ["e1l","e4l"],
+		  ["e1r","e4l"],
+		  ["e1l","e4r"],
+		  
+		  ["e1r","e2l"],
+		  ["e1l","e2r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  
+		  ["e1r","e3l"],
+		  ["e1l","e3r"],
+		  ["e2r","e4l"],
+		  ["e2l","e4r"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+"pigeon_transmission_M": {
+	"information":{
+		"authors":"gabester",
+		"name":"Ibishu Pigeon 3-Speed Manual Transmission",
+	}
+    "slotType" : "pigeon_transmission",
+	"scalenodeWeight":1,
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //["pigeon_engine", ["pigeon_engine"]],
+	],
+	"engine":{
+		"transmissionType":"manual",
+		"differential":7.0,
+		// -1, 0 (neutral), 1, etc
+		"gears":[-2.0, 0, 2.0, 1.4, 1.0]
+		"clutchDuration":0.12
+		"clutchTorque":300
+		//temporary until manual is coded
+		"viscousCoupling":1.5
+		"lockingTorqueLimit":50
+		"enableLocking":true
+		},
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--3 Speed Manual--
+		 {"selfCollision":false},
+		 {"collision":true}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"frictionCoef":0.7},
+		 {"group":"pigeon_transmission"},
+		 {"nodeWeight":13},
+		 ["tra1", 0.0, 0.0, 0.38],
+		 {"group":""},
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  		  
+	      {"beamSpring":4001000,"beamDamp":150},
+		  {"beamDeform":1500000,"beamStrength":"FLT_MAX"},
+		  //transmission
+		  ["tra1","e1r"],
+		  ["tra1","e3r"],
+		  ["tra1","e1l"],
+		  ["tra1","e3l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

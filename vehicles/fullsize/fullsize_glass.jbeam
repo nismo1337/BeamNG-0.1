@@ -1,0 +1,49 @@
+{
+"fullsize_glass": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Glass",
+	}
+    "slotType" : "fullsize_glass",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //glass
+		 {"deformGroup":"fullsize_windshield_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_windshield", ["fullsize_body"]],
+		 {"deformGroup":"fullsize_backlight_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_backlight", ["fullsize_body"]],
+		 {"deformGroup":"fullsize_sideglass_L_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_sideglass_L", ["fullsize_body"]],
+		 {"deformGroup":"fullsize_sideglass_R_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+		 ["fullsize_sideglass_R", ["fullsize_body"]],
+		 
+		 {"deformGroup":""},
+		 
+		 ["fullsize_wipers", ["fullsize_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+			
+			
+	],
+}
+}

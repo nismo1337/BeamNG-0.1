@@ -1,0 +1,36 @@
+{
+"pickup_glass": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Glass",
+	}
+    "slotType" : "pickup_glass",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //glass
+		 {"deformGroup":"pickup_windshield_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["pickup_windshield", ["pickup_cab", "pickup_firewall", "pickup_frontmeat"]],
+		 
+		 {"deformGroup":"pickup_backlight_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["pickup_backlight", ["pickup_cab", "pickup_firewall", "pickup_frontmeat"]],
+		 
+         {"deformGroup":""}
+		 ["pickup_wipers", ["pickup_cab", "pickup_firewall", "pickup_frontmeat"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+}

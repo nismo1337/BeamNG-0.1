@@ -1,0 +1,378 @@
+{
+"pickup_fender_R_offroad": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Right Fender",
+	}
+    "slotType" : "pickup_fender_R",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_fender_R_offroad", ["pickup_fender_R"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FENDER--
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2},
+		 {"group":"pickup_fender_R"},
+		 //r
+		 {"selfCollision":false}
+		 ["fe1r", -0.85, -0.86, 0.39],
+		 {"selfCollision":true}
+		 ["fe2r", -0.86, -0.97, 0.39],
+		 
+		 {"selfCollision":false}
+		 ["fe3r", -0.96, -0.86, 0.83],
+		 {"selfCollision":true}
+		 ["fe4r", -1.01, -1.41, 0.92],
+		 ["fe5r", -0.98, -1.87, 0.73],
+		 ["fe6r", -0.93, -1.93, 0.73],
+		 
+		 ["fe7r", -0.92, -0.86, 1.22],
+		 ["fe8r", -0.92, -1.36, 1.20],
+		 ["fe9r", -0.92, -1.73, 1.18],
+		 {"selfCollision":false}
+		 ["fe10r", -0.91, -2.07, 1.12],
+		 {"group":""},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 ["fe11r", -0.60, -1.46, 0.80],
+		 {"group":""}
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--FENDER--
+		  {"beamSpring":2351000,"beamDamp":150},
+		  {"beamDeform":24500,"beamStrength":"FLT_MAX"},
+		  //fender main shape
+		  ["fe1r","fe2r"],
+		  ["fe3r","fe4r"],
+		  ["fe4r","fe5r"],
+		  ["fe5r","fe6r"],
+		  ["fe7r","fe8r"],
+		  ["fe8r","fe9r"],
+		  ["fe9r","fe10r"],
+		  
+		  ["fe1r","fe3r"],
+		  ["fe2r","fe4r"],
+		  ["fe3r","fe7r"],
+		  ["fe4r","fe8r"],
+		  ["fe5r","fe9r"],
+		  ["fe6r","fe10r"],
+		  
+		  ["fe2r","fe3r"],
+		  //surficial crossing
+		  {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+		  ["fe1r","fe4r"],
+		  ["fe3r","fe8r"],
+		  ["fe4r","fe7r"],
+		  ["fe4r","fe9r"],
+		  ["fe5r","fe8r"],
+		  ["fe5r","fe10r"],
+		  ["fe6r","fe9r"],
+		  //rigidifier
+		  {"beamDeform":3600,"beamStrength":"FLT_MAX"},
+		  ["fe1r","fe7r"],
+		  ["fe1l","fe7l"],
+		  
+		  ["fe11r","fe1r"],
+		  ["fe11r","fe2r"],
+		  ["fe11r","fe3r"],
+		  ["fe11r","fe4r"],
+		  ["fe11r","fe5r"],
+		  ["fe11r","fe6r"],
+		  ["fe11r","fe7r"],
+		  ["fe11r","fe8r"],
+		  ["fe11r","fe9r"],
+		  ["fe11r","fe10r"],
+		  
+		  //rear attach
+		  {"beamDeform":16500,"beamStrength":66000},
+		  //r
+		  {"breakGroup":"pickup_fender_a_FR"},
+		  ["fe1r","f8rr"],
+		  ["fe1r","fr4r"],
+		  ["fe1r","fr8r"],
+		  ["fe1r","c1rr"],
+		  ["fe1r","f6rr"],
+		  ["fe2r","f8rr"],
+		  ["fe2r","fr4r"],
+		  
+		  {"breakGroup":"pickup_fender_b_FR"},
+		  ["fe2r","fr8r"],
+		  ["fe2r","c1rr"],
+		  ["fe2r","f6rr"],
+		  ["fe3r","f6rr"],
+		  ["fe3r","f6r"],
+		  ["fe3r","f8rr"],
+		  ["fe3r","f3rr"],
+		  ["fe7r","f3rr"],
+		  ["fe7r","f3r"],
+		  
+		  //front attach
+		  {"beamDeform":8500,"beamStrength":36500},
+		  //r
+		  {"breakGroup":"pickup_fender_c_FR"},
+		  ["fe9r","f1rr"],
+		  ["fe9r","f1r"],
+		  ["fe10r","f1rr"],
+		  ["fe10r","f1r"],
+		  ["fe6r","f4rr"],
+		  ["fe6r","f7rr"],
+		  
+		  {"breakGroup":""},
+		  
+		  //--FENDER SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":2351000,"beamDamp":150},
+		  {"beamLimitSpring":2351000,"beamLimitDamp":150},
+		  {"beamDeform":8500,"beamStrength":400000},
+
+		  ["fe6r","f4r"],
+		  ["fe5r","f4r"],
+		  
+		  ["fe11r","fr7"],
+		  
+		  ["fe1r","c1rr"],
+		  ["fe7r","r1rr"],
+		  
+		  ["fe4r","f5rr"],
+		  
+		  {"optional":true},
+		  ["fe7r","d8r"],
+		  
+		  ["fe3r","d5r"],
+
+		  
+		  ["fe1r","d2r"],
+		  
+		  {"optional":false},
+		  {"beamDeform":16200,"beamStrength":125000},
+		  
+		  ["fe8r","f3r"],
+		  
+		  ["fe4r","f6r"],
+		  
+		  ["fe8r","f6r"],
+		  
+		  ["fe4r","f3r"],
+		  
+		  ["fe8r","f1r"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//right fender
+			{"group":"pickup_fender_R"},
+			["fe1r","fe2r","fe3r"],
+			["fe3r","fe2r","fe4r"],
+			["fe3r","fe4r","fe7r"],
+			["fe7r","fe4r","fe8r"],
+			["fe4r","fe5r","fe8r"],
+			["fe8r","fe5r","fe9r"],
+			["fe5r","fe6r","fe9r"],
+			["fe9r","fe6r","fe10r"],
+			
+			
+	],
+}
+"pickup_fender_L_offroad": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril D-Series Off-Road Left Fender",
+	}
+    "slotType" : "pickup_fender_L",
+	"scalebeamSpring":0.84,
+	"scalebeamDamp":1.3,
+	"scalebeamDeform":1.5,
+	"scalebeamStrength":1.78,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_fender_L_offroad", ["pickup_fender_L"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FENDER--
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2},
+		 {"group":"pickup_fender_L"},
+		 //l
+		 {"selfCollision":false}
+		 ["fe1l", 0.85, -0.86, 0.39],
+		 {"selfCollision":true}
+		 ["fe2l", 0.86, -0.97, 0.39],
+		 
+		 {"selfCollision":false}
+		 ["fe3l", 0.96, -0.86, 0.83],
+		 {"selfCollision":true}
+		 ["fe4l", 1.01, -1.41, 0.92],
+		 ["fe5l", 0.98, -1.87, 0.73],
+		 ["fe6l", 0.93, -1.93, 0.73],
+		 
+		 ["fe7l", 0.92, -0.86, 1.22],
+		 ["fe8l", 0.92, -1.36, 1.20],
+		 ["fe9l", 0.92, -1.73, 1.18],
+		 {"selfCollision":false}
+		 ["fe10l", 0.91, -2.07, 1.12],
+		 {"group":""},
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 ["fe11l", 0.60, -1.46, 0.80],
+		 {"group":""}
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--FENDER--
+		  {"beamSpring":2351000,"beamDamp":150},
+		  {"beamDeform":24500,"beamStrength":"FLT_MAX"},
+		  //fender main shape
+		  ["fe1l","fe2l"],
+		  ["fe3l","fe4l"],
+		  ["fe4l","fe5l"],
+		  ["fe5l","fe6l"],
+		  ["fe7l","fe8l"],
+		  ["fe8l","fe9l"],
+		  ["fe9l","fe10l"],
+		  
+		  ["fe1l","fe3l"],
+		  ["fe2l","fe4l"],
+		  ["fe3l","fe7l"],
+		  ["fe4l","fe8l"],
+		  ["fe5l","fe9l"],
+		  ["fe6l","fe10l"],
+		  
+		  ["fe2l","fe3l"],
+		  //surficial crossing
+		  {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+		  ["fe1l","fe4l"],
+		  ["fe3l","fe8l"],
+		  ["fe4l","fe7l"],
+		  ["fe4l","fe9l"],
+		  ["fe5l","fe8l"],
+		  ["fe5l","fe10l"],
+		  ["fe6l","fe9l"],
+		  //rigidifier
+		  {"beamDeform":3600,"beamStrength":"FLT_MAX"},
+		  ["fe1l","fe7l"],
+		  
+		  ["fe11l","fe1l"],
+		  ["fe11l","fe2l"],
+		  ["fe11l","fe3l"],
+		  ["fe11l","fe4l"],
+		  ["fe11l","fe5l"],
+		  ["fe11l","fe6l"],
+		  ["fe11l","fe7l"],
+		  ["fe11l","fe8l"],
+		  ["fe11l","fe9l"],
+		  ["fe11l","fe10l"],
+		  
+		  //rear attach
+		  {"beamDeform":16500,"beamStrength":66000},
+		  //l
+		  {"breakGroup":"pickup_fender_a_FL"},
+		  ["fe1l","f8ll"],
+		  ["fe1l","fr4l"],
+		  ["fe1l","fr8l"],
+		  ["fe1l","c1ll"],
+		  ["fe1l","f6ll"],
+		  ["fe2l","f8ll"],
+		  ["fe2l","fr4l"],
+		  
+		  {"breakGroup":"pickup_fender_b_FL"},
+		  ["fe2l","fr8l"],
+		  ["fe2l","c1ll"],
+		  ["fe2l","f6ll"],
+		  ["fe3l","f6ll"],
+		  ["fe3l","f6l"],
+		  ["fe3l","f8ll"],
+		  ["fe3l","f3ll"],
+		  ["fe7l","f3ll"],
+		  ["fe7l","f3l"],
+		  
+		  //front attach
+		  {"beamDeform":8500,"beamStrength":36500},
+		  //l
+		  {"breakGroup":"pickup_fender_c_FL"},
+		  ["fe9l","f1ll"],
+		  ["fe9l","f1l"],
+		  ["fe10l","f1ll"],
+		  ["fe10l","f1l"],
+		  ["fe6l","f4ll"],
+		  ["fe6l","f7ll"],
+		  
+		  {"breakGroup":""},
+		  
+		  //--FENDER SUPPORT BEAMS--
+		  {"beamType":"|SUPPORT","beamLongBound":4},
+		  {"beamSpring":2351000,"beamDamp":150},
+		  {"beamLimitSpring":2351000,"beamLimitDamp":150},
+		  {"beamDeform":8500,"beamStrength":400000},
+
+		  ["fe6l","f4l"],
+		  ["fe5l","f4l"],
+		  
+		  ["fe11l","fr7"],
+		  
+		  ["fe1l","c1ll"],
+		  ["fe7l","r1ll"],
+		  
+		  ["fe4l","f5ll"],
+		  
+		  {"optional":true},
+		  ["fe7l","d8l"],	
+		  
+		  ["fe3l","d5l"],
+
+		  ["fe1l","d2l"],
+		  
+		  {"optional":false},
+		  {"beamDeform":16200,"beamStrength":125000},
+		  
+		  ["fe8l","f3l"],
+		  
+		  ["fe4l","f6l"],
+		  
+		  ["fe8l","f6l"],
+		  
+		  ["fe4l","f3l"],
+		  
+		  ["fe8l","f1l"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			//left fender
+			{"group":"pickup_fender_L"},
+			["fe2l","fe1l","fe3l"],
+			["fe2l","fe3l","fe4l"],
+			["fe4l","fe3l","fe7l"],
+			["fe4l","fe7l","fe8l"],
+			["fe5l","fe4l","fe8l"],
+			["fe5l","fe8l","fe9l"],
+			["fe6l","fe5l","fe9l"],
+			["fe6l","fe9l","fe10l"],
+			
+	],
+}
+}

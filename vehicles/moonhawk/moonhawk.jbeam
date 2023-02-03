@@ -1,0 +1,1063 @@
+{
+"moonhawk": {	
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk",
+	}
+    "slotType" : "main",
+	"slots": [
+		["type", "default"]
+		["moonhawk_body","moonhawk_body"],
+		["moonhawk_bumper_F","moonhawk_bumper_F"],
+		["moonhawk_bumper_R","moonhawk_bumper_R"],
+		
+		["moonhawk_steer","steer_01a"],
+		//engine
+		["moonhawk_fueltank","moonhawk_fueltank"],
+		["moonhawk_innerfender_FR","moonhawk_innerfender_FR"],
+		["moonhawk_innerfender_FL","moonhawk_innerfender_FL"],
+		["moonhawk_radsupport","moonhawk_radsupport"],
+		["moonhawk_engine","moonhawk_engine"],
+		//running gear
+		["moonhawk_suspension_R","moonhawk_suspension_R"],
+		["moonhawk_suspension_F","moonhawk_suspension_F"],
+	],
+	 "dragCoef":12,
+	 "selfCollisionThickness":0.02,
+	 "remoteCollisionThickness":0.06,
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "zeroOutSelfCollision":false,
+	 "refNodes":[
+		["ref:", "back:", "left:", "up:"]
+		["f2rr", "f4rr", "f2ll", "f11rr"]
+		],
+	 "cameraExternal":{
+		"distance":6.5,
+		"distanceMin":3,
+		"offset":{"x":0.77, "y":0.9, "z":0.5},
+		"fov":70,
+	 },
+	 "camerasInternal":[
+		["x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+		{"nodeWeight":2},
+	    {"selfCollision":false}
+	    {"collision":false}
+		{"beamSpring":100000,"beamDamp":500},
+		//hood cam
+		[0.0, -0.6, 1.2, 75, "f11rr","f11ll","f12r","f12l","f13rr","f13ll"],
+		//fender cam
+		[-1.4, 0.0, 0.7, 75, "f1r","f10r","f11rr","f2rr","f3rr","f3r"],
+		//dash cam
+		{"beamSpring":800,"beamDamp":150},
+		[0.42, 0.26, 1.18, 75, "f3ll","f3l","f4ll","f5ll","rx1l","f3r"],
+	 ],
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"rotation":{"x":0, "y":0, "z":0}, "translation":{"x":0, "y":0, "z":0}},
+		 //{"disableSection":1},
+		 //{"debugPositioning":true},
+		 {"isCollisionMesh":false},
+		 //body
+		 
+		 ["moonhawk_frame", ["moonhawk_frame","moonhawk_lowermounts_a_F","moonhawk_lowermounts_b_F","moonhawk_uppermounts_a_F","moonhawk_uppermounts_b_F","moonhawk_lowermounts_RR","moonhawk_lowermounts_RL","moonhawk_uppermounts_RR","moonhawk_uppermounts_RL","moonhawk_shocktop_F","moonhawk_shocktop_R","moonhawk_swaymounts_F"]],
+	 ],
+	"glowMap":{			
+			"moonhawk_signal_L":{"simpleFunction":{"signal_L":0.2,"parking":0.2}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			"moonhawk_signal_R":{"simpleFunction":{"signal_R":0.2,"parking":0.2}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			"moonhawk_taillight_L":{"simpleFunction":{"signal_L":0.2,"running":0.2,"parking":0.2}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			"moonhawk_taillight_R":{"simpleFunction":{"signal_R":0.2,"running":0.2,"parking":0.2}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			"moonhawk_brakelight":{"simpleFunction":{"brake":0.2,"running":0.2}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			"moonhawk_lowbeam":{"simpleFunction":{"lowbeam":0.5,"highbeam":0.5}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			"moonhawk_highbeam":{"simpleFunction":{"highbeam":1}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			"moonhawk_reverselight":{"simpleFunction":{"reverse":0.3}, "off":"moonhawk_lights", "on":"moonhawk_lights_on"},
+			}
+	"engine":{
+		"onBeamBreakDisableEngine":["driveshaft"]
+	}, 
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_frame"},
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"nodeWeight":6.9},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //frame lower
+		 ["f1r",-0.47,-1.03, 0.27],
+		 ["f1l", 0.47,-1.03, 0.27],
+		 ["f2rr",-0.77,-0.88, 0.22],
+		 ["f2ll", 0.77,-0.88, 0.22],
+		 ["f3rr",-0.77,-0.46, 0.22],
+		 ["f3r",-0.24,-0.42, 0.23],
+		 ["f3l", 0.24,-0.42, 0.23],
+		 ["f3ll", 0.77,-0.46, 0.22],
+		 ["f4rr",-0.77, 0.03, 0.22],
+		 ["f4ll", 0.77, 0.03, 0.22],
+		 ["f5rr",-0.77, 0.70, 0.22],
+		 ["f5ll", 0.77, 0.70, 0.22],
+		 ["f6rr",-0.65, 1.07, 0.28],
+		 ["f6r",-0.24, 1.18, 0.49],
+		 ["f6l", 0.24, 1.18, 0.49],
+		 ["f6ll", 0.65, 1.07, 0.28],
+		 ["f7rr",-0.65, 1.43, 0.53],
+		 ["f7ll", 0.65, 1.43, 0.53],
+		 ["f8rr",-0.65, 1.87, 0.29],
+		 ["f8ll", 0.65, 1.87, 0.29],
+		 ["f9rr",-0.65, 2.52, 0.345],
+		 ["f9", 0.0, 2.52, 0.345],
+		 ["f9ll", 0.65, 2.52, 0.345],
+		 //frame upper
+		 ["f10r",-0.47,-1.03, 0.42],
+		 ["f10l", 0.47,-1.03, 0.42],
+		 ["f11rr",-0.77,-0.88, 0.32],
+		 ["f11ll", 0.77,-0.88, 0.32],
+		 ["f12rr",-0.77,-0.46, 0.32],
+		 ["f12r",-0.24,-0.42, 0.33],
+		 ["f12l", 0.24,-0.42, 0.33],
+		 ["f12ll", 0.77,-0.46, 0.32],
+		 ["f13rr",-0.77, 0.03, 0.32],
+		 ["f13ll", 0.77, 0.03, 0.32],
+		 ["f14rr",-0.77, 0.67, 0.32],
+		 ["f14ll", 0.77, 0.67, 0.32],
+		 ["f15rr",-0.65, 1.05, 0.41],
+		 ["f15r",-0.24, 1.18, 0.62],
+		 ["f15l", 0.24, 1.18, 0.62],
+		 ["f15ll", 0.65, 1.05, 0.41],
+		 ["f16rr",-0.65, 1.43, 0.63],
+		 ["f16ll", 0.65, 1.43, 0.63],
+		 ["f17rr",-0.65, 1.89, 0.40],
+		 ["f17ll", 0.65, 1.89, 0.40],
+		 ["f18rr",-0.65, 2.52, 0.45],
+		 ["f18", 0.0, 2.52, 0.45],
+		 ["f18ll", 0.65, 2.52, 0.45],
+		 
+		 //floating rigid node
+		 ["f19", 0.0, 1.93, 0.34, {"fuelTankNode":true,"nodeWeight":60}], //the weight of this node should change with fuel amount
+		 
+		 {"nodeWeight":5.9},
+		 //rear axle axis points
+		 {"group":"moonhawk_lowermounts_RR"}
+		 ["rx1r",-0.51, 0.80, 0.277],
+		 {"group":"moonhawk_lowermounts_RL"}
+		 ["rx1l", 0.51, 0.80, 0.277],
+		 
+		 {"group":"moonhawk_uppermounts_RR"}
+		 ["rx2r",-0.20, 1.21, 0.55],
+		 {"group":"moonhawk_uppermounts_RL"}
+		 ["rx2l", 0.20, 1.21, 0.55],
+		 
+		 {"nodeWeight":5.1},
+		 //rear shock top
+		 {"group":"moonhawk_shocktop_R"},
+		 ["rs1r",-0.46, 1.36, 0.67],
+		 ["rs1l", 0.46, 1.36, 0.67],
+		 
+		 {"nodeWeight":5.8},
+		 //front frame members
+		 ["f20rr",-0.55,-1.38, 0.32],
+		 {"group":"moonhawk_swaymounts_F"},
+		 ["f20r",-0.18,-1.31, 0.25],
+		 ["f20l", 0.18,-1.31, 0.25],
+		 {"group":"moonhawk_frame"},
+		 ["f20ll", 0.55,-1.38, 0.32],
+		 
+		 {"group":"moonhawk_swaymounts_F"},
+		 ["f21rr",-0.46,-1.77, 0.325],
+		 ["f21r",-0.34,-1.81, 0.325],
+		 ["f21l", 0.34,-1.81, 0.325],
+		 ["f21ll", 0.46,-1.77, 0.325],
+		 {"group":"moonhawk_frame"},
+		 
+		 ["f22rr",-0.58,-2.06, 0.39],
+		 ["f22r",-0.47,-2.06, 0.39],
+		 ["f22l", 0.47,-2.06, 0.39],
+		 ["f22ll", 0.58,-2.06, 0.39],
+		 
+		 //upper
+		 ["f23rr",-0.55,-1.38, 0.45],
+		 ["f23r",-0.18,-1.39, 0.33],
+		 ["f23l", 0.18,-1.39, 0.33],
+		 ["f23ll", 0.55,-1.38, 0.45],
+		 
+		 ["f24rr",-0.46,-1.77, 0.46],
+		 ["f24r",-0.34,-1.81, 0.46],
+		 ["f24l", 0.34,-1.81, 0.46],
+		 ["f24ll", 0.46,-1.77, 0.46],
+		 
+		 ["f25rr",-0.58,-2.06, 0.51],
+		 ["f25r",-0.47,-2.06, 0.51],
+		 ["f25l", 0.47,-2.06, 0.51],
+		 ["f25ll", 0.58,-2.06, 0.51],
+		 
+		 {"nodeWeight":6.0},
+		 //front lower axis points
+		 {"group":"moonhawk_lowermounts_a_F"},
+		 ["fx1r",-0.19,-1.47, 0.25],
+		 ["fx1l", 0.19,-1.47, 0.25],
+		 
+		 {"group":"moonhawk_lowermounts_b_F"},
+		 ["fx2r",-0.33,-1.12, 0.23],
+		 ["fx2l", 0.33,-1.12, 0.23],
+		 
+		 {"nodeWeight":5.4},
+		 {"group":"moonhawk_uppermounts_a_F"},
+		 //upper
+		 ["fx3r",-0.40,-1.49, 0.51],
+		 ["fx3l", 0.40,-1.49, 0.51],
+		 
+		 {"group":"moonhawk_uppermounts_b_F"},
+		 ["fx4r",-0.44,-1.23, 0.49],
+		 ["fx4l", 0.44,-1.23, 0.49],
+		 {"nodeWeight":5.1},
+		 {"group":"moonhawk_shocktop_F"},
+		 //front shock top
+		 ["fs1r",-0.48,-1.39, 0.47],
+		 ["fs1l", 0.48,-1.39, 0.47],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"breakGroup":""},
+		  //engine soft mounts
+		  {"optional":true},
+	      {"beamSpring":2501000,"beamDamp":300},
+		  {"beamDeform":40000,"beamStrength":220000},
+		  ["e1r","fx2r"],
+		  ["e1l","fx2l"],
+		  ["e2r","fx1r"],
+		  ["e2l","fx1l"],
+		  
+		  ["e1r","f23r"],
+		  ["e1l","f23l"],
+		  ["e2r","f23r"],
+		  ["e2l","f23l"],
+		  
+		  ["e1r","f20r"],
+		  ["e1l","f20l"],
+		  ["e2r","f20r"],
+		  ["e2l","f20l"],
+		  
+		  ["e4r","f23r"],
+		  ["e4l","f23l"],
+		  
+		  
+		  //transmission soft mounts
+		  
+		  ["tra1","f12r"],
+		  ["tra1","f12l"],
+		  
+		  ["tra1","f3r"],
+		  ["tra1","f3l"],
+		  
+		  //engine limiters
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.15, "beamShortBound":0.5}, 
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":100000,"beamStrength":1500000},
+		  {"beamLimitSpring":6001000,"beamLimitDamp":250},
+		  //front end collide
+		  
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.12, "beamShortBound":0.4}, 
+		  //firewall collide
+		  ["e4r","b10r"],
+		  ["e4r","b1r"],
+		  ["e4l","b10l"],
+		  ["e4l","b1l"],
+		  
+		  //transmission limiters
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.12, "beamShortBound":0.12}, 
+		  {"optional":false},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":7501000,"beamDamp":250},
+		  //front frame main shape lengthwise
+		  
+		  //r
+		  ["f1r","f20rr"],
+		  ["f20rr","f21rr"],
+		  ["f21rr","f22rr"],
+		  ["f21r","f22r"],
+		  
+		  ["f10r","f23rr"],
+		  ["f23rr","f24rr"],
+		  ["f24rr","f25rr"],
+		  ["f24r","f25r"],
+		  
+		  //l
+		  ["f1l","f20ll"],
+		  ["f20ll","f21ll"],
+		  ["f21ll","f22ll"],
+		  ["f21l","f22l"],
+		  
+		  ["f10l","f23ll"],
+		  ["f23ll","f24ll"],
+		  ["f24ll","f25ll"],
+		  ["f24l","f25l"],
+		  
+		  //vertical
+		  
+		  //r
+		  ["f20rr","f23rr"],
+		  ["f20r","f23r"],
+		  ["f21rr","f24rr"],
+		  ["f21r","f24r"],
+		  ["f22rr","f25rr"],
+		  ["f22r","f25r"],
+		  
+		  //l
+		  ["f20ll","f23ll"],
+		  ["f20l","f23l"],
+		  ["f21ll","f24ll"],
+		  ["f21l","f24l"],
+		  ["f22ll","f25ll"],
+		  ["f22l","f25l"],
+		  
+		  //horizontal
+		  ["f20rr","f20r"],
+		  ["f20r","f20l"],
+		  ["f20ll","f20l"],
+		  
+		  ["f23rr","f23r"],
+		  ["f23r","f23l"],
+		  ["f23ll","f23l"],
+		  
+		  ["f21rr","f21r"],
+		  ["f21ll","f21l"],
+		  ["f22rr","f22r"],
+		  ["f22ll","f22l"],
+		  
+		  ["f24rr","f24r"],
+		  ["f24ll","f24l"],
+		  ["f25rr","f25r"],
+		  ["f25ll","f25l"],
+		  
+		  //attach to lower axis points
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":6001000,"beamDamp":220},
+		  //r
+		  ["f20rr","fx1r"],
+		  ["f20r","fx1r"],
+		  ["f23rr","fx1r"],
+		  ["f23r","fx1r"],
+		  
+		  //["f21rr","fx1r"],
+		  //["f21r","fx1r"],
+		  //["f24rr","fx1r"],
+		  //["f24r","fx1r"],
+		  
+		  ["f1r","fx2r"],
+		  ["f10r","fx2r"],
+		  
+		  ["f20rr","fx2r"],
+		  ["f20r","fx2r"],
+		  ["f23rr","fx2r"],
+		  ["f23r","fx2r"],
+		  
+		  //["f21rr","fx2r"],
+		  //["f21r","fx2r"],
+		  //["f24rr","fx2r"],
+		  //["f24r","fx2r"],
+		  
+		  //l
+		  ["f20ll","fx1l"],
+		  ["f20l","fx1l"],
+		  ["f23ll","fx1l"],
+		  ["f23l","fx1l"],
+		  
+		  //["f21ll","fx1l"],
+		  //["f21l","fx1l"],
+		  //["f24ll","fx1l"],
+		  //["f24l","fx1l"],
+		  
+		  ["f1l","fx2l"],
+		  ["f10l","fx2l"],
+		  
+		  ["f20ll","fx2l"],
+		  ["f20l","fx2l"],
+		  ["f23ll","fx2l"],
+		  ["f23l","fx2l"],
+		  
+		  //["f21ll","fx2l"],
+		  //["f21l","fx2l"],
+		  //["f24ll","fx2l"],
+		  //["f24l","fx2l"],
+		  
+		  //attach to each other
+		  ["fx1r","fx2r"],
+		  ["fx1l","fx2l"],
+		  
+		  ["fx1r","fx1l"],
+		  
+		  ["fx2l","f20r"],
+		  ["fx2l","f23r"],
+		  
+		  ["fx2r","f20l"],
+		  ["fx2r","f23l"],
+		  
+		  ["fx1l","f20r"],
+		  ["fx1l","f23r"],
+		  
+		  ["fx1r","f20l"],
+		  ["fx1r","f23l"],
+		  
+		  //upper axis points
+		  {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":5001000,"beamDamp":200},
+		  //r
+		  ["fx3r","fx4r"],
+		  ["fx3r","fs1r"],
+		  ["fx4r","fs1r"],
+		  
+		  ["fx3r","f23rr"],
+		  ["fx4r","f23rr"],
+		  
+		  ["fx3r","f23r"],
+		  ["fx4r","f23r"],
+		  
+		  //["fx3r","f24rr"],
+		  //["fx4r","f24rr"],
+		  
+		  //["fx3r","f24r"],
+		  //["fx4r","f24r"],
+		  
+		  ["fx3r","f20rr"],
+		  ["fx4r","f20rr"],
+		  //["fx3r","f21rr"],
+		  //["fx4r","f21rr"],
+		  
+		  ["fx3r","fx2r"],
+		  ["fx4r","fx2r"],
+		  ["fx3r","fx1r"],
+		  ["fx4r","fx1r"],
+		  
+		  
+		  //l
+		  ["fx3l","fx4l"],
+		  ["fx3l","fs1l"],
+		  ["fx4l","fs1l"],
+		  
+		  ["fx3l","f23ll"],
+		  ["fx4l","f23ll"],
+		  
+		  ["fx3l","f23l"],
+		  ["fx4l","f23l"],
+		  
+		  //["fx3l","f24ll"],
+		  //["fx4l","f24ll"],
+		  
+		  //["fx3l","f24l"],
+		  //["fx4l","f24l"],
+		  
+		  ["fx3l","f20ll"],
+		  ["fx4l","f20ll"],
+		  //["fx3l","f21ll"],
+		  //["fx4l","f21ll"],
+		  
+		  ["fx3l","fx2l"],
+		  ["fx4l","fx2l"],
+		  ["fx3l","fx1l"],
+		  ["fx4l","fx1l"],
+		  //shock top
+		  {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":5001000,"beamDamp":200},
+		  //r
+		  ["fs1r","f20rr"],
+		  ["fs1r","f23rr"],
+		  //["fs1r","f21rr"],
+		  //["fs1r","f24rr"],
+		  
+		  ["fs1r","f20r"],
+		  ["fs1r","f23r"],
+		  //["fs1r","f21r"],
+		  //["fs1r","f24r"],
+		  
+		  ["fs1r","fx1r"],
+		  ["fs1r","fx2r"],
+		  
+		  ["fs1r","f10r"],
+		  ["fs1r","f1r"],
+		  
+		  //l
+		  ["fs1l","f20ll"],
+		  ["fs1l","f23ll"],
+		  //["fs1l","f21ll"],
+		  //["fs1l","f24ll"],
+		  
+		  ["fs1l","f20l"],
+		  ["fs1l","f23l"],
+		  //["fs1l","f21l"],
+		  //["fs1l","f24l"],
+		  
+		  ["fs1l","fx1l"],
+		  ["fs1l","fx2l"],
+		  
+		  ["fs1l","f10l"],
+		  ["fs1l","f1l"],
+		  
+		  {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":6001000,"beamDamp":220},
+		  //crossing
+		  //side lengthwise
+		  
+		  //r
+		  //["f10r","f20rr"],
+		  ["f1r","f23rr"],
+		  ["f23rr","f21rr"],
+		  ["f20rr","f24rr"],
+		  ["f24rr","f22rr"],
+		  ["f21rr","f25rr"],
+		  
+		  //["f23r","f21r"],
+		  ["f20r","f24r"],
+		  ["f24r","f22r"],
+		  ["f21r","f25r"],
+		  
+		  //l
+		  //["f10l","f20ll"],
+		  ["f1l","f23ll"],
+		  ["f23ll","f21ll"],
+		  ["f20ll","f24ll"],
+		  ["f24ll","f22ll"],
+		  ["f21ll","f25ll"],
+		  
+		  //["f23l","f21l"],
+		  ["f20l","f24l"],
+		  ["f24l","f22l"],
+		  ["f21l","f25l"],
+		  
+		  //top and bottom lengthwise
+		  
+		  //r
+		  ["f20rr","f21r"],
+		  ["f20r","f21rr"],
+		  ["f21rr","f22r"],
+		  ["f21r","f22rr"],
+		  ["f23rr","f24r"],
+		  ["f23r","f24rr"],
+		  ["f24rr","f25r"],
+		  ["f24r","f25rr"],
+		  
+		  //l
+		  ["f20ll","f21l"],
+		  ["f20l","f21ll"],
+		  ["f21ll","f22l"],
+		  ["f21l","f22ll"],
+		  ["f23ll","f24l"],
+		  ["f23l","f24ll"],
+		  ["f24ll","f25l"],
+		  ["f24l","f25ll"],
+		  
+		  //horiz
+		  
+		  //r
+		  ["f20rr","f23r"],
+		  ["f20r","f23rr"],
+		  ["f21rr","f24r"],
+		  ["f21r","f24rr"],
+		  ["f22rr","f25r"],
+		  ["f22r","f25rr"],
+		  
+		  //l
+		  ["f20ll","f23l"],
+		  ["f20l","f23ll"],
+		  ["f21ll","f24l"],
+		  ["f21l","f24ll"],
+		  ["f22ll","f25l"],
+		  ["f22l","f25ll"],
+		  
+		  //corner and stuff
+		  
+		  //r
+		  ["f1r","f23r"],
+		  ["f10r","f23r"],
+		  
+		  ["f1r","f20r"],
+		  ["f10r","f20r"],
+		  
+		  //l
+		  ["f1l","f23l"],
+		  ["f10l","f23l"],
+		  
+		  ["f1l","f20l"],
+		  ["f10l","f20l"],
+		  
+		  
+		  {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":5001000,"beamDamp":200},
+		  //rigids
+		  /*
+		  //r
+		  ["f2rr","f20rr"],
+		  ["f11rr","f23rr"],
+		  
+		  ["f10r","f24rr"],
+		  ["f1r","f21rr"],
+		  ["f10r","f24r"],
+		  ["f1r","f21r"],
+		  
+		  ["f20rr","f22rr"],
+		  ["f23rr","f25rr"],
+		  ["f20rr","f22r"],
+		  ["f23rr","f25r"],
+		  ["f20r","f22r"],
+		  ["f23r","f25r"],
+		  
+		  //l
+		  ["f2ll","f20ll"],
+		  ["f11ll","f23ll"],
+		  
+		  ["f10l","f24ll"],
+		  ["f1l","f21ll"],
+		  ["f10l","f24l"],
+		  ["f1l","f21l"],
+		  
+		  ["f20ll","f22ll"],
+		  ["f23ll","f25ll"],
+		  ["f20ll","f22l"],
+		  ["f23ll","f25l"],
+		  ["f20l","f22l"],
+		  ["f23l","f25l"],
+		  */
+		  
+		  ["f2rr","f24rr"],
+		  ["f2ll","f24ll"],
+		  
+		  ["f1r","f24r"],
+		  ["f1l","f24l"],
+		  
+		  {"beamDeform":180000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":7501000,"beamDamp":250},
+		  //frame main shape lengthwise
+		  
+		  //r
+		  ["f2rr","f3rr"],
+		  ["f3rr","f4rr"],
+		  ["f4rr","f5rr"],
+		  ["f5rr","f6rr"],
+		  ["f6rr","f7rr"],
+		  ["f7rr","f8rr"],
+		  
+		  ["f11rr","f12rr"],
+		  ["f12rr","f13rr"],
+		  ["f13rr","f14rr"],
+		  ["f14rr","f15rr"],
+		  ["f15rr","f16rr"],
+		  ["f16rr","f17rr"],
+		  
+		  //l
+		  ["f2ll","f3ll"],
+		  ["f3ll","f4ll"],
+		  ["f4ll","f5ll"],
+		  ["f5ll","f6ll"],
+		  ["f6ll","f7ll"],
+		  ["f7ll","f8ll"],
+		  
+		  ["f11ll","f12ll"],
+		  ["f12ll","f13ll"],
+		  ["f13ll","f14ll"],
+		  ["f14ll","f15ll"],
+		  ["f15ll","f16ll"],
+		  ["f16ll","f17ll"],
+		  
+		  //widthwise rigid
+		  ["f1r","f2rr"],
+		  ["f1l","f2ll"],
+		  
+		  ["f10r","f11rr"],
+		  ["f10l","f11ll"],
+		  
+		  ["f9rr","f9"],
+		  ["f9ll","f9"],
+		  ["f18rr","f18"],
+		  ["f18ll","f18"],
+		  
+		  ["f3rr","f3r"],
+		  ["f3r","f3l"],
+		  ["f3ll","f3l"],
+		  
+		  ["f12rr","f12r"],
+		  ["f12r","f12l"],
+		  ["f12ll","f12l"],
+		  
+		  ["f6rr","f6r"],
+		  ["f6r","f6l"],
+		  ["f6ll","f6l"],
+		  
+		  ["f15rr","f15r"],
+		  ["f15r","f15l"],
+		  ["f15ll","f15l"],
+		  
+		  //vertical
+		  //r
+		  ["f1r","f10r"],
+		  ["f2rr","f11rr"],
+		  ["f3r","f12r"],
+		  ["f3rr","f12rr"],
+		  ["f4rr","f13rr"],
+		  ["f5rr","f14rr"],
+		  ["f6rr","f15rr"],
+		  ["f6r","f15r"],
+		  ["f7rr","f16rr"],
+		  ["f8rr","f17rr"],
+		  ["f9rr","f18rr"],
+		  
+		  //l
+		  ["f1l","f10l"],
+		  ["f2ll","f11ll"],
+		  ["f3l","f12l"],
+		  ["f3ll","f12ll"],
+		  ["f4ll","f13ll"],
+		  ["f5ll","f14ll"],
+		  ["f6ll","f15ll"],
+		  ["f6l","f15l"],
+		  ["f7ll","f16ll"],
+		  ["f8ll","f17ll"],
+		  ["f9ll","f18ll"],
+		  
+		  //m
+		  ["f9","f18"],
+		  
+		  {"beamDeform":55000,"beamStrength":"FLT_MAX"},
+		  //weak
+		  ["f8rr","f9rr"],
+		  ["f8ll","f9ll"],
+		  
+		  ["f17rr","f18rr"],
+		  ["f17ll","f18ll"],
+		  
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  
+		  
+		  ["f8rr","f18rr"],
+		  ["f9rr","f17rr"],
+		  ["f8ll","f18ll"],
+		  ["f9ll","f17ll"],
+		  
+		  {"beamDeform":70000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":6001000,"beamDamp":220},
+		  //to axis point 1
+		  ["f5rr","rx1r"],
+		  ["f6rr","rx1r"],
+		  ["f5ll","rx1l"],
+		  ["f6ll","rx1l"],
+		  
+		  ["f14rr","rx1r"],
+		  ["f15rr","rx1r"],
+		  ["f14ll","rx1l"],
+		  ["f15ll","rx1l"],
+		  
+		  //to axis point 2
+		  ["f16rr","rx2r"],
+		  ["f15rr","rx2r"],
+		  ["f15r","rx2r"],
+		  ["f16ll","rx2l"],
+		  ["f15ll","rx2l"],
+		  ["f15l","rx2l"],
+		  
+		  ["f15r","rx2l"],
+		  ["f15l","rx2r"],
+		  //axis point interconnect
+		  ["rx2r","rx2l"],
+		  
+		  //to shock top
+		  ["f16rr","rs1r"],
+		  ["f15rr","rs1r"],
+		  ["f15r","rs1r"],
+		  ["f16ll","rs1l"],
+		  ["f15ll","rs1l"],
+		  ["f15l","rs1l"],
+		  
+		  {"beamDeform":35000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":6001000,"beamDamp":220},
+		  //soft squishy beams but still important incl crossing
+		  
+		  //r
+		  ["f3r","f1r"],
+		  ["f12r","f10r"],
+		  ["f1r","f4rr"],
+		  ["f10r","f13rr"],
+		  
+		  ["f13rr","f12r"],
+		  ["f4rr","f3r"],
+		  ["f2rr","f3r"],
+		  ["f11rr","f12r"],
+		  
+		  ["f3rr","f12r"],
+		  ["f4rr","f5rr"],
+		  ["f12rr","f3r"],
+		  ["f13rr","f14rr"],
+		  
+		  ["f12rr","f10r"],
+		  ["f3rr","f1r"],
+		  
+		  ["rs1r","f17rr"],
+		  ["rs1r","f8rr"],
+		  
+		  ["rx2r","f15rr"],
+		  ["rx2r","f6rr"],
+		  
+		  ["rx1r","f15r"],
+		  ["rx1r","f6r"],
+		  ["rx1r","rx2r"],
+		  //l
+		  ["f3l","f1l"],
+		  ["f12l","f10l"],
+		  ["f1l","f4ll"],
+		  ["f10l","f13ll"],
+		  
+		  ["f13ll","f12l"],
+		  ["f4ll","f3l"],
+		  ["f2ll","f3l"],
+		  ["f11ll","f12l"],
+		  
+		  ["f3ll","f12l"],
+		  ["f4ll","f5ll"],
+		  ["f12ll","f3l"],
+		  ["f13ll","f14ll"],
+		  
+		  ["f12ll","f10l"],
+		  ["f3ll","f1l"],
+		  
+		  ["rs1l","f17ll"],
+		  ["rs1l","f8ll"],
+		  
+		  ["rx2l","f15ll"],
+		  ["rx2l","f6ll"],
+		  
+		  ["rx1l","f15l"],
+		  ["rx1l","f6l"],
+		  ["rx1l","rx2l"],
+		  //all
+		  
+		  ["f2rr","f12r"],
+		  ["f2ll","f12l"],
+		  ["f11rr","f3r"],
+		  ["f11ll","f3l"],
+		  
+		  ["f4rr","f12r"],
+		  ["f4ll","f12l"],
+		  ["f13rr","f3r"],
+		  ["f13ll","f3l"],
+		  
+		  ["f3r","f12l"],
+		  ["f3l","f12r"],
+		  
+		  ["rs1l","f15r"],
+		  ["rs1r","f15l"],
+		  
+		  ["rs1r","f6r"],
+		  ["rs1l","f6l"],
+		  
+		  ["rs1l","rx2r"],
+		  ["rs1r","rx2l"],
+		  
+		  {"beamDeform":55000,"beamStrength":"FLT_MAX"},
+		  //side of frame rail cross lengthwise
+		  //r
+		  ["f1r","f11rr"],
+		  ["f2rr","f10r"],
+		  
+		  ["f3rr","f13rr"],
+		  ["f4rr","f12rr"],
+		  ["f2rr","f12rr"],
+		  ["f3rr","f11rr"],
+		  ["f4rr","f14rr"],
+		  ["f5rr","f13rr"],
+		  ["f5rr","f15rr"],
+		  ["f6rr","f14rr"],
+		  ["f6rr","f16rr"],
+		  ["f7rr","f15rr"],
+		  ["f7rr","f17rr"],
+		  ["f8rr","f16rr"],
+		  
+		  //l
+		  ["f1l","f11ll"],
+		  ["f2ll","f10l"],
+		  
+		  ["f3ll","f13ll"],
+		  ["f4ll","f12ll"],
+		  ["f2ll","f12ll"],
+		  ["f3ll","f11ll"],
+		  ["f4ll","f14ll"],
+		  ["f5ll","f13ll"],
+		  ["f5ll","f15ll"],
+		  ["f6ll","f14ll"],
+		  ["f6ll","f16ll"],
+		  ["f7ll","f15ll"],
+		  ["f7ll","f17ll"],
+		  ["f8ll","f16ll"],
+		  
+		  //rear face
+		  ["f18","f9rr"],
+		  ["f18","f9ll"],
+		  ["f9","f18rr"],
+		  ["f9","f18ll"],
+		  
+		  {"beamDeform":40000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":5001000,"beamDamp":200},
+		  //weaker rigidifying beams
+		  ["f1r","f1l"],
+		  ["f2rr","f3l"],
+		  ["f2ll","f3r"],
+		  ["f4rr","f3l"],
+		  ["f4ll","f3r"],
+		  
+		  ["f10r","f10l"],
+		  ["f11rr","f12l"],
+		  ["f11ll","f12r"],
+		  ["f13rr","f12l"],
+		  ["f13ll","f12r"],
+		  
+		  //lengthwise rigids
+		  ["f1r","f3rr"],
+		  ["f1l","f3ll"],
+		  ["f10r","f12rr"],
+		  ["f10l","f12ll"],
+		  
+		  ["f1r","f12rr"],
+		  ["f1l","f12ll"],
+		  //["f10r","f3rr"],
+		  //["f10l","f3ll"],
+		  
+		  ["f2rr","f4rr"],
+		  ["f2ll","f4ll"],
+		  ["f11rr","f13rr"],
+		  ["f11ll","f13ll"],
+		  
+		  ["f2rr","f13rr"],
+		  ["f2ll","f13ll"],
+		  ["f11rr","f4rr"],
+		  ["f11ll","f4ll"],
+		  
+		  ["f3rr","f5rr"],
+		  ["f3ll","f5ll"],
+		  ["f12rr","f14rr"],
+		  ["f12ll","f14ll"],
+		  
+		  ["f3rr","f14rr"],
+		  ["f3ll","f14ll"],
+		  ["f12rr","f5rr"],
+		  ["f12ll","f5ll"],
+		  
+		  ["f4rr","f6rr"],
+		  ["f4ll","f6ll"],
+		  ["f5rr","f7rr"],
+		  ["f5ll","f7ll"],
+		  ["f6rr","f8rr"],
+		  ["f6ll","f8ll"],
+		  //["f7rr","f9rr"],
+		  //["f7ll","f9ll"],
+		  
+		  ["f13rr","f15rr"],
+		  ["f13ll","f15ll"],
+		  ["f14rr","f16rr"],
+		  ["f14ll","f16ll"],
+		  ["f15rr","f17rr"],
+		  ["f15ll","f17ll"],
+		  //["f16rr","f18rr"],
+		  //["f16ll","f18ll"],
+		  
+		  ["f13rr","f6rr"],
+		  ["f13ll","f6ll"],
+		  ["f14rr","f7rr"],
+		  ["f14ll","f7ll"],
+		  
+		  ["f4rr","f15rr"],
+		  ["f4ll","f15ll"],
+		  ["f5rr","f16rr"],
+		  ["f5ll","f16ll"],
+		  
+		  //to axis point 1
+		  ["f4rr","rx1r"],
+		  ["f13rr","rx1r"],
+		  
+		  ["f4ll","rx1l"],
+		  ["f13ll","rx1l"],
+		  
+		  //upbend enticement
+		  //["f1r","f24rr"],
+		  //["f1l","f24ll"],
+		  
+	      {"beamSpring":2501000,"beamDamp":200},
+		  {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+		  //rear rigid
+		  ["f9rr","f19"],
+		  ["f9","f19"],
+		  ["f9ll","f19"],
+		  ["f18rr","f19"],
+		  ["f18","f19"],
+		  ["f18ll","f19"],
+		  
+		  ["f8rr","f19"],
+		  ["f8ll","f19"],
+		  ["f17rr","f19"],
+		  ["f17ll","f19"],
+		  
+		  ["f19","f7rr"],
+		  ["f19","f16rr"],
+		  
+		  ["f19","f7ll"],
+		  ["f19","f16ll"],
+		  //corner
+		  ["f18","f17rr"],
+		  ["f18","f17ll"],
+		  
+		  ["f9","f8rr"],
+		  ["f9","f8ll"],
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+"moonhawk_fueltank": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Fuel Tank",
+	}
+    "slotType" : "moonhawk_fueltank",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_fueltank", ["moonhawk_body","moonhawk_frame"]],
+	],		 
+	"engine":{
+		"fuelTankBeams":["moonhawk_fueltank_a","moonhawk_fueltank_b","moonhawk_fueltank_c"]
+		"fuelCapacity":80
+	}, 
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //fuel tank beam
+	      {"beamSpring":101000,"beamDamp":20},
+		  {"beamDeform":4000,"beamStrength":32000},
+		  ["f8rr","f8ll",{"name":"moonhawk_fueltank_a"}],
+		  ["f18","f19",{"name":"moonhawk_fueltank_b"}],
+		  ["f9rr","f9ll",{"name":"moonhawk_fueltank_c"}],
+	],
+}
+"steer_01a": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Racing Wheel",
+	}
+    "slotType" : "moonhawk_steer",	 
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//steering wheel
+		["steering"  , "steer_01a"      , "f2rr","f2ll","f3rr",  {"x":15, "y":0, "z":0}, {"x":0, "y":0, "z":520}    , {"x":0, "y":0, "z":0}, -1, 1, 0, 1],
+	 ],
+}
+}

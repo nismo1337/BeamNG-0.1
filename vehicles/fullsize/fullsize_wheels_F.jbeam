@@ -1,0 +1,184 @@
+{
+"fullsize_wheel_F": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Front Wheels",
+	}
+    "slotType" : "fullsize_wheel_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["wheel_03a_16x9_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["wheel_03a"]],
+		 ["wheel_03a_16x9_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["wheel_03a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front wheels
+		 {"nodeWeight":4.5},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false}
+		 {"group":"wheelhub_a_FR"},
+		 ["fw1r", -0.645, -1.45, 0.34],
+		 {"group":"wheelhub_b_FR"},
+		 ["fw1rr", -0.91, -1.45, 0.34],
+		 {"group":"wheelhub_a_FL"},
+		 ["fw1l", 0.645, -1.45, 0.34],
+		 {"group":"wheelhub_b_FL"},
+		 ["fw1ll", 0.91, -1.45, 0.34],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamDeform":280000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":9001000,"beamDamp":50},
+		  //front wheel
+		  ["fw1r","fw1rr"],
+		  ["fw1l","fw1ll"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.345},
+			{"hubRadius":0.21},
+			{"wheelOffset":-0.045},
+			{"hubWidth":0.225},
+			{"tireWidth":0.215},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1501000, "hubBeamDamp":30}
+			{"beamSpring":1501000, "beamDamp":30},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.6},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":240000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":55000,"wheelSideBeamStrength":65000},
+			{"wheelReinforcementBeamSpring":76000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":55000,"wheelReinforcementBeamStrength":65000},
+			{"wheelTreadBeamSpring":501000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":55000,"wheelTreadBeamStrength":65000},
+			{"wheelPeripheryBeamSpring":501000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":55000,"wheelPeripheryBeamStrength":65000},
+			{"springExpansion":1501000, "dampExpansion":30},
+			{"nodeWeight":0.6},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.1},
+			
+			//front
+			{"selfCollision":false}
+			{"collision":true}
+            ["FR", "wheel_FR", "fw1rr", "fw1r", 9999,  "fh5r", 1],
+            ["FL", "wheel_FL", "fw1ll", "fw1l", 9999,  "fh5l", -1],
+			{"selfCollision":true}
+			{"enableABS":false}
+			{"propulsed":0}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+	],
+}
+"fullsize_wheel_F_sport": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Sport Front Wheels",
+	}
+    "slotType" : "fullsize_wheel_F",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["wheel_02a_18x10_FR", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], ["wheel_02a"]],
+		 ["wheel_02a_18x10_FL", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], ["wheel_02a"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //front wheels
+		 {"nodeWeight":4.5},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":false}
+		 {"group":"wheelhub_a_FR"},
+		 ["fw1r", -0.645, -1.45, 0.34],
+		 {"group":"wheelhub_b_FR"},
+		 ["fw1rr", -0.91, -1.45, 0.34],
+		 {"group":"wheelhub_a_FL"},
+		 ["fw1l", 0.645, -1.45, 0.34],
+		 {"group":"wheelhub_b_FL"},
+		 ["fw1ll", 0.91, -1.45, 0.34],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamDeform":280000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":9001000,"beamDamp":50},
+		  //front wheel
+		  ["fw1r","fw1rr"],
+		  ["fw1l","fw1ll"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},  
+	],
+	"hubWheelsTSG": [
+            ["name","group","node1:","node2:","nodeS","nodeArm:","wheelDir"], 
+			{"enableTireSideSupportBeams":true},
+			
+			//general settings
+			{"radius":0.345},
+			{"hubRadius":0.24},
+			{"wheelOffset":-0.045},
+			{"hubWidth":0.275},
+			{"tireWidth":0.265},
+			{"numRays":10},
+			
+			//hub options
+			{"hubBeamSpring":1501000, "hubBeamDamp":30}
+			{"beamSpring":1501000, "beamDamp":30},
+			{"hubBeamDeform":56000, "hubBeamStrength":120000},
+			{"beamDeform":56000,"beamStrength":120000},
+			{"hubNodeWeight":0.6},
+			{"hubNodeMaterial":"|NM_METAL"},
+			{"hubFrictionCoef":0.7},
+			
+			//tire options
+			{"wheelSideBeamSpring":320000,"wheelSideBeamDamp":350,"wheelSideBeamDeform":55000,"wheelSideBeamStrength":65000},
+			{"wheelReinforcementBeamSpring":122000,"wheelReinforcementBeamDamp":110,"wheelReinforcementBeamDeform":55000,"wheelReinforcementBeamStrength":65000},
+			{"wheelTreadBeamSpring":501000,"wheelTreadBeamDamp":150,"wheelTreadBeamDeform":55000,"wheelTreadBeamStrength":65000},
+			{"wheelPeripheryBeamSpring":501000,"wheelPeripheryBeamDamp":150,"wheelPeripheryBeamDeform":55000,"wheelPeripheryBeamStrength":65000},
+			{"springExpansion":1501000, "dampExpansion":30},
+			{"nodeWeight":0.6},
+			{"nodeMaterial":"|NM_RUBBER"},
+			{"frictionCoef":1.15},
+			
+			//front
+			{"selfCollision":false}
+			{"collision":true}
+            ["FR", "wheel_FR", "fw1rr", "fw1r", 9999,  "fh5r", 1],
+            ["FL", "wheel_FL", "fw1ll", "fw1l", 9999,  "fh5l", -1],
+			{"selfCollision":true}
+			{"enableABS":false}
+			{"propulsed":0}
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":""},
+	],
+}
+}
